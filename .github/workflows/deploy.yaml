@@ -1,0 +1,93 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: Build & Deploy Game
+
+on:
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - master
+  #   paths-ignore:
+  #     - '.github/workflows/**'
+  #     - '.gitignore'
+  #     - '**.md'
+
+env:
+  BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GODOT_VERSION: "4.3"
+  ITCH_PROJECT_NAME: "gametemplate"
+  ITCH_USERNAME: "comigor"
+
+jobs:
+  export_game:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.game_version.outputs.version }}
+    permissions: write-all
+    container:
+      image: barichello/godot-ci:4.3 # Set GODOT version here as well.
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          # lfs: true
+
+      - name: get game version
+        id: game_version
+        run: |
+          cat ./project.godot | grep 'config/version' | sed -E 's/.*config.version="([^"]+)".*/\1/g' > version.txt
+          echo "version=$(cat version.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: export game
+        id: export
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+
+          godot --headless --verbose --import --editor --quit
+
+          mkdir -v -p build/windows
+          godot --headless --verbose --export-release "Windows" build/windows/win64.exe
+          zip -j -r build/Windows.zip build/windows/*
+          mkdir -v -p build/linux
+          godot --headless --verbose --export-release "Linux/X11" build/linux/linux.x86_64
+          zip -j -r build/LinuxX11.zip build/linux/*
+          mkdir -v -p build/web
+          godot --headless --verbose --export-release "Web" build/web/index.html
+          zip -j -r build/Web.zip build/web/*
+
+          echo "archive_directory=$(pwd)/build" >> "$GITHUB_OUTPUT"
+
+      - name: create release
+        uses: ncipollo/release-action@v1.12.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          generateReleaseNotes: true
+          tag: ${{ steps.game_version.outputs.version }}
+          artifacts: ${{ steps.export.outputs.archive_directory }}/*
+          allowUpdates: true
+
+      - uses: actions/upload-artifact@v4
+        with:
+          path: ${{ steps.export.outputs.archive_directory }}/*
+          overwrite: true
+
+  publish_itch:
+    needs: export_game
+    if: ${{ contains(github.ref, 'master') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: download artifact
+        uses: actions/download-artifact@v4
+      - name: setup butler
+        run: |
+          curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+          unzip butler.zip
+          chmod +x butler
+          ./butler -V
+      - name: publish to itch
+        run: |
+          ./butler push artifact/Windows.zip $ITCH_USERNAME/$ITCH_PROJECT_NAME:win --assume-yes --userversion=${{ needs.export_game.outputs.version }}
+          ./butler push artifact/LinuxX11.zip $ITCH_USERNAME/$ITCH_PROJECT_NAME:amd64 --assume-yes --userversion=${{ needs.export_game.outputs.version }}
+          ./butler push artifact/Web.zip $ITCH_USERNAME/$ITCH_PROJECT_NAME:web --assume-yes --userversion=${{ needs.export_game.outputs.version }}
