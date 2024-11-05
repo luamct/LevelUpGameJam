@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://5wtjqrsucrv0"]
-
-[ext_resource type="Script" path="res://scenes/globals/signals.gd" id="1_t0fi7"]
-
-[node name="Signals" type="Node"]
-script = ExtResource("1_t0fi7")
