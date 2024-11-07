@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cgh7ug7rrwuqh" path="res://assets/sprites/cave/Cave_Floor.png" id="8_bibe8"]
 [ext_resource type="Texture2D" uid="uid://bbyhk62ivxp0q" path="res://assets/sprites/cave/Cave_Door.png" id="9_5ffvt"]
 [ext_resource type="Texture2D" uid="uid://cqvfdnhmd83wu" path="res://assets/ui/UI_Frames.png" id="12_c0a3f"]
-[ext_resource type="PackedScene" uid="uid://woucgevkq7qf" path="res://scenes/chest.tscn" id="12_ova1c"]
+[ext_resource type="PackedScene" uid="uid://woucgevkq7qf" path="res://scenes/plantation.tscn" id="12_ova1c"]
 [ext_resource type="Texture2D" uid="uid://bdif4ne5yo2yh" path="res://assets/sprites/items/coin_anim_f0.png" id="13_d4fiv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ipcvl"]

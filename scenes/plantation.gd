@@ -8,4 +8,4 @@ func _ready() -> void:
 	
 func on_click(_viewport, event, _shape_idx):
 	if event.is_action_pressed("click"):
-		Globals.chest_clicked.emit()
+		Globals.plantation_clicked.emit()

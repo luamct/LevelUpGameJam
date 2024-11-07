@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=4 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Texture2D" uid="uid://bov4rl4ij25p4" path="res://assets/sprites/map_paper.png" id="2_boqem"]
+[ext_resource type="PackedScene" uid="uid://woucgevkq7qf" path="res://scenes/plantation.tscn" id="3_7gc0v"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_6e6bs")
@@ -10,6 +11,9 @@ script = ExtResource("1_6e6bs")
 anchor_mode = 0
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(818, 94)
+position = Vector2(815, 94)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_boqem")
+
+[node name="Chest" parent="." instance=ExtResource("3_7gc0v")]
+position = Vector2(134, 607)

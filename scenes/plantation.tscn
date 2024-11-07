@@ -1,21 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://woucgevkq7qf"]
 
-[ext_resource type="Script" path="res://scenes/chest.gd" id="1_gogjq"]
-[ext_resource type="Texture2D" uid="uid://uveqdh4wcmi0" path="res://assets/sprites/items/Chest_Anim.png" id="1_ic42q"]
+[ext_resource type="Script" path="res://scenes/plantation.gd" id="1_gogjq"]
+[ext_resource type="Texture2D" uid="uid://bntjbbjn7don0" path="res://assets/sprites/trees/Cherry_Tree.png" id="2_v6k3n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fe8tp"]
-size = Vector2(18, 18)
+size = Vector2(30, 44)
 
-[node name="Chest" type="Node2D"]
-scale = Vector2(2, 2)
+[node name="Plantation" type="Node2D"]
 script = ExtResource("1_gogjq")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_fe8tp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ic42q")
-region_enabled = true
+texture = ExtResource("2_v6k3n")
 region_rect = Rect2(0, 0, 16, 16)
