@@ -24,9 +24,11 @@ Globals="*res://scenes/globals.tscn"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [gui]
 
+theme/custom="res://resources/themes/main_theme.tres"
 theme/custom_font="res://assets/fonts/monogram-extended.ttf"
 
 [input]

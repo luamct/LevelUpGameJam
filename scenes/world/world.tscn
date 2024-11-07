@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=9 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Texture2D" uid="uid://bov4rl4ij25p4" path="res://assets/sprites/map_paper.png" id="2_boqem"]
 [ext_resource type="PackedScene" uid="uid://woucgevkq7qf" path="res://scenes/plantation.tscn" id="3_7gc0v"]
+[ext_resource type="Texture2D" uid="uid://pgdxhhynjgc2" path="res://assets/sprites/adventurers/Actor1RMVX.bmp" id="4_1owbm"]
+[ext_resource type="Script" path="res://scenes/ui/side_panel.gd" id="4_lmqdk"]
+[ext_resource type="Texture2D" uid="uid://ckn6ic6p6sr3e" path="res://assets/ui/UI_Selectors.png" id="5_m3tqs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t32m"]
+atlas = ExtResource("5_m3tqs")
+region = Rect2(107, 10, 26, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_377f6"]
+atlas = ExtResource("4_1owbm")
+region = Rect2(0, 0, 48, 48)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_6e6bs")
@@ -17,3 +28,84 @@ texture = ExtResource("2_boqem")
 
 [node name="Chest" parent="." instance=ExtResource("3_7gc0v")]
 position = Vector2(134, 607)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SidePanel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -282.0
+offset_right = -2.0
+offset_bottom = 720.0
+grow_horizontal = 0
+script = ExtResource("4_lmqdk")
+
+[node name="PortraitSelector" type="TextureRect" parent="CanvasLayer/SidePanel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+offset_right = 48.0
+offset_bottom = 48.0
+texture = SubResource("AtlasTexture_4t32m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SidePanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="PortraitsLabel" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer"]
+layout_mode = 2
+text = "Adventurers"
+
+[node name="PortraitsContainer" type="GridContainer" parent="CanvasLayer/SidePanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 5
+
+[node name="Portrait" type="Control" parent="CanvasLayer/SidePanel/VBoxContainer/PortraitsContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SidePanel/VBoxContainer/PortraitsContainer/Portrait"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_377f6")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Portrait2" type="Control" parent="CanvasLayer/SidePanel/VBoxContainer/PortraitsContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SidePanel/VBoxContainer/PortraitsContainer/Portrait2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_377f6")
+expand_mode = 1
+stretch_mode = 3
