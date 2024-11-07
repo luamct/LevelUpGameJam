@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0igutvoh1cxw"]
+
+[ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
+[ext_resource type="Texture2D" uid="uid://bov4rl4ij25p4" path="res://assets/sprites/map_paper.png" id="2_boqem"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_6e6bs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(818, 94)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_boqem")
