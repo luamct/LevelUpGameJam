@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdcqkm7x4l87e"]
+
+[ext_resource type="Script" path="res://scenes/mainmenu.gd" id="1_17i2h"]
+[ext_resource type="Texture2D" uid="uid://dt616rjoag2ob" path="res://assets/sprites/background/UI_MainMenuBackground.png" id="1_xr2gu"]
+[ext_resource type="Texture2D" uid="uid://b56wuowfhcov2" path="res://assets/images/Logo A Guilds Tale.png" id="2_q2yvp"]
+[ext_resource type="FontFile" uid="uid://c0hpkea1kl8jj" path="res://assets/fonts/monogram.ttf" id="3_w3fq4"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_17i2h")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.525101, 0.525101, 0.525101, 0.517647)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -8.0
+offset_right = 1747.0
+offset_bottom = 976.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.720001, 0.72)
+texture = ExtResource("1_xr2gu")
+expand_mode = 5
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 49.0
+offset_top = -112.0
+offset_right = 1129.0
+offset_bottom = 1808.0
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("2_q2yvp")
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 178.0
+offset_right = 794.0
+offset_bottom = 274.0
+scale = Vector2(4.01356, 3.39848)
+
+[node name="NewGame" type="Button" parent="ButtonsContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_w3fq4")
+theme_override_font_sizes/font_size = 16
+text = "New Game"
+
+[node name="LoadGame" type="Button" parent="ButtonsContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_w3fq4")
+theme_override_font_sizes/font_size = 16
+text = "Load Game"
+
+[node name="Options" type="Button" parent="ButtonsContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_w3fq4")
+theme_override_font_sizes/font_size = 16
+text = "Options"
+
+[node name="Exit" type="Button" parent="ButtonsContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_w3fq4")
+theme_override_font_sizes/font_size = 16
+text = "Exit"
