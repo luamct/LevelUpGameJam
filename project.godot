@@ -19,6 +19,7 @@ config/icon="res://assets/sprites/icon.svg"
 [autoload]
 
 Globals="*res://scenes/globals.tscn"
+transition_screen="*res://scenes/transition_screen.tscn"
 
 [display]
 
