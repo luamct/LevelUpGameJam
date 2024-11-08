@@ -1,12 +1,23 @@
 class_name SidePanel
 extends Panel
 
+const PORTRAIT_SCENE = preload("res://scenes/ui/portrait.tscn")
+
 @onready var portrait_selector = %PortraitSelector
 @onready var portraits_container: GridContainer = %PortraitsContainer
 
+@onready var adventurers: Array[Adventurer]
+
 func _ready():
+	adventurers.assign($"../../Adventurers".get_children())
+	
 	# Connect signals for each portrait in the grid container
-	for portrait: Control in portraits_container.get_children():
+	for adventurer: Adventurer in adventurers:
+		
+		var portrait: Control = PORTRAIT_SCENE.instantiate()
+		portraits_container.add_child(portrait)
+		portrait.set_portrait_texture(adventurer.portrait)
+		
 		portrait.mouse_entered.connect(func(): _on_portrait_hovered(portrait))
 		portrait.mouse_exited.connect(_on_portrait_exited)
 

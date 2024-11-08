@@ -1,6 +1,9 @@
 class_name Adventurer
 extends Node2D
 
+@export var _name: String
+@export var portrait: Texture2D
+
 @export var strength: int
 @export var speed: int
 @export var agility: int
