@@ -1,6 +1,7 @@
 extends Node
 
 signal plantation_clicked
+signal gold_updated(gold: int)
 
 @export var gold_per_click: int
 
@@ -11,4 +12,4 @@ func _ready() -> void:
 
 func on_plantation_clicked():
 	current_gold += gold_per_click
-	print(current_gold)
+	gold_updated.emit(current_gold)
