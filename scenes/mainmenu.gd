@@ -9,19 +9,15 @@ func on_button_pressed(button_name: String):
 		"NewGame":
 			transition_screen.scene_path = "res://scenes/world/world.tscn"
 			transition_screen.fade_in()
-			pass
 		
 		"LoadGame":
 			transition_screen.scene_path = "res://scenes/world/world.tscn"
 			transition_screen.fade_in()
-			pass
 		
 		"Options":
 			transition_screen.scene_path = "res://scenes/world/world.tscn"
 			transition_screen.fade_in()
-			pass
 		
 		"Exit":
 			transition_screen.can_quit = true
 			transition_screen.fade_in()
-			pass
