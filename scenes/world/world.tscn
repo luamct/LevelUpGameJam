@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=10 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Texture2D" uid="uid://bov4rl4ij25p4" path="res://assets/sprites/map_paper.png" id="2_boqem"]
-[ext_resource type="PackedScene" uid="uid://woucgevkq7qf" path="res://scenes/plantation.tscn" id="3_7gc0v"]
+[ext_resource type="PackedScene" uid="uid://woucgevkq7qf" path="res://scenes/areas/spot.tscn" id="3_7gc0v"]
 [ext_resource type="PackedScene" uid="uid://cci1pxpj48ewe" path="res://scenes/adventurer/adventurer.tscn" id="4_ijfal"]
 [ext_resource type="Script" path="res://scenes/ui/side_panel.gd" id="4_lmqdk"]
 [ext_resource type="Texture2D" uid="uid://yb4ib4uaor4a" path="res://resources/portraits/liquor_bo.tres" id="5_eae34"]
 [ext_resource type="Texture2D" uid="uid://ckn6ic6p6sr3e" path="res://assets/ui/UI_Selectors.png" id="5_m3tqs"]
+[ext_resource type="PackedScene" uid="uid://b0dek7py76rxn" path="res://scenes/areas/area.tscn" id="6_il4vw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4t32m"]
 atlas = ExtResource("5_m3tqs")
@@ -23,14 +24,19 @@ position = Vector2(815, 94)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_boqem")
 
-[node name="Chest" parent="." instance=ExtResource("3_7gc0v")]
-position = Vector2(134, 607)
-
 [node name="Adventurers" type="Node2D" parent="."]
 
 [node name="LiquorBo" parent="Adventurers" instance=ExtResource("4_ijfal")]
 name_ = "Liquor Bo"
 portrait = ExtResource("5_eae34")
+
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="StartingVillage" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(191, 595)
+
+[node name="LeekCrops" parent="Areas/StartingVillage/Spots" index="0" instance=ExtResource("3_7gc0v")]
+position = Vector2(-64, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -52,128 +58,135 @@ offset_right = 48.0
 offset_bottom = 48.0
 texture = SubResource("AtlasTexture_4t32m")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SidePanel"]
+[node name="PanelSectionsVBox" type="VBoxContainer" parent="CanvasLayer/SidePanel"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
 
-[node name="GoldContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/VBoxContainer"]
+[node name="GoldContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/PanelSectionsVBox"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/GoldContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/GoldContainer"]
 layout_mode = 2
 text = "Gold: "
 
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/GoldContainer"]
+[node name="Value" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/GoldContainer"]
 layout_mode = 2
 text = "0"
 
-[node name="PortraitsLabel" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer"]
+[node name="PortraitsLabel" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox"]
 layout_mode = 2
 text = "Adventurers"
 
-[node name="PortraitsContainer" type="GridContainer" parent="CanvasLayer/SidePanel/VBoxContainer"]
+[node name="PortraitsContainer" type="GridContainer" parent="CanvasLayer/SidePanel/PanelSectionsVBox"]
 unique_name_in_owner = true
 layout_mode = 2
 columns = 5
 
-[node name="AdventurerStats" type="VBoxContainer" parent="CanvasLayer/SidePanel/VBoxContainer"]
+[node name="AdventurerStats" type="VBoxContainer" parent="CanvasLayer/SidePanel/PanelSectionsVBox"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="NameLabel" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats"]
+[node name="NameLabel" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="LevelContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats"]
+[node name="LevelContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats/LevelContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats/LevelContainer"]
 layout_mode = 2
 text = "Level: "
 
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats/LevelContainer"]
+[node name="Value" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats/LevelContainer"]
 layout_mode = 2
 
-[node name="StrengthContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats"]
+[node name="StrengthContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats/StrengthContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats/StrengthContainer"]
 layout_mode = 2
 text = "Strength: "
 
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats/StrengthContainer"]
+[node name="Value" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats/StrengthContainer"]
 layout_mode = 2
 
-[node name="SpeedContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats"]
+[node name="SpeedContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats/SpeedContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats/SpeedContainer"]
 layout_mode = 2
 text = "Speed: "
 
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats/SpeedContainer"]
+[node name="Value" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats/SpeedContainer"]
 layout_mode = 2
 
-[node name="AgilityContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats"]
+[node name="AgilityContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats/AgilityContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats/AgilityContainer"]
 layout_mode = 2
 text = "Agility: "
 
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats/AgilityContainer"]
+[node name="Value" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats/AgilityContainer"]
 layout_mode = 2
 
-[node name="DefenseContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats"]
+[node name="DefenseContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats/DefenseContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats/DefenseContainer"]
 layout_mode = 2
 text = "Defense: "
 
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats/DefenseContainer"]
+[node name="Value" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats/DefenseContainer"]
 layout_mode = 2
 
-[node name="AttackContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats"]
+[node name="AttackContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats/AttackContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats/AttackContainer"]
 layout_mode = 2
 text = "Attack: "
 
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats/AttackContainer"]
+[node name="Value" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats/AttackContainer"]
 layout_mode = 2
 
-[node name="MoraleContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats"]
+[node name="MoraleContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats/MoraleContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats/MoraleContainer"]
 layout_mode = 2
 text = "Morale: "
 
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats/MoraleContainer"]
+[node name="Value" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats/MoraleContainer"]
 layout_mode = 2
 
-[node name="DisciplineContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats"]
+[node name="DisciplineContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats/DisciplineContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats/DisciplineContainer"]
 layout_mode = 2
 text = "Discipline: "
 
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/VBoxContainer/AdventurerStats/DisciplineContainer"]
+[node name="Value" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats/DisciplineContainer"]
 layout_mode = 2
+
+[node name="LocationActionsLabel" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox"]
+layout_mode = 2
+text = "Location Actions:"
 
 [node name="GoldUpdateTimer" type="Timer" parent="CanvasLayer/SidePanel"]
 wait_time = 0.5
+
+[editable path="Areas/StartingVillage"]

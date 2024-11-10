@@ -1,6 +1,6 @@
 extends Node
 
-signal plantation_clicked
+signal spot_clicked
 signal gold_updated(gold: int)
 
 @export var gold_per_click: int
@@ -8,8 +8,8 @@ signal gold_updated(gold: int)
 var current_gold: int = 0
 
 func _ready() -> void:
-	plantation_clicked.connect(on_plantation_clicked)
+	spot_clicked.connect(on_spot_clicked)
 
-func on_plantation_clicked():
+func on_spot_clicked():
 	current_gold += gold_per_click
 	gold_updated.emit(current_gold)
