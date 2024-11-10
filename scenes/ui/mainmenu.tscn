@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxjitl57ibo4i"]
 
-[ext_resource type="Script" path="res://scenes/mainmenu.gd" id="1_17i2h"]
+[ext_resource type="Script" path="res://scenes/ui/mainmenu.gd" id="1_17i2h"]
 [ext_resource type="Texture2D" uid="uid://dt616rjoag2ob" path="res://assets/sprites/background/UI_MainMenuBackground.png" id="1_xr2gu"]
 [ext_resource type="Texture2D" uid="uid://b56wuowfhcov2" path="res://assets/images/Logo A Guilds Tale.png" id="2_q2yvp"]
 [ext_resource type="FontFile" uid="uid://c0hpkea1kl8jj" path="res://assets/fonts/monogram.ttf" id="3_w3fq4"]
