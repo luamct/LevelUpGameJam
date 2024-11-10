@@ -7,6 +7,7 @@ const PORTRAIT_SCENE = preload("res://scenes/ui/portrait.tscn")
 @onready var portrait_selector = %PortraitSelector
 @onready var portraits_container: GridContainer = %PortraitsContainer
 @onready var adventurer_stats: VBoxContainer = %AdventurerStats
+@onready var actions_container: VBoxContainer = %ActionsContainer
 
 @onready var name_label: Label = %NameLabel
 @onready var level_value: Label = %LevelContainer/Value
@@ -53,5 +54,13 @@ func on_portrait_input_event(event: InputEvent, portrait: Control, adventurer: A
 		morale_value.text = str(adventurer.morale)
 		discipline_value.text = str(adventurer.discipline)
 
+		for child in actions_container.get_children():
+			child.queue_free()
+		
+		for spot in adventurer.area.spots:
+			var label = Label.new()
+			label.text = " - " + spot.name_
+			actions_container.add_child(label)
+		
 func on_gold_updated(current_gold: int):
 	gold_value.text = str(current_gold)

@@ -13,3 +13,5 @@ extends Node2D
 @export var discipline: int
 
 @export var level: int
+
+@export var area: Area

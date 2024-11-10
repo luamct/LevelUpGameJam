@@ -26,9 +26,10 @@ texture = ExtResource("2_boqem")
 
 [node name="Adventurers" type="Node2D" parent="."]
 
-[node name="LiquorBo" parent="Adventurers" instance=ExtResource("4_ijfal")]
+[node name="LiquorBo" parent="Adventurers" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 name_ = "Liquor Bo"
 portrait = ExtResource("5_eae34")
+area = NodePath("../../Areas/StartingVillage")
 
 [node name="Areas" type="Node2D" parent="."]
 
@@ -37,6 +38,11 @@ position = Vector2(191, 595)
 
 [node name="LeekCrops" parent="Areas/StartingVillage/Spots" index="0" instance=ExtResource("3_7gc0v")]
 position = Vector2(-64, 0)
+name_ = "Leek Crops"
+
+[node name="Tavern" parent="Areas/StartingVillage/Spots" index="1" instance=ExtResource("3_7gc0v")]
+position = Vector2(-64, 0)
+name_ = "Tavern"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -182,9 +188,13 @@ text = "Discipline: "
 [node name="Value" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox/AdventurerStats/DisciplineContainer"]
 layout_mode = 2
 
-[node name="LocationActionsLabel" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox"]
+[node name="ActionsLabel" type="Label" parent="CanvasLayer/SidePanel/PanelSectionsVBox"]
 layout_mode = 2
-text = "Location Actions:"
+text = "Available Actions:"
+
+[node name="ActionsContainer" type="VBoxContainer" parent="CanvasLayer/SidePanel/PanelSectionsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="GoldUpdateTimer" type="Timer" parent="CanvasLayer/SidePanel"]
 wait_time = 0.5
