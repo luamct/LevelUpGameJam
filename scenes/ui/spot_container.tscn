@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj2gd8dsrulg8"]
+
+[ext_resource type="Script" path="res://scenes/ui/spot_container.gd" id="1_g2w1c"]
+
+[node name="SpotContainer" type="HBoxContainer"]
+script = ExtResource("1_g2w1c")
+
+[node name="SpotInfoContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="SpotInfoContainer"]
+layout_mode = 2
+text = "Leek Crops"
+
+[node name="RequirementsLabel" type="Label" parent="SpotInfoContainer"]
+layout_mode = 2
+text = "Requirements:"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SpotInfoContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SpotInfoContainer/VBoxContainer"]
+layout_mode = 2
+text = "  1+ Strength"
+
+[node name="Label2" type="Label" parent="SpotInfoContainer/VBoxContainer"]
+layout_mode = 2
+text = "  1+ Discipline"
+
+[node name="GoldOutputLabel" type="Label" parent="SpotInfoContainer"]
+layout_mode = 2
+text = "Gold per second:"
+
+[node name="GoldOutputValue" type="Label" parent="SpotInfoContainer"]
+layout_mode = 2
+text = "  +1 per adventurer"
+
+[node name="SlotsContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="SlotsLabel" type="Label" parent="SlotsContainer"]
+layout_mode = 2
+text = "Slots"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SlotsContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="SlotsContainer/HBoxContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="SlotsContainer/HBoxContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+
+[node name="Panel3" type="Panel" parent="SlotsContainer/HBoxContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2

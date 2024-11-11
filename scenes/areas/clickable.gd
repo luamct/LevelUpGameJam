@@ -4,6 +4,7 @@ extends Area2D
 func _ready() -> void:
 	input_event.connect(on_click)
 
-func on_click(_viewport, event, _shape_idx):
+func on_click(_viewport, event: InputEvent, _shape_idx):
 	if event.is_action_pressed("left_click"):
+		#print("Click!")
 		Globals.spot_clicked.emit()
