@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Texture2D" uid="uid://bov4rl4ij25p4" path="res://assets/sprites/map_paper.png" id="2_boqem"]
-[ext_resource type="Script" path="res://scenes/world/camera_2d.gd" id="2_rwaap"]
+[ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
 [ext_resource type="PackedScene" uid="uid://woucgevkq7qf" path="res://scenes/areas/spot.tscn" id="3_7gc0v"]
 [ext_resource type="PackedScene" uid="uid://cci1pxpj48ewe" path="res://scenes/adventurer/adventurer.tscn" id="4_ijfal"]
 [ext_resource type="Script" path="res://scenes/ui/side_panel.gd" id="4_lmqdk"]
