@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://beogoyxe3efrf"]
+
+[ext_resource type="Script" path="res://scenes/ui/spot_info_production.gd" id="1_hddld"]
+
+[node name="SpotInfoProduction" type="HBoxContainer"]
+script = ExtResource("1_hddld")
+
+[node name="InfoColumn" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="InfoColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Leek Crops"
+
+[node name="RequirementsLabel" type="Label" parent="InfoColumn"]
+layout_mode = 2
+text = "Requirements:"
+
+[node name="RequirementsContainer" type="VBoxContainer" parent="InfoColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GoldOutputLabel" type="Label" parent="InfoColumn"]
+layout_mode = 2
+text = "Gold per second:"
+
+[node name="GoldOutputValue" type="Label" parent="InfoColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "  +1 per adventurer"
+
+[node name="SlotsColumn" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="SlotsLabel" type="Label" parent="SlotsColumn"]
+layout_mode = 2
+text = "Slots"
+
+[node name="SlotsContainer" type="HBoxContainer" parent="SlotsColumn"]
+unique_name_in_owner = true
+layout_mode = 2

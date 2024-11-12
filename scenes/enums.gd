@@ -10,5 +10,11 @@ enum Attribute {
 	DISCIPLINE = 6
 }
 
+enum SpotType {
+	PRODUCTION = 0, # Crops, dungeons and other spots that produce gold over time
+	BUYING = 1,     # Tavern, shop and other spots that have goods (or adventurers) for a price
+	TRAINING = 2    # Trainer and other spots that increase the adventurers level over time, for a price
+}
+
 static func as_string(attribute: Attribute) -> String:
 	return Attribute.keys()[attribute]
