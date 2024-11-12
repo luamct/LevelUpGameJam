@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=15 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -9,7 +9,18 @@
 [ext_resource type="Texture2D" uid="uid://yb4ib4uaor4a" path="res://resources/portraits/liquor_bo.tres" id="5_eae34"]
 [ext_resource type="Texture2D" uid="uid://ckn6ic6p6sr3e" path="res://assets/ui/UI_Selectors.png" id="5_m3tqs"]
 [ext_resource type="PackedScene" uid="uid://b0dek7py76rxn" path="res://scenes/areas/area.tscn" id="6_il4vw"]
-[ext_resource type="PackedScene" uid="uid://dj2gd8dsrulg8" path="res://scenes/ui/spot_container.tscn" id="10_gno7t"]
+[ext_resource type="Script" path="res://scenes/areas/requirement.gd" id="8_4wor3"]
+[ext_resource type="Script" path="res://scenes/world/bottom_panel.gd" id="10_qvsck"]
+
+[sub_resource type="Resource" id="Resource_hnu8g"]
+script = ExtResource("8_4wor3")
+attribute = 2
+minimum_value = 1
+
+[sub_resource type="Resource" id="Resource_y810m"]
+script = ExtResource("8_4wor3")
+attribute = 5
+minimum_value = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4t32m"]
 atlas = ExtResource("5_m3tqs")
@@ -42,6 +53,7 @@ position = Vector2(250, 473)
 [node name="LeekCrops" parent="Areas/StartingVillage/Spots" index="0" instance=ExtResource("3_7gc0v")]
 position = Vector2(-64, 0)
 name_ = "Leek Crops"
+requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_hnu8g"), SubResource("Resource_y810m")])
 
 [node name="Tavern" parent="Areas/StartingVillage/Spots" index="1" instance=ExtResource("3_7gc0v")]
 position = Vector2(-64, 0)
@@ -208,8 +220,9 @@ offset_top = 530.0
 offset_right = 995.0
 offset_bottom = 718.0
 size_flags_horizontal = 4
+script = ExtResource("10_qvsck")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BottomPanel"]
+[node name="SpotContainer" type="HBoxContainer" parent="CanvasLayer/BottomPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -219,28 +232,26 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BottomPanel/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BottomPanel/SpotContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 
-[node name="AvailableActionsLabel" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/VBoxContainer"]
+[node name="AvailableActionsLabel" type="Label" parent="CanvasLayer/BottomPanel/SpotContainer/VBoxContainer"]
 layout_mode = 2
 text = "Actions"
 horizontal_alignment = 1
 
-[node name="LeekCropsButton" type="Button" parent="CanvasLayer/BottomPanel/HBoxContainer/VBoxContainer"]
+[node name="LeekCropsButton" type="Button" parent="CanvasLayer/BottomPanel/SpotContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Leek Crops"
 
-[node name="TavernButton" type="Button" parent="CanvasLayer/BottomPanel/HBoxContainer/VBoxContainer"]
+[node name="TavernButton" type="Button" parent="CanvasLayer/BottomPanel/SpotContainer/VBoxContainer"]
 layout_mode = 2
 text = "Tavern"
 
-[node name="TrainerButton" type="Button" parent="CanvasLayer/BottomPanel/HBoxContainer/VBoxContainer"]
+[node name="TrainerButton" type="Button" parent="CanvasLayer/BottomPanel/SpotContainer/VBoxContainer"]
 layout_mode = 2
 text = "Trainer"
-
-[node name="SpotContainer" parent="CanvasLayer/BottomPanel/HBoxContainer" instance=ExtResource("10_gno7t")]
-layout_mode = 2
 
 [editable path="Areas/StartingVillage"]

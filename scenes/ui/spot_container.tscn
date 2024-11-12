@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dj2gd8dsrulg8"]
+[gd_scene load_steps=2 format=3 uid="uid://beogoyxe3efrf"]
 
 [ext_resource type="Script" path="res://scenes/ui/spot_container.gd" id="1_g2w1c"]
 
@@ -9,6 +9,7 @@ script = ExtResource("1_g2w1c")
 layout_mode = 2
 
 [node name="NameLabel" type="Label" parent="SpotInfoContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Leek Crops"
 
@@ -16,22 +17,16 @@ text = "Leek Crops"
 layout_mode = 2
 text = "Requirements:"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SpotInfoContainer"]
+[node name="RequirementsContainer" type="VBoxContainer" parent="SpotInfoContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-
-[node name="Label" type="Label" parent="SpotInfoContainer/VBoxContainer"]
-layout_mode = 2
-text = "  1+ Strength"
-
-[node name="Label2" type="Label" parent="SpotInfoContainer/VBoxContainer"]
-layout_mode = 2
-text = "  1+ Discipline"
 
 [node name="GoldOutputLabel" type="Label" parent="SpotInfoContainer"]
 layout_mode = 2
 text = "Gold per second:"
 
 [node name="GoldOutputValue" type="Label" parent="SpotInfoContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "  +1 per adventurer"
 
