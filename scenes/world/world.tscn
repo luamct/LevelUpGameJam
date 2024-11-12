@@ -1,13 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=12 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Texture2D" uid="uid://bov4rl4ij25p4" path="res://assets/sprites/map_paper.png" id="2_boqem"]
+[ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
 [ext_resource type="PackedScene" uid="uid://woucgevkq7qf" path="res://scenes/areas/spot.tscn" id="3_7gc0v"]
 [ext_resource type="PackedScene" uid="uid://cci1pxpj48ewe" path="res://scenes/adventurer/adventurer.tscn" id="4_ijfal"]
 [ext_resource type="Script" path="res://scenes/ui/side_panel.gd" id="4_lmqdk"]
 [ext_resource type="Texture2D" uid="uid://yb4ib4uaor4a" path="res://resources/portraits/liquor_bo.tres" id="5_eae34"]
 [ext_resource type="Texture2D" uid="uid://ckn6ic6p6sr3e" path="res://assets/ui/UI_Selectors.png" id="5_m3tqs"]
 [ext_resource type="PackedScene" uid="uid://b0dek7py76rxn" path="res://scenes/areas/area.tscn" id="6_il4vw"]
+[ext_resource type="PackedScene" uid="uid://dj2gd8dsrulg8" path="res://scenes/ui/spot_container.tscn" id="10_gno7t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4t32m"]
 atlas = ExtResource("5_m3tqs")
@@ -18,6 +20,7 @@ script = ExtResource("1_6e6bs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+script = ExtResource("2_rwaap")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(815, 94)
@@ -34,7 +37,7 @@ area = NodePath("../../Areas/StartingVillage")
 [node name="Areas" type="Node2D" parent="."]
 
 [node name="StartingVillage" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(191, 595)
+position = Vector2(250, 473)
 
 [node name="LeekCrops" parent="Areas/StartingVillage/Spots" index="0" instance=ExtResource("3_7gc0v")]
 position = Vector2(-64, 0)
@@ -198,5 +201,46 @@ layout_mode = 2
 
 [node name="GoldUpdateTimer" type="Timer" parent="CanvasLayer/SidePanel"]
 wait_time = 0.5
+
+[node name="BottomPanel" type="Panel" parent="CanvasLayer"]
+offset_left = 1.0
+offset_top = 530.0
+offset_right = 995.0
+offset_bottom = 718.0
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BottomPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BottomPanel/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="AvailableActionsLabel" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Actions"
+horizontal_alignment = 1
+
+[node name="LeekCropsButton" type="Button" parent="CanvasLayer/BottomPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Leek Crops"
+
+[node name="TavernButton" type="Button" parent="CanvasLayer/BottomPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tavern"
+
+[node name="TrainerButton" type="Button" parent="CanvasLayer/BottomPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Trainer"
+
+[node name="SpotContainer" parent="CanvasLayer/BottomPanel/HBoxContainer" instance=ExtResource("10_gno7t")]
+layout_mode = 2
 
 [editable path="Areas/StartingVillage"]
