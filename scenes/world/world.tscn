@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
-[ext_resource type="Texture2D" uid="uid://bov4rl4ij25p4" path="res://assets/sprites/map_paper.png" id="2_boqem"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
 [ext_resource type="PackedScene" uid="uid://woucgevkq7qf" path="res://scenes/areas/spot.tscn" id="3_7gc0v"]
+[ext_resource type="Texture2D" uid="uid://gjekk4mkvr1b" path="res://resources/Map/2024-11-11 map01.png" id="3_exgk6"]
 [ext_resource type="PackedScene" uid="uid://cci1pxpj48ewe" path="res://scenes/adventurer/adventurer.tscn" id="4_ijfal"]
 [ext_resource type="Script" path="res://scenes/ui/side_panel.gd" id="4_lmqdk"]
 [ext_resource type="Texture2D" uid="uid://yb4ib4uaor4a" path="res://resources/portraits/liquor_bo.tres" id="5_eae34"]
@@ -25,7 +25,7 @@ script = ExtResource("2_rwaap")
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(815, 94)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_boqem")
+texture = ExtResource("3_exgk6")
 
 [node name="Adventurers" type="Node2D" parent="."]
 
