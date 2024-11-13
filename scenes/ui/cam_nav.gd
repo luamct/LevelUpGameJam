@@ -5,7 +5,7 @@ var drag_start = Vector2()
 var dragging = false
 var map_limits = Rect2()
 var viewport_size = Vector2()
-var zoom_step = 0.1  # Define o quanto o zoom vai aumentar ou diminuir a cada rotação
+var zoom_step = 0.01  # Define o quanto o zoom vai aumentar ou diminuir a cada rotação
 var min_zoom = Vector2(0.5, 0.5)  # Limite máximo de zoom (mais próximo)
 var max_zoom = Vector2(2, 2)      # Limite mínimo de zoom (mais distante)
 

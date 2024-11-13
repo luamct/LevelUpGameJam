@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmpwv1uxml8fv"]
+[gd_scene load_steps=2 format=3 uid="uid://dwulq7rxjvi0x"]
 
 [ext_resource type="Script" path="res://scenes/ui/spot_info_training.gd" id="1_ayjml"]
 
@@ -11,7 +11,7 @@ layout_mode = 2
 [node name="NameLabel" type="Label" parent="InfoColumn"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Leek Crops"
+text = "Trainer Sable"
 
 [node name="GoldPriceLabel" type="Label" parent="InfoColumn"]
 layout_mode = 2
@@ -21,6 +21,16 @@ text = "Gold Price:"
 unique_name_in_owner = true
 layout_mode = 2
 text = "  X per level"
+
+[node name="TimeToLevelLabel" type="Label" parent="InfoColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Time to level:"
+
+[node name="TimeToLevelValue" type="Label" parent="InfoColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "  X seconds"
 
 [node name="SlotsColumn" type="VBoxContainer" parent="."]
 layout_mode = 2
