@@ -8,6 +8,7 @@ const PORTRAIT_SCENE = preload("res://scenes/ui/portrait.tscn")
 @onready var portraits_container: GridContainer = %PortraitsContainer
 @onready var adventurer_stats: VBoxContainer = %AdventurerStats
 @onready var actions_container: VBoxContainer = %ActionsContainer
+@onready var bottom_panel: BottomPanel = %BottomPanel
 
 @onready var name_label: Label = %NameLabel
 @onready var level_value: Label = %LevelContainer/Value
@@ -31,13 +32,15 @@ func _ready():
 		var portrait: Control = PORTRAIT_SCENE.instantiate()
 		portraits_container.add_child(portrait)
 		portrait.set_portrait_texture(adventurer.portrait)
-		
+
 		portrait.gui_input.connect(func(event: InputEvent): on_portrait_input_event(event, portrait, adventurer))
 		#portrait.mouse_entered.connect(func(): _on_portrait_hovered(portrait, adventurer))
 		#portrait.mouse_exited.connect(_on_portrait_exited)
 
 func on_portrait_input_event(event: InputEvent, portrait: Control, adventurer: Adventurer):
 	if event.is_action_pressed("left_click"):
+		bottom_panel.show_panel(adventurer)
+		
 		portrait_selector.reparent(portrait)
 		portrait_selector.position = Vector2.ZERO
 

@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b0dek7py76rxn" path="res://scenes/areas/area.tscn" id="6_il4vw"]
 [ext_resource type="Script" path="res://scenes/areas/requirement.gd" id="8_4wor3"]
 [ext_resource type="Script" path="res://scenes/ui/bottom_panel.gd" id="10_qvsck"]
-[ext_resource type="PackedScene" path="res://scenes/ui/spot_info_production.tscn" id="12_ds10p"]
+[ext_resource type="PackedScene" uid="uid://beogoyxe3efrf" path="res://scenes/ui/spot_info_production.tscn" id="12_ds10p"]
 [ext_resource type="PackedScene" uid="uid://dwulq7rxjvi0x" path="res://scenes/ui/spot_info_training.tscn" id="13_qg1ek"]
 
 [sub_resource type="Resource" id="Resource_hnu8g"]
@@ -227,6 +227,8 @@ layout_mode = 2
 wait_time = 0.5
 
 [node name="BottomPanel" type="Panel" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
 offset_left = 1.0
 offset_top = 530.0
 offset_right = 995.0
@@ -244,26 +246,26 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BottomPanel/SpotContainer"]
+[node name="ButtonsContainer" type="VBoxContainer" parent="CanvasLayer/BottomPanel/SpotContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 
-[node name="AvailableActionsLabel" type="Label" parent="CanvasLayer/BottomPanel/SpotContainer/VBoxContainer"]
+[node name="AvailableActionsLabel" type="Label" parent="CanvasLayer/BottomPanel/SpotContainer/ButtonsContainer"]
 layout_mode = 2
 text = "Actions"
 horizontal_alignment = 1
 
-[node name="LeekCropsButton" type="Button" parent="CanvasLayer/BottomPanel/SpotContainer/VBoxContainer"]
+[node name="LeekCropsButton" type="Button" parent="CanvasLayer/BottomPanel/SpotContainer/ButtonsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Leek Crops"
 
-[node name="TavernButton" type="Button" parent="CanvasLayer/BottomPanel/SpotContainer/VBoxContainer"]
+[node name="TavernButton" type="Button" parent="CanvasLayer/BottomPanel/SpotContainer/ButtonsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Tavern"
 
-[node name="TrainerButton" type="Button" parent="CanvasLayer/BottomPanel/SpotContainer/VBoxContainer"]
+[node name="TrainerButton" type="Button" parent="CanvasLayer/BottomPanel/SpotContainer/ButtonsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Trainer"
