@@ -39,7 +39,7 @@ func _ready():
 
 func on_portrait_input_event(event: InputEvent, portrait: Control, adventurer: Adventurer):
 	if event.is_action_pressed("left_click"):
-		bottom_panel.show_panel(adventurer)
+		bottom_panel.show_buttons(adventurer)
 		
 		portrait_selector.reparent(portrait)
 		portrait_selector.position = Vector2.ZERO
@@ -59,11 +59,6 @@ func on_portrait_input_event(event: InputEvent, portrait: Control, adventurer: A
 
 		for child in actions_container.get_children():
 			child.queue_free()
-		
-		for spot in adventurer.area.spots:
-			var label = Label.new()
-			label.text = " - " + spot.name_
-			actions_container.add_child(label)
 		
 func on_gold_updated(current_gold: int):
 	gold_value.text = str(current_gold)

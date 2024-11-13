@@ -20,7 +20,7 @@ func setup(spot: Spot):
 			var label = Label.new()
 			label.text = "  %d+ %s" % [requirement.minimum_value, Enums.as_string(requirement.attribute)]
 			requirements_container.add_child(label)
-		
+
 	# Show gold output
 	gold_output_value.text = "  +%d per adventurer" % [spot.gold_output]
 

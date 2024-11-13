@@ -2,8 +2,6 @@ class_name BottomPanel
 extends Panel
 
 @onready var spot_container: HBoxContainer = $SpotContainer
-@onready var crops_button: Button = %LeekCropsButton
-@onready var trainer_button: Button = %TrainerButton
 @onready var buttons_container: VBoxContainer = $SpotContainer/ButtonsContainer
 
 @onready var spot_info_production: SpotInfoProduction = %SpotInfoProduction
@@ -12,8 +10,8 @@ extends Panel
 func _ready() -> void:
 	pass
 
-func show_panel(adventurer: Adventurer):
-	visible = true
+func show_buttons(adventurer: Adventurer):
+	buttons_container.visible = true
 	for child in buttons_container.get_children():
 		if child is Button:
 			child.queue_free()
@@ -26,17 +24,17 @@ func show_panel(adventurer: Adventurer):
 			buttons_container.add_child(button)
 
 func on_spot_button_pressed(spot: Spot):
-	match spot.type:
-		Enums.SpotType.PRODUCTION:
-			spot_info_training.visible = false
-			spot_info_production.visible = true
-			spot_info_production.setup(spot)
-			
-		Enums.SpotType.BUYING:
-			spot_info_production.visible = false
-			spot_info_training.visible = true
-			spot_info_training.setup(spot)
-			
-		Enums.SpotType.TRAINING:
-			print("TODO")
+	if spot is ProductionSpot:
+		spot_info_training.visible = false
+		spot_info_production.visible = true
+		spot_info_production.setup(spot)
+		
+	elif spot is TrainingSpot:
+		spot_info_production.visible = false
+		spot_info_training.visible = true
+		spot_info_training.setup(spot)
+
+	elif spot is BuyingSpot:
+		print("TODO")
+		
 	
