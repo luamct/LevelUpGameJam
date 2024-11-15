@@ -40,6 +40,7 @@ func _ready():
 func on_portrait_input_event(event: InputEvent, portrait: Control, adventurer: Adventurer):
 	if event.is_action_pressed("left_click"):
 		bottom_panel.show_buttons(adventurer)
+		Globals.adventurer_selected(adventurer)
 		
 		portrait_selector.reparent(portrait)
 		portrait_selector.position = Vector2.ZERO
@@ -57,8 +58,6 @@ func on_portrait_input_event(event: InputEvent, portrait: Control, adventurer: A
 		morale_value.text = str(adventurer.morale)
 		discipline_value.text = str(adventurer.discipline)
 
-		for child in actions_container.get_children():
-			child.queue_free()
-		
+
 func on_gold_updated(current_gold: int):
 	gold_value.text = str(current_gold)

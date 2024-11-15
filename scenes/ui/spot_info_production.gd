@@ -28,6 +28,8 @@ func setup(spot: Spot):
 	free_children(slots_container)
 	for i in range(spot.slots):
 		var slot = SLOT_PANEL_SCENE.instantiate()
+		slot.number = i
+		slot.spot = spot
 		slots_container.add_child(slot)
 
 func free_children(node: Control):

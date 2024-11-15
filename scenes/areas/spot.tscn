@@ -1,21 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://woucgevkq7qf"]
+[gd_scene load_steps=2 format=3 uid="uid://woucgevkq7qf"]
 
-[ext_resource type="Script" path="res://scenes/areas/clickable.gd" id="1_43kll"]
 [ext_resource type="Script" path="res://scenes/areas/spot.gd" id="1_pp21c"]
-[ext_resource type="Texture2D" uid="uid://cepo1ge2h3fen" path="res://assets/sprites/cartography/treePinesSmall.png" id="2_dp8hb"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fe8tp"]
-size = Vector2(52, 60)
 
 [node name="Spot" type="Node2D"]
 script = ExtResource("1_pp21c")
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("1_43kll")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_fe8tp")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_dp8hb")
-region_rect = Rect2(0, 0, 16, 16)
+[node name="ProductionTimer" type="Timer" parent="."]
+autostart = true

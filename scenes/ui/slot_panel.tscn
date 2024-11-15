@@ -1,7 +1,11 @@
-[gd_scene format=3 uid="uid://blithjtbvb67s"]
+[gd_scene load_steps=3 format=3 uid="uid://blithjtbvb67s"]
+
+[ext_resource type="Script" path="res://scenes/ui/slot_panel.gd" id="1_2foxr"]
+[ext_resource type="PackedScene" uid="uid://0itb5ywjb0oj" path="res://scenes/ui/portrait.tscn" id="2_f367u"]
 
 [node name="SlotPanel" type="Panel"]
 custom_minimum_size = Vector2(48, 48)
+script = ExtResource("1_2foxr")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -10,3 +14,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Portrait" parent="." instance=ExtResource("2_f367u")]
+visible = false
+
+[editable path="Portrait"]

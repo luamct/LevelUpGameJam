@@ -6,5 +6,5 @@ func _ready() -> void:
 
 func on_click(_viewport, event: InputEvent, _shape_idx):
 	if event.is_action_pressed("left_click"):
-		#print("Click!")
-		Globals.spot_clicked.emit()
+		#Globals.spot_clicked.emit()
+		pass
