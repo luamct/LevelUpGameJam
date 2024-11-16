@@ -10,7 +10,7 @@ const SLOT_PANEL_SCENE = preload("res://scenes/ui/slot_panel.tscn")
 
 func setup(spot: Spot):
 	name_label.text = spot.name_
-		
+
 	# Show gold output
 	gold_price_value.text = "  %d per level" % [spot.level_cost]
 
@@ -20,7 +20,9 @@ func setup(spot: Spot):
 	# Add slots
 	free_children(slots_container)
 	for i in range(spot.slots):
-		var slot = SLOT_PANEL_SCENE.instantiate()
+		var slot: SlotPanel = SLOT_PANEL_SCENE.instantiate()
+		slot.number = i
+		slot.spot = spot
 		slots_container.add_child(slot)
 
 func free_children(node: Control):

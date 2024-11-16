@@ -15,3 +15,4 @@ extends Node2D
 @export var level: int
 
 @export var area: Area
+@export var spot: Spot
