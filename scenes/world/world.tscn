@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
 [ext_resource type="PackedScene" uid="uid://woucgevkq7qf" path="res://scenes/areas/spot.tscn" id="3_7gc0v"]
-[ext_resource type="Texture2D" uid="uid://gjekk4mkvr1b" path="res://resources/Map/2024-11-11 map01.png" id="3_exgk6"]
+[ext_resource type="Texture2D" uid="uid://gjekk4mkvr1b" path="res://assets/maps/2024-11-11 map01.png" id="3_exgk6"]
 [ext_resource type="PackedScene" uid="uid://cci1pxpj48ewe" path="res://scenes/adventurer/adventurer.tscn" id="4_ijfal"]
 [ext_resource type="Script" path="res://scenes/ui/side_panel.gd" id="4_lmqdk"]
 [ext_resource type="Texture2D" uid="uid://yb4ib4uaor4a" path="res://resources/portraits/liquor_bo.tres" id="5_eae34"]
