@@ -9,7 +9,7 @@ const SLOT_PANEL_SCENE = preload("res://scenes/ui/slot_panel.tscn")
 @onready var time_to_level: Label = %TimeToLevelValue
 
 func setup(spot: Spot):
-	name_label.text = spot.name_
+	name_label.text = spot.name
 
 	# Show gold output
 	gold_price_value.text = "  %d per level" % [spot.level_cost]

@@ -38,33 +38,30 @@ texture = ExtResource("3_exgk6")
 [node name="LiquorBo" parent="Adventurers" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 name_ = "Liquor Bo"
 portrait = ExtResource("5_eae34")
-area = NodePath("../../Areas/StartingVillage")
+area = NodePath("../../Areas/MerryLeafVillage")
 
 [node name="Areas" type="Node2D" parent="."]
 
-[node name="StartingVillage" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="MerryLeafVillage" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(250, 473)
 
-[node name="LeekCrops" parent="Areas/StartingVillage/Spots" index="0" instance=ExtResource("3_7gc0v")]
+[node name="LeekCrops" parent="Areas/MerryLeafVillage/Spots" index="0" instance=ExtResource("3_7gc0v")]
 position = Vector2(-64, 0)
 script = ExtResource("8_dl7w6")
 requirements = Array[ExtResource("8_4wor3")]([])
 gold_output = 1
-name_ = "Leek Crops"
 slots = 4
 
-[node name="Trainer" parent="Areas/StartingVillage/Spots" index="1" instance=ExtResource("3_7gc0v")]
+[node name="Trainer" parent="Areas/MerryLeafVillage/Spots" index="1" instance=ExtResource("3_7gc0v")]
 position = Vector2(-64, 0)
 script = ExtResource("10_gbss6")
 level_cost = 100
 level_time = 30
-name_ = "Trainer Sable"
 slots = 2
 
-[node name="Tavern" parent="Areas/StartingVillage/Spots" index="2" instance=ExtResource("3_7gc0v")]
+[node name="Tavern" parent="Areas/MerryLeafVillage/Spots" index="2" instance=ExtResource("3_7gc0v")]
 position = Vector2(-64, 0)
 script = ExtResource("11_arn45")
-name_ = "Tavern"
 slots = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -261,4 +258,4 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[editable path="Areas/StartingVillage"]
+[editable path="Areas/MerryLeafVillage"]

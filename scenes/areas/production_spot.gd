@@ -9,7 +9,7 @@ extends Spot
 func _ready() -> void:
 	super()
 	production_timer.timeout.connect(on_tick)
-	
+
 func on_tick():
 	var gold = 0
 	for adventurer in adventurers:
@@ -17,4 +17,3 @@ func on_tick():
 			gold += gold_output * production_timer.wait_time
 
 	Globals.gold_collected.emit(gold)
-	

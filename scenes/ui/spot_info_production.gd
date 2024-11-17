@@ -9,7 +9,7 @@ const SLOT_PANEL_SCENE = preload("res://scenes/ui/slot_panel.tscn")
 @onready var slots_container: HBoxContainer = %SlotsContainer
 
 func setup(spot: Spot):
-	name_label.text = spot.name_
+	name_label.text = spot.name
 	
 	# Show requirements, if any
 	if spot.requirements.size() == 0:
