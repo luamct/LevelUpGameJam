@@ -17,3 +17,7 @@ func on_gold_collected(gold: int):
 
 func adventurer_selected(adventurer: Adventurer):
 	selected_adventurer = adventurer
+
+func create_adventurer():
+	var adventurer_scene = preload("res://scenes/adventurer/adventurer.tscn")
+	return adventurer_scene.instantiate()

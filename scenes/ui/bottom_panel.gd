@@ -3,6 +3,7 @@ extends Panel
 
 const SPOT_INFO_PRODUCTION = preload("res://scenes/ui/spot_info_production.tscn")
 const SPOT_INFO_TRAINING = preload("res://scenes/ui/spot_info_training.tscn")
+const SPOT_INFO_BUYING = preload("res://scenes/ui/spot_info_buying.tscn")
 
 @onready var spot_container: HBoxContainer = $SpotContainer
 @onready var buttons_container: VBoxContainer = $SpotContainer/ButtonsContainer
@@ -52,6 +53,9 @@ func on_spot_button_pressed(spot: Spot):
 			currently_showing_panel = spot_info_panel
 
 		elif spot is BuyingSpot:
-			print("TODO")
-		
-	
+			var spot_info_panel = SPOT_INFO_BUYING.instantiate()
+			spot_container.add_child(spot_info_panel)
+			spot_info_panel.name = panel_name
+			spot_info_panel.setup(spot)
+			
+			currently_showing_panel = spot_info_panel

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=19 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://scenes/areas/buying_spot.gd" id="11_arn45"]
 [ext_resource type="PackedScene" uid="uid://beogoyxe3efrf" path="res://scenes/ui/spot_info_production.tscn" id="12_ds10p"]
 [ext_resource type="PackedScene" uid="uid://dwulq7rxjvi0x" path="res://scenes/ui/spot_info_training.tscn" id="13_qg1ek"]
+[ext_resource type="PackedScene" uid="uid://c36dk4u424yed" path="res://scenes/ui/spot_info_buying.tscn" id="17_lgwgh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4t32m"]
 atlas = ExtResource("5_m3tqs")
@@ -62,6 +63,7 @@ slots = 2
 [node name="Tavern" parent="Areas/MerryLeafVillage/Spots" index="2" instance=ExtResource("3_7gc0v")]
 position = Vector2(-64, 0)
 script = ExtResource("11_arn45")
+buy_cost = 10
 slots = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -254,6 +256,11 @@ visible = false
 layout_mode = 2
 
 [node name="SpotInfoTraining" parent="CanvasLayer/BottomPanel/SpotContainer" instance=ExtResource("13_qg1ek")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="SpotInfoBuying" parent="CanvasLayer/BottomPanel/SpotContainer" instance=ExtResource("17_lgwgh")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2

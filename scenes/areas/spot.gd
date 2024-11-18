@@ -31,3 +31,8 @@ func remove_adventurer(adventurer: Adventurer):
 func full_name() -> String:
 	return "%s_%s" % [area.name, name]
 	
+# Add adventurer in an empty slot
+func get_adventurer_in_slot(slot_index: int) -> Adventurer:
+	if slot_index >= 0 and slot_index < adventurers.size():
+		return adventurers[slot_index]
+	return null

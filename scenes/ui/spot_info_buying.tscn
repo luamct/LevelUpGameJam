@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://c36dk4u424yed"]
+
+[ext_resource type="Script" path="res://scenes/ui/spot_info_buying.gd" id="1_7gx7l"]
+
+[node name="SpotInfoBuying" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_7gx7l")
+
+[node name="TavernName" type="Label" parent="."]
+layout_mode = 2
+text = "Last Call Tavern"
+
+[node name="HiringCost" type="Label" parent="."]
+layout_mode = 2
+text = "50 Gold per Adventurer"
+
+[node name="SlotsContainer" type="HBoxContainer" parent="."]
+layout_mode = 2

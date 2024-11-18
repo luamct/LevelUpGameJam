@@ -1,4 +1,4 @@
 class_name BuyingSpot
 extends Spot
 
-# TODO: Add buying specific stuff
+@export var buy_cost: int = 10  # Custo padrão para contratar aventureiros
