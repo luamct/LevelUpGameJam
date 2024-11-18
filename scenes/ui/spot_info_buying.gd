@@ -25,7 +25,7 @@ func hire_adventurer(spot: Spot):
 		Globals.gold_updated.emit(Globals.current_gold)
 		
 		var new_adventurer = Globals.create_adventurer()  # Assume uma função que cria novos aventureiros
-		
+
 		# Encontre o próximo slot disponível (índice)
 		var available_slot = -1
 		for i in range(spot.slots):

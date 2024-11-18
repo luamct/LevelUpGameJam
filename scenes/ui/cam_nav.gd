@@ -50,9 +50,9 @@ func _input(event):
 			#adjust_zoom(-zoom_step)
 				
 	elif event is InputEventMouseMotion and dragging:
-		var offset = drag_start - get_global_mouse_position()
+		var grab_offset = drag_start - get_global_mouse_position()
 		drag_start = get_global_mouse_position()
-		position += offset
+		position += grab_offset
 		
 #func adjust_zoom(step):
 	#var new_zoom = zoom + Vector2(step, step)

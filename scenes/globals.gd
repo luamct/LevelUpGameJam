@@ -21,3 +21,8 @@ func adventurer_selected(adventurer: Adventurer):
 func create_adventurer():
 	var adventurer_scene = preload("res://scenes/adventurer/adventurer.tscn")
 	return adventurer_scene.instantiate()
+
+func _input(_event: InputEvent) -> void:
+	if Input.is_key_pressed(KEY_EQUAL):
+		current_gold += 100
+		gold_updated.emit(current_gold)

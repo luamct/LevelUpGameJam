@@ -17,15 +17,13 @@ func _ready() -> void:
 	for i in slots:
 		adventurers.append(null)
 
-func add_adventurer(adventurer: Adventurer, slot_number: int) -> void:
-	adventurers[slot_number] = adventurer
-	adventurer_added.emit(adventurer, slot_number)
+func try_to_add_adventurer(_adventurer: Adventurer, _slot_number: int) -> bool:
+	assert(false, "Method not implemented on subclass")
+	return false
 
-func remove_adventurer(adventurer: Adventurer):
-	var slot_number = adventurers.find(adventurer)
-	if slot_number >= 0:
-		adventurers[slot_number] = null
-		adventurer_removed.emit(adventurer, slot_number)
+func try_to_remove_adventurer(_adventurer: Adventurer) -> bool:
+	assert(false, "Method not implemented on subclass")
+	return false
 	
 # Unique name including area name
 func full_name() -> String:
