@@ -1,26 +1,24 @@
 class_name TrainingSpot
 extends Spot
 
-@export var level_cost: int # How much it costs to level up an adventurer (in gold)
-@export var level_time: int # How long does it take to level up one adventurer (in seconds)
+@export var gold_per_xp: int # How much it costs to level up an adventurer (in gold)
+@export var xp_per_second: int # How long does it take to level up one adventurer (in seconds)
 
+@onready var training_timer: Timer = $TrainingTimer
+
+func _ready():
+	super()
+	training_timer.timeout.connect(on_training_tick)
+	
 func try_to_add_adventurer(adventurer: Adventurer, slot_number: int) -> bool:
 	if adventurers[slot_number]:
 		print("Slot is already busy!") # TODO: Pop out
 		return false
-
-	if Globals.current_gold < level_cost:
-		print("Not enough gold!")  # TODO: Pop out
-		return false
-
-	Globals.current_gold -= level_cost
-	Globals.gold_updated.emit(Globals.current_gold)
 	
 	# Try to remove this adventurer from current slot. Some spots, 
 	# like training, don't allow removing the adventurer
 	if adventurer.spot:
-		if not adventurer.spot.try_to_remove_adventurer(adventurer):
-			return false
+		adventurer.spot.try_to_remove_adventurer(adventurer)
 
 	# Add to this spot
 	adventurer.spot = self
@@ -29,13 +27,24 @@ func try_to_add_adventurer(adventurer: Adventurer, slot_number: int) -> bool:
 	adventurer_added.emit(adventurer, slot_number)
 	return true
 
-# If this adventurer is in fact in this spot, it cannot be removed 
-# until training is over. Otherwise, we return true to signify success
+func on_training_tick():
+	for adventurer in adventurers:
+		if adventurer:
+			if Globals.current_gold < gold_per_xp:
+				print("Not enough gold for training!")  # TODO: Pop out
+				continue
+
+			Globals.current_gold -= gold_per_xp
+			Globals.gold_updated.emit(Globals.current_gold)
+
+			adventurer.add_xp(xp_per_second)
+
 func try_to_remove_adventurer(adventurer: Adventurer) -> bool:
 	var slot_number = adventurers.find(adventurer)
-	
-	if slot_number >= 0:
-		print("Adventurer is training and cannot be moved yet!")
+	if slot_number < 0:
 		return false
-	else:
-		return true
+		
+	adventurers[slot_number] = null
+	adventurer_removed.emit(adventurer, slot_number)
+	return true
+	

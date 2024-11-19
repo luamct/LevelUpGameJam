@@ -7,3 +7,6 @@ script = ExtResource("1_pp21c")
 
 [node name="ProductionTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="TrainingTimer" type="Timer" parent="."]
+autostart = true

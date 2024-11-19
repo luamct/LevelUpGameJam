@@ -39,6 +39,7 @@ texture = ExtResource("3_exgk6")
 [node name="LiquorBo" parent="Adventurers" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 name_ = "Liquor Bo"
 portrait = ExtResource("5_eae34")
+level = 1
 area = NodePath("../../Areas/MerryLeafVillage")
 
 [node name="Areas" type="Node2D" parent="."]
@@ -56,8 +57,8 @@ slots = 4
 [node name="Trainer" parent="Areas/MerryLeafVillage/Spots" index="1" instance=ExtResource("3_7gc0v")]
 position = Vector2(-64, 0)
 script = ExtResource("10_gbss6")
-level_cost = 100
-level_time = 30
+gold_per_xp = 1
+xp_per_second = 300
 slots = 2
 
 [node name="Tavern" parent="Areas/MerryLeafVillage/Spots" index="2" instance=ExtResource("3_7gc0v")]
