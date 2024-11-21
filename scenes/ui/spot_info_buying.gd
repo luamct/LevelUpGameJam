@@ -1,23 +1,32 @@
+class_name SpotInfoBuying
 extends HBoxContainer
 
 const SLOT_PANEL_SCENE = preload("res://scenes/ui/slot_panel.tscn")
 
-@onready var name_label: Label = $TavernName
-@onready var slots_container: HBoxContainer = $SlotsContainer
-@onready var gold_value_label: Label = $HiringCost
+@onready var name_label: Label = %NameLabel
+@onready var slots_container: HBoxContainer = %SlotsContainer
+@onready var hiring_cost = %HiringCost
 
+func _ready() -> void:
+	pass
 
 func setup(spot: Spot):
 	name_label.text = spot.name
-	gold_value_label.text = str(spot.buy_cost) + " Gold per Adventurer"
+	hiring_cost.text = str(spot.buy_cost) + " Gold per Adventurer"
+
+	for i in range(spot.slots):
+		var slot: SlotPanel = SLOT_PANEL_SCENE.instantiate()
+		slot.number = i
+		slot.spot = spot
+		slots_container.add_child(slot)
 	
 	# Limpar slots e adicionar novos
-	free_children(slots_container)
-	for i in range(spot.slots):
-		var button = Button.new()
-		button.text = "Hire Adventurer"
-		button.pressed.connect(func(): hire_adventurer(spot))
-		slots_container.add_child(button)
+	# free_children(slots_container)
+	# for i in range(spot.slots):
+	# 	var button = Button.new()
+	# 	button.text = "Hire Adventurer"
+	# 	button.pressed.connect(func(): hire_adventurer(spot))
+	# 	slots_container.add_child(button)
 
 func hire_adventurer(spot: Spot):
 	if Globals.current_gold >= spot.buy_cost:
