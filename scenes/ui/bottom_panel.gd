@@ -1,5 +1,5 @@
 class_name BottomPanel
-extends Panel
+extends MarginContainer
 
 const SPOT_INFO_PRODUCTION = preload("res://scenes/ui/spot_info_production.tscn")
 const SPOT_INFO_TRAINING = preload("res://scenes/ui/spot_info_training.tscn")

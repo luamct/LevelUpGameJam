@@ -7,7 +7,6 @@ const PORTRAIT_SCENE = preload("res://scenes/ui/portrait.tscn")
 @onready var portrait_selector = %PortraitSelector
 @onready var portraits_container: GridContainer = %PortraitsContainer
 @onready var adventurer_stats: VBoxContainer = %AdventurerStats
-@onready var actions_container: VBoxContainer = %ActionsContainer
 @onready var bottom_panel: BottomPanel = %BottomPanel
 
 @onready var name_label: Label = %NameLabel

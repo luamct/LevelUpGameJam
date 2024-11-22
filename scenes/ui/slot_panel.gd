@@ -6,7 +6,6 @@ extends Panel
 
 var number: int
 var spot: Spot
-#var adventurer: Adventurer
 
 func _ready() -> void:
 	button.pressed.connect(on_panel_clicked)
