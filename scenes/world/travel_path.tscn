@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bukvpaws8uoa2"]
+
+[ext_resource type="Script" path="res://scenes/world/travel_path.gd" id="1_yq77x"]
+
+[sub_resource type="Curve2D" id="Curve2D_4vfm3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 8, 1, 22, 20.5, -22, -20.5, -10, -46, 0, 0, 0, 0, -49, -79)
+}
+point_count = 3
+
+[node name="TravelPath" type="Path2D"]
+curve = SubResource("Curve2D_4vfm3")
+script = ExtResource("1_yq77x")
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 1.0
+default_color = Color(0.184314, 0.0784314, 0.0156863, 1)

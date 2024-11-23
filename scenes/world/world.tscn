@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=24 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -16,9 +16,11 @@
 [ext_resource type="Script" path="res://scenes/areas/buying_spot.gd" id="11_arn45"]
 [ext_resource type="PackedScene" uid="uid://beogoyxe3efrf" path="res://scenes/ui/spot_info_production.tscn" id="12_ds10p"]
 [ext_resource type="Texture2D" uid="uid://bmguafu6tr4ng" path="res://assets/ui/bars_screens/Side bar1.png" id="12_galt4"]
+[ext_resource type="Texture2D" uid="uid://dipkwpg1dtghi" path="res://assets/Map Structures/Building humans Villa.png" id="12_sfq3d"]
 [ext_resource type="PackedScene" uid="uid://dwulq7rxjvi0x" path="res://scenes/ui/spot_info_training.tscn" id="13_qg1ek"]
 [ext_resource type="PackedScene" path="res://scenes/ui/spot_info_buying.tscn" id="17_lgwgh"]
 [ext_resource type="Texture2D" uid="uid://da4wft15e23o8" path="res://assets/ui/bars_screens/Area1 blank.png" id="19_wjdxs"]
+[ext_resource type="PackedScene" uid="uid://bukvpaws8uoa2" path="res://scenes/world/travel_path.tscn" id="21_lj6df"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r5e2e"]
 texture = ExtResource("12_galt4")
@@ -34,14 +36,16 @@ region = Rect2(107, 10, 26, 28)
 [node name="World" type="Node2D"]
 script = ExtResource("1_6e6bs")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-script = ExtResource("2_rwaap")
-
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(815, 94)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_exgk6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(300, -112)
+anchor_mode = 0
+zoom = Vector2(2, 2)
+script = ExtResource("2_rwaap")
 
 [node name="Adventurers" type="Node2D" parent="."]
 
@@ -54,7 +58,7 @@ area = NodePath("../../Areas/MerryLeafVillage")
 [node name="Areas" type="Node2D" parent="."]
 
 [node name="MerryLeafVillage" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(250, 473)
+position = Vector2(606.796, 58.8504)
 
 [node name="LeekCrops" parent="Areas/MerryLeafVillage/Spots" index="0" instance=ExtResource("3_7gc0v")]
 position = Vector2(-64, 0)
@@ -63,18 +67,32 @@ requirements = Array[ExtResource("8_4wor3")]([])
 gold_output = 1
 slots = 4
 
-[node name="Trainer" parent="Areas/MerryLeafVillage/Spots" index="1" instance=ExtResource("3_7gc0v")]
+[node name="Tavern" parent="Areas/MerryLeafVillage/Spots" index="1" instance=ExtResource("3_7gc0v")]
 position = Vector2(-64, 0)
+script = ExtResource("11_arn45")
+buy_cost = 10
+slots = 3
+
+[node name="SablesSettlement" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(533, -43)
+
+[node name="Trainer" parent="Areas/SablesSettlement/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
 gold_per_xp = 1
 xp_per_second = 300
 slots = 2
 
-[node name="Tavern" parent="Areas/MerryLeafVillage/Spots" index="2" instance=ExtResource("3_7gc0v")]
-position = Vector2(-64, 0)
-script = ExtResource("11_arn45")
-buy_cost = 10
-slots = 3
+[node name="SaltwindHeightsCity" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(705, 163)
+
+[node name="Sprite2D" parent="Areas/SaltwindHeightsCity" index="0"]
+texture = ExtResource("12_sfq3d")
+
+[node name="Trainer" parent="Areas/SaltwindHeightsCity/Spots" index="0" instance=ExtResource("3_7gc0v")]
+script = ExtResource("10_gbss6")
+gold_per_xp = 1
+xp_per_second = 300
+slots = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -289,4 +307,11 @@ text = "Discipline: "
 [node name="Value" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/DisciplineContainer"]
 layout_mode = 2
 
+[node name="TravelPaths" type="Node2D" parent="."]
+
+[node name="TravelPath1" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+position = Vector2(600, 44)
+
 [editable path="Areas/MerryLeafVillage"]
+[editable path="Areas/SablesSettlement"]
+[editable path="Areas/SaltwindHeightsCity"]

@@ -1,13 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://b0dek7py76rxn"]
 
-[ext_resource type="Texture2D" uid="uid://cq4rabetplsdb" path="res://assets/sprites/cartography/tent.png" id="1_2oecp"]
 [ext_resource type="Script" path="res://scenes/areas/area.gd" id="1_ldarn"]
+[ext_resource type="Texture2D" uid="uid://dlagp6apxve1s" path="res://assets/Map Structures/Building humans-main camp.png" id="2_smgu3"]
 
 [node name="Area" type="Node2D"]
 script = ExtResource("1_ldarn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 2
-texture = ExtResource("1_2oecp")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_smgu3")
 
 [node name="Spots" type="Node2D" parent="."]
