@@ -27,6 +27,10 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+area=""
+
 [gui]
 
 theme/custom="res://resources/themes/main_theme.tres"
