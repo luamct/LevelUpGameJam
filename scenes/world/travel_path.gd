@@ -15,16 +15,10 @@ func _ready() -> void:
 		
 	var areas: Array[Node] = get_tree().get_nodes_in_group("area")
 	for area in areas:
-		#var connects_at = area.connects_to(path)
-		#print(area, " -- ", path, " : ", connects_at)
 		
 		var first = area.to_local(to_global(points[0]))
 		var last = area.to_local(to_global(points[-1]))
 		var rect = area.collision_shape.shape.get_rect()
-		#print(rect)
-		#print(first)
-		#print(last)
-		#print()
 		if rect.has_point(first):
 			starts_at = area
 			area.paths.append(self)
