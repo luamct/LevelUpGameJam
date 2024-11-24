@@ -4,4 +4,6 @@
 
 [node name="Globals" type="Node"]
 script = ExtResource("1_ycv4i")
-gold_per_click = 1
+km_per_pixel = 0.5
+base_speed = 1.0
+speed_per_point = 0.5

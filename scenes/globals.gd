@@ -3,7 +3,9 @@ extends Node
 signal gold_collected
 signal gold_updated(gold: int)
 
-@export var gold_per_click: int
+@export var km_per_pixel: float
+@export var base_speed: float  # km per second
+@export var speed_per_point: float  # + km per second per speed attribute
 
 var xp_table: Array[int] = [
 	0, 1050, 2450, 4550, 7700, 12425, 19513, 30145, 46094, 70018, 105904, 
@@ -31,3 +33,9 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_EQUAL):
 		current_gold += 100
 		gold_updated.emit(current_gold)
+
+func selected_adventurer_speed() -> float:
+	return base_speed + selected_adventurer.speed * speed_per_point
+
+func calculate_speed(adventurer: Adventurer) -> float:
+	return base_speed + adventurer.speed * speed_per_point

@@ -4,6 +4,7 @@ extends MarginContainer
 const SPOT_INFO_PRODUCTION = preload("res://scenes/ui/spot_info_production.tscn")
 const SPOT_INFO_TRAINING = preload("res://scenes/ui/spot_info_training.tscn")
 const SPOT_INFO_BUYING = preload("res://scenes/ui/spot_info_buying.tscn")
+const TRAVEL_INFO_PANEL = preload("res://scenes/ui/travel_info_panel.tscn")
 
 @onready var spot_container: HBoxContainer = $SpotContainer
 @onready var buttons_container: VBoxContainer = $SpotContainer/ButtonsContainer
@@ -42,19 +43,12 @@ func on_travel_button_pressed(from: Area):
 		panel_node.visible = true
 		currently_showing_panel = panel_node
 	else:
-		var vbox = VBoxContainer.new()
-		for path in from.paths:
-			var button: Button = Button.new()
-			if path.starts_at == from:
-				button.text = path.ends_at.name
-			else:
-				button.text = path.starts_at.name
-			vbox.add_child(button)
+		var travel_info: TravelInfoPanel = TRAVEL_INFO_PANEL.instantiate()
+		spot_container.add_child(travel_info)
+		travel_info.name = panel_name
+		travel_info.setup(from)
 		
-		spot_container.add_child(vbox)
-		vbox.name = panel_name
-		currently_showing_panel = vbox
-		
+		currently_showing_panel = travel_info
 	
 func on_spot_button_pressed(spot: Spot):
 	var panel_name: String = "%s__SpotInfo" % [spot.full_name()]

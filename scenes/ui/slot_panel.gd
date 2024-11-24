@@ -14,7 +14,7 @@ func _ready() -> void:
 func on_adventurer_removed(_adventurer: Adventurer, slot_number: int):
 	if slot_number == number:
 		portrait.visible = false
-	
+
 func on_panel_clicked():
 	if Globals.selected_adventurer:
 		var success = spot.try_to_add_adventurer(Globals.selected_adventurer, number)

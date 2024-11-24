@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bmguafu6tr4ng" path="res://assets/ui/bars_screens/Side bar1.png" id="12_galt4"]
 [ext_resource type="Texture2D" uid="uid://dipkwpg1dtghi" path="res://assets/Map Structures/Building humans Villa.png" id="12_sfq3d"]
 [ext_resource type="PackedScene" uid="uid://dwulq7rxjvi0x" path="res://scenes/ui/spot_info_training.tscn" id="13_qg1ek"]
-[ext_resource type="PackedScene" path="res://scenes/ui/spot_info_buying.tscn" id="17_lgwgh"]
+[ext_resource type="PackedScene" uid="uid://d3xrhmeeu6pp" path="res://scenes/ui/spot_info_buying.tscn" id="17_lgwgh"]
 [ext_resource type="Texture2D" uid="uid://da4wft15e23o8" path="res://assets/ui/bars_screens/Area1 blank.png" id="19_wjdxs"]
 [ext_resource type="PackedScene" uid="uid://bukvpaws8uoa2" path="res://scenes/world/travel_path.tscn" id="21_lj6df"]
 
@@ -64,6 +64,8 @@ script = ExtResource("2_rwaap")
 [node name="Adventurers" type="Node2D" parent="."]
 
 [node name="LiquorBo" parent="Adventurers" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+z_index = 10
+position = Vector2(583, 56.5)
 name_ = "Liquor Bo"
 portrait = ExtResource("5_b26p0")
 level = 1

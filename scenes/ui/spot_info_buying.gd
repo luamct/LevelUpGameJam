@@ -13,7 +13,6 @@ func setup(spot: Spot):
 	hiring_cost.text = str(spot.buy_cost) + " Gold per Adventurer"
 
 	# Clear existing slots and populate with current slots
-	free_children(slots_container)
 	for i in range(spot.slots):
 		var slot: SlotPanel = SLOT_PANEL_SCENE.instantiate()
 		slot.number = i
