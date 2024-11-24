@@ -24,6 +24,5 @@ func on_travel_button_hovered(from_area: Area, path: TravelPath):
 	travel_time_value.text = str(travel_time)
 
 func on_travel_button_clicked(from_area: Area, path: TravelPath):
-	print("Clicked")
 	Globals.selected_adventurer.start_traveling(from_area, path)
 	
