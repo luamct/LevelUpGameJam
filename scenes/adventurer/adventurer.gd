@@ -20,8 +20,10 @@ signal level_up(int)
 @export var area: Area
 @export var spot: Spot
 
+# Path2D are directional, so this value tells if the adventurer is 
+# coming from the start of the path (value 1), or at the end (value -1)
+@export var traveling_direction: int
 @export var traveling_in: TravelPath
-@export var traveling_from: Area
 var position_on_path: float   # As a percentage of the path
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -36,21 +38,42 @@ func add_xp(new_xp: int):
 		level_up.emit(level)
 
 func start_traveling(from_area: Area, path: TravelPath):
-	position_on_path = 0.0
+	remove_from_spot()
 	traveling_in = path
-	traveling_from = from_area
+	
+	if from_area == path.starts_at:
+		traveling_direction = 1
+		position_on_path = 0.0
+	else:
+		traveling_direction = -1
+		position_on_path = 1.0
+	
 
 func add_to_spot(_spot: Spot):
 	spot = _spot
+	area = _spot.area
 	global_position = spot.area.global_position
 
+func remove_from_spot():
+	spot = null
+	area = null
+	
 func _process(delta: float):
 	if traveling_in:
 		var distance = Globals.calculate_speed(self) * delta
-		position_on_path += distance / traveling_in.distance
 		
+		# Because of the factor traveling_direction, we're incrementing 
+		# towards 1 if traveling_direction = 1, or decrementing towards 
+		# 0 if traveling_direction = -1
+		position_on_path += (distance / traveling_in.distance) * traveling_direction
+
 		global_position = traveling_in.get_position_in_path(position_on_path)
-		#print(position_on_path, " => ", global_position)
-		if position_on_path >= 1.0:
-			print("Chegoooo")
+		if traveling_direction == 1 and position_on_path >= 1.0:
+			area = traveling_in.ends_at
+			global_position = area.global_position
+			traveling_in = null
+		elif traveling_direction == -1 and position_on_path <= 0.0:
+			area = traveling_in.starts_at
+			global_position = area.global_position
+			traveling_in = null
 	

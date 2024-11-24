@@ -5,6 +5,7 @@ var drag_start = Vector2()
 var dragging = false
 var map_limits = Rect2()
 var viewport_size = Vector2()
+var pan_speed = 200
 #var zoom_step = 0.01  # Define o quanto o zoom vai aumentar ou diminuir a cada rotação
 #var min_zoom = Vector2(0.5, 0.5)  # Limite máximo de zoom (mais próximo)
 #var max_zoom = Vector2(2, 2)      # Limite mínimo de zoom (mais distante)
@@ -30,7 +31,7 @@ func _process(delta):
 	if Input.is_action_pressed("nav_right"):
 		cam_movement.x += 1
 	
-	var new_position = position + cam_movement * 500 * delta
+	var new_position = position + cam_movement * pan_speed * delta
 	position.x = clamp(new_position.x, map_limits.position.x, map_limits.position.x + map_limits.size.x - viewport_size.x)
 	position.y = clamp(new_position.y, map_limits.position.y, map_limits.position.y + map_limits.size.y - viewport_size.y)
 

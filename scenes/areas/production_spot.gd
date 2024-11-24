@@ -30,7 +30,7 @@ func try_to_add_adventurer(adventurer: Adventurer, slot_number: int) -> bool:
 			return false
 	
 	# Add to this spot
-	adventurer.spot = self
+	adventurer.add_to_spot(self)
 	adventurers[slot_number] = adventurer
 	
 	adventurer_added.emit(adventurer, slot_number)

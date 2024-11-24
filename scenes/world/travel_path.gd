@@ -40,5 +40,5 @@ func _ready() -> void:
 	assert(ends_at, "Could not find ending area for path " + self.name)
 
 func get_position_in_path(at: float):
-	path_follow.progress = at
+	path_follow.progress_ratio = min(at, 1.0)
 	return path_follow.global_position
