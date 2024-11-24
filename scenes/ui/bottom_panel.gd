@@ -12,10 +12,14 @@ const TRAVEL_INFO_PANEL = preload("res://scenes/ui/travel_info_panel.tscn")
 var currently_showing_panel: Control = null
 
 func _ready() -> void:
-	pass
+	Globals.update_bottom_panel.connect(update_buttons)
 
-func show_buttons(adventurer: Adventurer):
+func update_buttons(adventurer: Adventurer):
+	if currently_showing_panel:
+		currently_showing_panel.visible = false
+		currently_showing_panel = null
 	buttons_container.visible = true
+	
 	for child in buttons_container.get_children():
 		if child is Button:
 			child.queue_free()
@@ -27,14 +31,20 @@ func show_buttons(adventurer: Adventurer):
 			button.pressed.connect(func(): on_spot_button_pressed(spot))
 			buttons_container.add_child(button)
 		
-		# There's always the option to travel
+		# There's always the option to travel if in an area
 		var button: Button = Button.new()
 		button.text = "Travel"
-		button.pressed.connect(func (): on_travel_button_pressed(adventurer.area))
+		button.pressed.connect(func (): on_travel_button_pressed(adventurer))
 		buttons_container.add_child(button)
-		
-func on_travel_button_pressed(from: Area):
-	var panel_name: String = "%s__TravelInfo" % [from.name]
+
+func on_travel_button_pressed(adventurer: Adventurer):
+	var area_or_path_name: String
+	if adventurer.area:
+		area_or_path_name = adventurer.area.name
+	else:
+		area_or_path_name = adventurer.area.traveling_in.name
+
+	var panel_name: String = "%s__TravelInfo" % [area_or_path_name]
 	var panel_node = spot_container.get_node_or_null(panel_name)
 	if currently_showing_panel:
 		currently_showing_panel.visible = false
@@ -46,7 +56,7 @@ func on_travel_button_pressed(from: Area):
 		var travel_info: TravelInfoPanel = TRAVEL_INFO_PANEL.instantiate()
 		spot_container.add_child(travel_info)
 		travel_info.name = panel_name
-		travel_info.setup(from)
+		travel_info.setup(adventurer)
 		
 		currently_showing_panel = travel_info
 	

@@ -25,4 +25,4 @@ script = ExtResource("1_k4me1")
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_up5nf")
 autoplay = "default"
-frame_progress = 0.508821
+frame_progress = 0.184033

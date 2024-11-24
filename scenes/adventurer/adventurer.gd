@@ -47,7 +47,8 @@ func start_traveling(from_area: Area, path: TravelPath):
 	else:
 		traveling_direction = -1
 		position_on_path = 1.0
-	
+		
+	Globals.update_bottom_panel.emit(self)
 
 func add_to_spot(_spot: Spot):
 	spot = _spot
@@ -69,11 +70,12 @@ func _process(delta: float):
 
 		global_position = traveling_in.get_position_in_path(position_on_path)
 		if traveling_direction == 1 and position_on_path >= 1.0:
-			area = traveling_in.ends_at
-			global_position = area.global_position
-			traveling_in = null
+			arrived_at(traveling_in.ends_at)
 		elif traveling_direction == -1 and position_on_path <= 0.0:
-			area = traveling_in.starts_at
-			global_position = area.global_position
-			traveling_in = null
+			arrived_at(traveling_in.starts_at)
 	
+func arrived_at(_area: Area):
+	area = _area
+	global_position = area.global_position
+	traveling_in = null
+	Globals.update_bottom_panel.emit(self)

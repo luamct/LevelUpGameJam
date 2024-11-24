@@ -38,7 +38,7 @@ func _ready():
 
 func on_portrait_input_event(event: InputEvent, portrait: Control, adventurer: Adventurer):
 	if event.is_action_pressed("left_click"):
-		bottom_panel.show_buttons(adventurer)
+		bottom_panel.update_buttons(adventurer)
 		Globals.adventurer_selected(adventurer)
 		
 		portrait_selector.reparent(portrait)
