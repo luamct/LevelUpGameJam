@@ -142,20 +142,21 @@ area = NodePath("../../Areas/MerryLeafVillage")
 [node name="Areas" type="Node2D" parent="."]
 
 [node name="MerryLeafVillage" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(602.796, 59.8504)
+position = Vector2(603, 60)
 
 [node name="Sprite2D" parent="Areas/MerryLeafVillage" index="0"]
 scale = Vector2(0.191958, 0.191958)
 
+[node name="Spots" parent="Areas/MerryLeafVillage" index="1"]
+position = Vector2(-20, 1)
+
 [node name="LeekCrops" parent="Areas/MerryLeafVillage/Spots" index="0" instance=ExtResource("3_7gc0v")]
-position = Vector2(-64, 0)
 script = ExtResource("8_dl7w6")
 requirements = Array[ExtResource("8_4wor3")]([])
 gold_output = 1
 slots = 4
 
 [node name="Tavern" parent="Areas/MerryLeafVillage/Spots" index="1" instance=ExtResource("3_7gc0v")]
-position = Vector2(-64, 0)
 script = ExtResource("11_arn45")
 buy_cost = 10
 slots = 3
