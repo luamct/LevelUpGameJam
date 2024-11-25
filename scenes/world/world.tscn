@@ -113,6 +113,9 @@ slots = 2
 [node name="Area" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(782, 104)
 
+[node name="Area2" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(901, 155)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="BottomBannerTexture" type="TextureRect" parent="CanvasLayer"]
