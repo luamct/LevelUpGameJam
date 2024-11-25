@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=29 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -14,9 +14,10 @@
 [ext_resource type="Script" path="res://scenes/areas/training_spot.gd" id="10_gbss6"]
 [ext_resource type="Script" path="res://scenes/ui/bottom_panel.gd" id="10_qvsck"]
 [ext_resource type="Script" path="res://scenes/areas/buying_spot.gd" id="11_arn45"]
+[ext_resource type="Texture2D" uid="uid://4mi51u168pnv" path="res://assets/Map Structures/Building humans Tower.png" id="12_88m3j"]
 [ext_resource type="PackedScene" uid="uid://beogoyxe3efrf" path="res://scenes/ui/spot_info_production.tscn" id="12_ds10p"]
 [ext_resource type="Texture2D" uid="uid://bmguafu6tr4ng" path="res://assets/ui/bars_screens/Side bar1.png" id="12_galt4"]
-[ext_resource type="Texture2D" uid="uid://dipkwpg1dtghi" path="res://assets/Map Structures/Building humans Villa.png" id="12_sfq3d"]
+[ext_resource type="Texture2D" uid="uid://dkdo6yxdsx56t" path="res://assets/Map Structures/Building tend.png" id="13_o4tw5"]
 [ext_resource type="PackedScene" uid="uid://dwulq7rxjvi0x" path="res://scenes/ui/spot_info_training.tscn" id="13_qg1ek"]
 [ext_resource type="PackedScene" uid="uid://d3xrhmeeu6pp" path="res://scenes/ui/spot_info_buying.tscn" id="17_lgwgh"]
 [ext_resource type="Texture2D" uid="uid://da4wft15e23o8" path="res://assets/ui/bars_screens/Area1 blank.png" id="19_wjdxs"]
@@ -36,16 +37,30 @@ region = Rect2(107, 10, 26, 28)
 [sub_resource type="Curve2D" id="Curve2D_m8ydb"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 4, 1, 6.60712, 15.102, -6.60712, -15.102, -2, -41, 0, 0, 0, 0, -45, -74)
+"points": PackedVector2Array(0, 0, 0, 0, 7, 2, 0, 0, 0, 0, 9, -40, 0, 0, 0, 0, -52, -67, 0, 0, 0, 0, -61, -79)
 }
-point_count = 3
+point_count = 4
 
-[sub_resource type="Curve2D" id="Curve2D_80t2b"]
+[sub_resource type="Curve2D" id="Curve2D_nt43w"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2, -6.00057, -18.4997, -14.7157, 18.4997, 14.7157, 32, 28.9994, 0, 0, 0, 0, 76, 83.9994)
+"points": PackedVector2Array(0, 0, 0, 0, 553, -49, 0, 0, 0, 0, 583, -44, 0, 0, 0, 0, 600, -23, 0, 0, 0, 0, 626, -28, 0, 0, 0, 0, 657, -9, 0, 0, 0, 0, 732, -12, 0, 0, 0, 0, 746, 1, 0, 0, 0, 0, 728, 19, 0, 0, 0, 0, 759, 40, 0, 0, 0, 0, 780, 44, 0, 0, 0, 0, 790, 77, 0, 0, 0, 0, 798, 85, 0, 0, 0, 0, 794, 96)
 }
-point_count = 3
+point_count = 13
+
+[sub_resource type="Curve2D" id="Curve2D_id65s"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 604, 71, 0, 0, 0, 0, 614, 94, 0, 0, 0, 0, 686, 103, 0, 0, 0, 0, 691, 165, 0, 0, 0, 0, 709, 166)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_g5b1r"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 777, 112, 0, 0, 0, 0, 747, 113, 0, 0, 0, 0, 742, 145, 0, 0, 0, 0, 722, 146, 0, 0, 0, 0, 721, 152)
+}
+point_count = 5
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_6e6bs")
@@ -74,7 +89,7 @@ area = NodePath("../../Areas/MerryLeafVillage")
 [node name="Areas" type="Node2D" parent="."]
 
 [node name="MerryLeafVillage" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(606.796, 58.8504)
+position = Vector2(602.796, 59.8504)
 
 [node name="LeekCrops" parent="Areas/MerryLeafVillage/Spots" index="0" instance=ExtResource("3_7gc0v")]
 position = Vector2(-64, 0)
@@ -89,32 +104,33 @@ script = ExtResource("11_arn45")
 buy_cost = 10
 slots = 3
 
-[node name="SablesSettlement" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="AbandonedStables" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(533, -43)
 
-[node name="Trainer" parent="Areas/SablesSettlement/Spots" index="0" instance=ExtResource("3_7gc0v")]
+[node name="Trainer" parent="Areas/AbandonedStables/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
 gold_per_xp = 1
 xp_per_second = 300
 slots = 2
 
-[node name="SaltwindHeightsCity" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(705, 163)
+[node name="WatchTower" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(720, 165)
 
-[node name="Sprite2D" parent="Areas/SaltwindHeightsCity" index="0"]
-texture = ExtResource("12_sfq3d")
+[node name="Sprite2D" parent="Areas/WatchTower" index="0"]
+texture = ExtResource("12_88m3j")
 
-[node name="Trainer" parent="Areas/SaltwindHeightsCity/Spots" index="0" instance=ExtResource("3_7gc0v")]
-script = ExtResource("10_gbss6")
-gold_per_xp = 1
-xp_per_second = 300
-slots = 2
+[node name="ThievesCamp" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(783, 104)
 
-[node name="Area" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(782, 104)
+[node name="Sprite2D" parent="Areas/ThievesCamp" index="0"]
+position = Vector2(-5, -4)
+texture = ExtResource("13_o4tw5")
 
-[node name="Area2" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(901, 155)
+[node name="Sprite2D2" type="Sprite2D" parent="Areas/ThievesCamp"]
+texture_filter = 2
+position = Vector2(3, 0)
+scale = Vector2(0.237193, 0.237193)
+texture = ExtResource("13_o4tw5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -331,17 +347,23 @@ layout_mode = 2
 
 [node name="TravelPaths" type="Node2D" parent="."]
 
-[node name="TravelPath1" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+[node name="TravelPath_01" parent="TravelPaths" instance=ExtResource("21_lj6df")]
 position = Vector2(600, 44)
 curve = SubResource("Curve2D_m8ydb")
 
-[node name="TravelPath" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-position = Vector2(608, 78.0006)
-curve = SubResource("Curve2D_80t2b")
+[node name="TravelPath_02" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+curve = SubResource("Curve2D_nt43w")
+
+[node name="TravelPath_03" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+curve = SubResource("Curve2D_id65s")
+
+[node name="TravelPath_04" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+curve = SubResource("Curve2D_g5b1r")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-428, -115)
 
 [editable path="Areas/MerryLeafVillage"]
-[editable path="Areas/SablesSettlement"]
-[editable path="Areas/SaltwindHeightsCity"]
+[editable path="Areas/AbandonedStables"]
+[editable path="Areas/WatchTower"]
+[editable path="Areas/ThievesCamp"]
