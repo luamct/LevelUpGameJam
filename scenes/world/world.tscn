@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=34 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dkdo6yxdsx56t" path="res://assets/Map Structures/Building tend.png" id="13_o4tw5"]
 [ext_resource type="PackedScene" uid="uid://dwulq7rxjvi0x" path="res://scenes/ui/spot_info_training.tscn" id="13_qg1ek"]
 [ext_resource type="Texture2D" uid="uid://ds8556n1lxu4g" path="res://assets/Map Structures/Building orc Tower.png" id="14_icbto"]
+[ext_resource type="Texture2D" uid="uid://mafofxwlgvej" path="res://assets/Map Structures/Building dwarv Castle.png" id="15_u862k"]
 [ext_resource type="PackedScene" uid="uid://d3xrhmeeu6pp" path="res://scenes/ui/spot_info_buying.tscn" id="17_lgwgh"]
 [ext_resource type="Texture2D" uid="uid://da4wft15e23o8" path="res://assets/ui/bars_screens/Area1 blank.png" id="19_wjdxs"]
 [ext_resource type="PackedScene" uid="uid://bukvpaws8uoa2" path="res://scenes/world/travel_path.tscn" id="21_lj6df"]
@@ -70,6 +71,20 @@ _data = {
 }
 point_count = 9
 
+[sub_resource type="Curve2D" id="Curve2D_ja5vj"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 519, -46, 0, 0, 0, 0, 490, -61, 0, 0, 0, 0, 454, -36, 0, 0, 0, 0, 423, -58, 0, 0, 0, 0, 356, -29, 0, 0, 0, 0, 367, 15, 0, 0, 0, 0, 392, 17, 0, 0, 0, 0, 401, 12)
+}
+point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_ro5ft"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 412, 17, 0, 0, 0, 0, 410, 31, 0, 0, 0, 0, 404, 38, 0, 0, 0, 0, 415, 49, 0, 0, 0, 0, 455, 56, 0, 0, 0, 0, 473, 72, 0, 0, 0, 0, 491, 63, 0, 0, 0, 0, 510, 59)
+}
+point_count = 8
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_6e6bs")
 
@@ -99,6 +114,9 @@ area = NodePath("../../Areas/MerryLeafVillage")
 [node name="MerryLeafVillage" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(602.796, 59.8504)
 
+[node name="Sprite2D" parent="Areas/MerryLeafVillage" index="0"]
+scale = Vector2(0.191958, 0.191958)
+
 [node name="LeekCrops" parent="Areas/MerryLeafVillage/Spots" index="0" instance=ExtResource("3_7gc0v")]
 position = Vector2(-64, 0)
 script = ExtResource("8_dl7w6")
@@ -115,6 +133,9 @@ slots = 3
 [node name="AbandonedStables" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(533, -43)
 
+[node name="Sprite2D" parent="Areas/AbandonedStables" index="0"]
+scale = Vector2(0.188136, 0.188136)
+
 [node name="Trainer" parent="Areas/AbandonedStables/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
 gold_per_xp = 1
@@ -125,6 +146,8 @@ slots = 2
 position = Vector2(720, 165)
 
 [node name="Sprite2D" parent="Areas/WatchTower" index="0"]
+position = Vector2(0, -2)
+scale = Vector2(0.164296, 0.164296)
 texture = ExtResource("12_88m3j")
 
 [node name="ThievesCamp" parent="Areas" instance=ExtResource("6_il4vw")]
@@ -134,12 +157,18 @@ position = Vector2(783, 103)
 texture = ExtResource("13_o4tw5")
 
 [node name="OrcTower" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(895, 143)
+position = Vector2(895, 138)
 
 [node name="Sprite2D" parent="Areas/OrcTower" index="0"]
-position = Vector2(-1, -7)
-scale = Vector2(0.195323, 0.195323)
+scale = Vector2(0.158844, 0.158844)
 texture = ExtResource("14_icbto")
+
+[node name="FortHideout" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(418, 8)
+
+[node name="Sprite2D" parent="Areas/FortHideout" index="0"]
+scale = Vector2(0.143871, 0.143871)
+texture = ExtResource("15_u862k")
 
 [node name="ThievesBossCamp" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(794, 28)
@@ -153,6 +182,19 @@ texture_filter = 2
 position = Vector2(2, 1)
 scale = Vector2(0.234008, 0.234008)
 texture = ExtResource("13_o4tw5")
+
+[node name="ScoutCamp" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(519, 54)
+
+[node name="Sprite2D" parent="Areas/ScoutCamp" index="0"]
+scale = Vector2(0.188136, 0.188136)
+texture = ExtResource("13_o4tw5")
+
+[node name="Trainer" parent="Areas/ScoutCamp/Spots" index="0" instance=ExtResource("3_7gc0v")]
+script = ExtResource("10_gbss6")
+gold_per_xp = 1
+xp_per_second = 300
+slots = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -386,6 +428,12 @@ curve = SubResource("Curve2D_b1jyg")
 position = Vector2(0, -1)
 curve = SubResource("Curve2D_t1pvq")
 
+[node name="TravelPath_06" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+curve = SubResource("Curve2D_ja5vj")
+
+[node name="TravelPath_07" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+curve = SubResource("Curve2D_ro5ft")
+
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-428, -115)
 
@@ -394,4 +442,6 @@ position = Vector2(-428, -115)
 [editable path="Areas/WatchTower"]
 [editable path="Areas/ThievesCamp"]
 [editable path="Areas/OrcTower"]
+[editable path="Areas/FortHideout"]
 [editable path="Areas/ThievesBossCamp"]
+[editable path="Areas/ScoutCamp"]
