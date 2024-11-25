@@ -110,6 +110,9 @@ gold_per_xp = 1
 xp_per_second = 300
 slots = 2
 
+[node name="Area" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(782, 104)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="BottomBannerTexture" type="TextureRect" parent="CanvasLayer"]
