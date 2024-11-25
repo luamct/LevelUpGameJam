@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=37 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -72,12 +72,12 @@ _data = {
 }
 point_count = 9
 
-[sub_resource type="Curve2D" id="Curve2D_ja5vj"]
+[sub_resource type="Curve2D" id="Curve2D_7g4do"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 519, -46, 0, 0, 0, 0, 490, -61, 0, 0, 0, 0, 454, -36, 0, 0, 0, 0, 423, -58, 0, 0, 0, 0, 356, -29, 0, 0, 0, 0, 367, 15, 0, 0, 0, 0, 392, 17, 0, 0, 0, 0, 401, 12)
+"points": PackedVector2Array(0, 0, 0, 0, 534, -54, 0, 0, 0, 0, 544, -57, 0, 0, 0, 0, 561, -63, 0, 0, 0, 0, 568, -73, 0, 0, 0, 0, 566, -79, 0, 0, 0, 0, 565, -83, 0, 0, 0, 0, 566, -87, 0, 0, 0, 0, 570, -93, 0, 0, 0, 0, 570, -98, 0, 0, 0, 0, 569, -102, 0, 0, 0, 0, 566, -106, 0, 0, 0, 0, 561, -110, 0, 0, 0, 0, 555, -112, 0, 0, 0, 0, 549, -112, 0, 0, 0, 0, 544, -111, 0, 0, 0, 0, 538, -107, 0, 0, 0, 0, 532, -101, 0, 0, 0, 0, 528, -98, 0, 0, 0, 0, 524, -98, 0, 0, 0, 0, 517, -101, 0, 0, 0, 0, 513, -106, 0, 0, 0, 0, 511, -112, 0, 0, 0, 0, 511, -119, 0, 0, 0, 0, 514, -124, 0, 0, 0, 0, 517, -130, 0, 0, 0, 0, 519, -135, 0, 0, 0, 0, 520, -141, 0, 0, 0, 0, 518, -144, 0, 0, 0, 0, 511, -148, 0, 0, 0, 0, 504, -150, 0, 0, 0, 0, 496, -149, 0, 0, 0, 0, 487, -146, 0, 0, 0, 0, 481, -144, 0, 0, 0, 0, 476, -142, 0, 0, 0, 0, 466, -142, 0, 0, 0, 0, 462, -148, 0, 0, 0, 0, 455, -153, 0, 0, 0, 0, 448, -156, 0, 0, 0, 0, 438, -155, 0, 0, 0, 0, 431, -152, 0, 0, 0, 0, 427, -149, 0, 0, 0, 0, 426, -140)
 }
-point_count = 8
+point_count = 42
 
 [sub_resource type="Curve2D" id="Curve2D_ro5ft"]
 resource_local_to_scene = true
@@ -92,6 +92,13 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 407, 15, 0, 0, 0, 0, 394, 27, 0, 0, 0, 0, 393, 34, 0, 0, 0, 0, 420, 54, 0, 0, 0, 0, 419, 71, 0, 0, 0, 0, 406, 81, 0, 0, 0, 0, 394, 102, 0, 0, 0, 0, 378, 108, 0, 0, 0, 0, 366, 102)
 }
 point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_rd2vh"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 427, -123, 0, 0, 0, 0, 422, -114, 0, 0, 0, 0, 415, -110, 0, 0, 0, 0, 403, -105, 0, 0, 0, 0, 396, -101, 0, 0, 0, 0, 398, -93, 0, 0, 0, 0, 400, -87, 0, 0, 0, 0, 395, -82, 0, 0, 0, 0, 400, -78, 0, 0, 0, 0, 402, -74, 0, 0, 0, 0, 403, -69, 0, 0, 0, 0, 410, -66, 0, 0, 0, 0, 423, -68, 0, 0, 0, 0, 430, -67, 0, 0, 0, 0, 435, -65, 0, 0, 0, 0, 438, -60, 0, 0, 0, 0, 437, -51, 0, 0, 0, 0, 434, -45, 0, 0, 0, 0, 439, -40, 0, 0, 0, 0, 447, -38, 0, 0, 0, 0, 455, -34, 0, 0, 0, 0, 459, -28, 0, 0, 0, 0, 461, -20, 0, 0, 0, 0, 456, -15, 0, 0, 0, 0, 453, -6, 0, 0, 0, 0, 449, -1, 0, 0, 0, 0, 443, 2, 0, 0, 0, 0, 434, 10)
+}
+point_count = 28
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_6e6bs")
@@ -170,6 +177,12 @@ position = Vector2(895, 138)
 [node name="Sprite2D" parent="Areas/OrcTower" index="0"]
 scale = Vector2(0.158844, 0.158844)
 texture = ExtResource("14_icbto")
+
+[node name="RobbersOutpost" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(426, -132)
+
+[node name="Sprite2D" parent="Areas/RobbersOutpost" index="0"]
+texture = ExtResource("13_o4tw5")
 
 [node name="FortHideout" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(418, 8)
@@ -444,13 +457,16 @@ position = Vector2(0, -1)
 curve = SubResource("Curve2D_t1pvq")
 
 [node name="TravelPath_06" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-curve = SubResource("Curve2D_ja5vj")
-
-[node name="TravelPath_07" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-curve = SubResource("Curve2D_ro5ft")
+curve = SubResource("Curve2D_7g4do")
 
 [node name="TravelPath_08" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+curve = SubResource("Curve2D_ro5ft")
+
+[node name="TravelPath_09" parent="TravelPaths" instance=ExtResource("21_lj6df")]
 curve = SubResource("Curve2D_bkdvw")
+
+[node name="TravelPath_07" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+curve = SubResource("Curve2D_rd2vh")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-428, -115)
@@ -460,6 +476,7 @@ position = Vector2(-428, -115)
 [editable path="Areas/WatchTower"]
 [editable path="Areas/ThievesCamp"]
 [editable path="Areas/OrcTower"]
+[editable path="Areas/RobbersOutpost"]
 [editable path="Areas/FortHideout"]
 [editable path="Areas/CorruptedMines"]
 [editable path="Areas/ThievesBossCamp"]
