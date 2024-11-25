@@ -22,3 +22,10 @@ func connects_to(path: TravelPath) -> int:
 	else:
 		return 0
 	
+# Once an area is visited, all connected paths and areas are revealed
+# Calling this method on an already visited area has no effect
+func visited():
+	for path in paths:
+		path.visible = true
+		path.starts_at.visible = true
+		path.ends_at.visible = true

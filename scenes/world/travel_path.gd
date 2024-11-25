@@ -11,15 +11,7 @@ var dashed: bool = true
 var distance: int = 0
 
 func _ready() -> void:
-	line.set_antialiased(true)
-	var last_point: Vector2
-	for point in points:
-		if last_point:
-			distance += point.distance_to(last_point)
-		last_point = point
-		
-		line.add_point(point)
-	distance = int(distance * Globals.km_per_pixel)
+	distance = int(curve.get_baked_length() * Globals.km_per_pixel)
 
 	var areas: Array[Node] = get_tree().get_nodes_in_group("area")
 	for area in areas:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=41 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -24,19 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://bq1h8qypq0aph" path="res://assets/Map Structures/Building dwarv Altar.png" id="16_7ia4y"]
 [ext_resource type="Texture2D" uid="uid://ra25hj83xk6n" path="res://assets/Map Structures/Building dwarv Tower.png" id="17_2nwek"]
 [ext_resource type="PackedScene" uid="uid://d3xrhmeeu6pp" path="res://scenes/ui/spot_info_buying.tscn" id="17_lgwgh"]
+[ext_resource type="Texture2D" uid="uid://t6c8acgutpc5" path="res://assets/Paths/Path 1.png" id="19_1h226"]
 [ext_resource type="Texture2D" uid="uid://da4wft15e23o8" path="res://assets/ui/bars_screens/Area1 blank.png" id="19_wjdxs"]
 [ext_resource type="PackedScene" uid="uid://bukvpaws8uoa2" path="res://scenes/world/travel_path.tscn" id="21_lj6df"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r5e2e"]
-texture = ExtResource("12_galt4")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4t32m"]
-atlas = ExtResource("5_m3tqs")
-region = Rect2(107, 10, 26, 28)
 
 [sub_resource type="Curve2D" id="Curve2D_m8ydb"]
 resource_local_to_scene = true
@@ -115,6 +105,17 @@ _data = {
 }
 point_count = 17
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r5e2e"]
+texture = ExtResource("12_galt4")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t32m"]
+atlas = ExtResource("5_m3tqs")
+region = Rect2(107, 10, 26, 28)
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_6e6bs")
 
@@ -182,12 +183,14 @@ scale = Vector2(0.164296, 0.164296)
 texture = ExtResource("12_88m3j")
 
 [node name="ThievesCamp" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(783, 103)
 
 [node name="Sprite2D" parent="Areas/ThievesCamp" index="0"]
 texture = ExtResource("13_o4tw5")
 
 [node name="OrcTower" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(895, 138)
 
 [node name="Sprite2D" parent="Areas/OrcTower" index="0"]
@@ -195,6 +198,7 @@ scale = Vector2(0.158844, 0.158844)
 texture = ExtResource("14_icbto")
 
 [node name="OrcIslandScout" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(957, 291)
 
 [node name="Sprite2D" parent="Areas/OrcIslandScout" index="0"]
@@ -202,12 +206,14 @@ scale = Vector2(0.158844, 0.158844)
 texture = ExtResource("14_icbto")
 
 [node name="RobbersOutpost" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(426, -132)
 
 [node name="Sprite2D" parent="Areas/RobbersOutpost" index="0"]
 texture = ExtResource("13_o4tw5")
 
 [node name="FortHideout" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(418, 8)
 
 [node name="Sprite2D" parent="Areas/FortHideout" index="0"]
@@ -215,6 +221,7 @@ scale = Vector2(0.143871, 0.143871)
 texture = ExtResource("15_u862k")
 
 [node name="CorruptedMines" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(360, 90)
 
 [node name="Sprite2D" parent="Areas/CorruptedMines" index="0"]
@@ -222,6 +229,7 @@ scale = Vector2(0.16806, 0.16806)
 texture = ExtResource("16_7ia4y")
 
 [node name="TwinPeaks" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(290, 5)
 
 [node name="Sprite2D" parent="Areas/TwinPeaks" index="0"]
@@ -236,6 +244,7 @@ scale = Vector2(0.16806, 0.16806)
 texture = ExtResource("17_2nwek")
 
 [node name="ThievesBossCamp" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(794, 28)
 
 [node name="Sprite2D" parent="Areas/ThievesBossCamp" index="0"]
@@ -249,6 +258,7 @@ scale = Vector2(0.234008, 0.234008)
 texture = ExtResource("13_o4tw5")
 
 [node name="ScoutCamp" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(519, 54)
 
 [node name="Sprite2D" parent="Areas/ScoutCamp" index="0"]
@@ -260,6 +270,114 @@ script = ExtResource("10_gbss6")
 gold_per_xp = 1
 xp_per_second = 300
 slots = 2
+
+[node name="TravelPaths" type="Node2D" parent="."]
+
+[node name="TravelPath_01" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+position = Vector2(600, 44)
+curve = SubResource("Curve2D_m8ydb")
+
+[node name="PathFollow2D" parent="TravelPaths/TravelPath_01" index="1"]
+position = Vector2(7, 2)
+rotation = -1.52321
+
+[node name="Sprite2D" parent="TravelPaths/TravelPath_01" index="2"]
+position = Vector2(-20, -43)
+scale = Vector2(0.374706, 0.374706)
+texture = ExtResource("19_1h226")
+
+[node name="TravelPath_02" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+curve = SubResource("Curve2D_id65s")
+
+[node name="PathFollow2D" parent="TravelPaths/TravelPath_02" index="1"]
+position = Vector2(604, 71)
+rotation = 1.16067
+
+[node name="Sprite2D" parent="TravelPaths/TravelPath_02" index="2"]
+position = Vector2(658, 117)
+scale = Vector2(0.415152, 0.415152)
+texture = ExtResource("19_1h226")
+
+[node name="TravelPath_03" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
+curve = SubResource("Curve2D_3qb8b")
+
+[node name="PathFollow2D" parent="TravelPaths/TravelPath_03" index="1"]
+position = Vector2(733, 165)
+rotation = -1.15257
+
+[node name="Sprite2D" parent="TravelPaths/TravelPath_03" index="2"]
+position = Vector2(764, 115)
+rotation = 4.51116
+scale = Vector2(0.4064, 0.4064)
+texture = ExtResource("19_1h226")
+
+[node name="TravelPath_04" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
+curve = SubResource("Curve2D_b1jyg")
+
+[node name="PathFollow2D" parent="TravelPaths/TravelPath_04" index="1"]
+position = Vector2(776, 98)
+rotation = -1.92957
+
+[node name="TravelPath_05" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
+position = Vector2(0, -1)
+curve = SubResource("Curve2D_t1pvq")
+
+[node name="PathFollow2D" parent="TravelPaths/TravelPath_05" index="1"]
+position = Vector2(732, 169)
+
+[node name="TravelPath_06" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
+curve = SubResource("Curve2D_7g4do")
+
+[node name="PathFollow2D" parent="TravelPaths/TravelPath_06" index="1"]
+position = Vector2(534, -54)
+rotation = -0.291457
+
+[node name="TravelPath_07" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
+curve = SubResource("Curve2D_rd2vh")
+
+[node name="PathFollow2D" parent="TravelPaths/TravelPath_07" index="1"]
+position = Vector2(427, -123)
+rotation = 2.07789
+
+[node name="TravelPath_08" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
+curve = SubResource("Curve2D_ro5ft")
+
+[node name="PathFollow2D" parent="TravelPaths/TravelPath_08" index="1"]
+position = Vector2(412, 17)
+rotation = 1.89255
+
+[node name="TravelPath_09" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
+curve = SubResource("Curve2D_bkdvw")
+
+[node name="PathFollow2D" parent="TravelPaths/TravelPath_09" index="1"]
+position = Vector2(407, 15)
+rotation = 2.39617
+
+[node name="TravelPath_10" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
+curve = SubResource("Curve2D_x4nvp")
+
+[node name="PathFollow2D" parent="TravelPaths/TravelPath_10" index="1"]
+position = Vector2(349, 91)
+rotation = 3.07502
+
+[node name="TravelPath_11" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
+curve = SubResource("Curve2D_06osl")
+
+[node name="PathFollow2D" parent="TravelPaths/TravelPath_11" index="1"]
+position = Vector2(900, 150)
+rotation = 1.27934
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-428, -115)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -474,46 +592,6 @@ text = "Discipline: "
 [node name="Value" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/DisciplineContainer"]
 layout_mode = 2
 
-[node name="TravelPaths" type="Node2D" parent="."]
-
-[node name="TravelPath_01" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-position = Vector2(600, 44)
-curve = SubResource("Curve2D_m8ydb")
-
-[node name="TravelPath_02" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-curve = SubResource("Curve2D_id65s")
-
-[node name="TravelPath_03" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-curve = SubResource("Curve2D_3qb8b")
-
-[node name="TravelPath_04" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-curve = SubResource("Curve2D_b1jyg")
-
-[node name="TravelPath_05" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-position = Vector2(0, -1)
-curve = SubResource("Curve2D_t1pvq")
-
-[node name="TravelPath_06" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-curve = SubResource("Curve2D_7g4do")
-
-[node name="TravelPath_07" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-curve = SubResource("Curve2D_rd2vh")
-
-[node name="TravelPath_08" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-curve = SubResource("Curve2D_ro5ft")
-
-[node name="TravelPath_09" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-curve = SubResource("Curve2D_bkdvw")
-
-[node name="TravelPath_10" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-curve = SubResource("Curve2D_x4nvp")
-
-[node name="TravelPath_11" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-curve = SubResource("Curve2D_06osl")
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(-428, -115)
-
 [editable path="Areas/MerryLeafVillage"]
 [editable path="Areas/AbandonedStables"]
 [editable path="Areas/WatchTower"]
@@ -526,3 +604,14 @@ position = Vector2(-428, -115)
 [editable path="Areas/TwinPeaks"]
 [editable path="Areas/ThievesBossCamp"]
 [editable path="Areas/ScoutCamp"]
+[editable path="TravelPaths/TravelPath_01"]
+[editable path="TravelPaths/TravelPath_02"]
+[editable path="TravelPaths/TravelPath_03"]
+[editable path="TravelPaths/TravelPath_04"]
+[editable path="TravelPaths/TravelPath_05"]
+[editable path="TravelPaths/TravelPath_06"]
+[editable path="TravelPaths/TravelPath_07"]
+[editable path="TravelPaths/TravelPath_08"]
+[editable path="TravelPaths/TravelPath_09"]
+[editable path="TravelPaths/TravelPath_10"]
+[editable path="TravelPaths/TravelPath_11"]

@@ -76,6 +76,7 @@ func _process(delta: float):
 	
 func arrived_at(_area: Area):
 	area = _area
+	area.visited()
 	global_position = area.global_position
 	traveling_in = null
 	Globals.update_bottom_panel.emit(self)
