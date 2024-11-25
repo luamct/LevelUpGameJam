@@ -383,6 +383,7 @@ curve = SubResource("Curve2D_3qb8b")
 curve = SubResource("Curve2D_b1jyg")
 
 [node name="TravelPath_05" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+position = Vector2(0, -1)
 curve = SubResource("Curve2D_t1pvq")
 
 [node name="Marker2D" type="Marker2D" parent="."]
