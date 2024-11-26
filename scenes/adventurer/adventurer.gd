@@ -31,7 +31,8 @@ var position_on_path: float   # As a percentage of the path
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready():
-	global_position = area.global_position
+	if area:
+		global_position = area.global_position
 	
 func add_xp(new_xp: int):
 	xp += new_xp
