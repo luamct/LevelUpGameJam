@@ -161,48 +161,6 @@ script = ExtResource("11_arn45")
 buy_cost = 10
 slots = 1
 
-[node name="Bard" parent="Areas/MerryLeafVillage/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
-z_index = 10
-position = Vector2(0, -4.5)
-name_ = "Bard"
-portrait = ExtResource("11_hswoa")
-strength = 3
-speed = 3
-agility = 6
-defense = 4
-attack = 8
-morale = 3
-discipline = 4
-xp = 500
-level = 3
-hire_cost = 5000
-area = NodePath("../../..")
-
-[node name="Paladin" parent="Areas/MerryLeafVillage/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
-z_index = 10
-position = Vector2(0, -4.5)
-name_ = "Paladin"
-portrait = ExtResource("5_b26p0")
-strength = 10
-speed = 5
-agility = 6
-defense = 15
-attack = 19
-morale = 2
-discipline = 9
-xp = 1000
-level = 8
-hire_cost = 7000
-area = NodePath("../../..")
-
-[node name="Sorcerer" parent="Areas/MerryLeafVillage/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
-z_index = 10
-position = Vector2(0, -4.5)
-name_ = "Sorcerer"
-portrait = ExtResource("5_b26p0")
-level = 1
-area = NodePath("../../..")
-
 [node name="Trainer" parent="Areas/TemplateArea/Spots" index="2" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
 gold_per_xp = 1
@@ -256,14 +214,12 @@ xp_per_second = 300
 slots = 2
 
 [node name="ThievesCamp" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(783, 103)
 
 [node name="Sprite2D" parent="Areas/ThievesCamp" index="0"]
 texture = ExtResource("13_o4tw5")
 
 [node name="OrcTower" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(895, 138)
 
 [node name="Sprite2D" parent="Areas/OrcTower" index="0"]
@@ -271,7 +227,6 @@ scale = Vector2(0.158844, 0.158844)
 texture = ExtResource("14_icbto")
 
 [node name="OrcIslandScout" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(957, 291)
 
 [node name="Sprite2D" parent="Areas/OrcIslandScout" index="0"]
@@ -279,14 +234,12 @@ scale = Vector2(0.158844, 0.158844)
 texture = ExtResource("14_icbto")
 
 [node name="RobbersOutpost" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(426, -132)
 
 [node name="Sprite2D" parent="Areas/RobbersOutpost" index="0"]
 texture = ExtResource("13_o4tw5")
 
 [node name="FortHideout" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(418, 8)
 
 [node name="Sprite2D" parent="Areas/FortHideout" index="0"]
@@ -294,7 +247,6 @@ scale = Vector2(0.143871, 0.143871)
 texture = ExtResource("15_u862k")
 
 [node name="CorruptedMines" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(360, 90)
 
 [node name="Sprite2D" parent="Areas/CorruptedMines" index="0"]
@@ -302,7 +254,6 @@ scale = Vector2(0.16806, 0.16806)
 texture = ExtResource("16_7ia4y")
 
 [node name="TwinPeaks" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(290, 5)
 
 [node name="Sprite2D" parent="Areas/TwinPeaks" index="0"]
@@ -317,7 +268,6 @@ scale = Vector2(0.16806, 0.16806)
 texture = ExtResource("17_2nwek")
 
 [node name="ThievesBossCamp" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(794, 28)
 
 [node name="Sprite2D" parent="Areas/ThievesBossCamp" index="0"]
@@ -331,7 +281,6 @@ scale = Vector2(0.234008, 0.234008)
 texture = ExtResource("13_o4tw5")
 
 [node name="ScoutCamp" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(519, 54)
 
 [node name="Sprite2D" parent="Areas/ScoutCamp" index="0"]
@@ -343,6 +292,45 @@ script = ExtResource("10_gbss6")
 gold_per_xp = 1
 xp_per_second = 300
 slots = 2
+
+[node name="Areas_MerryLeafVillage_Spots_Tavern#Bard" parent="." instance=ExtResource("4_ijfal")]
+z_index = 10
+position = Vector2(0, -4.5)
+name_ = "Bard"
+portrait = ExtResource("11_hswoa")
+strength = 3
+speed = 3
+agility = 6
+defense = 4
+attack = 8
+morale = 3
+discipline = 4
+xp = 500
+level = 3
+hire_cost = 5000
+
+[node name="Areas_MerryLeafVillage_Spots_Tavern#Paladin" parent="." instance=ExtResource("4_ijfal")]
+z_index = 10
+position = Vector2(0, -4.5)
+name_ = "Paladin"
+portrait = ExtResource("5_b26p0")
+strength = 10
+speed = 5
+agility = 6
+defense = 15
+attack = 19
+morale = 2
+discipline = 9
+xp = 1000
+level = 8
+hire_cost = 7000
+
+[node name="Areas_MerryLeafVillage_Spots_Tavern#Sorcerer" parent="." instance=ExtResource("4_ijfal")]
+z_index = 10
+position = Vector2(0, -4.5)
+name_ = "Sorcerer"
+portrait = ExtResource("5_b26p0")
+level = 1
 
 [node name="TravelPaths" type="Node2D" parent="."]
 
@@ -372,7 +360,6 @@ scale = Vector2(0.415152, 0.415152)
 texture = ExtResource("19_1h226")
 
 [node name="TravelPath_03" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 curve = SubResource("Curve2D_3qb8b")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_03" index="1"]
@@ -386,7 +373,6 @@ scale = Vector2(0.4064, 0.4064)
 texture = ExtResource("19_1h226")
 
 [node name="TravelPath_04" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 curve = SubResource("Curve2D_b1jyg")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_04" index="1"]
@@ -394,7 +380,6 @@ position = Vector2(776, 98)
 rotation = -1.92957
 
 [node name="TravelPath_05" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 position = Vector2(0, -1)
 curve = SubResource("Curve2D_t1pvq")
 
@@ -402,7 +387,6 @@ curve = SubResource("Curve2D_t1pvq")
 position = Vector2(732, 169)
 
 [node name="TravelPath_06" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 curve = SubResource("Curve2D_7g4do")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_06" index="1"]
@@ -410,7 +394,6 @@ position = Vector2(534, -54)
 rotation = -0.291457
 
 [node name="TravelPath_07" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 curve = SubResource("Curve2D_rd2vh")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_07" index="1"]
@@ -418,7 +401,6 @@ position = Vector2(427, -123)
 rotation = 2.07789
 
 [node name="TravelPath_08" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 curve = SubResource("Curve2D_ro5ft")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_08" index="1"]
@@ -426,7 +408,6 @@ position = Vector2(412, 17)
 rotation = 1.89255
 
 [node name="TravelPath_09" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 curve = SubResource("Curve2D_bkdvw")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_09" index="1"]
@@ -434,7 +415,6 @@ position = Vector2(407, 15)
 rotation = 2.39617
 
 [node name="TravelPath_10" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 curve = SubResource("Curve2D_x4nvp")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_10" index="1"]
@@ -442,7 +422,6 @@ position = Vector2(349, 91)
 rotation = 3.07502
 
 [node name="TravelPath_11" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 curve = SubResource("Curve2D_06osl")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_11" index="1"]
