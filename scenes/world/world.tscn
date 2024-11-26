@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=40 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b0dek7py76rxn" path="res://scenes/areas/area.tscn" id="6_il4vw"]
 [ext_resource type="Script" path="res://scenes/areas/requirement.gd" id="8_4wor3"]
 [ext_resource type="Script" path="res://scenes/areas/production_spot.gd" id="8_dl7w6"]
+[ext_resource type="Script" path="res://scenes/areas/firecamp_spot.gd" id="8_do0jp"]
 [ext_resource type="Script" path="res://scenes/areas/training_spot.gd" id="10_gbss6"]
 [ext_resource type="Script" path="res://scenes/areas/buying_spot.gd" id="11_arn45"]
 [ext_resource type="Texture2D" uid="uid://b0t475e0jewt7" path="res://assets/classes/static_bard.png" id="11_hswoa"]
@@ -149,18 +150,21 @@ scale = Vector2(0.191958, 0.191958)
 [node name="Spots" parent="Areas/TemplateArea" index="1"]
 position = Vector2(-20, 1)
 
-[node name="LeekCrops" parent="Areas/TemplateArea/Spots" index="0" instance=ExtResource("3_7gc0v")]
+[node name="Firecamp" parent="Areas/TemplateArea/Spots" index="0" instance=ExtResource("3_7gc0v")]
+script = ExtResource("8_do0jp")
+
+[node name="LeekCrops" parent="Areas/TemplateArea/Spots" index="1" instance=ExtResource("3_7gc0v")]
 script = ExtResource("8_dl7w6")
 requirements = Array[ExtResource("8_4wor3")]([])
 gold_output = 1
 slots = 4
 
-[node name="Tavern" parent="Areas/TemplateArea/Spots" index="1" instance=ExtResource("3_7gc0v")]
+[node name="Tavern" parent="Areas/TemplateArea/Spots" index="2" instance=ExtResource("3_7gc0v")]
 script = ExtResource("11_arn45")
 buy_cost = 10
 slots = 1
 
-[node name="Trainer" parent="Areas/TemplateArea/Spots" index="2" instance=ExtResource("3_7gc0v")]
+[node name="Trainer" parent="Areas/TemplateArea/Spots" index="3" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
 gold_per_xp = 1
 xp_per_second = 300
@@ -175,13 +179,16 @@ scale = Vector2(0.191958, 0.191958)
 [node name="Spots" parent="Areas/Merry Leaf Village" index="1"]
 position = Vector2(-20, 1)
 
-[node name="LeekCrops" parent="Areas/Merry Leaf Village/Spots" index="0" instance=ExtResource("3_7gc0v")]
+[node name="Firecamp" parent="Areas/Merry Leaf Village/Spots" index="0" instance=ExtResource("3_7gc0v")]
+script = ExtResource("8_do0jp")
+
+[node name="LeekCrops" parent="Areas/Merry Leaf Village/Spots" index="1" instance=ExtResource("3_7gc0v")]
 script = ExtResource("8_dl7w6")
 requirements = Array[ExtResource("8_4wor3")]([])
 gold_output = 1
 slots = 4
 
-[node name="Tavern" parent="Areas/Merry Leaf Village/Spots" index="1" instance=ExtResource("3_7gc0v")]
+[node name="Tavern" parent="Areas/Merry Leaf Village/Spots" index="2" instance=ExtResource("3_7gc0v")]
 script = ExtResource("11_arn45")
 buy_cost = 10
 slots = 1
