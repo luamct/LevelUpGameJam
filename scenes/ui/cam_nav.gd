@@ -1,14 +1,11 @@
 extends Camera2D
 
-
-var drag_start = Vector2()
 var dragging = false
 var map_limits = Rect2()
-var viewport_size = Vector2()
 var pan_speed = 200
-#var zoom_step = 0.01  # Define o quanto o zoom vai aumentar ou diminuir a cada rotação
-#var min_zoom = Vector2(0.5, 0.5)  # Limite máximo de zoom (mais próximo)
-#var max_zoom = Vector2(2, 2)      # Limite mínimo de zoom (mais distante)
+var zoom_step = 0.05
+var min_zoom = 0.5
+var max_zoom = 2.5
 
 @onready var background = $"../Background"
 
@@ -16,12 +13,8 @@ func _ready():
 	if background and background.texture:
 		var map_size = background.texture.get_size() * background.scale
 		map_limits = Rect2(background.position - map_size / 2, map_size)
-		
-		print(map_limits)
-		
-	viewport_size = get_viewport_rect().size
 
-# Navegação através de teclas WASD e Direcionais
+# Camera navigation using WASD
 func _process(delta):
 	var cam_movement = Vector2()
 	if Input.is_action_pressed("nav_up"):
@@ -33,49 +26,21 @@ func _process(delta):
 	if Input.is_action_pressed("nav_right"):
 		cam_movement.x += 1
 	
-	viewport_size = get_viewport_rect().size / zoom
-	
-	# Actual rect in world space being captured by the camera
-	var viewport_rect = Rect2(position, viewport_size)
+	var half_viewport = (get_viewport_rect().size / zoom) / 2.0
 	
 	var new_position = position + cam_movement * pan_speed * delta
-	position.x = clamp(new_position.x, map_limits.position.x, map_limits.end.x - viewport_size.x)
-	position.y = clamp(new_position.y, map_limits.position.y, map_limits.end.y - viewport_size.y)
+	position = new_position.clamp(map_limits.position + half_viewport, map_limits.end - half_viewport)
 
-# Navegação através do mouse
-func _input(event):
-	#print(get_viewport_rect())
-	
+# Navigation and zoom using the mouse middle button
+func _input(event: InputEvent):
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_RIGHT:
-			if event.pressed:
-				drag_start = get_global_mouse_position()
-				dragging = true
-			else:
-				dragging = false
-				
-		#elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			#adjust_zoom(zoom_step)
-		#elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			#adjust_zoom(-zoom_step)
-				
+		if event.button_index == MOUSE_BUTTON_MIDDLE:
+			dragging = event.pressed
+		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			zoom = (zoom + Vector2(zoom_step, zoom_step)).clampf(min_zoom, max_zoom)
+		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			zoom = (zoom - Vector2(zoom_step, zoom_step)).clampf(min_zoom, max_zoom)
+			
 	elif event is InputEventMouseMotion and dragging:
-		var grab_offset = drag_start - get_global_mouse_position()
-		drag_start = get_global_mouse_position()
-		position += grab_offset
-		
-#func adjust_zoom(step):
-	#var new_zoom = zoom + Vector2(step, step)
-	#var camera_size = viewport_size * new_zoom
-	#print("Camera size: " + str(camera_size))
-	#print("Map limits: " + str(map_limits.size))
-	#if camera_size.x > map_limits.size.x or camera_size.y > map_limits.size.y:
-		#return  
-	#set_zoom_level(new_zoom)
-
-#func set_zoom_level(new_zoom):
-	#print("Position antes do zoom: " + str(position))
-	##zoom.x = clamp(new_zoom.x, min_zoom.x, max_zoom.x)
-	##zoom.y = clamp(new_zoom.y, min_zoom.y, max_zoom.y)
-	#position = position * new_zoom
-	#print("Position depois do zoom: " + str(position))
+		position -= event.relative / zoom
+	

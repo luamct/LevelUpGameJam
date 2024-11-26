@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://t6c8acgutpc5" path="res://assets/Paths/Path 1.png" id="19_1h226"]
 [ext_resource type="Texture2D" uid="uid://da4wft15e23o8" path="res://assets/ui/bars_screens/Area1 blank.png" id="19_wjdxs"]
 [ext_resource type="PackedScene" uid="uid://bukvpaws8uoa2" path="res://scenes/world/travel_path.tscn" id="21_lj6df"]
-[ext_resource type="PackedScene" uid="uid://b171lyrmcpsmf" path="res://scenes/ui/bottom_panel.tscn" id="22_xlvp7"]
+[ext_resource type="PackedScene" path="res://scenes/ui/bottom_panel.tscn" id="22_xlvp7"]
 
 [sub_resource type="Curve2D" id="Curve2D_m8ydb"]
 resource_local_to_scene = true
@@ -124,7 +124,6 @@ texture = ExtResource("3_exgk6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(300, -112)
-anchor_mode = 0
 zoom = Vector2(2.5, 2.5)
 script = ExtResource("2_rwaap")
 
@@ -335,45 +334,6 @@ script = ExtResource("10_gbss6")
 gold_per_xp = 1
 xp_per_second = 300
 slots = 2
-
-[node name="Areas_MerryLeafVillage_Spots_Tavern#Bard" parent="." instance=ExtResource("4_ijfal")]
-z_index = 10
-position = Vector2(0, -4.5)
-name_ = "Bard"
-portrait = ExtResource("11_hswoa")
-strength = 3
-speed = 3
-agility = 6
-defense = 4
-attack = 8
-morale = 3
-discipline = 4
-xp = 500
-level = 3
-hire_cost = 5000
-
-[node name="Areas_MerryLeafVillage_Spots_Tavern#Paladin" parent="." instance=ExtResource("4_ijfal")]
-z_index = 10
-position = Vector2(0, -4.5)
-name_ = "Paladin"
-portrait = ExtResource("5_b26p0")
-strength = 10
-speed = 5
-agility = 6
-defense = 15
-attack = 19
-morale = 2
-discipline = 9
-xp = 1000
-level = 8
-hire_cost = 7000
-
-[node name="Areas_MerryLeafVillage_Spots_Tavern#Sorcerer" parent="." instance=ExtResource("4_ijfal")]
-z_index = 10
-position = Vector2(0, -4.5)
-name_ = "Sorcerer"
-portrait = ExtResource("5_b26p0")
-level = 1
 
 [node name="TravelPaths" type="Node2D" parent="."]
 
