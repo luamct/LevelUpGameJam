@@ -64,9 +64,19 @@ layout_mode = 2
 [node name="InfoAdventurer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="InfoAdventurer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="InfoAdventurer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InfoAdventurer/HBoxContainer"]
 layout_mode = 2
 text = "Status:"
+
+[node name="HSpace4" type="Control" parent="InfoAdventurer/HBoxContainer"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="HireCost" type="Label" parent="InfoAdventurer/HBoxContainer"]
+layout_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="InfoAdventurer"]
 layout_mode = 2
@@ -82,7 +92,6 @@ text = "Level: "
 
 [node name="Value" type="Label" parent="InfoAdventurer/GridContainer/LevelContainer"]
 layout_mode = 2
-text = "0"
 
 [node name="StrengthContainer" type="HBoxContainer" parent="InfoAdventurer/GridContainer"]
 unique_name_in_owner = true
@@ -94,7 +103,6 @@ text = "Strength: "
 
 [node name="Value" type="Label" parent="InfoAdventurer/GridContainer/StrengthContainer"]
 layout_mode = 2
-text = "2"
 
 [node name="SpeedContainer" type="HBoxContainer" parent="InfoAdventurer/GridContainer"]
 unique_name_in_owner = true

@@ -228,6 +228,7 @@ position = Vector2(-583, -65.5)
 name_ = "Sorcerer"
 portrait = ExtResource("5_b26p0")
 level = 1
+hire_cost = 1000
 
 [node name="Abandoned Stables" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(533, -43)
