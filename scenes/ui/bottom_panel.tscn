@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://b171lyrmcpsmf"]
+
+[ext_resource type="Script" path="res://scenes/ui/bottom_panel.gd" id="1_c8q1d"]
+[ext_resource type="PackedScene" uid="uid://beogoyxe3efrf" path="res://scenes/ui/spot_info_production.tscn" id="2_kkihu"]
+[ext_resource type="PackedScene" uid="uid://dwulq7rxjvi0x" path="res://scenes/ui/spot_info_training.tscn" id="3_c12k7"]
+[ext_resource type="PackedScene" uid="uid://d3xrhmeeu6pp" path="res://scenes/ui/spot_info_buying.tscn" id="4_x4raq"]
+
+[node name="BottomPanel" type="MarginContainer"]
+offset_left = 280.0
+offset_top = 591.0
+offset_right = 1278.0
+offset_bottom = 718.0
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_c8q1d")
+
+[node name="SpotContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="AvailableActionsLabel" type="Label" parent="SpotContainer"]
+layout_mode = 2
+text = "Actions"
+horizontal_alignment = 1
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="SpotContainer"]
+visible = false
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="SpotInfoProduction" parent="SpotContainer" instance=ExtResource("2_kkihu")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="SpotInfoTraining" parent="SpotContainer" instance=ExtResource("3_c12k7")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="SpotInfoBuying" parent="SpotContainer" instance=ExtResource("4_x4raq")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2

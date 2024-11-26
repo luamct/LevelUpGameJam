@@ -17,6 +17,8 @@ signal level_up(int)
 @export var xp: int
 @export var level: int
 
+@export var hire_cost: int
+
 @export var area: Area
 @export var spot: Spot
 

@@ -1,9 +1,19 @@
 class_name BuyingSpot
 extends Spot
 
-@export var buy_cost: int = 10  # Cost to hire adventurers
+@export var buy_cost: int = 10 
 
-signal slot_updated  # Signal to notify the interface to update buttons
+var predefined_adventurers: Array = []
+
+signal predefined_adventurers_available(predefined_adventurers: Array)
+signal slot_updated 
+
+func init_predefined_adventurers():
+	predefined_adventurers = [
+		Globals.create_adventurer("Bard"),
+		Globals.create_adventurer("Paladin"),
+		Globals.create_adventurer("Rogue")
+	]
 
 # Function to add an adventurer to a slot
 func try_to_add_adventurer(adventurer: Adventurer, slot_number: int) -> bool:
@@ -17,15 +27,18 @@ func try_to_add_adventurer(adventurer: Adventurer, slot_number: int) -> bool:
 			return false
 
 	# Assign the adventurer to this spot without charging
-	# try_to_hire_adventurer()
-	adventurer.add_to_spot(self)
+	adventurer.spot = self
 	adventurers[slot_number] = adventurer
 
 	# Emit signal to notify that a slot was updated
 	adventurer_added.emit(adventurer, slot_number)
 	slot_updated.emit()  # Notify UI to update buttons
-	print("Adventurer added to slot:", slot_number)
 
+	# When the initial adventurer is added, make predefined adventurers available
+	if len(predefined_adventurers) > 0:
+		emit_signal("predefined_adventurers_available", predefined_adventurers)
+
+	print("Adventurer added to slot:", slot_number)
 	return true
 
 # Function to remove an adventurer from a slot
@@ -65,4 +78,22 @@ func try_to_hire_adventurer(slot_number: int) -> bool:
 	slot_updated.emit()  # Notify UI to update buttons
 	print("New adventurer hired and added to slot:", slot_number)
 
+	return true
+
+# Function to hire one of the predefined adventurers
+func hire_predefined_adventurer(adventurer: Adventurer) -> bool:
+	# Check if there is enough gold
+	if Globals.current_gold < buy_cost:
+		print("Not enough gold to hire the predefined adventurer!")
+		return false
+
+	# Deduct gold and add the adventurer to the firecamp (to be implemented)
+	Globals.current_gold -= buy_cost
+	Globals.gold_updated.emit(Globals.current_gold)
+
+	# Emit signal to notify the UI that predefined adventurers have been updated
+	predefined_adventurers.erase(adventurer)
+	emit_signal("predefined_adventurers_available", predefined_adventurers)
+
+	print("Predefined adventurer hired:", adventurer.name_)
 	return true

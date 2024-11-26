@@ -34,3 +34,19 @@ text = "Slots"
 [node name="SlotsContainer" type="HBoxContainer" parent="SlotsColumn"]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="HSpace" type="Control" parent="."]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="PredefinedListContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="AdventurerList" type="Label" parent="PredefinedListContainer"]
+layout_mode = 2
+text = "Adventurer to Hire:"
+
+[node name="AdventurerSlots" type="HBoxContainer" parent="PredefinedListContainer"]
+unique_name_in_owner = true
+layout_mode = 2

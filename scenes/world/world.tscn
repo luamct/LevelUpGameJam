@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=39 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -12,21 +12,19 @@
 [ext_resource type="Script" path="res://scenes/areas/requirement.gd" id="8_4wor3"]
 [ext_resource type="Script" path="res://scenes/areas/production_spot.gd" id="8_dl7w6"]
 [ext_resource type="Script" path="res://scenes/areas/training_spot.gd" id="10_gbss6"]
-[ext_resource type="Script" path="res://scenes/ui/bottom_panel.gd" id="10_qvsck"]
 [ext_resource type="Script" path="res://scenes/areas/buying_spot.gd" id="11_arn45"]
+[ext_resource type="Texture2D" uid="uid://b0t475e0jewt7" path="res://assets/classes/static_bard.png" id="11_hswoa"]
 [ext_resource type="Texture2D" uid="uid://4mi51u168pnv" path="res://assets/Map Structures/Building humans Tower.png" id="12_88m3j"]
-[ext_resource type="PackedScene" uid="uid://beogoyxe3efrf" path="res://scenes/ui/spot_info_production.tscn" id="12_ds10p"]
 [ext_resource type="Texture2D" uid="uid://bmguafu6tr4ng" path="res://assets/ui/bars_screens/Side bar1.png" id="12_galt4"]
 [ext_resource type="Texture2D" uid="uid://dkdo6yxdsx56t" path="res://assets/Map Structures/Building tend.png" id="13_o4tw5"]
-[ext_resource type="PackedScene" uid="uid://dwulq7rxjvi0x" path="res://scenes/ui/spot_info_training.tscn" id="13_qg1ek"]
 [ext_resource type="Texture2D" uid="uid://ds8556n1lxu4g" path="res://assets/Map Structures/Building orc Tower.png" id="14_icbto"]
 [ext_resource type="Texture2D" uid="uid://mafofxwlgvej" path="res://assets/Map Structures/Building dwarv Castle.png" id="15_u862k"]
 [ext_resource type="Texture2D" uid="uid://bq1h8qypq0aph" path="res://assets/Map Structures/Building dwarv Altar.png" id="16_7ia4y"]
 [ext_resource type="Texture2D" uid="uid://ra25hj83xk6n" path="res://assets/Map Structures/Building dwarv Tower.png" id="17_2nwek"]
-[ext_resource type="PackedScene" uid="uid://d3xrhmeeu6pp" path="res://scenes/ui/spot_info_buying.tscn" id="17_lgwgh"]
 [ext_resource type="Texture2D" uid="uid://t6c8acgutpc5" path="res://assets/Paths/Path 1.png" id="19_1h226"]
 [ext_resource type="Texture2D" uid="uid://da4wft15e23o8" path="res://assets/ui/bars_screens/Area1 blank.png" id="19_wjdxs"]
 [ext_resource type="PackedScene" uid="uid://bukvpaws8uoa2" path="res://scenes/world/travel_path.tscn" id="21_lj6df"]
+[ext_resource type="PackedScene" uid="uid://b171lyrmcpsmf" path="res://scenes/ui/bottom_panel.tscn" id="22_xlvp7"]
 
 [sub_resource type="Curve2D" id="Curve2D_m8ydb"]
 resource_local_to_scene = true
@@ -161,7 +159,49 @@ slots = 4
 [node name="Tavern" parent="Areas/TemplateArea/Spots" index="1" instance=ExtResource("3_7gc0v")]
 script = ExtResource("11_arn45")
 buy_cost = 10
-slots = 3
+slots = 1
+
+[node name="Bard" parent="Areas/MerryLeafVillage/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+z_index = 10
+position = Vector2(0, -4.5)
+name_ = "Bard"
+portrait = ExtResource("11_hswoa")
+strength = 3
+speed = 3
+agility = 6
+defense = 4
+attack = 8
+morale = 3
+discipline = 4
+xp = 500
+level = 3
+hire_cost = 5000
+area = NodePath("../../..")
+
+[node name="Paladin" parent="Areas/MerryLeafVillage/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+z_index = 10
+position = Vector2(0, -4.5)
+name_ = "Paladin"
+portrait = ExtResource("5_b26p0")
+strength = 10
+speed = 5
+agility = 6
+defense = 15
+attack = 19
+morale = 2
+discipline = 9
+xp = 1000
+level = 8
+hire_cost = 7000
+area = NodePath("../../..")
+
+[node name="Sorcerer" parent="Areas/MerryLeafVillage/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+z_index = 10
+position = Vector2(0, -4.5)
+name_ = "Sorcerer"
+portrait = ExtResource("5_b26p0")
+level = 1
+area = NodePath("../../..")
 
 [node name="Trainer" parent="Areas/TemplateArea/Spots" index="2" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
@@ -429,47 +469,8 @@ grow_vertical = 0
 texture = ExtResource("19_wjdxs")
 expand_mode = 1
 
-[node name="BottomPanel" type="MarginContainer" parent="CanvasLayer"]
+[node name="BottomPanel" parent="CanvasLayer" instance=ExtResource("22_xlvp7")]
 unique_name_in_owner = true
-offset_left = 280.0
-offset_top = 591.0
-offset_right = 1278.0
-offset_bottom = 718.0
-size_flags_horizontal = 4
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-script = ExtResource("10_qvsck")
-
-[node name="SpotContainer" type="HBoxContainer" parent="CanvasLayer/BottomPanel"]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="AvailableActionsLabel" type="Label" parent="CanvasLayer/BottomPanel/SpotContainer"]
-layout_mode = 2
-text = "Actions"
-horizontal_alignment = 1
-
-[node name="ButtonsContainer" type="VBoxContainer" parent="CanvasLayer/BottomPanel/SpotContainer"]
-visible = false
-custom_minimum_size = Vector2(120, 0)
-layout_mode = 2
-
-[node name="SpotInfoProduction" parent="CanvasLayer/BottomPanel/SpotContainer" instance=ExtResource("12_ds10p")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="SpotInfoTraining" parent="CanvasLayer/BottomPanel/SpotContainer" instance=ExtResource("13_qg1ek")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="SpotInfoBuying" parent="CanvasLayer/BottomPanel/SpotContainer" instance=ExtResource("17_lgwgh")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
 
 [node name="SidePanel" type="Panel" parent="CanvasLayer"]
 anchors_preset = 4
