@@ -2,6 +2,6 @@
 
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
-Button/font_sizes/font_size = 24
+Button/font_sizes/font_size = 18
 Label/colors/font_color = Color(0.129558, 0.129558, 0.129558, 1)
-Label/font_sizes/font_size = 24
+Label/font_sizes/font_size = 18

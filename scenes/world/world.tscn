@@ -127,7 +127,7 @@ texture = ExtResource("3_exgk6")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(300, -112)
 anchor_mode = 0
-zoom = Vector2(2, 2)
+zoom = Vector2(2.5, 2.5)
 script = ExtResource("2_rwaap")
 
 [node name="Adventurers" type="Node2D" parent="."]
@@ -138,37 +138,64 @@ position = Vector2(583, 56.5)
 name_ = "Liquor Bo"
 portrait = ExtResource("5_b26p0")
 level = 1
-area = NodePath("../../Areas/MerryLeafVillage")
+area = NodePath("../../Areas/Merry Leaf Village")
 
 [node name="Areas" type="Node2D" parent="."]
 
-[node name="MerryLeafVillage" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(603, 60)
+[node name="TemplateArea" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
+position = Vector2(666, 331)
 
-[node name="Sprite2D" parent="Areas/MerryLeafVillage" index="0"]
+[node name="Sprite2D" parent="Areas/TemplateArea" index="0"]
 scale = Vector2(0.191958, 0.191958)
 
-[node name="Spots" parent="Areas/MerryLeafVillage" index="1"]
+[node name="Spots" parent="Areas/TemplateArea" index="1"]
 position = Vector2(-20, 1)
 
-[node name="LeekCrops" parent="Areas/MerryLeafVillage/Spots" index="0" instance=ExtResource("3_7gc0v")]
+[node name="LeekCrops" parent="Areas/TemplateArea/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("8_dl7w6")
 requirements = Array[ExtResource("8_4wor3")]([])
 gold_output = 1
 slots = 4
 
-[node name="Tavern" parent="Areas/MerryLeafVillage/Spots" index="1" instance=ExtResource("3_7gc0v")]
+[node name="Tavern" parent="Areas/TemplateArea/Spots" index="1" instance=ExtResource("3_7gc0v")]
 script = ExtResource("11_arn45")
 buy_cost = 10
 slots = 3
 
-[node name="AbandonedStables" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="Trainer" parent="Areas/TemplateArea/Spots" index="2" instance=ExtResource("3_7gc0v")]
+script = ExtResource("10_gbss6")
+gold_per_xp = 1
+xp_per_second = 300
+slots = 2
+
+[node name="Merry Leaf Village" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(603, 60)
+
+[node name="Sprite2D" parent="Areas/Merry Leaf Village" index="0"]
+scale = Vector2(0.191958, 0.191958)
+
+[node name="Spots" parent="Areas/Merry Leaf Village" index="1"]
+position = Vector2(-20, 1)
+
+[node name="LeekCrops" parent="Areas/Merry Leaf Village/Spots" index="0" instance=ExtResource("3_7gc0v")]
+script = ExtResource("8_dl7w6")
+requirements = Array[ExtResource("8_4wor3")]([])
+gold_output = 1
+slots = 4
+
+[node name="Tavern" parent="Areas/Merry Leaf Village/Spots" index="1" instance=ExtResource("3_7gc0v")]
+script = ExtResource("11_arn45")
+buy_cost = 10
+slots = 3
+
+[node name="Abandoned Stables" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(533, -43)
 
-[node name="Sprite2D" parent="Areas/AbandonedStables" index="0"]
+[node name="Sprite2D" parent="Areas/Abandoned Stables" index="0"]
 scale = Vector2(0.188136, 0.188136)
 
-[node name="Trainer" parent="Areas/AbandonedStables/Spots" index="0" instance=ExtResource("3_7gc0v")]
+[node name="Trainer" parent="Areas/Abandoned Stables/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
 gold_per_xp = 1
 xp_per_second = 300
@@ -181,6 +208,12 @@ position = Vector2(720, 165)
 position = Vector2(0, -2)
 scale = Vector2(0.164296, 0.164296)
 texture = ExtResource("12_88m3j")
+
+[node name="Dwarf Trainer" parent="Areas/WatchTower/Spots" index="0" instance=ExtResource("3_7gc0v")]
+script = ExtResource("10_gbss6")
+gold_per_xp = 1
+xp_per_second = 300
+slots = 2
 
 [node name="ThievesCamp" parent="Areas" instance=ExtResource("6_il4vw")]
 visible = false
@@ -388,8 +421,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -639.0
-offset_top = -801.0
+offset_top = -802.0
 offset_right = 639.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("19_wjdxs")
@@ -592,8 +626,9 @@ text = "Discipline: "
 [node name="Value" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/DisciplineContainer"]
 layout_mode = 2
 
-[editable path="Areas/MerryLeafVillage"]
-[editable path="Areas/AbandonedStables"]
+[editable path="Areas/TemplateArea"]
+[editable path="Areas/Merry Leaf Village"]
+[editable path="Areas/Abandoned Stables"]
 [editable path="Areas/WatchTower"]
 [editable path="Areas/ThievesCamp"]
 [editable path="Areas/OrcTower"]
