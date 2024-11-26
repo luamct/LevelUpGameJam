@@ -17,6 +17,8 @@ func _ready():
 		var map_size = background.texture.get_size() * background.scale
 		map_limits = Rect2(background.position - map_size / 2, map_size)
 		
+		print(map_limits)
+		
 	viewport_size = get_viewport_rect().size
 
 # Navegação através de teclas WASD e Direcionais
@@ -31,12 +33,19 @@ func _process(delta):
 	if Input.is_action_pressed("nav_right"):
 		cam_movement.x += 1
 	
+	viewport_size = get_viewport_rect().size / zoom
+	
+	# Actual rect in world space being captured by the camera
+	var viewport_rect = Rect2(position, viewport_size)
+	
 	var new_position = position + cam_movement * pan_speed * delta
-	position.x = clamp(new_position.x, map_limits.position.x, map_limits.position.x + map_limits.size.x - viewport_size.x)
-	position.y = clamp(new_position.y, map_limits.position.y, map_limits.position.y + map_limits.size.y - viewport_size.y)
+	position.x = clamp(new_position.x, map_limits.position.x, map_limits.end.x - viewport_size.x)
+	position.y = clamp(new_position.y, map_limits.position.y, map_limits.end.y - viewport_size.y)
 
 # Navegação através do mouse
 func _input(event):
+	#print(get_viewport_rect())
+	
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_RIGHT:
 			if event.pressed:
