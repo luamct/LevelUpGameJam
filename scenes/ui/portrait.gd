@@ -5,3 +5,4 @@ extends Control
 
 func set_portrait_texture(texture: Texture2D):
 	texture_rect.texture = texture
+	visible = true

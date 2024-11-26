@@ -12,6 +12,7 @@ layout_mode = 2
 
 [node name="NameLabel" type="Label" parent="InfoColumn"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "Tavern"
 
@@ -21,8 +22,13 @@ text = "Last Call Tavern"
 
 [node name="HiringCost" type="Label" parent="InfoColumn"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "50 Gold per Adventurer"
+
+[node name="HSpace" type="Control" parent="."]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
 
 [node name="SlotsColumn" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -35,7 +41,7 @@ text = "Slots"
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HSpace" type="Control" parent="."]
+[node name="HSpace2" type="Control" parent="."]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 
@@ -49,4 +55,109 @@ text = "Adventurer to Hire:"
 
 [node name="AdventurerSlots" type="HBoxContainer" parent="PredefinedListContainer"]
 unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HSpace3" type="Control" parent="."]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="InfoAdventurer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InfoAdventurer"]
+layout_mode = 2
+text = "Status:"
+
+[node name="GridContainer" type="GridContainer" parent="InfoAdventurer"]
+layout_mode = 2
+columns = 2
+
+[node name="LevelContainer" type="HBoxContainer" parent="InfoAdventurer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InfoAdventurer/GridContainer/LevelContainer"]
+layout_mode = 2
+text = "Level: "
+
+[node name="Value" type="Label" parent="InfoAdventurer/GridContainer/LevelContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="StrengthContainer" type="HBoxContainer" parent="InfoAdventurer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InfoAdventurer/GridContainer/StrengthContainer"]
+layout_mode = 2
+text = "Strength: "
+
+[node name="Value" type="Label" parent="InfoAdventurer/GridContainer/StrengthContainer"]
+layout_mode = 2
+text = "2"
+
+[node name="SpeedContainer" type="HBoxContainer" parent="InfoAdventurer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InfoAdventurer/GridContainer/SpeedContainer"]
+layout_mode = 2
+text = "Speed: "
+
+[node name="Value" type="Label" parent="InfoAdventurer/GridContainer/SpeedContainer"]
+layout_mode = 2
+
+[node name="AgilityContainer" type="HBoxContainer" parent="InfoAdventurer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InfoAdventurer/GridContainer/AgilityContainer"]
+layout_mode = 2
+text = "Agility: "
+
+[node name="Value" type="Label" parent="InfoAdventurer/GridContainer/AgilityContainer"]
+layout_mode = 2
+
+[node name="DefenseContainer" type="HBoxContainer" parent="InfoAdventurer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InfoAdventurer/GridContainer/DefenseContainer"]
+layout_mode = 2
+text = "Defense: "
+
+[node name="Value" type="Label" parent="InfoAdventurer/GridContainer/DefenseContainer"]
+layout_mode = 2
+
+[node name="AttackContainer" type="HBoxContainer" parent="InfoAdventurer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InfoAdventurer/GridContainer/AttackContainer"]
+layout_mode = 2
+text = "Attack: "
+
+[node name="Value" type="Label" parent="InfoAdventurer/GridContainer/AttackContainer"]
+layout_mode = 2
+
+[node name="MoraleContainer" type="HBoxContainer" parent="InfoAdventurer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InfoAdventurer/GridContainer/MoraleContainer"]
+layout_mode = 2
+text = "Morale: "
+
+[node name="Value" type="Label" parent="InfoAdventurer/GridContainer/MoraleContainer"]
+layout_mode = 2
+
+[node name="DisciplineContainer" type="HBoxContainer" parent="InfoAdventurer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InfoAdventurer/GridContainer/DisciplineContainer"]
+layout_mode = 2
+text = "Discipline: "
+
+[node name="Value" type="Label" parent="InfoAdventurer/GridContainer/DisciplineContainer"]
 layout_mode = 2

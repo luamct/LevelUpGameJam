@@ -161,48 +161,6 @@ script = ExtResource("11_arn45")
 buy_cost = 10
 slots = 1
 
-[node name="Bard" parent="Areas/MerryLeafVillage/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
-z_index = 10
-position = Vector2(0, -4.5)
-name_ = "Bard"
-portrait = ExtResource("11_hswoa")
-strength = 3
-speed = 3
-agility = 6
-defense = 4
-attack = 8
-morale = 3
-discipline = 4
-xp = 500
-level = 3
-hire_cost = 5000
-area = NodePath("../../..")
-
-[node name="Paladin" parent="Areas/MerryLeafVillage/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
-z_index = 10
-position = Vector2(0, -4.5)
-name_ = "Paladin"
-portrait = ExtResource("5_b26p0")
-strength = 10
-speed = 5
-agility = 6
-defense = 15
-attack = 19
-morale = 2
-discipline = 9
-xp = 1000
-level = 8
-hire_cost = 7000
-area = NodePath("../../..")
-
-[node name="Sorcerer" parent="Areas/MerryLeafVillage/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
-z_index = 10
-position = Vector2(0, -4.5)
-name_ = "Sorcerer"
-portrait = ExtResource("5_b26p0")
-level = 1
-area = NodePath("../../..")
-
 [node name="Trainer" parent="Areas/TemplateArea/Spots" index="2" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
 gold_per_xp = 1
@@ -227,7 +185,49 @@ slots = 4
 [node name="Tavern" parent="Areas/Merry Leaf Village/Spots" index="1" instance=ExtResource("3_7gc0v")]
 script = ExtResource("11_arn45")
 buy_cost = 10
-slots = 3
+slots = 1
+
+[node name="Bard" parent="Areas/Merry Leaf Village/Spots/Tavern" instance=ExtResource("4_ijfal")]
+visible = false
+z_index = 10
+position = Vector2(-583, -65.5)
+name_ = "Bard"
+portrait = ExtResource("11_hswoa")
+strength = 3
+speed = 3
+agility = 6
+defense = 4
+attack = 8
+morale = 3
+discipline = 4
+xp = 500
+level = 3
+hire_cost = 5000
+
+[node name="Paladin" parent="Areas/Merry Leaf Village/Spots/Tavern" instance=ExtResource("4_ijfal")]
+visible = false
+z_index = 10
+position = Vector2(-583, -65.5)
+name_ = "Paladin"
+portrait = ExtResource("5_b26p0")
+strength = 10
+speed = 5
+agility = 6
+defense = 15
+attack = 19
+morale = 2
+discipline = 9
+xp = 1000
+level = 8
+hire_cost = 7000
+
+[node name="Sorcerer" parent="Areas/Merry Leaf Village/Spots/Tavern" instance=ExtResource("4_ijfal")]
+visible = false
+z_index = 10
+position = Vector2(-583, -65.5)
+name_ = "Sorcerer"
+portrait = ExtResource("5_b26p0")
+level = 1
 
 [node name="Abandoned Stables" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(533, -43)

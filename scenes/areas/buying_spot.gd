@@ -8,12 +8,6 @@ var predefined_adventurers: Array = []
 signal predefined_adventurers_available(predefined_adventurers: Array)
 signal slot_updated 
 
-func init_predefined_adventurers():
-	predefined_adventurers = [
-		Globals.create_adventurer("Bard"),
-		Globals.create_adventurer("Paladin"),
-		Globals.create_adventurer("Rogue")
-	]
 
 # Function to add an adventurer to a slot
 func try_to_add_adventurer(adventurer: Adventurer, slot_number: int) -> bool:
