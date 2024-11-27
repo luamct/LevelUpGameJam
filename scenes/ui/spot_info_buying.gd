@@ -33,13 +33,24 @@ func setup(spot: Spot):
 		slots_container.add_child(slot)
 	
 	if spot is BuyingSpot:
+		spot.connect("adventurer_added", Callable(self, "_on_adventurer_added"))
+		spot.connect("adventurer_removed", Callable(self, "_on_adventurer_removed"))
+		
 		var adventurers = spot.get_children().filter(func(adv):return adv is Adventurer)
 		for adventurer in adventurers:
 			var slot: AvailableAdventurer = AVAILABLE_ADVENTURER_SCENE.instantiate()
 			adventurer_slots.add_child(slot)
 			slot.setup(adventurer)
 			slot.button.pressed.connect(func(): on_portrait_clicked(adventurer))
-			
+			slot.hire_button.pressed.connect(func(): on_hire_button_pressed(adventurer))
+
+func _on_adventurer_added(adventurer: Adventurer, slot_number:int):
+	predefined_list_container.visible = true
+	info_adventurer.visible = true
+	
+func _on_adventurer_removed(adventurer: Adventurer, slot_number:int):
+	predefined_list_container.visible = false
+	info_adventurer.visible = false
 
 func on_portrait_clicked(adventurer: Adventurer):
 	# Fill the adventurer status
@@ -53,7 +64,20 @@ func on_portrait_clicked(adventurer: Adventurer):
 	attack_value.text = str(adventurer.attack)
 	morale_value.text = str(adventurer.morale)
 	discipline_value.text = str(adventurer.discipline)
+	
+func on_hire_button_pressed(adventurer: Adventurer):
+	on_portrait_clicked(adventurer)
+	if Globals.current_gold < adventurer.hire_cost:
+		print("Não há dinheiro suficiente para contratação do " + adventurer.name_)
+		return
+	
+	Globals.current_gold -= adventurer.hire_cost
+	Globals.gold_updated.emit(Globals.current_gold)
+	Globals.add_adventurer_to_firecamp(adventurer)
+	Globals.hired_adventurer.emit(adventurer)
+	print("Aventureiro contratado: " + adventurer.name_)
 
 func free_children(node: Control):
 	for child in node.get_children():
 		child.queue_free()
+		

@@ -3,6 +3,7 @@ extends Node
 signal gold_collected
 signal gold_updated(gold: int)
 signal update_bottom_panel(adventurer: Adventurer)
+signal hired_adventurer(adventurer: Adventurer)
 
 @export var km_per_pixel: float
 @export var base_speed: float  # km per second

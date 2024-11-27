@@ -161,7 +161,6 @@ slots = 4
 
 [node name="Tavern" parent="Areas/TemplateArea/Spots" index="2" instance=ExtResource("3_7gc0v")]
 script = ExtResource("11_arn45")
-buy_cost = 10
 slots = 1
 
 [node name="Trainer" parent="Areas/TemplateArea/Spots" index="3" instance=ExtResource("3_7gc0v")]
@@ -190,7 +189,6 @@ slots = 4
 
 [node name="Tavern" parent="Areas/Merry Leaf Village/Spots" index="2" instance=ExtResource("3_7gc0v")]
 script = ExtResource("11_arn45")
-buy_cost = 10
 slots = 1
 
 [node name="Bard" parent="Areas/Merry Leaf Village/Spots/Tavern" instance=ExtResource("4_ijfal")]
