@@ -18,10 +18,13 @@ const AVAILABLE_ADVENTURER_SCENE = preload("res://scenes/ui/available_adventurer
 @onready var discipline_value = $InfoAdventurer/GridContainer/DisciplineContainer/Value
 @onready var status_label = $InfoAdventurer/HBoxContainer/Label
 @onready var hire_cost = $InfoAdventurer/HBoxContainer/HireCost
+@onready var info_adventurer = $InfoAdventurer
 
 
 func setup(spot: Spot):
 	name_label.text = spot.name
+	predefined_list_container.visible = false
+	info_adventurer.visible = false
 
 	for i in range(spot.slots):
 		var slot: SlotPanel = SLOT_PANEL_SCENE.instantiate()

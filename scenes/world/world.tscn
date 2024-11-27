@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://t6c8acgutpc5" path="res://assets/Paths/Path 1.png" id="19_1h226"]
 [ext_resource type="Texture2D" uid="uid://da4wft15e23o8" path="res://assets/ui/bars_screens/Area1 blank.png" id="19_wjdxs"]
 [ext_resource type="PackedScene" uid="uid://bukvpaws8uoa2" path="res://scenes/world/travel_path.tscn" id="21_lj6df"]
-[ext_resource type="PackedScene" path="res://scenes/ui/bottom_panel.tscn" id="22_xlvp7"]
+[ext_resource type="PackedScene" uid="uid://b171lyrmcpsmf" path="res://scenes/ui/bottom_panel.tscn" id="22_xlvp7"]
 
 [sub_resource type="Curve2D" id="Curve2D_m8ydb"]
 resource_local_to_scene = true

@@ -15,7 +15,6 @@ var xp_table: Array[int] = [
 
 var current_gold: int = 0
 var selected_adventurer: Adventurer
-var predefined_adventurers: Array = []
 
 func _ready() -> void:
 	gold_collected.connect(on_gold_collected)
@@ -26,54 +25,6 @@ func on_gold_collected(gold: int):
 
 func adventurer_selected(adventurer: Adventurer):
 	selected_adventurer = adventurer
-
-func create_adventurer(adventurer_type: String = "") -> Adventurer:
-	var adventurer_scene = preload("res://scenes/adventurer/adventurer.tscn")
-	var adventurer = adventurer_scene.instantiate()
-	
-	match adventurer_type:
-		"Bard":
-			adventurer.name_ = "Bard"
-			adventurer.portrait = preload("res://assets/classes/bard_1.png")
-			adventurer.strength = 5
-			adventurer.speed = 6
-			adventurer.agility = 7
-			adventurer.defense = 4
-			adventurer.attack = 3
-			adventurer.morale = 8
-			adventurer.discipline = 6
-			adventurer.hire_cost = 6000
-		"Paladin":
-			adventurer.name_ = "Paladin"
-			adventurer.portrait = preload("res://assets/classes/paladin_1.png")
-			adventurer.strength = 8
-			adventurer.speed = 4
-			adventurer.agility = 5
-			adventurer.defense = 7
-			adventurer.attack = 4
-			adventurer.morale = 9
-			adventurer.discipline = 7
-		"Rogue":
-			adventurer.name_ = "Rogue"
-			adventurer.portrait = preload("res://assets/classes/rogue_1.png")
-			adventurer.strength = 6
-			adventurer.speed = 9
-			adventurer.agility = 8
-			adventurer.defense = 3
-			adventurer.attack = 5
-			adventurer.morale = 7
-			adventurer.discipline = 5
-		_:
-			adventurer.name_ = "Adventurer"
-			adventurer.portrait = preload("res://assets/classes/fighter_1.png")
-			adventurer.strength = 5
-			adventurer.speed = 5
-			adventurer.agility = 5
-			adventurer.defense = 5
-			adventurer.attack = 5
-			adventurer.morale = 5
-			adventurer.discipline = 5
-	return adventurer
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_EQUAL):
