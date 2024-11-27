@@ -25,14 +25,13 @@ func _ready():
 	adventurers.assign($"../../Adventurers".get_children())
 	
 	Globals.gold_updated.connect(on_gold_updated)
+	Globals.hired_adventurer.connect(on_hired_adventurer)
 	
 	# Connect signals for each portrait in the grid container
 	for adventurer: Adventurer in adventurers:
-		var portrait: Control = PORTRAIT_SCENE.instantiate()
-		portraits_container.add_child(portrait)
-		portrait.set_portrait_texture(adventurer.portrait)
-
-		portrait.gui_input.connect(func(event: InputEvent): on_portrait_input_event(event, portrait, adventurer))
+		add_adventurer_to_panel(adventurer)
+#
+		#portrait.gui_input.connect(func(event: InputEvent): on_portrait_input_event(event, portrait, adventurer))
 		#portrait.mouse_entered.connect(func(): _on_portrait_hovered(portrait, adventurer))
 		#portrait.mouse_exited.connect(_on_portrait_exited)
 
@@ -57,6 +56,17 @@ func on_portrait_input_event(event: InputEvent, portrait: Control, adventurer: A
 		morale_value.text = str(adventurer.morale)
 		discipline_value.text = str(adventurer.discipline)
 
-
 func on_gold_updated(current_gold: int):
 	gold_value.text = str(current_gold)
+
+func on_hired_adventurer(adventurer: Adventurer):
+	print("Aventureiro adicionado ao painel lateral: " + adventurer.name_)
+	adventurers.append(adventurer)
+	add_adventurer_to_panel(adventurer)
+	
+func add_adventurer_to_panel(adventurer: Adventurer):
+	var portrait: Control = PORTRAIT_SCENE.instantiate()
+	portraits_container.add_child(portrait)
+	portrait.set_portrait_texture(adventurer.portrait)
+
+	portrait.gui_input.connect(func(event: InputEvent): on_portrait_input_event(event, portrait, adventurer))

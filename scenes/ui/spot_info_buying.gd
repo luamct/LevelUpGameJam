@@ -42,17 +42,19 @@ func setup(spot: Spot):
 			adventurer_slots.add_child(slot)
 			slot.setup(adventurer)
 			slot.button.pressed.connect(func(): on_portrait_clicked(adventurer))
-			slot.hire_button.pressed.connect(func(): on_hire_button_pressed(adventurer))
+			slot.hire_button.pressed.connect(func(): on_hire_button_pressed(adventurer, slot))
 
 func _on_adventurer_added(adventurer: Adventurer, slot_number:int):
 	predefined_list_container.visible = true
-	info_adventurer.visible = true
 	
 func _on_adventurer_removed(adventurer: Adventurer, slot_number:int):
 	predefined_list_container.visible = false
 	info_adventurer.visible = false
 
 func on_portrait_clicked(adventurer: Adventurer):
+	# Show status info container
+	info_adventurer.visible = true
+	
 	# Fill the adventurer status
 	status_label.text = adventurer.name + " Status -"
 	hire_cost.text = "Cost: " + str(adventurer.hire_cost) 
@@ -65,7 +67,7 @@ func on_portrait_clicked(adventurer: Adventurer):
 	morale_value.text = str(adventurer.morale)
 	discipline_value.text = str(adventurer.discipline)
 	
-func on_hire_button_pressed(adventurer: Adventurer):
+func on_hire_button_pressed(adventurer: Adventurer, slot: AvailableAdventurer):
 	on_portrait_clicked(adventurer)
 	if Globals.current_gold < adventurer.hire_cost:
 		print("Não há dinheiro suficiente para contratação do " + adventurer.name_)
@@ -76,6 +78,12 @@ func on_hire_button_pressed(adventurer: Adventurer):
 	Globals.add_adventurer_to_firecamp(adventurer)
 	Globals.hired_adventurer.emit(adventurer)
 	print("Aventureiro contratado: " + adventurer.name_)
+	
+	# Remove hired adventurer from list to hire
+	adventurer_slots.remove_child(slot)
+	
+	# Remove info status container
+	info_adventurer.visible = false
 
 func free_children(node: Control):
 	for child in node.get_children():
