@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=50 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -30,6 +30,12 @@
 [ext_resource type="PackedScene" uid="uid://b171lyrmcpsmf" path="res://scenes/ui/bottom_panel.tscn" id="22_xlvp7"]
 [ext_resource type="Texture2D" uid="uid://e5i7lp6no830" path="res://assets/Paths/Road 03.png" id="23_21xdo"]
 [ext_resource type="Texture2D" uid="uid://jw83jkthb7xj" path="res://assets/Paths/Road 04.png" id="24_dd1x5"]
+[ext_resource type="Texture2D" uid="uid://b4kt0mdgfnxhq" path="res://assets/Paths/Road 05.png" id="25_ifnik"]
+[ext_resource type="Texture2D" uid="uid://p8wgsqhk1tn4" path="res://assets/Paths/Road 06.png" id="26_pr6oe"]
+[ext_resource type="Texture2D" uid="uid://bis6e1muiun60" path="res://assets/Paths/Road 07.png" id="27_hm5fs"]
+[ext_resource type="Texture2D" uid="uid://dkbt0i3henea3" path="res://assets/Paths/Road 08.png" id="28_k72ya"]
+[ext_resource type="Texture2D" uid="uid://n63iekmtuqic" path="res://assets/Paths/Road 09.png" id="29_r7l42"]
+[ext_resource type="Texture2D" uid="uid://dvvlku7yhfioy" path="res://assets/Paths/Road 10.png" id="30_nmbsu"]
 
 [sub_resource type="Curve2D" id="Curve2D_m8ydb"]
 resource_local_to_scene = true
@@ -62,44 +68,44 @@ point_count = 18
 [sub_resource type="Curve2D" id="Curve2D_t1pvq"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 732, 169, 0, 0, 0, 0, 760, 169, 0, 0, 0, 0, 760, 189, 0, 0, 0, 0, 795, 209, 0, 0, 0, 0, 811, 208, 0, 0, 0, 0, 855, 195, 0, 0, 0, 0, 858, 180, 0, 0, 0, 0, 889, 176, 0, 0, 0, 0, 895, 150)
+"points": PackedVector2Array(0, 0, 0, 0, 718, 167, 0, 0, 0, 0, 727, 153, 0, 0, 0, 0, 744, 155, 0, 0, 0, 0, 751, 165, 0, 0, 0, 0, 749, 176, 0, 0, 0, 0, 746, 183, 0, 0, 0, 0, 750, 188, 0, 0, 0, 0, 761, 189, 0, 0, 0, 0, 781, 191, 0, 0, 0, 0, 789, 196, 0, 0, 0, 0, 799, 202, 0, 0, 0, 0, 804, 206, 0, 0, 0, 0, 813, 212, 0, 0, 0, 0, 823, 217, 0, 0, 0, 0, 830, 218, 0, 0, 0, 0, 837, 215, 0, 0, 0, 0, 840, 206, 0, 0, 0, 0, 842, 197, 0, 0, 0, 0, 847, 191, 0, 0, 0, 0, 858, 185, 0, 0, 0, 0, 865, 182, 0, 0, 0, 0, 861, 173, 0, 0, 0, 0, 856, 166, 0, 0, 0, 0, 858, 157, 0, 0, 0, 0, 862, 151, 0, 0, 0, 0, 869, 145, 0, 0, 0, 0, 891, 140)
 }
-point_count = 9
+point_count = 27
 
 [sub_resource type="Curve2D" id="Curve2D_7g4do"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 534, -54, 0, 0, 0, 0, 544, -57, 0, 0, 0, 0, 561, -63, 0, 0, 0, 0, 568, -73, 0, 0, 0, 0, 566, -79, 0, 0, 0, 0, 565, -83, 0, 0, 0, 0, 566, -87, 0, 0, 0, 0, 570, -93, 0, 0, 0, 0, 570, -98, 0, 0, 0, 0, 569, -102, 0, 0, 0, 0, 566, -106, 0, 0, 0, 0, 561, -110, 0, 0, 0, 0, 555, -112, 0, 0, 0, 0, 549, -112, 0, 0, 0, 0, 544, -111, 0, 0, 0, 0, 538, -107, 0, 0, 0, 0, 532, -101, 0, 0, 0, 0, 528, -98, 0, 0, 0, 0, 524, -98, 0, 0, 0, 0, 517, -101, 0, 0, 0, 0, 513, -106, 0, 0, 0, 0, 511, -112, 0, 0, 0, 0, 511, -119, 0, 0, 0, 0, 514, -124, 0, 0, 0, 0, 517, -130, 0, 0, 0, 0, 519, -135, 0, 0, 0, 0, 520, -141, 0, 0, 0, 0, 518, -144, 0, 0, 0, 0, 511, -148, 0, 0, 0, 0, 504, -150, 0, 0, 0, 0, 496, -149, 0, 0, 0, 0, 487, -146, 0, 0, 0, 0, 481, -144, 0, 0, 0, 0, 476, -142, 0, 0, 0, 0, 466, -142, 0, 0, 0, 0, 462, -148, 0, 0, 0, 0, 455, -153, 0, 0, 0, 0, 448, -156, 0, 0, 0, 0, 438, -155, 0, 0, 0, 0, 431, -152, 0, 0, 0, 0, 427, -149, 0, 0, 0, 0, 426, -140)
+"points": PackedVector2Array(0, 0, 0, 0, 534, -54, 0, 0, 0, 0, 528, -62, 0, 0, 0, 0, 529, -71, 0, 0, 0, 0, 534, -80, 0, 0, 0, 0, 546, -83, 0, 0, 0, 0, 558, -84, 0, 0, 0, 0, 567, -85, 0, 0, 0, 0, 571, -92, 0, 0, 0, 0, 571, -102, 0, 0, 0, 0, 566, -111, 0, 0, 0, 0, 557, -116, 0, 0, 0, 0, 544, -117, 0, 0, 0, 0, 535, -113, 0, 0, 0, 0, 530, -107, 0, 0, 0, 0, 524, -106, 0, 0, 0, 0, 517, -108, 0, 0, 0, 0, 513, -118, 0, 0, 0, 0, 516, -125, 0, 0, 0, 0, 519, -132, 0, 0, 0, 0, 521, -142, 0, 0, 0, 0, 521, -148, 0, 0, 0, 0, 513, -153, 0, 0, 0, 0, 504, -154, 0, 0, 0, 0, 496, -152, 0, 0, 0, 0, 488, -149, 0, 0, 0, 0, 481, -141, 0, 0, 0, 0, 471, -139, 0, 0, 0, 0, 461, -145, 0, 0, 0, 0, 455, -149, 0, 0, 0, 0, 446, -153, 0, 0, 0, 0, 437, -152, 0, 0, 0, 0, 431, -146, 0, 0, 0, 0, 426, -133)
 }
-point_count = 42
+point_count = 33
 
 [sub_resource type="Curve2D" id="Curve2D_rd2vh"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 427, -123, 0, 0, 0, 0, 422, -114, 0, 0, 0, 0, 415, -110, 0, 0, 0, 0, 403, -105, 0, 0, 0, 0, 396, -101, 0, 0, 0, 0, 398, -93, 0, 0, 0, 0, 400, -87, 0, 0, 0, 0, 395, -82, 0, 0, 0, 0, 400, -78, 0, 0, 0, 0, 402, -74, 0, 0, 0, 0, 403, -69, 0, 0, 0, 0, 410, -66, 0, 0, 0, 0, 423, -68, 0, 0, 0, 0, 430, -67, 0, 0, 0, 0, 435, -65, 0, 0, 0, 0, 438, -60, 0, 0, 0, 0, 437, -51, 0, 0, 0, 0, 434, -45, 0, 0, 0, 0, 439, -40, 0, 0, 0, 0, 447, -38, 0, 0, 0, 0, 455, -34, 0, 0, 0, 0, 459, -28, 0, 0, 0, 0, 461, -20, 0, 0, 0, 0, 456, -15, 0, 0, 0, 0, 453, -6, 0, 0, 0, 0, 449, -1, 0, 0, 0, 0, 443, 2, 0, 0, 0, 0, 434, 10)
+"points": PackedVector2Array(0, 0, 0, 0, 427, -128, 0, 0, 0, 0, 422, -118, 0, 0, 0, 0, 410, -116, 0, 0, 0, 0, 408, -109, 0, 0, 0, 0, 405, -104, 0, 0, 0, 0, 407, -98, 0, 0, 0, 0, 410, -91, 0, 0, 0, 0, 407, -85, 0, 0, 0, 0, 406, -81, 0, 0, 0, 0, 411, -74, 0, 0, 0, 0, 419, -74, 0, 0, 0, 0, 433, -75, 0, 0, 0, 0, 439, -73, 0, 0, 0, 0, 442, -70, 0, 0, 0, 0, 444, -64, 0, 0, 0, 0, 443, -55, 0, 0, 0, 0, 442, -47, 0, 0, 0, 0, 442, -39, 0, 0, 0, 0, 447, -36, 0, 0, 0, 0, 456, -31, 0, 0, 0, 0, 461, -25, 0, 0, 0, 0, 461, -17, 0, 0, 0, 0, 460, -10, 0, 0, 0, 0, 455, -7, 0, 0, 0, 0, 447, -9, 0, 0, 0, 0, 440, -5, 0, 0, 0, 0, 435, 2, 0, 0, 0, 0, 421, 7)
 }
 point_count = 28
 
 [sub_resource type="Curve2D" id="Curve2D_ro5ft"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 412, 17, 0, 0, 0, 0, 410, 23, 0, 0, 0, 0, 409, 30, 0, 0, 0, 0, 418, 37, 0, 0, 0, 0, 426, 45, 0, 0, 0, 0, 433, 53, 0, 0, 0, 0, 439, 57, 0, 0, 0, 0, 447, 57, 0, 0, 0, 0, 451, 53, 0, 0, 0, 0, 454, 48, 0, 0, 0, 0, 461, 47, 0, 0, 0, 0, 467, 49, 0, 0, 0, 0, 472, 52, 0, 0, 0, 0, 476, 55, 0, 0, 0, 0, 481, 55, 0, 0, 0, 0, 485, 53, 0, 0, 0, 0, 488, 48, 0, 0, 0, 0, 494, 46, 0, 0, 0, 0, 500, 47, 0, 0, 0, 0, 504, 50, 0, 0, 0, 0, 511, 53)
+"points": PackedVector2Array(0, 0, 0, 0, 418, 14, 0, 0, 0, 0, 419, 21, 0, 0, 0, 0, 421, 28, 0, 0, 0, 0, 425, 35, 0, 0, 0, 0, 424, 43, 0, 0, 0, 0, 432, 45, 0, 0, 0, 0, 441, 49, 0, 0, 0, 0, 445, 54, 0, 0, 0, 0, 449, 62, 0, 0, 0, 0, 451, 67, 0, 0, 0, 0, 458, 67, 0, 0, 0, 0, 464, 62, 0, 0, 0, 0, 473, 60, 0, 0, 0, 0, 479, 66, 0, 0, 0, 0, 484, 65, 0, 0, 0, 0, 488, 59, 0, 0, 0, 0, 496, 58, 0, 0, 0, 0, 517, 55)
 }
-point_count = 21
+point_count = 18
 
 [sub_resource type="Curve2D" id="Curve2D_bkdvw"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 407, 15, 0, 0, 0, 0, 394, 27, 0, 0, 0, 0, 393, 34, 0, 0, 0, 0, 420, 54, 0, 0, 0, 0, 419, 71, 0, 0, 0, 0, 406, 81, 0, 0, 0, 0, 394, 102, 0, 0, 0, 0, 378, 108, 0, 0, 0, 0, 366, 102)
+"points": PackedVector2Array(0, 0, 0, 0, 417, 14, 0, 0, 0, 0, 408, 18, 0, 0, 0, 0, 394, 21, 0, 0, 0, 0, 392, 27, 0, 0, 0, 0, 390, 34, 0, 0, 0, 0, 401, 35, 0, 0, 0, 0, 409, 37, 0, 0, 0, 0, 413, 43, 0, 0, 0, 0, 417, 50, 0, 0, 0, 0, 428, 54, 0, 0, 0, 0, 424, 62, 0, 0, 0, 0, 417, 65, 0, 0, 0, 0, 414, 69, 0, 0, 0, 0, 411, 75, 0, 0, 0, 0, 405, 78, 0, 0, 0, 0, 399, 83, 0, 0, 0, 0, 397, 88, 0, 0, 0, 0, 396, 96, 0, 0, 0, 0, 392, 100, 0, 0, 0, 0, 388, 104, 0, 0, 0, 0, 383, 109, 0, 0, 0, 0, 380, 113, 0, 0, 0, 0, 374, 108, 0, 0, 0, 0, 360, 91)
 }
-point_count = 9
+point_count = 24
 
 [sub_resource type="Curve2D" id="Curve2D_x4nvp"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 349, 91, 0, 0, 0, 0, 334, 92, 0, 0, 0, 0, 327, 89, 0, 0, 0, 0, 321, 83, 0, 0, 0, 0, 320, 75, 0, 0, 0, 0, 315, 70, 0, 0, 0, 0, 320, 64, 0, 0, 0, 0, 336, 66, 0, 0, 0, 0, 342, 70, 0, 0, 0, 0, 350, 72, 0, 0, 0, 0, 358, 67, 0, 0, 0, 0, 364, 60, 0, 0, 0, 0, 368, 55, 0, 0, 0, 0, 376, 50, 0, 0, 0, 0, 378, 47, 0, 0, 0, 0, 379, 40, 0, 0, 0, 0, 375, 34, 0, 0, 0, 0, 371, 29, 0, 0, 0, 0, 365, 35, 0, 0, 0, 0, 360, 42, 0, 0, 0, 0, 352, 48, 0, 0, 0, 0, 344, 51, 0, 0, 0, 0, 337, 50, 0, 0, 0, 0, 327, 42, 0, 0, 0, 0, 323, 33, 0, 0, 0, 0, 320, 25, 0, 0, 0, 0, 316, 16, 0, 0, 0, 0, 313, 10, 0, 0, 0, 0, 310, 9, 0, 0, 0, 0, 305, 15, 0, 0, 0, 0, 301, 20, 0, 0, 0, 0, 293, 18, 0, 0, 0, 0, 290, 10)
+"points": PackedVector2Array(0, 0, 0, 0, 359, 91, 0, 0, 0, 0, 356, 99, 0, 0, 0, 0, 350, 105, 0, 0, 0, 0, 345, 101, 0, 0, 0, 0, 335, 94, 0, 0, 0, 0, 327, 84, 0, 0, 0, 0, 319, 75, 0, 0, 0, 0, 318, 66, 0, 0, 0, 0, 325, 61, 0, 0, 0, 0, 338, 60, 0, 0, 0, 0, 342, 70, 0, 0, 0, 0, 348, 72, 0, 0, 0, 0, 354, 66, 0, 0, 0, 0, 361, 59, 0, 0, 0, 0, 370, 51, 0, 0, 0, 0, 371, 41, 0, 0, 0, 0, 368, 34, 0, 0, 0, 0, 361, 36, 0, 0, 0, 0, 356, 43, 0, 0, 0, 0, 348, 47, 0, 0, 0, 0, 339, 47, 0, 0, 0, 0, 331, 42, 0, 0, 0, 0, 323, 28, 0, 0, 0, 0, 318, 16, 0, 0, 0, 0, 311, 8, 0, 0, 0, 0, 306, 9, 0, 0, 0, 0, 299, 16, 0, 0, 0, 0, 292, 16, 0, 0, 0, 0, 289, 5)
 }
-point_count = 33
+point_count = 29
 
 [sub_resource type="Curve2D" id="Curve2D_06osl"]
 resource_local_to_scene = true
@@ -272,6 +278,7 @@ position = Vector2(783, 103)
 texture = ExtResource("13_o4tw5")
 
 [node name="OrcTower" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(895, 138)
 
 [node name="Sprite2D" parent="Areas/OrcTower" index="0"]
@@ -279,6 +286,7 @@ scale = Vector2(0.158844, 0.158844)
 texture = ExtResource("14_icbto")
 
 [node name="OrcIslandScout" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(995, 242)
 
 [node name="Sprite2D" parent="Areas/OrcIslandScout" index="0"]
@@ -286,12 +294,14 @@ scale = Vector2(0.158844, 0.158844)
 texture = ExtResource("14_icbto")
 
 [node name="RobbersOutpost" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(426, -132)
 
 [node name="Sprite2D" parent="Areas/RobbersOutpost" index="0"]
 texture = ExtResource("13_o4tw5")
 
 [node name="FortHideout" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(418, 8)
 
 [node name="Sprite2D" parent="Areas/FortHideout" index="0"]
@@ -299,6 +309,7 @@ scale = Vector2(0.143871, 0.143871)
 texture = ExtResource("15_u862k")
 
 [node name="CorruptedMines" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(360, 90)
 
 [node name="Sprite2D" parent="Areas/CorruptedMines" index="0"]
@@ -306,6 +317,7 @@ scale = Vector2(0.16806, 0.16806)
 texture = ExtResource("16_7ia4y")
 
 [node name="TwinPeaks" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(290, 5)
 
 [node name="Sprite2D" parent="Areas/TwinPeaks" index="0"]
@@ -334,6 +346,7 @@ scale = Vector2(0.234008, 0.234008)
 texture = ExtResource("13_o4tw5")
 
 [node name="ScoutCamp" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(519, 54)
 
 [node name="Sprite2D" parent="Areas/ScoutCamp" index="0"]
@@ -407,50 +420,88 @@ scale = Vector2(0.219073, 0.23752)
 texture = ExtResource("24_dd1x5")
 
 [node name="TravelPath_05" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
 position = Vector2(0, -1)
 curve = SubResource("Curve2D_t1pvq")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_05" index="1"]
-position = Vector2(732, 169)
+position = Vector2(718, 167)
+rotation = -0.999459
+
+[node name="Sprite2D" parent="TravelPaths/TravelPath_05" index="2"]
+position = Vector2(802, 186)
+scale = Vector2(0.271594, 0.258786)
+texture = ExtResource("25_ifnik")
 
 [node name="TravelPath_06" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
 curve = SubResource("Curve2D_7g4do")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_06" index="1"]
 position = Vector2(534, -54)
-rotation = -0.291457
+rotation = -2.2143
+
+[node name="Sprite2D" parent="TravelPaths/TravelPath_06" index="2"]
+position = Vector2(502, -108)
+scale = Vector2(0.236393, 0.236393)
+texture = ExtResource("26_pr6oe")
 
 [node name="Sprite2D" type="Sprite2D" parent="TravelPaths/TravelPath_06/Sprite2D" index="0"]
 
 [node name="TravelPath_07" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
 curve = SubResource("Curve2D_rd2vh")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_07" index="1"]
-position = Vector2(427, -123)
-rotation = 2.07789
+position = Vector2(427, -128)
+rotation = 2.03444
+
+[node name="Sprite2D" parent="TravelPaths/TravelPath_07" index="2"]
+position = Vector2(432, -59)
+scale = Vector2(0.249219, 0.249219)
+texture = ExtResource("27_hm5fs")
 
 [node name="TravelPath_08" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
 curve = SubResource("Curve2D_ro5ft")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_08" index="1"]
-position = Vector2(412, 17)
-rotation = 1.89255
+position = Vector2(418, 14)
+rotation = 1.4289
+
+[node name="Sprite2D" parent="TravelPaths/TravelPath_08" index="2"]
+position = Vector2(460, 45)
+scale = Vector2(0.243849, 0.243849)
+texture = ExtResource("28_k72ya")
 
 [node name="TravelPath_09" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
 curve = SubResource("Curve2D_bkdvw")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_09" index="1"]
-position = Vector2(407, 15)
-rotation = 2.39617
+position = Vector2(417, 14)
+rotation = 2.72337
+
+[node name="Sprite2D" parent="TravelPaths/TravelPath_09" index="2"]
+position = Vector2(395, 66)
+scale = Vector2(0.251899, 0.251899)
+texture = ExtResource("29_r7l42")
 
 [node name="TravelPath_10" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
 curve = SubResource("Curve2D_x4nvp")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_10" index="1"]
-position = Vector2(349, 91)
-rotation = 3.07502
+position = Vector2(359, 91)
+rotation = 1.92957
+
+[node name="Sprite2D" parent="TravelPaths/TravelPath_10" index="2"]
+position = Vector2(330, 59)
+scale = Vector2(0.250734, 0.250734)
+texture = ExtResource("30_nmbsu")
 
 [node name="TravelPath_11" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
 position = Vector2(-1, 8)
 curve = SubResource("Curve2D_06osl")
 
