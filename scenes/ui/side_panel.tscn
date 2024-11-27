@@ -93,79 +93,133 @@ text = "Level: "
 [node name="Value" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/LevelContainer"]
 layout_mode = 2
 
-[node name="StrengthContainer" type="HBoxContainer" parent="MarginContainer/PanelSectionsVBox/AdventurerStats"]
+[node name="AttributesContainer" type="GridContainer" parent="MarginContainer/PanelSectionsVBox/AdventurerStats"]
 unique_name_in_owner = true
 layout_mode = 2
+columns = 3
 
-[node name="Label" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/StrengthContainer"]
+[node name="StrengthLabel" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
 layout_mode = 2
 text = "Strength: "
 
-[node name="Value" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/StrengthContainer"]
-layout_mode = 2
-
-[node name="SpeedContainer" type="HBoxContainer" parent="MarginContainer/PanelSectionsVBox/AdventurerStats"]
+[node name="StrengthValue" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/SpeedContainer"]
+[node name="StrengthLevelUp" type="Control" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer/StrengthLevelUp"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 28.0
+text = "+"
+
+[node name="SpeedLabel" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
 layout_mode = 2
 text = "Speed: "
 
-[node name="Value" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/SpeedContainer"]
-layout_mode = 2
-
-[node name="AgilityContainer" type="HBoxContainer" parent="MarginContainer/PanelSectionsVBox/AdventurerStats"]
+[node name="SpeedValue" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AgilityContainer"]
+[node name="SpeedLevelUp" type="Control" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer/SpeedLevelUp"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 28.0
+text = "+"
+
+[node name="AgilityLabel" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
 layout_mode = 2
 text = "Agility: "
 
-[node name="Value" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AgilityContainer"]
-layout_mode = 2
-
-[node name="DefenseContainer" type="HBoxContainer" parent="MarginContainer/PanelSectionsVBox/AdventurerStats"]
+[node name="AgilityValue" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/DefenseContainer"]
+[node name="AgilityLevelUp" type="Control" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer/AgilityLevelUp"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 28.0
+text = "+"
+
+[node name="DefenseLabel" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
 layout_mode = 2
 text = "Defense: "
 
-[node name="Value" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/DefenseContainer"]
-layout_mode = 2
-
-[node name="AttackContainer" type="HBoxContainer" parent="MarginContainer/PanelSectionsVBox/AdventurerStats"]
+[node name="DefenseValue" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttackContainer"]
+[node name="DefenseLevelUp" type="Control" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer/DefenseLevelUp"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 28.0
+text = "+"
+
+[node name="AttackLabel" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
 layout_mode = 2
 text = "Attack: "
 
-[node name="Value" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttackContainer"]
-layout_mode = 2
-
-[node name="MoraleContainer" type="HBoxContainer" parent="MarginContainer/PanelSectionsVBox/AdventurerStats"]
+[node name="AttackValue" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/MoraleContainer"]
+[node name="AttackLevelUp" type="Control" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer/AttackLevelUp"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 28.0
+text = "+"
+
+[node name="MoraleLabel" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
 layout_mode = 2
 text = "Morale: "
 
-[node name="Value" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/MoraleContainer"]
-layout_mode = 2
-
-[node name="DisciplineContainer" type="HBoxContainer" parent="MarginContainer/PanelSectionsVBox/AdventurerStats"]
+[node name="MoraleValue" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/DisciplineContainer"]
+[node name="MoraleLevelUp" type="Control" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer/MoraleLevelUp"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 28.0
+text = "+"
+
+[node name="DisciplineLabel" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
 layout_mode = 2
 text = "Discipline: "
 
-[node name="Value" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/DisciplineContainer"]
+[node name="DisciplineValue" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+
+[node name="DisciplineLevelUp" type="Control" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/AttributesContainer/DisciplineLevelUp"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 28.0
+text = "+"

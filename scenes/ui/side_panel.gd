@@ -11,13 +11,15 @@ const PORTRAIT_SCENE = preload("res://scenes/ui/portrait.tscn")
 
 @onready var name_label: Label = %NameLabel
 @onready var level_value: Label = %LevelContainer/Value
-@onready var strength_value: Label = %StrengthContainer/Value
-@onready var speed_value: Label = %SpeedContainer/Value
-@onready var agility_value: Label = %AgilityContainer/Value
-@onready var defense_value: Label = %DefenseContainer/Value
-@onready var attack_value: Label = %AttackContainer/Value
-@onready var morale_value: Label = %MoraleContainer/Value
-@onready var discipline_value: Label = %DisciplineContainer/Value
+@onready var strength_value: Label = %StrengthValue
+@onready var speed_value: Label = %SpeedValue
+@onready var agility_value: Label = %AgilityValue
+@onready var defense_value: Label = %DefenseValue
+@onready var attack_value: Label = %AttackValue
+@onready var morale_value: Label = %MoraleValue
+@onready var discipline_value: Label = %DisciplineValue
+
+@onready var attributes_container: GridContainer = %AttributesContainer
 
 var adventurers: Array[Adventurer]
 
@@ -30,32 +32,54 @@ func _ready():
 	# Connect signals for each portrait in the grid container
 	for adventurer: Adventurer in adventurers:
 		add_adventurer_to_panel(adventurer)
-#
-		#portrait.gui_input.connect(func(event: InputEvent): on_portrait_input_event(event, portrait, adventurer))
-		#portrait.mouse_entered.connect(func(): _on_portrait_hovered(portrait, adventurer))
-		#portrait.mouse_exited.connect(_on_portrait_exited)
+	
+	# Show the level up buttons if there are levels to attribute
+	for attribute: String in Globals.attributes:
+		var level_up_button: Button = get_level_up_button(attribute)
+		level_up_button.pressed.connect(func(): on_level_up_button_pressed(attribute.to_lower()))
 
 func on_portrait_input_event(event: InputEvent, portrait: Control, adventurer: Adventurer):
 	if event.is_action_pressed("left_click"):
 		bottom_panel.update_buttons(adventurer)
 		Globals.adventurer_selected(adventurer)
-		
+
 		portrait_selector.reparent(portrait)
 		portrait_selector.position = Vector2.ZERO
 
 		portrait_selector.visible = true
 		adventurer_stats.visible = true
 
-		name_label.text = adventurer.name_
-		level_value.text = str(adventurer.level)
-		strength_value.text = str(adventurer.strength)
-		speed_value.text = str(adventurer.speed)
-		agility_value.text = str(adventurer.agility)
-		defense_value.text = str(adventurer.defense)
-		attack_value.text = str(adventurer.attack)
-		morale_value.text = str(adventurer.morale)
-		discipline_value.text = str(adventurer.discipline)
+		update_adventurer_panel()
 
+func update_adventurer_panel():
+	var adventurer = Globals.selected_adventurer
+	name_label.text = adventurer.name_
+	level_value.text = level_string(adventurer)
+	
+	strength_value.text = str(adventurer.strength)
+	speed_value.text = str(adventurer.speed)
+	agility_value.text = str(adventurer.agility)
+	defense_value.text = str(adventurer.defense)
+	attack_value.text = str(adventurer.attack)
+	morale_value.text = str(adventurer.morale)
+	discipline_value.text = str(adventurer.discipline)
+
+	for attribute: String in Globals.attributes:
+		get_level_up_button(attribute).visible = adventurer.new_levels > 0
+
+func get_level_up_button(attribute: String):
+	return attributes_container.get_node("%sLevelUp/Button" % [attribute])
+	
+func level_string(adventurer: Adventurer):
+	var level_str = str(adventurer.level)
+	if adventurer.new_levels > 0:
+		level_str += " (+%d)" % [adventurer.new_levels]
+	return level_str
+
+func on_level_up_button_pressed(attribute_name: String):
+	Globals.selected_adventurer.level_up_attribute(attribute_name)
+	update_adventurer_panel()
+	
 func on_gold_updated(current_gold: int):
 	gold_value.text = str(current_gold)
 
@@ -70,3 +94,5 @@ func add_adventurer_to_panel(adventurer: Adventurer):
 	portrait.set_portrait_texture(adventurer.portrait)
 
 	portrait.gui_input.connect(func(event: InputEvent): on_portrait_input_event(event, portrait, adventurer))
+	adventurer.level_gained.connect(update_adventurer_panel)
+	adventurer.level_up.connect(update_adventurer_panel)
