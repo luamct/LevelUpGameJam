@@ -1,13 +1,11 @@
-[gd_scene load_steps=50 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=46 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
 [ext_resource type="PackedScene" uid="uid://woucgevkq7qf" path="res://scenes/areas/spot.tscn" id="3_7gc0v"]
 [ext_resource type="Texture2D" uid="uid://gjekk4mkvr1b" path="res://assets/maps/2024-11-11 map01.png" id="3_exgk6"]
 [ext_resource type="PackedScene" uid="uid://cci1pxpj48ewe" path="res://scenes/adventurer/adventurer.tscn" id="4_ijfal"]
-[ext_resource type="Script" path="res://scenes/ui/side_panel.gd" id="4_lmqdk"]
 [ext_resource type="Texture2D" uid="uid://ihg3tgvrop04" path="res://assets/classes/fighter_1.png" id="5_b26p0"]
-[ext_resource type="Texture2D" uid="uid://ckn6ic6p6sr3e" path="res://assets/ui/UI_Selectors.png" id="5_m3tqs"]
 [ext_resource type="PackedScene" uid="uid://b0dek7py76rxn" path="res://scenes/areas/area.tscn" id="6_il4vw"]
 [ext_resource type="Script" path="res://scenes/areas/requirement.gd" id="8_4wor3"]
 [ext_resource type="Script" path="res://scenes/areas/production_spot.gd" id="8_dl7w6"]
@@ -16,7 +14,6 @@
 [ext_resource type="Script" path="res://scenes/areas/buying_spot.gd" id="11_arn45"]
 [ext_resource type="Texture2D" uid="uid://b0t475e0jewt7" path="res://assets/classes/static_bard.png" id="11_hswoa"]
 [ext_resource type="Texture2D" uid="uid://4mi51u168pnv" path="res://assets/Map Structures/Building humans Tower.png" id="12_88m3j"]
-[ext_resource type="Texture2D" uid="uid://bmguafu6tr4ng" path="res://assets/ui/bars_screens/Side bar1.png" id="12_galt4"]
 [ext_resource type="Texture2D" uid="uid://dkdo6yxdsx56t" path="res://assets/Map Structures/Building tend.png" id="13_o4tw5"]
 [ext_resource type="Texture2D" uid="uid://ds8556n1lxu4g" path="res://assets/Map Structures/Building orc Tower.png" id="14_icbto"]
 [ext_resource type="Texture2D" uid="uid://mafofxwlgvej" path="res://assets/Map Structures/Building dwarv Castle.png" id="15_u862k"]
@@ -27,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cutehjkb06qgt" path="res://assets/Paths/Road 01.png" id="21_ms4n2"]
 [ext_resource type="Texture2D" uid="uid://biuve6ako2ls0" path="res://assets/Paths/Road 02.png" id="22_ahxid"]
 [ext_resource type="Texture2D" uid="uid://ccncje477xru8" path="res://assets/Paths/Road 11.png" id="22_p6cik"]
-[ext_resource type="PackedScene" uid="uid://b171lyrmcpsmf" path="res://scenes/ui/bottom_panel.tscn" id="22_xlvp7"]
+[ext_resource type="PackedScene" path="res://scenes/ui/bottom_panel.tscn" id="22_xlvp7"]
 [ext_resource type="Texture2D" uid="uid://e5i7lp6no830" path="res://assets/Paths/Road 03.png" id="23_21xdo"]
 [ext_resource type="Texture2D" uid="uid://jw83jkthb7xj" path="res://assets/Paths/Road 04.png" id="24_dd1x5"]
 [ext_resource type="Texture2D" uid="uid://b4kt0mdgfnxhq" path="res://assets/Paths/Road 05.png" id="25_ifnik"]
@@ -36,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://dkbt0i3henea3" path="res://assets/Paths/Road 08.png" id="28_k72ya"]
 [ext_resource type="Texture2D" uid="uid://n63iekmtuqic" path="res://assets/Paths/Road 09.png" id="29_r7l42"]
 [ext_resource type="Texture2D" uid="uid://dvvlku7yhfioy" path="res://assets/Paths/Road 10.png" id="30_nmbsu"]
+[ext_resource type="PackedScene" uid="uid://bdrp6dy3m1apy" path="res://scenes/ui/side_panel.tscn" id="34_vvur4"]
 
 [sub_resource type="Curve2D" id="Curve2D_m8ydb"]
 resource_local_to_scene = true
@@ -113,17 +111,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 893, 132, 0, 0, 0, 0, 897, 150, 0, 0, 0, 0, 902, 162, 0, 0, 0, 0, 902, 175, 0, 0, 0, 0, 895, 187, 0, 0, 0, 0, 876, 197, 0, 0, 0, 0, 860, 200, 0, 0, 0, 0, 843, 206, 0, 0, 0, 0, 831, 217, 0, 0, 0, 0, 824, 233, 0, 0, 0, 0, 823, 250, 0, 0, 0, 0, 833, 267, 0, 0, 0, 0, 849, 278, 0, 0, 0, 0, 863, 282, 0, 0, 0, 0, 878, 284, 0, 0, 0, 0, 889, 280, 0, 0, 0, 0, 896, 268, 0, 0, 0, 0, 906, 255, 0, 0, 0, 0, 919, 243, 0, 0, 0, 0, 936, 239, 0, 0, 0, 0, 947, 242, 0, 0, 0, 0, 959, 238, 0, 0, 0, 0, 974, 242, 0, 0, 0, 0, 992, 242)
 }
 point_count = 24
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r5e2e"]
-texture = ExtResource("12_galt4")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4t32m"]
-atlas = ExtResource("5_m3tqs")
-region = Rect2(107, 10, 26, 28)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_6e6bs")
@@ -535,160 +522,7 @@ expand_mode = 1
 [node name="BottomPanel" parent="CanvasLayer" instance=ExtResource("22_xlvp7")]
 unique_name_in_owner = true
 
-[node name="SidePanel" type="Panel" parent="CanvasLayer"]
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -360.0
-offset_right = 280.0
-offset_bottom = 360.0
-grow_vertical = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxTexture_r5e2e")
-script = ExtResource("4_lmqdk")
-
-[node name="GoldUpdateTimer" type="Timer" parent="CanvasLayer/SidePanel"]
-wait_time = 0.5
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/SidePanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="PortraitSelector" type="TextureRect" parent="CanvasLayer/SidePanel/MarginContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-texture = SubResource("AtlasTexture_4t32m")
-
-[node name="PanelSectionsVBox" type="VBoxContainer" parent="CanvasLayer/SidePanel/MarginContainer"]
-layout_mode = 2
-
-[node name="GoldContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/GoldContainer"]
-layout_mode = 2
-text = "Gold: "
-
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/GoldContainer"]
-layout_mode = 2
-text = "0"
-
-[node name="PortraitsLabel" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox"]
-layout_mode = 2
-text = "Adventurers"
-
-[node name="PortraitsContainer" type="GridContainer" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-columns = 5
-
-[node name="AdventurerStats" type="VBoxContainer" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="NameLabel" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="LevelContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/LevelContainer"]
-layout_mode = 2
-text = "Level: "
-
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/LevelContainer"]
-layout_mode = 2
-
-[node name="StrengthContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/StrengthContainer"]
-layout_mode = 2
-text = "Strength: "
-
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/StrengthContainer"]
-layout_mode = 2
-
-[node name="SpeedContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/SpeedContainer"]
-layout_mode = 2
-text = "Speed: "
-
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/SpeedContainer"]
-layout_mode = 2
-
-[node name="AgilityContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/AgilityContainer"]
-layout_mode = 2
-text = "Agility: "
-
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/AgilityContainer"]
-layout_mode = 2
-
-[node name="DefenseContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/DefenseContainer"]
-layout_mode = 2
-text = "Defense: "
-
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/DefenseContainer"]
-layout_mode = 2
-
-[node name="AttackContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/AttackContainer"]
-layout_mode = 2
-text = "Attack: "
-
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/AttackContainer"]
-layout_mode = 2
-
-[node name="MoraleContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/MoraleContainer"]
-layout_mode = 2
-text = "Morale: "
-
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/MoraleContainer"]
-layout_mode = 2
-
-[node name="DisciplineContainer" type="HBoxContainer" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/DisciplineContainer"]
-layout_mode = 2
-text = "Discipline: "
-
-[node name="Value" type="Label" parent="CanvasLayer/SidePanel/MarginContainer/PanelSectionsVBox/AdventurerStats/DisciplineContainer"]
-layout_mode = 2
+[node name="SidePanel" parent="CanvasLayer" instance=ExtResource("34_vvur4")]
 
 [editable path="Areas/TemplateArea"]
 [editable path="Areas/Merry Leaf Village"]
