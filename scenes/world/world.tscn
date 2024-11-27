@@ -362,7 +362,6 @@ slots = 2
 [node name="TravelPaths" type="Node2D" parent="."]
 
 [node name="TravelPath_01" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 position = Vector2(600, 44)
 curve = SubResource("Curve2D_m8ydb")
 
@@ -380,7 +379,6 @@ scale = Vector2(0.280629, 0.280629)
 texture = ExtResource("21_ms4n2")
 
 [node name="TravelPath_02" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 curve = SubResource("Curve2D_id65s")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_02" index="1"]
