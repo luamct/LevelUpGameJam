@@ -130,7 +130,7 @@ script = ExtResource("2_rwaap")
 
 [node name="Adventurers" type="Node2D" parent="."]
 
-[node name="LiquorBo" parent="Adventurers" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Peregrine The Fighter" parent="Adventurers" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 z_index = 10
 position = Vector2(583, 56.5)
 name_ = "Liquor Bo"
@@ -189,11 +189,11 @@ requirements = Array[ExtResource("8_4wor3")]([])
 gold_output = 1
 slots = 4
 
-[node name="Hire Adventurers" parent="Areas/Broken Sink Inn/Spots" index="2" instance=ExtResource("3_7gc0v")]
+[node name="Chat Around" parent="Areas/Broken Sink Inn/Spots" index="2" instance=ExtResource("3_7gc0v")]
 script = ExtResource("11_arn45")
 slots = 1
 
-[node name="Tobias The Bard" parent="Areas/Broken Sink Inn/Spots/Hire Adventurers" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Elis The Bard" parent="Areas/Broken Sink Inn/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
@@ -211,7 +211,7 @@ level = 3
 hire_cost = 5000
 area = NodePath("../../..")
 
-[node name="Aruan The Paladin" parent="Areas/Broken Sink Inn/Spots/Hire Adventurers" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Aruan The Paladin" parent="Areas/Broken Sink Inn/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
@@ -229,7 +229,7 @@ level = 8
 hire_cost = 7000
 area = NodePath("../../..")
 
-[node name="Ellie The Sorcerer" parent="Areas/Broken Sink Inn/Spots/Hire Adventurers" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Ebbo The Sorcerer" parent="Areas/Broken Sink Inn/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
