@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=49 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -15,9 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://b0t475e0jewt7" path="res://assets/classes/static_bard.png" id="11_hswoa"]
 [ext_resource type="Texture2D" uid="uid://4mi51u168pnv" path="res://assets/Map Structures/Building humans Tower.png" id="12_88m3j"]
 [ext_resource type="Texture2D" uid="uid://dkdo6yxdsx56t" path="res://assets/Map Structures/Building tend.png" id="13_o4tw5"]
+[ext_resource type="Texture2D" uid="uid://dipkwpg1dtghi" path="res://assets/Map Structures/Building humans Villa.png" id="13_wd84p"]
 [ext_resource type="Texture2D" uid="uid://ds8556n1lxu4g" path="res://assets/Map Structures/Building orc Tower.png" id="14_icbto"]
+[ext_resource type="Texture2D" uid="uid://bkm556mg3yh8p" path="res://assets/classes/paladin_1.png" id="15_cs4ln"]
 [ext_resource type="Texture2D" uid="uid://mafofxwlgvej" path="res://assets/Map Structures/Building dwarv Castle.png" id="15_u862k"]
 [ext_resource type="Texture2D" uid="uid://bq1h8qypq0aph" path="res://assets/Map Structures/Building dwarv Altar.png" id="16_7ia4y"]
+[ext_resource type="Texture2D" uid="uid://dtasnts0fi3f0" path="res://assets/classes/sorcerer_1.png" id="16_erfj3"]
 [ext_resource type="Texture2D" uid="uid://ra25hj83xk6n" path="res://assets/Map Structures/Building dwarv Tower.png" id="17_2nwek"]
 [ext_resource type="Texture2D" uid="uid://da4wft15e23o8" path="res://assets/ui/bars_screens/Area1 blank.png" id="19_wjdxs"]
 [ext_resource type="PackedScene" uid="uid://bukvpaws8uoa2" path="res://scenes/world/travel_path.tscn" id="21_lj6df"]
@@ -133,7 +136,7 @@ position = Vector2(583, 56.5)
 name_ = "Liquor Bo"
 portrait = ExtResource("5_b26p0")
 level = 1
-area = NodePath("../../Areas/Merry Leaf Village")
+area = NodePath("../../Areas/Broken Sink Inn")
 
 [node name="Areas" type="Node2D" parent="."]
 
@@ -166,30 +169,31 @@ gold_per_xp = 1
 xp_per_second = 300
 slots = 2
 
-[node name="Merry Leaf Village" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="Broken Sink Inn" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(602, 58)
 
-[node name="Sprite2D" parent="Areas/Merry Leaf Village" index="0"]
+[node name="Sprite2D" parent="Areas/Broken Sink Inn" index="0"]
 scale = Vector2(0.191958, 0.191958)
+texture = ExtResource("13_wd84p")
 
-[node name="Spots" parent="Areas/Merry Leaf Village" index="1"]
+[node name="Spots" parent="Areas/Broken Sink Inn" index="1"]
 position = Vector2(-20, 1)
 
-[node name="Firecamp" parent="Areas/Merry Leaf Village/Spots" index="0" instance=ExtResource("3_7gc0v")]
+[node name="Firecamp" parent="Areas/Broken Sink Inn/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("8_do0jp")
 slots = 5
 
-[node name="LeekCrops" parent="Areas/Merry Leaf Village/Spots" index="1" instance=ExtResource("3_7gc0v")]
+[node name="Wash Dishes" parent="Areas/Broken Sink Inn/Spots" index="1" instance=ExtResource("3_7gc0v")]
 script = ExtResource("8_dl7w6")
 requirements = Array[ExtResource("8_4wor3")]([])
 gold_output = 1
 slots = 4
 
-[node name="Tavern" parent="Areas/Merry Leaf Village/Spots" index="2" instance=ExtResource("3_7gc0v")]
+[node name="Hire Adventurers" parent="Areas/Broken Sink Inn/Spots" index="2" instance=ExtResource("3_7gc0v")]
 script = ExtResource("11_arn45")
 slots = 1
 
-[node name="Bard" parent="Areas/Merry Leaf Village/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Tobias The Bard" parent="Areas/Broken Sink Inn/Spots/Hire Adventurers" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
@@ -207,12 +211,12 @@ level = 3
 hire_cost = 5000
 area = NodePath("../../..")
 
-[node name="Paladin" parent="Areas/Merry Leaf Village/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Aruan The Paladin" parent="Areas/Broken Sink Inn/Spots/Hire Adventurers" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
 name_ = "Paladin"
-portrait = ExtResource("5_b26p0")
+portrait = ExtResource("15_cs4ln")
 strength = 10
 speed = 5
 agility = 6
@@ -225,23 +229,23 @@ level = 8
 hire_cost = 7000
 area = NodePath("../../..")
 
-[node name="Sorcerer" parent="Areas/Merry Leaf Village/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Ellie The Sorcerer" parent="Areas/Broken Sink Inn/Spots/Hire Adventurers" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
 name_ = "Sorcerer"
-portrait = ExtResource("5_b26p0")
+portrait = ExtResource("16_erfj3")
 level = 1
 hire_cost = 1000
 area = NodePath("../../..")
 
-[node name="Abandoned Stables" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="Abandoned" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(532, -48)
 
-[node name="Sprite2D" parent="Areas/Abandoned Stables" index="0"]
+[node name="Sprite2D" parent="Areas/Abandoned" index="0"]
 scale = Vector2(0.188136, 0.188136)
 
-[node name="Trainer" parent="Areas/Abandoned Stables/Spots" index="0" instance=ExtResource("3_7gc0v")]
+[node name="Trainer" parent="Areas/Abandoned/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
 gold_per_xp = 1
 xp_per_second = 300
@@ -262,14 +266,12 @@ xp_per_second = 300
 slots = 2
 
 [node name="ThievesCamp" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(783, 103)
 
 [node name="Sprite2D" parent="Areas/ThievesCamp" index="0"]
 texture = ExtResource("13_o4tw5")
 
 [node name="OrcTower" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(895, 138)
 
 [node name="Sprite2D" parent="Areas/OrcTower" index="0"]
@@ -277,7 +279,6 @@ scale = Vector2(0.158844, 0.158844)
 texture = ExtResource("14_icbto")
 
 [node name="OrcIslandScout" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(995, 242)
 
 [node name="Sprite2D" parent="Areas/OrcIslandScout" index="0"]
@@ -285,14 +286,12 @@ scale = Vector2(0.158844, 0.158844)
 texture = ExtResource("14_icbto")
 
 [node name="RobbersOutpost" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(426, -132)
 
 [node name="Sprite2D" parent="Areas/RobbersOutpost" index="0"]
 texture = ExtResource("13_o4tw5")
 
 [node name="FortHideout" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(418, 8)
 
 [node name="Sprite2D" parent="Areas/FortHideout" index="0"]
@@ -300,7 +299,6 @@ scale = Vector2(0.143871, 0.143871)
 texture = ExtResource("15_u862k")
 
 [node name="CorruptedMines" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(360, 90)
 
 [node name="Sprite2D" parent="Areas/CorruptedMines" index="0"]
@@ -308,7 +306,6 @@ scale = Vector2(0.16806, 0.16806)
 texture = ExtResource("16_7ia4y")
 
 [node name="TwinPeaks" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(290, 5)
 
 [node name="Sprite2D" parent="Areas/TwinPeaks" index="0"]
@@ -323,7 +320,6 @@ scale = Vector2(0.16806, 0.16806)
 texture = ExtResource("17_2nwek")
 
 [node name="ThievesBossCamp" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(794, 28)
 
 [node name="Sprite2D" parent="Areas/ThievesBossCamp" index="0"]
@@ -337,7 +333,6 @@ scale = Vector2(0.234008, 0.234008)
 texture = ExtResource("13_o4tw5")
 
 [node name="ScoutCamp" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(519, 54)
 
 [node name="Sprite2D" parent="Areas/ScoutCamp" index="0"]
@@ -382,7 +377,6 @@ scale = Vector2(0.258871, 0.258871)
 texture = ExtResource("22_ahxid")
 
 [node name="TravelPath_03" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 curve = SubResource("Curve2D_3qb8b")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_03" index="1"]
@@ -396,7 +390,6 @@ scale = Vector2(0.24165, 0.219745)
 texture = ExtResource("23_21xdo")
 
 [node name="TravelPath_04" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 curve = SubResource("Curve2D_b1jyg")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_04" index="1"]
@@ -409,7 +402,6 @@ scale = Vector2(0.219073, 0.23752)
 texture = ExtResource("24_dd1x5")
 
 [node name="TravelPath_05" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 position = Vector2(0, -1)
 curve = SubResource("Curve2D_t1pvq")
 
@@ -423,7 +415,6 @@ scale = Vector2(0.271594, 0.258786)
 texture = ExtResource("25_ifnik")
 
 [node name="TravelPath_06" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 curve = SubResource("Curve2D_7g4do")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_06" index="1"]
@@ -438,7 +429,6 @@ texture = ExtResource("26_pr6oe")
 [node name="Sprite2D" type="Sprite2D" parent="TravelPaths/TravelPath_06/Sprite2D" index="0"]
 
 [node name="TravelPath_07" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 curve = SubResource("Curve2D_rd2vh")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_07" index="1"]
@@ -451,7 +441,6 @@ scale = Vector2(0.249219, 0.249219)
 texture = ExtResource("27_hm5fs")
 
 [node name="TravelPath_08" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 curve = SubResource("Curve2D_ro5ft")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_08" index="1"]
@@ -464,7 +453,6 @@ scale = Vector2(0.243849, 0.243849)
 texture = ExtResource("28_k72ya")
 
 [node name="TravelPath_09" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 curve = SubResource("Curve2D_bkdvw")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_09" index="1"]
@@ -477,7 +465,6 @@ scale = Vector2(0.251899, 0.251899)
 texture = ExtResource("29_r7l42")
 
 [node name="TravelPath_10" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 curve = SubResource("Curve2D_x4nvp")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_10" index="1"]
@@ -490,7 +477,6 @@ scale = Vector2(0.250734, 0.250734)
 texture = ExtResource("30_nmbsu")
 
 [node name="TravelPath_11" parent="TravelPaths" instance=ExtResource("21_lj6df")]
-visible = false
 position = Vector2(-1, 8)
 curve = SubResource("Curve2D_06osl")
 
@@ -529,8 +515,8 @@ unique_name_in_owner = true
 [node name="SidePanel" parent="CanvasLayer" instance=ExtResource("34_vvur4")]
 
 [editable path="Areas/TemplateArea"]
-[editable path="Areas/Merry Leaf Village"]
-[editable path="Areas/Abandoned Stables"]
+[editable path="Areas/Broken Sink Inn"]
+[editable path="Areas/Abandoned"]
 [editable path="Areas/WatchTower"]
 [editable path="Areas/ThievesCamp"]
 [editable path="Areas/OrcTower"]
