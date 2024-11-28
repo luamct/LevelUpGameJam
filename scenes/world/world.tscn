@@ -33,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://dkbt0i3henea3" path="res://assets/Paths/Road 08.png" id="28_k72ya"]
 [ext_resource type="Texture2D" uid="uid://n63iekmtuqic" path="res://assets/Paths/Road 09.png" id="29_r7l42"]
 [ext_resource type="Texture2D" uid="uid://dvvlku7yhfioy" path="res://assets/Paths/Road 10.png" id="30_nmbsu"]
-[ext_resource type="PackedScene" path="res://scenes/ui/side_panel.tscn" id="34_vvur4"]
+[ext_resource type="PackedScene" uid="uid://bdrp6dy3m1apy" path="res://scenes/ui/side_panel.tscn" id="34_vvur4"]
 
 [sub_resource type="Curve2D" id="Curve2D_m8ydb"]
 resource_local_to_scene = true
