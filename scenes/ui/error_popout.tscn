@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bala3wwyf6tpd"]
+
+[ext_resource type="Texture2D" uid="uid://d0w01buj5kmg4" path="res://assets/Text Boxes/Square Small.png" id="1_61x8y"]
+[ext_resource type="Script" path="res://scenes/ui/error_popout.gd" id="2_susuj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pxyqx"]
+texture = ExtResource("1_61x8y")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[node name="ErrorPopout" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_pxyqx")
+script = ExtResource("2_susuj")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "Error Message"
+
+[node name="AutoDestroyTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true

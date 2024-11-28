@@ -18,8 +18,12 @@ func setup(spot: Spot):
 		free_children(requirements_container)
 		for requirement in spot.requirements:
 			var label = Label.new()
-			label.text = "  %d+ %s" % [requirement.minimum_value, Enums.attribute_string(requirement.attribute)]
 			requirements_container.add_child(label)
+			
+			if requirement.class_ != Enums.Class.ANY:
+				label.text = "  Only %sS" % [Enums.class_string(requirement.class_)]
+			else:
+				label.text = "  %d or more %s" % [requirement.minimum_value, Enums.attribute_string(requirement.attribute)]
 
 	# Show gold output
 	gold_output_value.text = "  +%d per adventurer" % [spot.gold_output]

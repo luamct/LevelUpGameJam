@@ -37,12 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://n63iekmtuqic" path="res://assets/Paths/Road 09.png" id="29_r7l42"]
 [ext_resource type="Texture2D" uid="uid://dvvlku7yhfioy" path="res://assets/Paths/Road 10.png" id="30_nmbsu"]
 [ext_resource type="PackedScene" uid="uid://bdrp6dy3m1apy" path="res://scenes/ui/side_panel.tscn" id="34_vvur4"]
-
-[sub_resource type="Resource" id="Resource_cb65w"]
-script = ExtResource("8_4wor3")
-class_ = 3
-attribute = 0
-minimum_value = 0
+[ext_resource type="Script" path="res://scenes/ui/popouts.gd" id="38_6pyis"]
 
 [sub_resource type="Curve2D" id="Curve2D_m8ydb"]
 resource_local_to_scene = true
@@ -192,7 +187,7 @@ slots = 5
 
 [node name="Wash Dishes" parent="Areas/Broken Sink Inn/Spots" index="1" instance=ExtResource("3_7gc0v")]
 script = ExtResource("8_dl7w6")
-requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_cb65w")])
+requirements = Array[ExtResource("8_4wor3")]([])
 gold_output = 1
 slots = 4
 
@@ -523,6 +518,13 @@ expand_mode = 1
 unique_name_in_owner = true
 
 [node name="SidePanel" parent="CanvasLayer" instance=ExtResource("34_vvur4")]
+
+[node name="Popouts" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("38_6pyis")
 
 [editable path="Areas/TemplateArea"]
 [editable path="Areas/Broken Sink Inn"]
