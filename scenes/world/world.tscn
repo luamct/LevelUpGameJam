@@ -12,11 +12,11 @@
 [ext_resource type="Script" path="res://scenes/areas/firecamp_spot.gd" id="8_do0jp"]
 [ext_resource type="Script" path="res://scenes/areas/training_spot.gd" id="10_gbss6"]
 [ext_resource type="Script" path="res://scenes/areas/buying_spot.gd" id="11_arn45"]
-[ext_resource type="Texture2D" uid="uid://b0t475e0jewt7" path="res://assets/classes/static_bard.png" id="11_hswoa"]
 [ext_resource type="Texture2D" uid="uid://4mi51u168pnv" path="res://assets/Map Structures/Building humans Tower.png" id="12_88m3j"]
 [ext_resource type="Texture2D" uid="uid://dkdo6yxdsx56t" path="res://assets/Map Structures/Building tend.png" id="13_o4tw5"]
 [ext_resource type="Texture2D" uid="uid://dipkwpg1dtghi" path="res://assets/Map Structures/Building humans Villa.png" id="13_wd84p"]
 [ext_resource type="Texture2D" uid="uid://ds8556n1lxu4g" path="res://assets/Map Structures/Building orc Tower.png" id="14_icbto"]
+[ext_resource type="Texture2D" uid="uid://bbvooj6ri1cqj" path="res://assets/classes/bard_1.png" id="14_t3r0y"]
 [ext_resource type="Texture2D" uid="uid://bkm556mg3yh8p" path="res://assets/classes/paladin_1.png" id="15_cs4ln"]
 [ext_resource type="Texture2D" uid="uid://mafofxwlgvej" path="res://assets/Map Structures/Building dwarv Castle.png" id="15_u862k"]
 [ext_resource type="Texture2D" uid="uid://bq1h8qypq0aph" path="res://assets/Map Structures/Building dwarv Altar.png" id="16_7ia4y"]
@@ -198,7 +198,7 @@ visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
 name_ = "Bard"
-portrait = ExtResource("11_hswoa")
+portrait = ExtResource("14_t3r0y")
 strength = 3
 speed = 3
 agility = 6
