@@ -39,7 +39,7 @@ func on_portrait_input_event(event: InputEvent, portrait: Control, adventurer: A
 	if event.is_action_pressed("left_click"):
 		bottom_panel.update_buttons(adventurer)
 		Globals.adventurer_selected(adventurer)
-		
+
 		portrait_selector.reparent(portrait)
 		portrait_selector.position = Vector2.ZERO
 

@@ -77,7 +77,7 @@ func on_hire_button_pressed(adventurer: Adventurer, slot: AvailableAdventurer):
 	Globals.gold_updated.emit(Globals.current_gold)
 	Globals.add_adventurer_to_firecamp(adventurer)
 	Globals.hired_adventurer.emit(adventurer)
-	print("Aventureiro contratado: " + adventurer.name_)
+	#print("Aventureiro contratado: " + adventurer.name_)
 	
 	# Remove hired adventurer from list to hire
 	adventurer_slots.remove_child(slot)

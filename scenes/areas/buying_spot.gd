@@ -15,7 +15,7 @@ func try_to_add_adventurer(adventurer: Adventurer, slot_number: int) -> bool:
 	# Emit signal to notify that a slot was updated
 	adventurer_added.emit(adventurer, slot_number)
 
-	print("Adventurer added to slot:", slot_number)
+	#print("Adventurer added to slot:", slot_number)
 	return true
 
 # Function to remove an adventurer from a slot
@@ -26,5 +26,5 @@ func try_to_remove_adventurer(adventurer: Adventurer) -> bool:
 
 	adventurers[slot_number] = null
 	adventurer_removed.emit(adventurer, slot_number)
-	print("Adventurer removed from slot:", slot_number)
+	#print("Adventurer removed from slot:", slot_number)
 	return true

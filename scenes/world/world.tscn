@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cutehjkb06qgt" path="res://assets/Paths/Road 01.png" id="21_ms4n2"]
 [ext_resource type="Texture2D" uid="uid://biuve6ako2ls0" path="res://assets/Paths/Road 02.png" id="22_ahxid"]
 [ext_resource type="Texture2D" uid="uid://ccncje477xru8" path="res://assets/Paths/Road 11.png" id="22_p6cik"]
-[ext_resource type="PackedScene" path="res://scenes/ui/bottom_panel.tscn" id="22_xlvp7"]
+[ext_resource type="PackedScene" uid="uid://b171lyrmcpsmf" path="res://scenes/ui/bottom_panel.tscn" id="22_xlvp7"]
 [ext_resource type="Texture2D" uid="uid://e5i7lp6no830" path="res://assets/Paths/Road 03.png" id="23_21xdo"]
 [ext_resource type="Texture2D" uid="uid://jw83jkthb7xj" path="res://assets/Paths/Road 04.png" id="24_dd1x5"]
 [ext_resource type="Texture2D" uid="uid://b4kt0mdgfnxhq" path="res://assets/Paths/Road 05.png" id="25_ifnik"]
@@ -33,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://dkbt0i3henea3" path="res://assets/Paths/Road 08.png" id="28_k72ya"]
 [ext_resource type="Texture2D" uid="uid://n63iekmtuqic" path="res://assets/Paths/Road 09.png" id="29_r7l42"]
 [ext_resource type="Texture2D" uid="uid://dvvlku7yhfioy" path="res://assets/Paths/Road 10.png" id="30_nmbsu"]
-[ext_resource type="PackedScene" uid="uid://bdrp6dy3m1apy" path="res://scenes/ui/side_panel.tscn" id="34_vvur4"]
+[ext_resource type="PackedScene" path="res://scenes/ui/side_panel.tscn" id="34_vvur4"]
 
 [sub_resource type="Curve2D" id="Curve2D_m8ydb"]
 resource_local_to_scene = true
@@ -188,7 +188,7 @@ slots = 4
 script = ExtResource("11_arn45")
 slots = 1
 
-[node name="Bard" parent="Areas/Merry Leaf Village/Spots/Tavern" instance=ExtResource("4_ijfal")]
+[node name="Bard" parent="Areas/Merry Leaf Village/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
@@ -204,8 +204,9 @@ discipline = 4
 xp = 500
 level = 3
 hire_cost = 5000
+area = NodePath("../../..")
 
-[node name="Paladin" parent="Areas/Merry Leaf Village/Spots/Tavern" instance=ExtResource("4_ijfal")]
+[node name="Paladin" parent="Areas/Merry Leaf Village/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
@@ -221,8 +222,9 @@ discipline = 9
 xp = 1000
 level = 8
 hire_cost = 7000
+area = NodePath("../../..")
 
-[node name="Sorcerer" parent="Areas/Merry Leaf Village/Spots/Tavern" instance=ExtResource("4_ijfal")]
+[node name="Sorcerer" parent="Areas/Merry Leaf Village/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
@@ -230,6 +232,7 @@ name_ = "Sorcerer"
 portrait = ExtResource("5_b26p0")
 level = 1
 hire_cost = 1000
+area = NodePath("../../..")
 
 [node name="Abandoned Stables" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(532, -49)
