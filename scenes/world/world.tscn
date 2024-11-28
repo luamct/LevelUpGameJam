@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cutehjkb06qgt" path="res://assets/Paths/Road 01.png" id="21_ms4n2"]
 [ext_resource type="Texture2D" uid="uid://biuve6ako2ls0" path="res://assets/Paths/Road 02.png" id="22_ahxid"]
 [ext_resource type="Texture2D" uid="uid://ccncje477xru8" path="res://assets/Paths/Road 11.png" id="22_p6cik"]
-[ext_resource type="PackedScene" uid="uid://b171lyrmcpsmf" path="res://scenes/ui/bottom_panel.tscn" id="22_xlvp7"]
+[ext_resource type="PackedScene" uid="uid://jt24mbgmndoh" path="res://scenes/ui/bottom_panel.tscn" id="22_xlvp7"]
 [ext_resource type="Texture2D" uid="uid://e5i7lp6no830" path="res://assets/Paths/Road 03.png" id="23_21xdo"]
 [ext_resource type="Texture2D" uid="uid://jw83jkthb7xj" path="res://assets/Paths/Road 04.png" id="24_dd1x5"]
 [ext_resource type="Texture2D" uid="uid://b4kt0mdgfnxhq" path="res://assets/Paths/Road 05.png" id="25_ifnik"]
@@ -121,8 +121,8 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_exgk6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(300, -112)
-zoom = Vector2(2.5, 2.5)
+position = Vector2(567.667, 95)
+zoom = Vector2(2, 2)
 script = ExtResource("2_rwaap")
 
 [node name="Adventurers" type="Node2D" parent="."]
@@ -177,6 +177,7 @@ position = Vector2(-20, 1)
 
 [node name="Firecamp" parent="Areas/Merry Leaf Village/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("8_do0jp")
+slots = 5
 
 [node name="LeekCrops" parent="Areas/Merry Leaf Village/Spots" index="1" instance=ExtResource("3_7gc0v")]
 script = ExtResource("8_dl7w6")

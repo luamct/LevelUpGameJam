@@ -4,6 +4,7 @@ extends MarginContainer
 const SPOT_INFO_PRODUCTION = preload("res://scenes/ui/spot_info_production.tscn")
 const SPOT_INFO_TRAINING = preload("res://scenes/ui/spot_info_training.tscn")
 const SPOT_INFO_BUYING = preload("res://scenes/ui/spot_info_buying.tscn")
+const SPOT_INFO_FIRECAMP = preload("res://scenes/ui/spot_info_firecamp.tscn")
 const TRAVEL_INFO_PANEL = preload("res://scenes/ui/travel_info_panel.tscn")
 
 @onready var spot_container: HBoxContainer = $SpotContainer
@@ -60,36 +61,26 @@ func on_travel_button_pressed(adventurer: Adventurer):
 		
 		currently_showing_panel = travel_info
 	
+func get_spot_scene(spot: Spot) -> PackedScene:
+	if spot is ProductionSpot: return SPOT_INFO_PRODUCTION
+	elif spot is TrainingSpot: return SPOT_INFO_TRAINING
+	elif spot is BuyingSpot: return SPOT_INFO_BUYING
+	elif spot is FirecampSpot: return SPOT_INFO_FIRECAMP
+	else: return null
+	
 func on_spot_button_pressed(spot: Spot):
 	var panel_name: String = "%s__SpotInfo" % [spot.full_name()]
 	var panel_node = spot_container.get_node_or_null(panel_name)
 	if currently_showing_panel:
 		currently_showing_panel.visible = false
-		
+
 	if panel_node:
 		panel_node.visible = true
 		currently_showing_panel = panel_node
 	else:
-		if spot is ProductionSpot:
-			var spot_info_panel = SPOT_INFO_PRODUCTION.instantiate()
-			spot_container.add_child(spot_info_panel)
-			spot_info_panel.name = panel_name
-			spot_info_panel.setup(spot)
+		var spot_info_panel = get_spot_scene(spot).instantiate()
+		spot_container.add_child(spot_info_panel)
+		spot_info_panel.name = panel_name
+		spot_info_panel.setup(spot)
 			
-			currently_showing_panel = spot_info_panel
-			
-		elif spot is TrainingSpot:
-			var spot_info_panel = SPOT_INFO_TRAINING.instantiate()
-			spot_container.add_child(spot_info_panel)
-			spot_info_panel.name = panel_name
-			spot_info_panel.setup(spot)
-			
-			currently_showing_panel = spot_info_panel
-
-		elif spot is BuyingSpot:
-			var spot_info_panel = SPOT_INFO_BUYING.instantiate()
-			spot_container.add_child(spot_info_panel)
-			spot_info_panel.name = panel_name
-			spot_info_panel.setup(spot)
-			
-			currently_showing_panel = spot_info_panel
+		currently_showing_panel = spot_info_panel

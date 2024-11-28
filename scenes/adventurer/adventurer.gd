@@ -1,7 +1,8 @@
 class_name Adventurer
 extends Node2D
 
-signal level_up(int)
+signal level_gained  # When a level is gained
+signal level_up      # When a gained level is used to increase an attribute
 
 @export var name_: String
 @export var portrait: Texture2D
@@ -16,6 +17,9 @@ signal level_up(int)
 
 @export var xp: int
 @export var level: int
+
+# Levels that were gained but not attributed yet
+var new_levels: int = 0
 
 @export var hire_cost: int
 
@@ -34,11 +38,13 @@ func _ready():
 	if area:
 		global_position = area.global_position
 	
+# Checks if we've hit the next entry in the xp table, using level + 
+# new_levels, since the player may not have attributed all levels yet
 func add_xp(new_xp: int):
 	xp += new_xp
-	if xp >= Globals.xp_table[level]:
-		level += 1
-		level_up.emit(level)
+	if xp >= Globals.xp_table[level + new_levels]:
+		new_levels += 1
+		level_gained.emit()
 
 func start_traveling(from_area: Area, path: TravelPath):
 	remove_from_spot()
@@ -83,3 +89,9 @@ func arrived_at(_area: Area):
 	global_position = area.global_position
 	traveling_in = null
 	Globals.update_bottom_panel.emit(self)
+	
+func level_up_attribute(attribute_name: String):
+	new_levels -= 1
+	level += 1
+	set(attribute_name, get(attribute_name) + 1)
+	level_up.emit()
