@@ -223,3 +223,9 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 28.0
 text = "+"
+
+[node name="AdventurerStatus" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 80)
+layout_mode = 2
+autowrap_mode = 1

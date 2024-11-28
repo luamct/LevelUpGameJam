@@ -19,6 +19,8 @@ const PORTRAIT_SCENE = preload("res://scenes/ui/portrait.tscn")
 @onready var morale_value: Label = %MoraleValue
 @onready var discipline_value: Label = %DisciplineValue
 
+@onready var adventurer_status = %AdventurerStatus
+
 @onready var attributes_container: GridContainer = %AttributesContainer
 
 var adventurers: Array[Adventurer]
@@ -70,6 +72,13 @@ func update_adventurer_panel():
 
 	for attribute: String in Globals.attributes:
 		get_level_up_button(attribute).visible = adventurer.new_levels > 0
+	
+	if adventurer.area:
+		adventurer_status.text = adventurer.name_ + " is on " + adventurer.area.name 
+		if adventurer.spot:
+			var spot_activity = " and spending a quality time on " + adventurer.spot.name
+			print(spot_activity)
+			adventurer_status.text += spot_activity
 
 func get_level_up_button(attribute: String):
 	return attributes_container.get_node("%sLevelUp/Button" % [attribute])
