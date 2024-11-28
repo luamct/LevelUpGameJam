@@ -183,7 +183,7 @@ position = Vector2(-20, 1)
 script = ExtResource("8_do0jp")
 slots = 5
 
-[node name="Wash Dishes test test test test test" parent="Areas/Broken Sink Inn/Spots" index="1" instance=ExtResource("3_7gc0v")]
+[node name="Wash Dishes" parent="Areas/Broken Sink Inn/Spots" index="1" instance=ExtResource("3_7gc0v")]
 script = ExtResource("8_dl7w6")
 requirements = Array[ExtResource("8_4wor3")]([])
 gold_output = 1
@@ -251,30 +251,30 @@ gold_per_xp = 1
 xp_per_second = 300
 slots = 2
 
-[node name="WatchTower" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="Solitary Toilet Tower" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(717, 165)
 
-[node name="Sprite2D" parent="Areas/WatchTower" index="0"]
+[node name="Sprite2D" parent="Areas/Solitary Toilet Tower" index="0"]
 position = Vector2(0, -2)
 scale = Vector2(0.164296, 0.164296)
 texture = ExtResource("12_88m3j")
 
-[node name="Dwarf Trainer" parent="Areas/WatchTower/Spots" index="0" instance=ExtResource("3_7gc0v")]
+[node name="Dwarf Trainer" parent="Areas/Solitary Toilet Tower/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
 gold_per_xp = 1
 xp_per_second = 300
 slots = 2
 
-[node name="ThievesCamp" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="Side Quest Woods" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(783, 103)
 
-[node name="Sprite2D" parent="Areas/ThievesCamp" index="0"]
+[node name="Sprite2D" parent="Areas/Side Quest Woods" index="0"]
 texture = ExtResource("13_o4tw5")
 
-[node name="OrcTower" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="Building with Fangs" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(895, 138)
 
-[node name="Sprite2D" parent="Areas/OrcTower" index="0"]
+[node name="Sprite2D" parent="Areas/Building with Fangs" index="0"]
 scale = Vector2(0.158844, 0.158844)
 texture = ExtResource("14_icbto")
 
@@ -517,9 +517,9 @@ unique_name_in_owner = true
 [editable path="Areas/TemplateArea"]
 [editable path="Areas/Broken Sink Inn"]
 [editable path="Areas/Sugar Foot Stables"]
-[editable path="Areas/WatchTower"]
-[editable path="Areas/ThievesCamp"]
-[editable path="Areas/OrcTower"]
+[editable path="Areas/Solitary Toilet Tower"]
+[editable path="Areas/Side Quest Woods"]
+[editable path="Areas/Building with Fangs"]
 [editable path="Areas/OrcIslandScout"]
 [editable path="Areas/RobbersOutpost"]
 [editable path="Areas/FortHideout"]
