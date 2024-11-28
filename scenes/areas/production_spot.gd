@@ -29,6 +29,15 @@ func try_to_add_adventurer(adventurer: Adventurer, slot_number: int) -> bool:
 		if not adventurer.spot.try_to_remove_adventurer(adventurer):
 			return false
 	
+	for requirement: Requirement in requirements:
+		if requirement.class_ != Enums.Class.ANY and requirement.class_ != adventurer.class_:
+			print("Adventurer is not of the required class: %s " % [Enums.class_string(requirement.class_)])
+			return false
+
+		if adventurer.attribute_value(requirement.attribute) < requirement.minimum_value:
+			print("Adventurer doesn't meet all requirements: %s is lower than %d" % [Enums.attribute_string(requirement.attribute), requirement.minimum_value])
+			return false
+	
 	# Add to this spot
 	adventurer.add_to_spot(self)
 	adventurers[slot_number] = adventurer

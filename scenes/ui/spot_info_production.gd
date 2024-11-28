@@ -18,7 +18,7 @@ func setup(spot: Spot):
 		free_children(requirements_container)
 		for requirement in spot.requirements:
 			var label = Label.new()
-			label.text = "  %d+ %s" % [requirement.minimum_value, Enums.as_string(requirement.attribute)]
+			label.text = "  %d+ %s" % [requirement.minimum_value, Enums.attribute_string(requirement.attribute)]
 			requirements_container.add_child(label)
 
 	# Show gold output

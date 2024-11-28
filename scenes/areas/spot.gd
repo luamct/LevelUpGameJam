@@ -9,7 +9,7 @@ signal adventurer_removed(adventurer: Adventurer, slot_number: int)
 
 # Always has "slots" items, one for each slot on this spot. A non-null 
 # value at index i means an adventurer is working on that slot
-@export var adventurers: Array[Adventurer]
+var adventurers: Array[Adventurer]
 
 @onready var area: Area = $"../.."
 

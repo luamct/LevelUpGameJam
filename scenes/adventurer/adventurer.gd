@@ -5,6 +5,7 @@ signal level_gained  # When a level is gained
 signal level_up      # When a gained level is used to increase an attribute
 
 @export var name_: String
+@export var class_: Enums.Class
 @export var portrait: Texture2D
 
 @export var strength: int
@@ -95,3 +96,14 @@ func level_up_attribute(attribute_name: String):
 	level += 1
 	set(attribute_name, get(attribute_name) + 1)
 	level_up.emit()
+
+func attribute_value(attribute: Enums.Attribute) -> int:
+	match attribute:
+		Enums.Attribute.STRENGTH: return strength
+		Enums.Attribute.SPEED: return speed
+		Enums.Attribute.AGILITY: return agility
+		Enums.Attribute.DEFENSE: return defense
+		Enums.Attribute.MORALE: return morale
+		Enums.Attribute.ATTACK: return attack
+		Enums.Attribute.DISCIPLINE: return discipline
+	return 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=50 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -37,6 +37,12 @@
 [ext_resource type="Texture2D" uid="uid://n63iekmtuqic" path="res://assets/Paths/Road 09.png" id="29_r7l42"]
 [ext_resource type="Texture2D" uid="uid://dvvlku7yhfioy" path="res://assets/Paths/Road 10.png" id="30_nmbsu"]
 [ext_resource type="PackedScene" uid="uid://bdrp6dy3m1apy" path="res://scenes/ui/side_panel.tscn" id="34_vvur4"]
+
+[sub_resource type="Resource" id="Resource_cb65w"]
+script = ExtResource("8_4wor3")
+class_ = 3
+attribute = 0
+minimum_value = 0
 
 [sub_resource type="Curve2D" id="Curve2D_m8ydb"]
 resource_local_to_scene = true
@@ -134,6 +140,7 @@ script = ExtResource("2_rwaap")
 z_index = 10
 position = Vector2(583, 56.5)
 name_ = "Peregrine The Fighter"
+class_ = 1
 portrait = ExtResource("5_b26p0")
 level = 1
 area = NodePath("../../Areas/Broken Sink Inn")
@@ -185,7 +192,7 @@ slots = 5
 
 [node name="Wash Dishes" parent="Areas/Broken Sink Inn/Spots" index="1" instance=ExtResource("3_7gc0v")]
 script = ExtResource("8_dl7w6")
-requirements = Array[ExtResource("8_4wor3")]([])
+requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_cb65w")])
 gold_output = 1
 slots = 4
 
@@ -197,7 +204,8 @@ slots = 1
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
-name_ = "Bard"
+name_ = "Elis The Bard"
+class_ = 2
 portrait = ExtResource("14_t3r0y")
 strength = 3
 speed = 3
@@ -215,7 +223,8 @@ area = NodePath("../../..")
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
-name_ = "Paladin"
+name_ = "Aruan The Paladin"
+class_ = 3
 portrait = ExtResource("15_cs4ln")
 strength = 10
 speed = 5
@@ -233,7 +242,8 @@ area = NodePath("../../..")
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
-name_ = "Sorcerer"
+name_ = "Ebbo The Sorcerer"
+class_ = 4
 portrait = ExtResource("16_erfj3")
 level = 1
 hire_cost = 1000
