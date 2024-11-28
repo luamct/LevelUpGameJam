@@ -239,13 +239,13 @@ level = 1
 hire_cost = 1000
 area = NodePath("../../..")
 
-[node name="Abandoned" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="Sugar Foot Stables" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(532, -48)
 
-[node name="Sprite2D" parent="Areas/Abandoned" index="0"]
+[node name="Sprite2D" parent="Areas/Sugar Foot Stables" index="0"]
 scale = Vector2(0.188136, 0.188136)
 
-[node name="Trainer" parent="Areas/Abandoned/Spots" index="0" instance=ExtResource("3_7gc0v")]
+[node name="Trainer" parent="Areas/Sugar Foot Stables/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
 gold_per_xp = 1
 xp_per_second = 300
@@ -516,7 +516,7 @@ unique_name_in_owner = true
 
 [editable path="Areas/TemplateArea"]
 [editable path="Areas/Broken Sink Inn"]
-[editable path="Areas/Abandoned"]
+[editable path="Areas/Sugar Foot Stables"]
 [editable path="Areas/WatchTower"]
 [editable path="Areas/ThievesCamp"]
 [editable path="Areas/OrcTower"]
