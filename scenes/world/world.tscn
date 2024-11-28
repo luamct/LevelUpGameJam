@@ -236,7 +236,7 @@ hire_cost = 1000
 area = NodePath("../../..")
 
 [node name="Abandoned Stables" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(532, -49)
+position = Vector2(532, -48)
 
 [node name="Sprite2D" parent="Areas/Abandoned Stables" index="0"]
 scale = Vector2(0.188136, 0.188136)
