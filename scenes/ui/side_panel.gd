@@ -50,6 +50,10 @@ func on_portrait_input_event(event: InputEvent, portrait: Control, adventurer: A
 		adventurer_stats.visible = true
 
 		update_adventurer_panel()
+		
+		#if adventurer.has_method("play_animation"):
+			#print("Animação do %s clicado!" % adventurer.class_name_value(adventurer.class_))
+			#adventurer.play_animation(adventurer.class_name_value(adventurer.class_))
 
 func update_adventurer_panel():
 	var adventurer = Globals.selected_adventurer
@@ -84,9 +88,9 @@ func on_gold_updated(current_gold: int):
 	gold_value.text = str(current_gold)
 
 func on_hired_adventurer(adventurer: Adventurer):
-	print("Aventureiro adicionado ao painel lateral: " + adventurer.name_)
 	adventurers.append(adventurer)
 	add_adventurer_to_panel(adventurer)
+	adventurer.sprite.show()
 	
 func add_adventurer_to_panel(adventurer: Adventurer):
 	var portrait: Control = PORTRAIT_SCENE.instantiate()

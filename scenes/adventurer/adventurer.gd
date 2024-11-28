@@ -107,3 +107,19 @@ func attribute_value(attribute: Enums.Attribute) -> int:
 		Enums.Attribute.ATTACK: return attack
 		Enums.Attribute.DISCIPLINE: return discipline
 	return 0
+
+func class_name_value(class_: Enums.Class) -> String:
+	match class_:
+		Enums.Class.FIGHTER: return "fighter"
+		Enums.Class.BARD: return "bard"
+		Enums.Class.PALADIN: return "paladin"
+		Enums.Class.SORCERER: return "sorcerer"
+		Enums.Class.DRUID: return "druid"
+		Enums.Class.ROGUE: return "rogue"
+	return ""
+
+func play_animation(animation_name: String):
+	print(sprite.animation)
+	print(animation_name)
+	if sprite.animation != animation_name:
+		sprite.play(animation_name)
