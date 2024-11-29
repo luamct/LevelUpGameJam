@@ -8,22 +8,29 @@
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 3
 anchors_preset = 0
-size_flags_horizontal = 4
-size_flags_vertical = 4
+offset_right = 64.0
+offset_bottom = 64.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
 script = ExtResource("1_a7ne1")
 
 [node name="FrameTexture" type="TextureRect" parent="."]
 visible = false
-custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
-offset_right = 64.0
-offset_bottom = 64.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_nfh5g")
 expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-offset_right = 64.0
-offset_bottom = 64.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_1f4av")
 expand_mode = 1
