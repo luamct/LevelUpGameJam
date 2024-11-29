@@ -255,15 +255,15 @@ texture = ExtResource("13_wd84p")
 [node name="Spots" parent="Areas/Broken Sink Inn" index="1"]
 position = Vector2(-20, 1)
 
-[node name="Firecamp" parent="Areas/Broken Sink Inn/Spots" index="0" instance=ExtResource("3_7gc0v")]
-script = ExtResource("8_do0jp")
-slots = 5
-
-[node name="Wash Dishes" parent="Areas/Broken Sink Inn/Spots" index="1" instance=ExtResource("3_7gc0v")]
+[node name="Wash Dishes" parent="Areas/Broken Sink Inn/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("8_dl7w6")
 requirements = Array[ExtResource("8_4wor3")]([])
 gold_output = 1
 slots = 2
+
+[node name="Firecamp" parent="Areas/Broken Sink Inn/Spots" index="1" instance=ExtResource("3_7gc0v")]
+script = ExtResource("8_do0jp")
+slots = 5
 
 [node name="SugarFoot Stables" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(532, -48)
@@ -274,7 +274,21 @@ No! Focus! You are not here for silk costumes and pony rides. You are here to pr
 [node name="Sprite2D" parent="Areas/SugarFoot Stables" index="0"]
 scale = Vector2(0.188136, 0.188136)
 
-[node name="Chat Around" parent="Areas/SugarFoot Stables/Spots" index="0" instance=ExtResource("3_7gc0v")]
+[node name="Learn New Cool Moves" parent="Areas/SugarFoot Stables/Spots" index="0" instance=ExtResource("3_7gc0v")]
+script = ExtResource("10_gbss6")
+max_level = 2
+gold_per_xp = 1
+xp_per_second = 300
+slots = 2
+
+[node name="Teach Kids Around What You Just Learned" parent="Areas/SugarFoot Stables/Spots" index="1" instance=ExtResource("3_7gc0v")]
+position = Vector2(114, 380)
+script = ExtResource("8_dl7w6")
+requirements = Array[ExtResource("8_4wor3")]([])
+gold_output = 1
+slots = 4
+
+[node name="Chat Around" parent="Areas/SugarFoot Stables/Spots" index="2" instance=ExtResource("3_7gc0v")]
 position = Vector2(50, 107)
 script = ExtResource("11_arn45")
 slots = 1
@@ -295,13 +309,6 @@ xp = 500
 level = 5
 hire_cost = 10000
 area = NodePath("../../../../Broken Sink Inn")
-
-[node name="Learn New Cool Moves" parent="Areas/SugarFoot Stables/Spots" index="1" instance=ExtResource("3_7gc0v")]
-script = ExtResource("10_gbss6")
-max_level = 2
-gold_per_xp = 1
-xp_per_second = 300
-slots = 2
 
 [node name="Solitary Toilet Tower" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(717, 165)
