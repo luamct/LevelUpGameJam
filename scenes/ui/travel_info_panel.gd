@@ -14,11 +14,10 @@ func setup(adventurer: Adventurer):
 				button.text = path.ends_at.name
 			else:
 				button.text = path.starts_at.name
-			
+
 			button.mouse_entered.connect(func(): on_travel_button_hovered(adventurer.area, path))
 			button.pressed.connect(func(): on_travel_button_clicked(adventurer.area, path))
 			destination_buttons.add_child(button)
-
 
 func on_travel_button_hovered(from_area: Area, path: TravelPath):
 	distance_value.text = str(path.distance)
@@ -26,5 +25,7 @@ func on_travel_button_hovered(from_area: Area, path: TravelPath):
 	travel_time_value.text = str(travel_time)
 
 func on_travel_button_clicked(from_area: Area, path: TravelPath):
-	Globals.selected_adventurer.start_traveling(from_area, path)
+	var adventurer = Globals.selected_adventurer
+	adventurer.spot.try_to_remove_adventurer(adventurer)
+	adventurer.start_traveling(from_area, path)
 	
