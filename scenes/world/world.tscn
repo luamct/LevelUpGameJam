@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=57 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -44,7 +44,7 @@
 
 [sub_resource type="Resource" id="Resource_c730x"]
 script = ExtResource("8_4wor3")
-class_ = 0
+class_ = 6
 attribute = 5
 minimum_value = 1
 
@@ -59,6 +59,12 @@ script = ExtResource("8_4wor3")
 class_ = 0
 attribute = 2
 minimum_value = 2
+
+[sub_resource type="Resource" id="Resource_3infq"]
+script = ExtResource("8_4wor3")
+class_ = 6
+attribute = 6
+minimum_value = 3
 
 [sub_resource type="Curve2D" id="Curve2D_m8ydb"]
 resource_local_to_scene = true
@@ -457,6 +463,13 @@ max_level = 7
 gold_per_xp = 4
 xp_per_second = 300
 slots = 2
+
+[node name="Or Pick Locks Around For Fun Trinkets If You Can" parent="Areas/Stone Temple/Spots" index="1" instance=ExtResource("3_7gc0v")]
+position = Vector2(228, 324)
+script = ExtResource("8_dl7w6")
+requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_3infq")])
+gold_output = 35
+slots = 1
 
 [node name="OrcIslandScout" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(995, 242)
