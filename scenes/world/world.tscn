@@ -167,14 +167,7 @@ slots = 4
 script = ExtResource("11_arn45")
 slots = 1
 
-[node name="Trainer" parent="Areas/TemplateArea/Spots" index="3" instance=ExtResource("3_7gc0v")]
-script = ExtResource("10_gbss6")
-max_level = 20
-gold_per_xp = 1
-xp_per_second = 300
-slots = 2
-
-[node name="Elis The One Hit Star" parent="Areas/TemplateArea/Spots/Trainer" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Elis The One Hit Star" parent="Areas/TemplateArea/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-647, -338.5)
@@ -193,7 +186,7 @@ level = 3
 hire_cost = 5000
 area = NodePath("../../../../Broken Sink Inn")
 
-[node name="Aruan The Righteous" parent="Areas/TemplateArea/Spots/Trainer" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Aruan The Righteous" parent="Areas/TemplateArea/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-647, -338.5)
@@ -212,7 +205,7 @@ level = 8
 hire_cost = 7000
 area = NodePath("../../../../Broken Sink Inn")
 
-[node name="Ebbo The Wise_ish" parent="Areas/TemplateArea/Spots/Trainer" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Ebbo The Wise_ish" parent="Areas/TemplateArea/Spots" index="3" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-647, -338.5)
@@ -221,9 +214,9 @@ class_ = 4
 portrait = ExtResource("15_st8nv")
 level = 1
 hire_cost = 1000
-area = NodePath("../../../../Broken Sink Inn")
+area = NodePath("../../../Broken Sink Inn")
 
-[node name="Brice The Beast" parent="Areas/TemplateArea/Spots/Trainer" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Brice The Beast" parent="Areas/TemplateArea/Spots" index="4" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-647, -338.5)
@@ -232,7 +225,22 @@ class_ = 5
 portrait = ExtResource("16_uqofc")
 level = 1
 hire_cost = 1000
-area = NodePath("../../../../Broken Sink Inn")
+area = NodePath("../../../Broken Sink Inn")
+
+[node name="Trainer" parent="Areas/TemplateArea/Spots" index="5" instance=ExtResource("3_7gc0v")]
+script = ExtResource("10_gbss6")
+max_level = 20
+gold_per_xp = 1
+xp_per_second = 300
+slots = 2
+
+[node name="Dwarf Trainer" parent="Areas/TemplateArea" instance=ExtResource("3_7gc0v")]
+position = Vector2(51, -166)
+script = ExtResource("10_gbss6")
+max_level = 20
+gold_per_xp = 1
+xp_per_second = 300
+slots = 2
 
 [node name="Broken Sink Inn" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(602, 58)
@@ -305,13 +313,6 @@ Luckily, they are about done with their business, and tell you that, for the rig
 position = Vector2(0, -2)
 scale = Vector2(0.164296, 0.164296)
 texture = ExtResource("12_88m3j")
-
-[node name="Dwarf Trainer" parent="Areas/Solitary Toilet Tower/Spots" index="0" instance=ExtResource("3_7gc0v")]
-script = ExtResource("10_gbss6")
-max_level = 20
-gold_per_xp = 1
-xp_per_second = 300
-slots = 2
 
 [node name="Side Quest Woods" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(783, 103)
