@@ -76,16 +76,16 @@ func update_adventurer_panel():
 		get_level_up_button(attribute).visible = adventurer.new_levels > 0
 	
 	if adventurer.area:
-		var area_activity = "Current location: " + adventurer.area.name 
+		var area_activity = "Location: " + adventurer.area.name 
 		adventurer_location.text = area_activity 
 	else:
 		adventurer_location.text = adventurer.name_ + " is travelling."
 	if adventurer.spot:
-		var spot_activity = "Current activity: " + adventurer.spot.name
+		var spot_activity = "Activity: " + adventurer.spot.name
 		adventurer_spot.text = spot_activity
 	else:
 		if adventurer.area:
-			adventurer_spot.text = adventurer.name_ + " is chilling."
+			adventurer_spot.text = "Activity: Chilling."
 		else: 
 			adventurer_spot.text = ""
 
