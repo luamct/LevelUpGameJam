@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=52 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -13,15 +13,17 @@
 [ext_resource type="Script" path="res://scenes/areas/training_spot.gd" id="10_gbss6"]
 [ext_resource type="Script" path="res://scenes/areas/buying_spot.gd" id="11_arn45"]
 [ext_resource type="Texture2D" uid="uid://4mi51u168pnv" path="res://assets/Map Structures/Building humans Tower.png" id="12_88m3j"]
+[ext_resource type="Texture2D" uid="uid://b0t475e0jewt7" path="res://assets/classes/static_bard.png" id="13_d7vdy"]
 [ext_resource type="Texture2D" uid="uid://dkdo6yxdsx56t" path="res://assets/Map Structures/Building tend.png" id="13_o4tw5"]
 [ext_resource type="Texture2D" uid="uid://dipkwpg1dtghi" path="res://assets/Map Structures/Building humans Villa.png" id="13_wd84p"]
 [ext_resource type="Texture2D" uid="uid://ds8556n1lxu4g" path="res://assets/Map Structures/Building orc Tower.png" id="14_icbto"]
-[ext_resource type="Texture2D" uid="uid://bbvooj6ri1cqj" path="res://assets/classes/bard_1.png" id="14_t3r0y"]
-[ext_resource type="Texture2D" uid="uid://bkm556mg3yh8p" path="res://assets/classes/paladin_1.png" id="15_cs4ln"]
+[ext_resource type="Texture2D" uid="uid://b07n0b2n1kv4e" path="res://assets/classes/static_paladin.png" id="14_shb0o"]
+[ext_resource type="Texture2D" uid="uid://bin8tcb4318ru" path="res://assets/classes/Static sorcerer.png" id="15_st8nv"]
 [ext_resource type="Texture2D" uid="uid://mafofxwlgvej" path="res://assets/Map Structures/Building dwarv Castle.png" id="15_u862k"]
 [ext_resource type="Texture2D" uid="uid://bq1h8qypq0aph" path="res://assets/Map Structures/Building dwarv Altar.png" id="16_7ia4y"]
-[ext_resource type="Texture2D" uid="uid://dtasnts0fi3f0" path="res://assets/classes/sorcerer_1.png" id="16_erfj3"]
+[ext_resource type="Texture2D" uid="uid://ckr0t1b1sn4re" path="res://assets/classes/static_druid.png" id="16_uqofc"]
 [ext_resource type="Texture2D" uid="uid://ra25hj83xk6n" path="res://assets/Map Structures/Building dwarv Tower.png" id="17_2nwek"]
+[ext_resource type="Texture2D" uid="uid://8swinhrd6f6j" path="res://assets/classes/static_rogue.png" id="18_jge76"]
 [ext_resource type="Texture2D" uid="uid://da4wft15e23o8" path="res://assets/ui/bars_screens/Area1 blank.png" id="19_wjdxs"]
 [ext_resource type="PackedScene" uid="uid://bukvpaws8uoa2" path="res://scenes/world/travel_path.tscn" id="21_lj6df"]
 [ext_resource type="Texture2D" uid="uid://cutehjkb06qgt" path="res://assets/Paths/Road 01.png" id="21_ms4n2"]
@@ -172,8 +174,71 @@ gold_per_xp = 1
 xp_per_second = 300
 slots = 2
 
+[node name="Elis The One Hit Star" parent="Areas/TemplateArea/Spots/Trainer" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+visible = false
+z_index = 10
+position = Vector2(-647, -338.5)
+name_ = "Elis The One Hit Star"
+class_ = 2
+portrait = ExtResource("13_d7vdy")
+strength = 3
+speed = 3
+agility = 6
+defense = 4
+attack = 8
+morale = 3
+discipline = 4
+xp = 500
+level = 3
+hire_cost = 5000
+area = NodePath("../../../../Broken Sink Inn")
+
+[node name="Aruan The Righteous" parent="Areas/TemplateArea/Spots/Trainer" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+visible = false
+z_index = 10
+position = Vector2(-647, -338.5)
+name_ = "Aruan The Righteous"
+class_ = 3
+portrait = ExtResource("14_shb0o")
+strength = 10
+speed = 5
+agility = 6
+defense = 15
+attack = 19
+morale = 2
+discipline = 9
+xp = 1000
+level = 8
+hire_cost = 7000
+area = NodePath("../../../../Broken Sink Inn")
+
+[node name="Ebbo The Wise_ish" parent="Areas/TemplateArea/Spots/Trainer" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+visible = false
+z_index = 10
+position = Vector2(-647, -338.5)
+name_ = "Ebbo The Wise_ish"
+class_ = 4
+portrait = ExtResource("15_st8nv")
+level = 1
+hire_cost = 1000
+area = NodePath("../../../../Broken Sink Inn")
+
+[node name="Brice The Beast" parent="Areas/TemplateArea/Spots/Trainer" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+visible = false
+z_index = 10
+position = Vector2(-647, -338.5)
+name_ = "Brice The Beast"
+class_ = 5
+portrait = ExtResource("16_uqofc")
+level = 1
+hire_cost = 1000
+area = NodePath("../../../../Broken Sink Inn")
+
 [node name="Broken Sink Inn" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(602, 58)
+story_text = "One would say this is not the fancier Inn around, and one would be so right.
+Anyways, You have heard the stables to the North of here have a good promo on tactical lessons for a newbie fighter such as yourself. Definitely worth a visit before you start wandering around. What was it again? Save the (newly created) world or something?
+"
 
 [node name="Sprite2D" parent="Areas/Broken Sink Inn" index="0"]
 scale = Vector2(0.191958, 0.191958)
@@ -192,67 +257,38 @@ requirements = Array[ExtResource("8_4wor3")]([])
 gold_output = 1
 slots = 2
 
-[node name="Sugar Foot Stables" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="SugarFoot Stables" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(532, -48)
+story_text = "Did you just get here and already witness weird mercenaries in red robes fleeing northwest?
+No! Focus! You are not here for silk costumes and pony rides. You are here to practice! And be polite.. Who knows what kind of friend you could make in the future..
+"
 
-[node name="Sprite2D" parent="Areas/Sugar Foot Stables" index="0"]
+[node name="Sprite2D" parent="Areas/SugarFoot Stables" index="0"]
 scale = Vector2(0.188136, 0.188136)
 
-[node name="Chat Around" parent="Areas/Sugar Foot Stables/Spots" index="0" instance=ExtResource("3_7gc0v")]
+[node name="Chat Around" parent="Areas/SugarFoot Stables/Spots" index="0" instance=ExtResource("3_7gc0v")]
 position = Vector2(50, 107)
 script = ExtResource("11_arn45")
 slots = 1
 
-[node name="Elis The Bard" parent="Areas/Sugar Foot Stables/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Josse The Shadow Mingler" parent="Areas/SugarFoot Stables/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
-name_ = "Elis The Bard"
-class_ = 2
-portrait = ExtResource("14_t3r0y")
-strength = 3
-speed = 3
-agility = 6
-defense = 4
-attack = 8
-morale = 3
-discipline = 4
+name_ = "Josse The Shadow Mingler"
+class_ = 6
+portrait = ExtResource("18_jge76")
+strength = 1
+speed = 1
+agility = 1
+defense = 1
+discipline = 1
 xp = 500
-level = 3
-hire_cost = 5000
+level = 5
+hire_cost = 10000
 area = NodePath("../../../../Broken Sink Inn")
 
-[node name="Aruan The Paladin" parent="Areas/Sugar Foot Stables/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
-visible = false
-z_index = 10
-position = Vector2(-583, -65.5)
-name_ = "Aruan The Paladin"
-class_ = 3
-portrait = ExtResource("15_cs4ln")
-strength = 10
-speed = 5
-agility = 6
-defense = 15
-attack = 19
-morale = 2
-discipline = 9
-xp = 1000
-level = 8
-hire_cost = 7000
-area = NodePath("../../../../Broken Sink Inn")
-
-[node name="Ebbo The Sorcerer" parent="Areas/Sugar Foot Stables/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
-visible = false
-z_index = 10
-position = Vector2(-583, -65.5)
-name_ = "Ebbo The Sorcerer"
-class_ = 4
-portrait = ExtResource("16_erfj3")
-level = 1
-hire_cost = 1000
-area = NodePath("../../../../Broken Sink Inn")
-
-[node name="Trainer" parent="Areas/Sugar Foot Stables/Spots" index="1" instance=ExtResource("3_7gc0v")]
+[node name="Learn New Cool Moves" parent="Areas/SugarFoot Stables/Spots" index="1" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
 max_level = 2
 gold_per_xp = 1
@@ -533,7 +569,7 @@ script = ExtResource("38_6pyis")
 
 [editable path="Areas/TemplateArea"]
 [editable path="Areas/Broken Sink Inn"]
-[editable path="Areas/Sugar Foot Stables"]
+[editable path="Areas/SugarFoot Stables"]
 [editable path="Areas/Solitary Toilet Tower"]
 [editable path="Areas/Side Quest Woods"]
 [editable path="Areas/Building with Fangs"]
