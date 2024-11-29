@@ -4,7 +4,6 @@ extends Panel
 const PORTRAIT_SCENE = preload("res://scenes/ui/portrait.tscn")
 
 @onready var gold_value: Label = %GoldContainer/Value
-@onready var portrait_selector = %PortraitSelector
 @onready var portraits_container: GridContainer = %PortraitsContainer
 @onready var adventurer_stats: VBoxContainer = %AdventurerStats
 @onready var bottom_panel: BottomPanel = %BottomPanel
@@ -25,6 +24,7 @@ const PORTRAIT_SCENE = preload("res://scenes/ui/portrait.tscn")
 
 @onready var attributes_container: GridContainer = %AttributesContainer
 
+var selected_portrait: Portrait
 var adventurers: Array[Adventurer]
 
 func _ready():
@@ -43,15 +43,17 @@ func _ready():
 		var level_up_button: Button = get_level_up_button(attribute)
 		level_up_button.pressed.connect(func(): on_level_up_button_pressed(attribute.to_lower()))
 
-func on_portrait_input_event(event: InputEvent, portrait: Control, adventurer: Adventurer):
+func on_portrait_input_event(event: InputEvent, portrait: Portrait, adventurer: Adventurer):
 	if event.is_action_pressed("left_click"):
 		bottom_panel.update_buttons(adventurer)
 		Globals.adventurer_selected(adventurer)
 
-		portrait_selector.reparent(portrait)
-		portrait_selector.position = Vector2.ZERO
-
-		portrait_selector.visible = true
+		if selected_portrait:
+			selected_portrait.unselect()
+			
+		portrait.select()
+		selected_portrait = portrait
+		
 		adventurer_stats.visible = true
 
 		update_adventurer_panel()
