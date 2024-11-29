@@ -26,6 +26,8 @@ func try_to_add_adventurer(adventurer: Adventurer, slot_number: int) -> bool:
 	adventurers[slot_number] = adventurer
 	
 	adventurer_added.emit(adventurer, slot_number)
+	
+	Globals.update_side_panel.emit()
 	return true
 
 func on_training_tick():
@@ -53,5 +55,6 @@ func try_to_remove_adventurer(adventurer: Adventurer) -> bool:
 		
 	adventurers[slot_number] = null
 	adventurer_removed.emit(adventurer, slot_number)
+	Globals.update_side_panel.emit()
 	return true
 	

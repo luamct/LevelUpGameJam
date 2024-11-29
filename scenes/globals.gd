@@ -6,6 +6,7 @@ signal update_bottom_panel(adventurer: Adventurer)
 signal hired_adventurer(adventurer: Adventurer)
 signal show_story_popout(area: String, atext: String)
 signal show_error_popout(text: String, seconds: float)
+signal update_side_panel
 
 @export var km_per_pixel: float
 @export var base_speed: float  # km per second
@@ -52,6 +53,3 @@ func selected_adventurer_speed() -> float:
 
 func calculate_speed(adventurer: Adventurer) -> float:
 	return base_speed + adventurer.speed * speed_per_point
-
-func add_adventurer_to_firecamp(adventurer: Adventurer):
-	print("Adventurer added to firecamp:", adventurer.name_)

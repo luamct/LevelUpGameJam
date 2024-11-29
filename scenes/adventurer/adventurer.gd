@@ -68,6 +68,7 @@ func add_to_spot(_spot: Spot):
 func remove_from_spot():
 	spot = null
 	area = null
+	Globals.update_side_panel.emit()
 	
 func _process(delta: float):
 	if traveling_in:
@@ -90,6 +91,7 @@ func arrived_at(_area: Area):
 	global_position = area.global_position
 	traveling_in = null
 	Globals.update_bottom_panel.emit(self)
+	Globals.update_side_panel.emit()
 	
 func level_up_attribute(attribute_name: String):
 	new_levels -= 1

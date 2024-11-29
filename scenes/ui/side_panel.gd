@@ -31,6 +31,7 @@ func _ready():
 	
 	Globals.gold_updated.connect(on_gold_updated)
 	Globals.hired_adventurer.connect(on_hired_adventurer)
+	Globals.update_side_panel.connect(update_adventurer_panel)
 	
 	# Connect signals for each portrait in the grid container
 	for adventurer: Adventurer in adventurers:
@@ -77,11 +78,16 @@ func update_adventurer_panel():
 	if adventurer.area:
 		var area_activity = "Current location: " + adventurer.area.name 
 		adventurer_location.text = area_activity 
+	else:
+		adventurer_location.text = adventurer.name_ + " is travelling."
 	if adventurer.spot:
 		var spot_activity = "Current activity: " + adventurer.spot.name
 		adventurer_spot.text = spot_activity
-
-
+	else:
+		if adventurer.area:
+			adventurer_spot.text = adventurer.name_ + " is chilling."
+		else: 
+			adventurer_spot.text = ""
 
 func get_level_up_button(attribute: String):
 	return attributes_container.get_node("%sLevelUp/Button" % [attribute])
