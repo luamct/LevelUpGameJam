@@ -372,10 +372,31 @@ texture = ExtResource("14_icbto")
 
 [node name="Festival In the Woods" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(426, -132)
-story_text = "You are back at scouting those mercenaries you saw earlier and it leads you to a.. Hippie Cosplay Festival in the woods? No, no! Those are weird Cultists, all dressed in Red and beating on a poor cultist or wizard or something, dressed in blue! What is this? Quick, save that poor underdog soul!  "
+story_text = "You are back at scouting those mercenaries you saw earlier and it leads you to a.. Hippie Cosplay Festival in the woods? No, no! Those are weird Cultists, all dressed in Red and beating on a poor cultist or sorcerer or something, dressed in blue! What is this? Quick, save that poor underdog soul! And chase those escape artists! This gotta have something to do with saving the reign.."
 
 [node name="Sprite2D" parent="Areas/Festival In the Woods" index="0"]
 texture = ExtResource("13_o4tw5")
+
+[node name="Free The Blue Sorcerer" parent="Areas/Festival In the Woods/Spots" index="0" instance=ExtResource("3_7gc0v")]
+position = Vector2(156, 191)
+script = ExtResource("11_arn45")
+slots = 1
+
+[node name="Elis The One Hit Star" parent="Areas/Festival In the Woods/Spots/Free The Blue Sorcerer" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+visible = false
+z_index = 10
+position = Vector2(-583, -65.5)
+name_ = "Elis The One Hit Star"
+class_ = 2
+portrait = ExtResource("13_d7vdy")
+strength = 3
+speed = 1
+agility = 6
+defense = 4
+xp = 500
+level = 3
+hire_cost = 5000
+area = NodePath("../../../../Broken Sink Inn")
 
 [node name="FortHideout" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(418, 8)
