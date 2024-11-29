@@ -375,10 +375,11 @@ position = Vector2(995, 242)
 scale = Vector2(0.158844, 0.158844)
 texture = ExtResource("14_icbto")
 
-[node name="RobbersOutpost" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="Festival In the Woods" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(426, -132)
+story_text = "You are back at scouting those mercenaries you saw earlier and it leads you to a.. Hippie Cosplay Festival in the woods? No, no! Those are weird Cultists, all dressed in Red and beating on a poor cultist or wizard or something, dressed in blue! What is this? Quick, save that poor underdog soul!  "
 
-[node name="Sprite2D" parent="Areas/RobbersOutpost" index="0"]
+[node name="Sprite2D" parent="Areas/Festival In the Woods" index="0"]
 texture = ExtResource("13_o4tw5")
 
 [node name="FortHideout" parent="Areas" instance=ExtResource("6_il4vw")]
@@ -619,7 +620,7 @@ script = ExtResource("38_6pyis")
 [editable path="Areas/Outpost With Fangs"]
 [editable path="Areas/Side Quest Woods"]
 [editable path="Areas/OrcIslandScout"]
-[editable path="Areas/RobbersOutpost"]
+[editable path="Areas/Festival In the Woods"]
 [editable path="Areas/FortHideout"]
 [editable path="Areas/CorruptedMines"]
 [editable path="Areas/TwinPeaks"]
