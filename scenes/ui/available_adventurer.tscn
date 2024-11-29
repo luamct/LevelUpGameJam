@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7v1ykrkdmhrf"]
+[gd_scene load_steps=3 format=3 uid="uid://c5tb6po7e7vi3"]
 
 [ext_resource type="PackedScene" uid="uid://0itb5ywjb0oj" path="res://scenes/ui/portrait.tscn" id="1_74e5p"]
 [ext_resource type="Script" path="res://scenes/ui/available_adventurer.gd" id="1_kqpp0"]
@@ -7,14 +7,10 @@
 script = ExtResource("1_kqpp0")
 
 [node name="HirePortraitPanel" type="Panel" parent="."]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
 [node name="Portrait" parent="HirePortraitPanel" instance=ExtResource("1_74e5p")]
-
-[node name="TextureRect" parent="HirePortraitPanel/Portrait" index="0"]
-offset_right = 24.0
-offset_bottom = 24.0
 
 [node name="Button" type="Button" parent="HirePortraitPanel"]
 layout_mode = 1
