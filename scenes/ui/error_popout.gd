@@ -3,6 +3,7 @@ extends PanelContainer
 
 @onready var label: Label = $MarginContainer/Label
 @onready var auto_destroy_timer: Timer = $AutoDestroyTimer
+@onready var audio_stream_player = $AudioStreamPlayer
 
 func on_auto_destroy():
 	queue_free()
@@ -13,3 +14,4 @@ func setup(text: String, seconds: float):
 	auto_destroy_timer.wait_time = seconds
 	auto_destroy_timer.timeout.connect(on_auto_destroy)
 	auto_destroy_timer.start()
+	audio_stream_player.play()

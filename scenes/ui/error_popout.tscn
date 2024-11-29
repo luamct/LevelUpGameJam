@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bala3wwyf6tpd"]
+[gd_scene load_steps=5 format=3 uid="uid://cpsyflnly0f1h"]
 
 [ext_resource type="Texture2D" uid="uid://d0w01buj5kmg4" path="res://assets/Text Boxes/Square Small.png" id="1_61x8y"]
 [ext_resource type="Script" path="res://scenes/ui/error_popout.gd" id="2_susuj"]
+[ext_resource type="AudioStream" uid="uid://cy5wb8fx6febe" path="res://assets/music/error.mp3" id="3_57r37"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pxyqx"]
 texture = ExtResource("1_61x8y")
@@ -26,3 +27,7 @@ text = "Error Message"
 [node name="AutoDestroyTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_57r37")
+volume_db = -2.627
