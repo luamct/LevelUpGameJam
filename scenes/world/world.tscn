@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=67 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -43,10 +43,16 @@
 [ext_resource type="Script" path="res://scenes/ui/popouts.gd" id="38_6pyis"]
 [ext_resource type="PackedScene" path="res://scenes/ui/story_popout.tscn" id="39_fiye7"]
 
-[sub_resource type="Resource" id="Resource_c730x"]
+[sub_resource type="Resource" id="Resource_ks6np"]
 script = ExtResource("8_4wor3")
-class_ = 6
+class_ = 0
 attribute = 5
+minimum_value = 1
+
+[sub_resource type="Resource" id="Resource_3hvom"]
+script = ExtResource("8_4wor3")
+class_ = 0
+attribute = 1
 minimum_value = 1
 
 [sub_resource type="Resource" id="Resource_pw2qr"]
@@ -55,10 +61,22 @@ class_ = 0
 attribute = 2
 minimum_value = 1
 
+[sub_resource type="Resource" id="Resource_070vj"]
+script = ExtResource("8_4wor3")
+class_ = 0
+attribute = 5
+minimum_value = 1
+
 [sub_resource type="Resource" id="Resource_bawid"]
 script = ExtResource("8_4wor3")
 class_ = 0
 attribute = 2
+minimum_value = 1
+
+[sub_resource type="Resource" id="Resource_ba8gl"]
+script = ExtResource("8_4wor3")
+class_ = 0
+attribute = 1
 minimum_value = 1
 
 [sub_resource type="Resource" id="Resource_ta48e"]
@@ -283,7 +301,7 @@ slots = 2
 [node name="Teach Kids Around What You Just Learned" parent="Areas/SugarFoot Stables/Spots" index="1" instance=ExtResource("3_7gc0v")]
 position = Vector2(114, 380)
 script = ExtResource("8_dl7w6")
-requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_c730x")])
+requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_ks6np")])
 gold_output = 5
 slots = 3
 
@@ -335,10 +353,9 @@ position = Vector2(-583, -65.5)
 name_ = "Elis The One Hit Star"
 class_ = 2
 portrait = ExtResource("13_d7vdy")
-strength = 3
 speed = 1
-agility = 6
-defense = 4
+morale = 1
+discipline = 1
 xp = 500
 level = 3
 hire_cost = 5000
@@ -347,7 +364,7 @@ area = NodePath("../../../../Broken Sink Inn")
 [node name="Break Pots And Steal Supplies Around" parent="Areas/Solitary Toilet Tower/Spots" index="1" instance=ExtResource("3_7gc0v")]
 position = Vector2(-135, -106)
 script = ExtResource("8_dl7w6")
-requirements = Array[ExtResource("8_4wor3")]([])
+requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_3hvom")])
 gold_output = 2
 slots = 2
 
@@ -367,7 +384,7 @@ texture = ExtResource("14_icbto")
 [node name="Kill Green Creatures" parent="Areas/Outpost With Fangs/Spots" index="0" instance=ExtResource("3_7gc0v")]
 position = Vector2(-249, 194)
 script = ExtResource("8_dl7w6")
-requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_c730x"), SubResource("Resource_pw2qr")])
+requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_pw2qr"), SubResource("Resource_070vj")])
 gold_output = 5
 slots = 3
 
@@ -481,7 +498,7 @@ area = NodePath("../../../../Broken Sink Inn")
 [node name="Fine, Go Fetch Grasshopers And Lost Treasures" parent="Areas/Bandit Banquet/Spots" index="1" instance=ExtResource("3_7gc0v")]
 position = Vector2(-212, 31)
 script = ExtResource("8_dl7w6")
-requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_bawid")])
+requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_ba8gl")])
 gold_output = 15
 slots = 2
 
