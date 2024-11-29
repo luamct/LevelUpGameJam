@@ -230,7 +230,7 @@ xp_per_second = 300
 slots = 2
 
 [node name="Broken Sink Inn" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(602, 58)
+position = Vector2(602, 57)
 story_text = "One would say this is not the fancier Inn around, and one would be so right.
 Anyways, You have heard the stables to the North of here have a good promo on tactical lessons for a newbie fighter such as yourself. Definitely worth a visit before you start wandering around. What was it again? Save the (newly created) world or something?
 "
