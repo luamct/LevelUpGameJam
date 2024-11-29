@@ -244,7 +244,10 @@ slots = 2
 [node name="Broken Sink Inn" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(602, 57)
 story_text = "One would say this is not the fancier Inn around and one would be right.
-Anyways, you have heard the Stables to the North have a good promo on tactical lessons for a newbie fighter such as yourself. It is definitely worth a visit before you start wandering around. What was it again? Save the (newly created) world or something?
+Anyways, you have heard the Stables to the North have a good promo on tactical
+lessons for a newbie fighter such as yourself. It is definitely worth a visit before you
+start wandering around. What was it again? Save the (newly created) world or
+something?
 "
 
 [node name="Sprite2D" parent="Areas/Broken Sink Inn" index="0"]
@@ -263,8 +266,9 @@ slots = 2
 [node name="SugarFoot Stables" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(532, -48)
 story_text = "Did you just get here and already witness weird mercenaries in red robes fleeing northwest?
-No! Focus! You are not here for silk costumes and pony rides. You are here to practice! And be polite.. Who knows what kind of friend you could make in the future..
-"
+No! Focus! You are not here for silk costumes and pony rides. You are here to
+practice! And be polite.. Who knows what kind of friend you could make in the 
+future.."
 
 [node name="Sprite2D" parent="Areas/SugarFoot Stables" index="0"]
 scale = Vector2(0.188136, 0.188136)
@@ -307,9 +311,12 @@ area = NodePath("../../../../Broken Sink Inn")
 
 [node name="Solitary Toilet Tower" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(717, 165)
-story_text = "You finally make it to the most famous Wash Tower around the area, and.. Is that.. Elis, the One-Hit Wonder? I mean, you know them for being shy despite all the singing, but what are the odds!
-Luckily, they are about done with their business and tell you that, for the right price, they would even help you investigate those weird lights approaching from the far sea. Unless you want to explore the woods.. We know we love a side quest!
-"
+story_text = "You finally make it to the most famous Wash Tower around the area, and.. Is that..
+Elis, the One-Hit Wonder? I mean, you know them for being shy despite all the
+singing, but what are the odds!
+Luckily, they are about done with their business and tell you that, for the right
+price, they would even help you investigate those weird lights approaching from
+the far sea. Unless you want to explore the woods.. We know we love a side quest!"
 
 [node name="Sprite2D" parent="Areas/Solitary Toilet Tower" index="0"]
 position = Vector2(0, -2)
@@ -347,7 +354,9 @@ slots = 2
 [node name="Outpost With Fangs" parent="Areas" instance=ExtResource("6_il4vw")]
 visible = false
 position = Vector2(895, 138)
-story_text = "Wow, who are those strange creatures hiding behind the dunes? What are they? Do they come from Outer Space, or do they worship some kind of evil God? Do they have families?
+story_text = "Wow, who are those strange creatures hiding behind the dunes? What are they? Do 
+they come from Outer Space, or do they worship some kind of evil God? Do they 
+have families?
 Nah, they build buildings with fangs and you are done with that! 
 Off with their green heads! (It`s OK, this is just a game..)"
 
@@ -373,7 +382,11 @@ slots = 3
 [node name="Festival By The Water" parent="Areas" instance=ExtResource("6_il4vw")]
 visible = false
 position = Vector2(426, -132)
-story_text = "You are back at scouting those mercenaries you saw earlier, leading you to a.. Hippie Cosplay Festival in the woods? No, no! Those are weird Cultists, all dressed in Red and beating on a poor cultist or sorcerer or something, dressed in blue! What is this? Quick, save that poor underdog soul! And Chase those escape artists! This gotta have something to do with saving the reign.."
+story_text = "You are back at scouting those mercenaries you saw earlier, leading you to a.. 
+Hippie Cosplay Festival in the woods? No, no! Those are weird Cultists, all dressed 
+in Red and beating on a poor cultist or sorcerer or something, dressed in blue! 
+What is this? Quick, save that poor underdog soul! And Chase those escape artists! 
+This gotta have something to do with saving the reign.."
 
 [node name="Sprite2D" parent="Areas/Festival By The Water" index="0"]
 texture = ExtResource("13_o4tw5")
@@ -408,7 +421,12 @@ area = NodePath("../../../../Broken Sink Inn")
 [node name="Side Quest Woods" parent="Areas" instance=ExtResource("6_il4vw")]
 visible = false
 position = Vector2(783, 103)
-story_text = "You went looking for grasshoppers and cuckoos and ended up finding horrifying footsteps and a savaged bandit camp around these woods. What lives around here? Why, why must you keep making these choices? Why not settle down and find yourself a good farm? Seriously, while the real estate market still lets you! Or maybe dive deep into these woods and see where these footsteps will lead you, and what will make you their desert now.."
+story_text = "You went looking for grasshoppers and cuckoos and ended up finding horrifying 
+footsteps and a savaged bandit camp around these woods. What lives around 
+here? Why, why must you keep making these choices? Why not settle down and 
+find yourself a good farm? Seriously, while the real estate market still lets you! Or 
+maybe dive deep into these woods and see where these footsteps will lead you, 
+and what will make you their desert now.."
 
 [node name="Sprite2D" parent="Areas/Side Quest Woods" index="0"]
 texture = ExtResource("13_o4tw5")
@@ -428,8 +446,13 @@ script = ExtResource("8_do0jp")
 [node name="Bandit Banquet" parent="Areas" instance=ExtResource("6_il4vw")]
 visible = false
 position = Vector2(794, 28)
-story_text = "Now that is good timing! You arrived at the Bandits Camp only to see the entire place turned to pieces. In the middle of the camp, you see a half-bear, half-man beast taking a lunch nap, until all you mumbling and singing wakes them up. This must be Brice, the druid who keeps these woods safe from evil! 
-Well, You know people are gentler in their decision-making after a good feast, so why not try to convince Brice to join you? You have always dreamed about benign friends with a Druid! They're so cool and environment-friendly!"
+story_text = "Now that is good timing! You arrived at the Bandits Camp only to see the entire 
+place turned to pieces. In the middle of the camp, you see a half-bear, half-man 
+beast taking a lunch nap, until all you mumbling and singing wakes them up. This 
+must be Brice, the druid who keeps these woods safe from evil! 
+Well, You know people are gentler in their decision-making after a good feast, so 
+why not try to convince Brice to join you? You have always dreamed about benign 
+friends with a Druid! They're so cool and environment-friendly!"
 
 [node name="Sprite2D" parent="Areas/Bandit Banquet" index="0"]
 position = Vector2(-1, -4)
@@ -478,8 +501,14 @@ texture = ExtResource("13_o4tw5")
 [node name="Stone Temple" parent="Areas" instance=ExtResource("6_il4vw")]
 visible = false
 position = Vector2(418, 8)
-story_text = "Following those cosplay cultists brought you to the very scary gates of an enormous Stone Temple. Inscriptions can be read all around, and this must have been the work of a dyslexic Stonemason! You will need more than a minute to understand all these weird names written in stone.
-To your advantage, your policy of “Punch First, Ask Later” helped you to meet a lovely fella dressed in red, who was still able to babble something about “your action being in vain, since the great Young One would rise again from within the core of the mountain and control the whole Reign” before you knocked him twice."
+story_text = "Following those cosplay cultists brought you to the very scary gates of an 
+enormous Stone Temple. Inscriptions can be read all around, and this must have 
+been the work of a dyslexic Stonemason! You will need more than a minute to 
+understand all these weird names written in stone.
+To your advantage, your policy of “Punch First, Ask Later” helped you to meet a 
+lovely fella dressed in red, who was still able to babble something about “your 
+action being in vain, since the great Young One would rise again from within the 
+core of the mountain and control the whole Reign” before you knocked him twice."
 
 [node name="Sprite2D" parent="Areas/Stone Temple" index="0"]
 scale = Vector2(0.143871, 0.143871)
@@ -503,7 +532,15 @@ slots = 1
 [node name="Corrupted Mines" parent="Areas" instance=ExtResource("6_il4vw")]
 visible = false
 position = Vector2(360, 90)
-story_text = "Of course, you would still find yourself facing a potentially terrifying death going through haunted mines.. Seriously, even the OP wizards in fancy IPs are dying inside these, and here you are thinking you are ready. Look at the size of that mountain, that’s for sure the final boss.. Or at least the partial final boss of a one-month attempt at a game! Maybe go wander a bit around before you adventure there! Remember those fangy creatures you killed? Or at least go check what that Paladin over there wants around these mines. Your enemy`s enemy is your friend, and it seems like they also wants to stop the Ritual regarding this Younge One or something."
+story_text = "Of course, you would still find yourself facing a potentially terrifying death going 
+through haunted mines.. Seriously, even the OP wizards in fancy IPs are dying 
+inside these, and here you are thinking you are ready. Look at the size of that 
+mountain, that’s for sure the final boss.. Or at least the partial final boss of a one-
+month attempt at a game! Maybe go wander a bit around before you adventure 
+there! Remember those fangy creatures you killed? Or at least go check what that 
+Paladin over there wants around these mines. Your enemy`s enemy is your friend, 
+and it seems like they also wants to stop the Ritual regarding this Younge One or 
+something."
 
 [node name="Sprite2D" parent="Areas/Corrupted Mines" index="0"]
 scale = Vector2(0.16806, 0.16806)
@@ -542,8 +579,14 @@ slots = 3
 [node name="Sages Tower" parent="Areas" instance=ExtResource("6_il4vw")]
 visible = false
 position = Vector2(519, 54)
-story_text = "You see a tower on the horizon and it immediately feels like a turning point. We all know a good hero needs a good party, and a good party needs a good Mentor. You are also thankful for a second that despite the space-time breach that all this summoning could be causing, these are still Medieval Fantasy times, and you don’t need to worry about the coaching culture just yet. 
-However, just as you approach the Tower, you notice this has unfortunately become a Distant Learning Center, and you will be sharing the Sage`s attention with a class of 48. Worry not, though, this tower has an excellent reception!"
+story_text = "You see a tower on the horizon and it immediately feels like a turning point. We all 
+know a good hero needs a good party, and a good party needs a good Mentor. You 
+are also thankful for a second that despite the space-time breach that all this 
+summoning could be causing, these are still Medieval Fantasy times, and you don’t 
+need to worry about the coaching culture just yet. 
+However, just as you approach the Tower, you notice this has unfortunately become 
+a Distant Learning Center, and you will be sharing the Sage`s attention with a class 
+of 48. Worry not, though, this tower has an excellent reception!"
 
 [node name="Sprite2D" parent="Areas/Sages Tower" index="0"]
 position = Vector2(1, -6)
@@ -568,8 +611,17 @@ slots = 1
 [node name="More Fangs" parent="Areas" instance=ExtResource("6_il4vw")]
 visible = false
 position = Vector2(995, 242)
-story_text = "Who would know that fangs make great rafters? You adventure on top of one and go explore the open sea. What could go wrong? Well, it also turns out fangs do not help with taming the wind, controlling the wind, or naming it. So many people seem to have a good hang of this force of nature, but not you.
-You watch powerless as your rafter is dragged by a warm current, and you feel insignificant as you stare at a smokey Volcano ahead of you. What will you see on this island? What other treasures would have been spread around this world, hadn't it been for this brutal project deadline? One can only wonder about all the loot, but perhaps one could also wonder if you will  ever give these green creatures a chance to talk for themselves before being decimated, every time you get to one of their camps."
+story_text = "Who would know that fangs make great rafters? You adventure on top of one and 
+go explore the open sea. What could go wrong? Well, it also turns out fangs do not 
+help with taming the wind, controlling the wind, or naming it. So many people 
+seem to have a good hang of this force of nature, but not you.
+You watch powerless as your rafter is dragged by a warm current, and you feel 
+insignificant as you stare at a smokey Volcano ahead of you. What will you see on 
+this island? What other treasures would have been spread around this world, 
+hadn't it been for this brutal project deadline? One can only wonder about all the 
+loot, but perhaps one could also wonder if you will  ever give these green creatures 
+a chance to talk for themselves before being decimated, every time you get to one 
+of their camps."
 
 [node name="Sprite2D" parent="Areas/More Fangs" index="0"]
 scale = Vector2(0.158844, 0.158844)
@@ -593,8 +645,17 @@ slots = 1
 [node name="TwinPeaks" parent="Areas" instance=ExtResource("6_il4vw")]
 visible = false
 position = Vector2(290, 5)
-story_text = "Twin Peaks
-You made it here to the final stop of what can only be the first part of a trilogy (that is how great histories are written nowadays!). Your body feels the dopamine peaking just as high as that left knee injury, but it was all worth it for the stunning view, climbing up these beautiful rocky and snowy mountains. New Zealand has nothing on you! Now go there and beat those lunatics summoning tentacles all over these mountains! Your easiest option right now in dealing with these wrongdoers would be of course to release both dragons from those two dungeons (we made it plural so that it is not a rip-off on the name, see.. Plus, as we stated before, we all know that the enemy of your enemy is your friend, right? RIGHT? Go there and release them, it is almost Friday and you are ready to take a deserved break!"
+story_text = "You made it here to the final stop of what can only be the first part of a trilogy (that 
+is how great histories are written nowadays!). Your body feels the dopamine 
+peaking just as high as that left knee injury, but it was all worth it for the stunning 
+view, climbing up these beautiful rocky and snowy mountains. New Zealand has 
+nothing on you! Now go there and beat those lunatics summoning tentacles all 
+over these mountains! Your easiest option right now in dealing with these 
+wrongdoers would be of course to release both dragons from those two dungeons 
+(we made it plural so that it is not a rip-off on the name, see.. Plus, as we stated 
+before, we all know that the enemy of your enemy is your friend, right? RIGHT? Go 
+there and release them, it is almost Friday and you are ready to take a deserved 
+break!"
 
 [node name="Sprite2D" parent="Areas/TwinPeaks" index="0"]
 position = Vector2(8, -4)
