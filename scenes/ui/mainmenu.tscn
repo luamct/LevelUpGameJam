@@ -1,22 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://c16mwrafkoj18"]
+[gd_scene load_steps=10 format=3 uid="uid://c16mwrafkoj18"]
 
 [ext_resource type="Script" path="res://scenes/ui/mainmenu.gd" id="1_17i2h"]
-[ext_resource type="Texture2D" uid="uid://b3sfn125o2xvd" path="res://assets/Intro UI/Intro-2a.png" id="5_eg1eu"]
+[ext_resource type="Texture2D" uid="uid://gibaggh7kvxy" path="res://assets/New Intro UI/NEW_intro1a.png" id="2_8djc7"]
+[ext_resource type="Texture2D" uid="uid://cmvnhhrm4b34m" path="res://assets/New Intro UI/NEW_intro1b.png" id="3_fvmt0"]
+[ext_resource type="Texture2D" uid="uid://ebgbhanl066g" path="res://assets/New Intro UI/NEW_intro1c.png" id="4_nq1vf"]
 [ext_resource type="FontFile" uid="uid://1bjas6wygquo" path="res://assets/fonts/BreatheFire-65pg.ttf" id="5_tsxwj"]
-[ext_resource type="Texture2D" uid="uid://cx8h8t8n8o07a" path="res://assets/Intro UI/Intro-2b.png" id="6_osv7u"]
-[ext_resource type="Texture2D" uid="uid://brn2bh6qdcopm" path="res://assets/Intro UI/Intro-2c.png" id="7_jpecs"]
+[ext_resource type="StyleBox" uid="uid://cyy4qgfdvj5na" path="res://assets/New Intro UI/ButtonOn.tres" id="6_1ow4d"]
+[ext_resource type="StyleBox" uid="uid://c1nh3ownqqfdk" path="res://assets/New Intro UI/ButtonOff.tres" id="7_8hl2m"]
+[ext_resource type="AudioStream" uid="uid://153pnattf8dd" path="res://assets/music/guilds_tale_balanced_loop_main_menu.wav" id="8_8me7o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qra35"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_eg1eu")
+"texture": ExtResource("2_8djc7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_osv7u")
+"texture": ExtResource("3_fvmt0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_jpecs")
+"texture": ExtResource("4_nq1vf")
 }],
 "loop": true,
 "name": &"default",
@@ -35,7 +38,7 @@ position = Vector2(635, 356)
 scale = Vector2(0.8, 0.72)
 sprite_frames = SubResource("SpriteFrames_qra35")
 autoplay = "default"
-frame_progress = 0.0510543
+frame_progress = 0.406249
 
 [node name="NewGame" type="Button" parent="." groups=["button"]]
 layout_mode = 2
@@ -44,8 +47,16 @@ offset_top = 576.0
 offset_right = 447.0
 offset_bottom = 597.0
 scale = Vector2(1.4, 1.4)
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_tsxwj")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 15
+theme_override_styles/hover_pressed = ExtResource("6_1ow4d")
+theme_override_styles/hover = ExtResource("6_1ow4d")
+theme_override_styles/pressed = ExtResource("7_8hl2m")
+theme_override_styles/normal = ExtResource("7_8hl2m")
 text = "New Game"
 
 [node name="Exit" type="Button" parent="." groups=["button"]]
@@ -55,6 +66,20 @@ offset_top = 580.0
 offset_right = 869.0
 offset_bottom = 601.0
 scale = Vector2(1.4, 1.4)
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_tsxwj")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 15
+theme_override_styles/hover_pressed = ExtResource("6_1ow4d")
+theme_override_styles/hover = ExtResource("6_1ow4d")
+theme_override_styles/pressed = ExtResource("7_8hl2m")
+theme_override_styles/normal = ExtResource("7_8hl2m")
 text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_8me7o")
+volume_db = -10.465
+pitch_scale = 1.08
+autoplay = true
