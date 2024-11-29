@@ -173,25 +173,6 @@ slots = 4
 script = ExtResource("11_arn45")
 slots = 1
 
-[node name="Elis The One Hit Star" parent="Areas/TemplateArea/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
-visible = false
-z_index = 10
-position = Vector2(-647, -338.5)
-name_ = "Elis The One Hit Star"
-class_ = 2
-portrait = ExtResource("13_d7vdy")
-strength = 3
-speed = 3
-agility = 6
-defense = 4
-attack = 8
-morale = 3
-discipline = 4
-xp = 500
-level = 3
-hire_cost = 5000
-area = NodePath("../../../../Broken Sink Inn")
-
 [node name="Ebbo The Wise_ish" parent="Areas/TemplateArea/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
@@ -328,18 +309,64 @@ position = Vector2(0, -2)
 scale = Vector2(0.164296, 0.164296)
 texture = ExtResource("12_88m3j")
 
+[node name="Befriend a Loud Speaker" parent="Areas/Solitary Toilet Tower/Spots" index="0" instance=ExtResource("3_7gc0v")]
+position = Vector2(-135, -106)
+script = ExtResource("11_arn45")
+slots = 1
+
+[node name="Elis The One Hit Star" parent="Areas/Solitary Toilet Tower/Spots/Befriend a Loud Speaker" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+visible = false
+z_index = 10
+position = Vector2(-583, -65.5)
+name_ = "Elis The One Hit Star"
+class_ = 2
+portrait = ExtResource("13_d7vdy")
+strength = 3
+speed = 1
+agility = 6
+defense = 4
+xp = 500
+level = 3
+hire_cost = 5000
+area = NodePath("../../../../Broken Sink Inn")
+
+[node name="Break Pots And Steal Supplies Around" parent="Areas/Solitary Toilet Tower/Spots" index="1" instance=ExtResource("3_7gc0v")]
+position = Vector2(-135, -106)
+script = ExtResource("8_dl7w6")
+requirements = Array[ExtResource("8_4wor3")]([])
+gold_output = 2
+slots = 2
+
+[node name="Outpost With Fangs" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(895, 138)
+story_text = "Wow, who are those strange creatures hiding behind the dunes? What are they? Do they come from Outer Space, or do they worship some kind of evil God? Do they have families?
+Nah, they build buildings with fangs and you are done with that! 
+Off with their Green heads! (It`s OK, this is just a game..)"
+
+[node name="Sprite2D" parent="Areas/Outpost With Fangs" index="0"]
+scale = Vector2(0.158844, 0.158844)
+texture = ExtResource("14_icbto")
+
+[node name="Kill Green Creatures" parent="Areas/Outpost With Fangs/Spots" index="0" instance=ExtResource("3_7gc0v")]
+position = Vector2(-249, 194)
+script = ExtResource("8_dl7w6")
+requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_c730x")])
+gold_output = 5
+slots = 3
+
+[node name="Glue Some Bad Ass Fangs On Your Weapons" parent="Areas/Outpost With Fangs/Spots" index="1" instance=ExtResource("3_7gc0v")]
+position = Vector2(-363, -186)
+script = ExtResource("10_gbss6")
+max_level = 4
+gold_per_xp = 2
+xp_per_second = 300
+slots = 3
+
 [node name="Side Quest Woods" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(783, 103)
 
 [node name="Sprite2D" parent="Areas/Side Quest Woods" index="0"]
 texture = ExtResource("13_o4tw5")
-
-[node name="Building with Fangs" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(895, 138)
-
-[node name="Sprite2D" parent="Areas/Building with Fangs" index="0"]
-scale = Vector2(0.158844, 0.158844)
-texture = ExtResource("14_icbto")
 
 [node name="OrcIslandScout" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(995, 242)
@@ -589,8 +616,8 @@ script = ExtResource("38_6pyis")
 [editable path="Areas/Broken Sink Inn"]
 [editable path="Areas/SugarFoot Stables"]
 [editable path="Areas/Solitary Toilet Tower"]
+[editable path="Areas/Outpost With Fangs"]
 [editable path="Areas/Side Quest Woods"]
-[editable path="Areas/Building with Fangs"]
 [editable path="Areas/OrcIslandScout"]
 [editable path="Areas/RobbersOutpost"]
 [editable path="Areas/FortHideout"]
