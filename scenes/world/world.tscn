@@ -190,11 +190,11 @@ slots = 2
 script = ExtResource("11_arn45")
 slots = 1
 
-[node name="Brice The Beast" parent="Areas/TemplateArea/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Brice The Sleepy Beast" parent="Areas/TemplateArea/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-647, -338.5)
-name_ = "Brice The Beast"
+name_ = "Brice The Sleepy Beast"
 class_ = 5
 portrait = ExtResource("16_uqofc")
 level = 1
@@ -404,6 +404,19 @@ slots = 2
 position = Vector2(-137, 229)
 script = ExtResource("8_do0jp")
 
+[node name="Bandits" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(794, 28)
+
+[node name="Sprite2D" parent="Areas/Bandits" index="0"]
+position = Vector2(-1, -4)
+texture = ExtResource("13_o4tw5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Areas/Bandits"]
+texture_filter = 2
+position = Vector2(5, -1)
+scale = Vector2(0.234008, 0.234008)
+texture = ExtResource("13_o4tw5")
+
 [node name="OrcIslandScout" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(995, 242)
 
@@ -438,19 +451,6 @@ texture_filter = 2
 position = Vector2(-9, -4)
 scale = Vector2(0.16806, 0.16806)
 texture = ExtResource("17_2nwek")
-
-[node name="ThievesBossCamp" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(794, 28)
-
-[node name="Sprite2D" parent="Areas/ThievesBossCamp" index="0"]
-position = Vector2(-1, -4)
-texture = ExtResource("13_o4tw5")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Areas/ThievesBossCamp"]
-texture_filter = 2
-position = Vector2(5, -1)
-scale = Vector2(0.234008, 0.234008)
-texture = ExtResource("13_o4tw5")
 
 [node name="ScoutCamp" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(519, 54)
@@ -649,11 +649,11 @@ script = ExtResource("38_6pyis")
 [editable path="Areas/Outpost With Fangs"]
 [editable path="Areas/Festival In the Woods"]
 [editable path="Areas/Side Quest Woods"]
+[editable path="Areas/Bandits"]
 [editable path="Areas/OrcIslandScout"]
 [editable path="Areas/FortHideout"]
 [editable path="Areas/CorruptedMines"]
 [editable path="Areas/TwinPeaks"]
-[editable path="Areas/ThievesBossCamp"]
 [editable path="Areas/ScoutCamp"]
 [editable path="TravelPaths/TravelPath_01"]
 [editable path="TravelPaths/TravelPath_02"]
