@@ -400,9 +400,8 @@ script = ExtResource("8_do0jp")
 
 [node name="Bandit Banquet" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(794, 28)
-story_text = "Now that is good timing! You arrived at the Bandits Camp only to see the entire place turned to pieces. In the middle of the camp, you see a half bear, half man beast taking a lunch nap. This must be Brice, the druid who keeps these woods safe from evil! 
-Well, You know people are gentler on their decision making after a good feast, so why not try to convince Brice to join you? You have always dreamed about being friends with a Druid! They're so cool and sustainable!  
-"
+story_text = "Now that is good timing! You arrived at the Bandits Camp only to see the entire place turned to pieces. In the middle of the camp, you see a half bear, half man beast taking a lunch nap. This must be Brice, the druid who keeps these woods safe from evil. 
+Well, You know people are gentler on their decision making after a good feast, so why not try to convince Brice to join you? You have always dreamed about benign friends with a Druid! They're so cool and environment-friendly!"
 
 [node name="Sprite2D" parent="Areas/Bandit Banquet" index="0"]
 position = Vector2(-1, -4)
