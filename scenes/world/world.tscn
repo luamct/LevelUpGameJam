@@ -169,7 +169,15 @@ requirements = Array[ExtResource("8_4wor3")]([])
 gold_output = 1
 slots = 4
 
-[node name="Tavern" parent="Areas/TemplateArea/Spots" index="2" instance=ExtResource("3_7gc0v")]
+[node name="Dwarf Trainer" parent="Areas/TemplateArea/Spots" index="2" instance=ExtResource("3_7gc0v")]
+position = Vector2(71, -167)
+script = ExtResource("10_gbss6")
+max_level = 20
+gold_per_xp = 1
+xp_per_second = 300
+slots = 2
+
+[node name="Tavern" parent="Areas/TemplateArea/Spots" index="3" instance=ExtResource("3_7gc0v")]
 script = ExtResource("11_arn45")
 slots = 1
 
@@ -214,7 +222,7 @@ level = 8
 hire_cost = 7000
 area = NodePath("../../../../Broken Sink Inn")
 
-[node name="Trainer" parent="Areas/TemplateArea/Spots" index="3" instance=ExtResource("3_7gc0v")]
+[node name="Trainer" parent="Areas/TemplateArea/Spots" index="4" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
 max_level = 20
 gold_per_xp = 1
@@ -225,14 +233,6 @@ slots = 2
 position = Vector2(-84, -272)
 script = ExtResource("8_do0jp")
 slots = 5
-
-[node name="Dwarf Trainer" parent="Areas/TemplateArea" instance=ExtResource("3_7gc0v")]
-position = Vector2(51, -166)
-script = ExtResource("10_gbss6")
-max_level = 20
-gold_per_xp = 1
-xp_per_second = 300
-slots = 2
 
 [node name="Broken Sink Inn" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(602, 58)
