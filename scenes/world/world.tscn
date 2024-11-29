@@ -157,7 +157,7 @@ position = Vector2(-20, 1)
 [node name="Firecamp" parent="Areas/TemplateArea/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("8_do0jp")
 
-[node name="LeekCrops" parent="Areas/TemplateArea/Spots" index="1" instance=ExtResource("3_7gc0v")]
+[node name="produce" parent="Areas/TemplateArea/Spots" index="1" instance=ExtResource("3_7gc0v")]
 script = ExtResource("8_dl7w6")
 requirements = Array[ExtResource("8_4wor3")]([])
 gold_output = 1
@@ -186,6 +186,28 @@ level = 3
 hire_cost = 5000
 area = NodePath("../../../../Broken Sink Inn")
 
+[node name="Ebbo The Wise_ish" parent="Areas/TemplateArea/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+visible = false
+z_index = 10
+position = Vector2(-647, -338.5)
+name_ = "Ebbo The Wise_ish"
+class_ = 4
+portrait = ExtResource("15_st8nv")
+level = 1
+hire_cost = 1000
+area = NodePath("../../../../Broken Sink Inn")
+
+[node name="Brice The Beast" parent="Areas/TemplateArea/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+visible = false
+z_index = 10
+position = Vector2(-647, -338.5)
+name_ = "Brice The Beast"
+class_ = 5
+portrait = ExtResource("16_uqofc")
+level = 1
+hire_cost = 1000
+area = NodePath("../../../../Broken Sink Inn")
+
 [node name="Aruan The Righteous" parent="Areas/TemplateArea/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
@@ -205,29 +227,7 @@ level = 8
 hire_cost = 7000
 area = NodePath("../../../../Broken Sink Inn")
 
-[node name="Ebbo The Wise_ish" parent="Areas/TemplateArea/Spots" index="3" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
-visible = false
-z_index = 10
-position = Vector2(-647, -338.5)
-name_ = "Ebbo The Wise_ish"
-class_ = 4
-portrait = ExtResource("15_st8nv")
-level = 1
-hire_cost = 1000
-area = NodePath("../../../Broken Sink Inn")
-
-[node name="Brice The Beast" parent="Areas/TemplateArea/Spots" index="4" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
-visible = false
-z_index = 10
-position = Vector2(-647, -338.5)
-name_ = "Brice The Beast"
-class_ = 5
-portrait = ExtResource("16_uqofc")
-level = 1
-hire_cost = 1000
-area = NodePath("../../../Broken Sink Inn")
-
-[node name="Trainer" parent="Areas/TemplateArea/Spots" index="5" instance=ExtResource("3_7gc0v")]
+[node name="Trainer" parent="Areas/TemplateArea/Spots" index="3" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
 max_level = 20
 gold_per_xp = 1
