@@ -7,7 +7,7 @@
 
 [node name="BottomPanel" type="MarginContainer"]
 offset_left = 280.0
-offset_top = 591.0
+offset_top = 582.0
 offset_right = 1278.0
 offset_bottom = 718.0
 size_flags_horizontal = 4
