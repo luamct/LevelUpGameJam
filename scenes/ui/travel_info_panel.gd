@@ -26,6 +26,7 @@ func on_travel_button_hovered(from_area: Area, path: TravelPath):
 
 func on_travel_button_clicked(from_area: Area, path: TravelPath):
 	var adventurer = Globals.selected_adventurer
-	adventurer.spot.try_to_remove_adventurer(adventurer)
+	if adventurer.spot:
+		adventurer.spot.try_to_remove_adventurer(adventurer)
 	adventurer.start_traveling(from_area, path)
 	
