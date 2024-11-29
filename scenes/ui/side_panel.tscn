@@ -93,6 +93,18 @@ text = "Level: "
 [node name="Value" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/LevelContainer"]
 layout_mode = 2
 
+[node name="ClassContainer" type="HBoxContainer" parent="MarginContainer/PanelSectionsVBox/AdventurerStats"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ClassLabel" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/ClassContainer"]
+layout_mode = 2
+text = "Class: "
+
+[node name="ClassValue" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats/ClassContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
 [node name="AttributesContainer" type="GridContainer" parent="MarginContainer/PanelSectionsVBox/AdventurerStats"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -226,8 +238,12 @@ text = "+"
 
 [node name="AdventurerLocation" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
+autowrap_mode = 3
 
 [node name="AdventurerSpot" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
+autowrap_mode = 3

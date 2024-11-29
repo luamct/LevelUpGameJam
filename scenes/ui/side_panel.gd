@@ -18,6 +18,7 @@ const PORTRAIT_SCENE = preload("res://scenes/ui/portrait.tscn")
 @onready var attack_value: Label = %AttackValue
 @onready var morale_value: Label = %MoraleValue
 @onready var discipline_value: Label = %DisciplineValue
+@onready var class_value = %ClassValue
 
 @onready var adventurer_location = %AdventurerLocation
 @onready var adventurer_spot = %AdventurerSpot
@@ -59,6 +60,8 @@ func update_adventurer_panel():
 	var adventurer = Globals.selected_adventurer
 	name_label.text = adventurer.name_
 	level_value.text = level_string(adventurer)
+	
+	class_value.text = adventurer.class_name_value(adventurer.class_)
 	
 	strength_value.text = str(adventurer.strength)
 	speed_value.text = str(adventurer.speed)
