@@ -593,12 +593,19 @@ gold_output = 30
 slots = 1
 
 [node name="TwinPeaks" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(290, 5)
 story_text = "Twin Peaks
 You made it here to the final stop of what can only be the first part of a trilogy (that is how great histories are written nowadays!). Your body feels the dopamine peaking just as high as that left knee injury, but it was all worth it for the stunning view, climbing up these beautiful rocky and snowy mountains. New Zealand has nothing on you! Now go there and beat those lunatics summoning tentacles all over these mountains! Your easiest option right now in dealing with these wrongdoers would be of course to release both dragons from those two dungeons (we made it plural so that it is not a rip-off on the name, see.. Plus, as we stated before, we all know that the enemy of your enemy is your friend, right? RIGHT? Go there and release them, it is almost Friday and you are ready to take a deserved break!"
 
 [node name="Sprite2D" parent="Areas/TwinPeaks" index="0"]
 position = Vector2(8, -4)
+scale = Vector2(0.16806, 0.16806)
+texture = ExtResource("17_2nwek")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Areas/TwinPeaks"]
+texture_filter = 2
+position = Vector2(-9, -4)
 scale = Vector2(0.16806, 0.16806)
 texture = ExtResource("17_2nwek")
 
@@ -615,12 +622,6 @@ script = ExtResource("8_dl7w6")
 requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_rxdeg")])
 gold_output = 30
 slots = 1
-
-[node name="Sprite2D2" type="Sprite2D" parent="Areas/TwinPeaks"]
-texture_filter = 2
-position = Vector2(-9, -4)
-scale = Vector2(0.16806, 0.16806)
-texture = ExtResource("17_2nwek")
 
 [node name="TravelPaths" type="Node2D" parent="."]
 
@@ -654,6 +655,7 @@ scale = Vector2(0.258871, 0.258871)
 texture = ExtResource("22_ahxid")
 
 [node name="TravelPath_03" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
 curve = SubResource("Curve2D_3qb8b")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_03" index="1"]
@@ -667,6 +669,7 @@ scale = Vector2(0.24165, 0.219745)
 texture = ExtResource("23_21xdo")
 
 [node name="TravelPath_04" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
 curve = SubResource("Curve2D_b1jyg")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_04" index="1"]
@@ -679,6 +682,7 @@ scale = Vector2(0.219073, 0.23752)
 texture = ExtResource("24_dd1x5")
 
 [node name="TravelPath_05" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
 position = Vector2(0, -1)
 curve = SubResource("Curve2D_t1pvq")
 
@@ -692,6 +696,7 @@ scale = Vector2(0.271594, 0.258786)
 texture = ExtResource("25_ifnik")
 
 [node name="TravelPath_06" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
 curve = SubResource("Curve2D_7g4do")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_06" index="1"]
@@ -706,6 +711,7 @@ texture = ExtResource("26_pr6oe")
 [node name="Sprite2D" type="Sprite2D" parent="TravelPaths/TravelPath_06/Sprite2D" index="0"]
 
 [node name="TravelPath_07" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
 curve = SubResource("Curve2D_rd2vh")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_07" index="1"]
@@ -718,6 +724,7 @@ scale = Vector2(0.249219, 0.249219)
 texture = ExtResource("27_hm5fs")
 
 [node name="TravelPath_08" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
 curve = SubResource("Curve2D_ro5ft")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_08" index="1"]
@@ -730,6 +737,7 @@ scale = Vector2(0.243849, 0.243849)
 texture = ExtResource("28_k72ya")
 
 [node name="TravelPath_09" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
 curve = SubResource("Curve2D_bkdvw")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_09" index="1"]
@@ -742,6 +750,7 @@ scale = Vector2(0.251899, 0.251899)
 texture = ExtResource("29_r7l42")
 
 [node name="TravelPath_10" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
 curve = SubResource("Curve2D_x4nvp")
 
 [node name="PathFollow2D" parent="TravelPaths/TravelPath_10" index="1"]
@@ -754,6 +763,7 @@ scale = Vector2(0.250734, 0.250734)
 texture = ExtResource("30_nmbsu")
 
 [node name="TravelPath_11" parent="TravelPaths" instance=ExtResource("21_lj6df")]
+visible = false
 position = Vector2(-1, 8)
 curve = SubResource("Curve2D_06osl")
 
