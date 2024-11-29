@@ -219,8 +219,8 @@ slots = 2
 
 [node name="Broken Sink Inn" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(602, 57)
-story_text = "One would say this is not the fancier Inn around, and one would be so right.
-Anyways, You have heard the stables to the North of here have a good promo on tactical lessons for a newbie fighter such as yourself. Definitely worth a visit before you start wandering around. What was it again? Save the (newly created) world or something?
+story_text = "One would say this is not the fancier Inn around and one would be right.
+Anyways, you have heard the Stables to the North have a good promo on tactical lessons for a newbie fighter such as yourself. It is definitely worth a visit before you start wandering around. What was it again? Save the (newly created) world or something?
 "
 
 [node name="Sprite2D" parent="Areas/Broken Sink Inn" index="0"]
@@ -283,8 +283,8 @@ area = NodePath("../../../../Broken Sink Inn")
 
 [node name="Solitary Toilet Tower" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(717, 165)
-story_text = "You finally make it to the most famous Wash Tower around the area, and.. Is that.. Elis, the One Hit Wonder? I mean, you know them for being shy despite all the singing, but what are the odds!
-Luckily, they are about done with their business, and tell you that, for the right prize, they would even help you investigate those weird lights approaching from the far sea. Unless you want to explore the woods.. We know we love a side quest!
+story_text = "You finally make it to the most famous Wash Tower around the area, and.. Is that.. Elis, the One-Hit Wonder? I mean, you know them for being shy despite all the singing, but what are the odds!
+Luckily, they are about done with their business and tell you that, for the right price, they would even help you investigate those weird lights approaching from the far sea. Unless you want to explore the woods.. We know we love a side quest!
 "
 
 [node name="Sprite2D" parent="Areas/Solitary Toilet Tower" index="0"]
@@ -324,7 +324,7 @@ slots = 2
 position = Vector2(895, 138)
 story_text = "Wow, who are those strange creatures hiding behind the dunes? What are they? Do they come from Outer Space, or do they worship some kind of evil God? Do they have families?
 Nah, they build buildings with fangs and you are done with that! 
-Off with their Green heads! (It`s OK, this is just a game..)"
+Off with their green heads! (It`s OK, this is just a game..)"
 
 [node name="Sprite2D" parent="Areas/Outpost With Fangs" index="0"]
 scale = Vector2(0.158844, 0.158844)
@@ -345,26 +345,27 @@ gold_per_xp = 2
 xp_per_second = 300
 slots = 3
 
-[node name="Festival In the Woods" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="Festival By The Water" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(426, -132)
-story_text = "You are back at scouting those mercenaries you saw earlier and it leads you to a.. Hippie Cosplay Festival in the woods? No, no! Those are weird Cultists, all dressed in Red and beating on a poor cultist or sorcerer or something, dressed in blue! What is this? Quick, save that poor underdog soul! And chase those escape artists! This gotta have something to do with saving the reign.."
+story_text = "You are back at scouting those mercenaries you saw earlier, and it leads you to a.. Hippie Cosplay Festival in the woods? No, no! Those are weird Cultists, all dressed in Red and beating on a poor cultist or sorcerer or something, dressed in blue! What is this? Quick, save that poor underdog soul! And Chase those escape artists! This gotta have something to do with saving the reign..
+"
 
-[node name="Sprite2D" parent="Areas/Festival In the Woods" index="0"]
+[node name="Sprite2D" parent="Areas/Festival By The Water" index="0"]
 texture = ExtResource("13_o4tw5")
 
-[node name="Soosh And Keep The Cultists Away" parent="Areas/Festival In the Woods/Spots" index="0" instance=ExtResource("3_7gc0v")]
+[node name="Soosh And Keep The Cultists Away" parent="Areas/Festival By The Water/Spots" index="0" instance=ExtResource("3_7gc0v")]
 position = Vector2(156, 191)
 script = ExtResource("8_dl7w6")
 requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_bawid")])
 gold_output = 10
 slots = 3
 
-[node name="Free The Blue Sorcerer" parent="Areas/Festival In the Woods/Spots" index="1" instance=ExtResource("3_7gc0v")]
+[node name="Free The Blue Sorcerer" parent="Areas/Festival By The Water/Spots" index="1" instance=ExtResource("3_7gc0v")]
 position = Vector2(156, 191)
 script = ExtResource("11_arn45")
 slots = 1
 
-[node name="Ebbo The Wise_ish" parent="Areas/Festival In the Woods/Spots/Free The Blue Sorcerer" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Ebbo The Wise_ish" parent="Areas/Festival By The Water/Spots/Free The Blue Sorcerer" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
@@ -400,8 +401,8 @@ script = ExtResource("8_do0jp")
 
 [node name="Bandit Banquet" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(794, 28)
-story_text = "Now that is good timing! You arrived at the Bandits Camp only to see the entire place turned to pieces. In the middle of the camp, you see a half bear, half man beast taking a lunch nap. This must be Brice, the druid who keeps these woods safe from evil. 
-Well, You know people are gentler on their decision making after a good feast, so why not try to convince Brice to join you? You have always dreamed about benign friends with a Druid! They're so cool and environment-friendly!"
+story_text = "Now that is good timing! You arrived at the Bandits Camp only to see the entire place turned to pieces. In the middle of the camp, you see a half-bear, half-man beast taking a lunch nap. This must be Brice, the druid who keeps these woods safe from evil. 
+Well, You know people are gentler in their decision-making after a good feast, so why not try to convince Brice to join you? You have always dreamed about benign friends with a Druid! They're so cool and environment-friendly!"
 
 [node name="Sprite2D" parent="Areas/Bandit Banquet" index="0"]
 position = Vector2(-1, -4)
@@ -440,12 +441,22 @@ position = Vector2(5, -1)
 scale = Vector2(0.234008, 0.234008)
 texture = ExtResource("13_o4tw5")
 
-[node name="FortHideout" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="Stone Temple" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(418, 8)
+story_text = "Following those cosplay cultists brought you to the very scary gates of an enormous Stone Temple. Inscriptions can be read all around, and this must have been the work of a dyslexic Stonemason! You will need more than a minute to understand all these weird names written in stone.
+To your advantage, your policy of “Punch First, Ask Later” helped you to meet a lovely fella dressed in red, who was still able to babble something about “your action being in vain, since the great Young One would rise again and control the whole Reign” before you knocked him twice."
 
-[node name="Sprite2D" parent="Areas/FortHideout" index="0"]
+[node name="Sprite2D" parent="Areas/Stone Temple" index="0"]
 scale = Vector2(0.143871, 0.143871)
 texture = ExtResource("15_u862k")
+
+[node name="Stay awhile and Read" parent="Areas/Stone Temple/Spots" index="0" instance=ExtResource("3_7gc0v")]
+position = Vector2(114, -56)
+script = ExtResource("10_gbss6")
+max_level = 7
+gold_per_xp = 4
+xp_per_second = 300
+slots = 2
 
 [node name="OrcIslandScout" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(995, 242)
@@ -690,10 +701,10 @@ horizontal_alignment = 1
 [editable path="Areas/SugarFoot Stables"]
 [editable path="Areas/Solitary Toilet Tower"]
 [editable path="Areas/Outpost With Fangs"]
-[editable path="Areas/Festival In the Woods"]
+[editable path="Areas/Festival By The Water"]
 [editable path="Areas/Side Quest Woods"]
 [editable path="Areas/Bandit Banquet"]
-[editable path="Areas/FortHideout"]
+[editable path="Areas/Stone Temple"]
 [editable path="Areas/OrcIslandScout"]
 [editable path="Areas/CorruptedMines"]
 [editable path="Areas/TwinPeaks"]
