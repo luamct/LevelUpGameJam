@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=59 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -56,6 +56,12 @@ minimum_value = 1
 
 [sub_resource type="Resource" id="Resource_bawid"]
 script = ExtResource("8_4wor3")
+class_ = 0
+attribute = 2
+minimum_value = 1
+
+[sub_resource type="Resource" id="Resource_ta48e"]
+script = ExtResource("8_4wor3")
 class_ = 2
 attribute = 4
 minimum_value = 2
@@ -65,6 +71,12 @@ script = ExtResource("8_4wor3")
 class_ = 6
 attribute = 6
 minimum_value = 3
+
+[sub_resource type="Resource" id="Resource_wwj7x"]
+script = ExtResource("8_4wor3")
+class_ = 0
+attribute = 5
+minimum_value = 2
 
 [sub_resource type="Curve2D" id="Curve2D_m8ydb"]
 resource_local_to_scene = true
@@ -196,25 +208,6 @@ slots = 2
 [node name="Tavern" parent="Areas/TemplateArea/Spots" index="2" instance=ExtResource("3_7gc0v")]
 script = ExtResource("11_arn45")
 slots = 1
-
-[node name="Aruan The Righteous" parent="Areas/TemplateArea/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
-visible = false
-z_index = 10
-position = Vector2(-647, -338.5)
-name_ = "Aruan The Righteous"
-class_ = 3
-portrait = ExtResource("14_shb0o")
-strength = 10
-speed = 5
-agility = 6
-defense = 15
-attack = 19
-morale = 2
-discipline = 9
-xp = 1000
-level = 8
-hire_cost = 7000
-area = NodePath("../../../../Broken Sink Inn")
 
 [node name="Trainer" parent="Areas/TemplateArea/Spots" index="3" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
@@ -443,7 +436,7 @@ slots = 2
 [node name="Or Keep Whistling Your One Hit Song" parent="Areas/Bandit Banquet/Spots" index="2" instance=ExtResource("3_7gc0v")]
 position = Vector2(-212, 31)
 script = ExtResource("8_dl7w6")
-requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_bawid")])
+requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_ta48e")])
 gold_output = 25
 slots = 1
 
@@ -456,7 +449,7 @@ texture = ExtResource("13_o4tw5")
 [node name="Stone Temple" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(418, 8)
 story_text = "Following those cosplay cultists brought you to the very scary gates of an enormous Stone Temple. Inscriptions can be read all around, and this must have been the work of a dyslexic Stonemason! You will need more than a minute to understand all these weird names written in stone.
-To your advantage, your policy of “Punch First, Ask Later” helped you to meet a lovely fella dressed in red, who was still able to babble something about “your action being in vain, since the great Young One would rise again and control the whole Reign” before you knocked him twice."
+To your advantage, your policy of “Punch First, Ask Later” helped you to meet a lovely fella dressed in red, who was still able to babble something about “your action being in vain, since the great Young One would rise again from within the core of the mountain and control the whole Reign” before you knocked him twice."
 
 [node name="Sprite2D" parent="Areas/Stone Temple" index="0"]
 scale = Vector2(0.143871, 0.143871)
@@ -474,36 +467,46 @@ slots = 2
 position = Vector2(228, 324)
 script = ExtResource("8_dl7w6")
 requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_3infq")])
-gold_output = 35
+gold_output = 40
 slots = 1
 
-[node name="OrcIslandScout" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(995, 242)
-
-[node name="Sprite2D" parent="Areas/OrcIslandScout" index="0"]
-scale = Vector2(0.158844, 0.158844)
-texture = ExtResource("14_icbto")
-
-[node name="CorruptedMines" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="Corrupted Mines" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(360, 90)
+story_text = "Of course, you would still find yourself facing a potentially terrifying death going through haunted mines.. Seriously, even the OP wizards in fancy IPs are dying inside these, and here you are thinking you are ready. Look at the size of that mountain, that’s for sure the final boss.. Or at least the partial final boss of a one-month attempt at a game! Maybe go wander a bit around before you adventure there! Remember those fangy creatures you killed? Or at least go check what that Paladin over there wants around these mines. Your enemy`s enemy is your friend, and it seems like they also wants to stop the Ritual regarding this Younge One or something."
 
-[node name="Sprite2D" parent="Areas/CorruptedMines" index="0"]
+[node name="Sprite2D" parent="Areas/Corrupted Mines" index="0"]
 scale = Vector2(0.16806, 0.16806)
 texture = ExtResource("16_7ia4y")
 
-[node name="TwinPeaks" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(290, 5)
+[node name="Offer The Paladin a Reasonable Tithe" parent="Areas/Corrupted Mines/Spots" index="0" instance=ExtResource("3_7gc0v")]
+position = Vector2(222, -31)
+script = ExtResource("11_arn45")
+slots = 1
 
-[node name="Sprite2D" parent="Areas/TwinPeaks" index="0"]
-position = Vector2(8, -4)
-scale = Vector2(0.16806, 0.16806)
-texture = ExtResource("17_2nwek")
+[node name="Aruan The Righteous" parent="Areas/Corrupted Mines/Spots/Offer The Paladin a Reasonable Tithe" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+visible = false
+z_index = 10
+position = Vector2(-583, -65.5)
+name_ = "Aruan The Righteous"
+class_ = 3
+portrait = ExtResource("14_shb0o")
+strength = 1
+speed = 1
+defense = 1
+attack = 1
+morale = 1
+discipline = 2
+xp = 6000
+level = 7
+hire_cost = 5000
+area = NodePath("../../../../Broken Sink Inn")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Areas/TwinPeaks"]
-texture_filter = 2
-position = Vector2(-9, -4)
-scale = Vector2(0.16806, 0.16806)
-texture = ExtResource("17_2nwek")
+[node name="Adventyure Inside These Corrupted Moldy Mines" parent="Areas/Corrupted Mines/Spots" index="1" instance=ExtResource("3_7gc0v")]
+position = Vector2(222, -31)
+script = ExtResource("8_dl7w6")
+requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_wwj7x")])
+gold_output = 20
+slots = 3
 
 [node name="ScoutCamp" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(519, 54)
@@ -518,6 +521,27 @@ max_level = 20
 gold_per_xp = 1
 xp_per_second = 300
 slots = 2
+
+[node name="OrcIslandScout" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(995, 242)
+
+[node name="Sprite2D" parent="Areas/OrcIslandScout" index="0"]
+scale = Vector2(0.158844, 0.158844)
+texture = ExtResource("14_icbto")
+
+[node name="TwinPeaks" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(290, 5)
+
+[node name="Sprite2D" parent="Areas/TwinPeaks" index="0"]
+position = Vector2(8, -4)
+scale = Vector2(0.16806, 0.16806)
+texture = ExtResource("17_2nwek")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Areas/TwinPeaks"]
+texture_filter = 2
+position = Vector2(-9, -4)
+scale = Vector2(0.16806, 0.16806)
+texture = ExtResource("17_2nwek")
 
 [node name="TravelPaths" type="Node2D" parent="."]
 
@@ -724,10 +748,10 @@ horizontal_alignment = 1
 [editable path="Areas/Side Quest Woods"]
 [editable path="Areas/Bandit Banquet"]
 [editable path="Areas/Stone Temple"]
-[editable path="Areas/OrcIslandScout"]
-[editable path="Areas/CorruptedMines"]
-[editable path="Areas/TwinPeaks"]
+[editable path="Areas/Corrupted Mines"]
 [editable path="Areas/ScoutCamp"]
+[editable path="Areas/OrcIslandScout"]
+[editable path="Areas/TwinPeaks"]
 [editable path="TravelPaths/TravelPath_01"]
 [editable path="TravelPaths/TravelPath_02"]
 [editable path="TravelPaths/TravelPath_03"]
