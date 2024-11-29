@@ -41,7 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://dvvlku7yhfioy" path="res://assets/Paths/Road 10.png" id="30_nmbsu"]
 [ext_resource type="PackedScene" uid="uid://bdrp6dy3m1apy" path="res://scenes/ui/side_panel.tscn" id="34_vvur4"]
 [ext_resource type="Script" path="res://scenes/ui/popouts.gd" id="38_6pyis"]
-[ext_resource type="PackedScene" path="res://scenes/ui/story_popout.tscn" id="39_fiye7"]
+[ext_resource type="PackedScene" uid="uid://vho7axsqn8hg" path="res://scenes/ui/story_popout.tscn" id="39_fiye7"]
 
 [sub_resource type="Resource" id="Resource_ks6np"]
 script = ExtResource("8_4wor3")
@@ -679,12 +679,6 @@ position = Vector2(8, -4)
 scale = Vector2(0.16806, 0.16806)
 texture = ExtResource("17_2nwek")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Areas/TwinPeaks"]
-texture_filter = 2
-position = Vector2(-9, -4)
-scale = Vector2(0.16806, 0.16806)
-texture = ExtResource("17_2nwek")
-
 [node name="Release the Undead Dread Red Dragon" parent="Areas/TwinPeaks/Spots" index="0" instance=ExtResource("3_7gc0v")]
 position = Vector2(356, 327)
 script = ExtResource("8_dl7w6")
@@ -698,6 +692,12 @@ script = ExtResource("8_dl7w6")
 requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_rxdeg")])
 gold_output = 30
 slots = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="Areas/TwinPeaks"]
+texture_filter = 2
+position = Vector2(-9, -4)
+scale = Vector2(0.16806, 0.16806)
+texture = ExtResource("17_2nwek")
 
 [node name="TravelPaths" type="Node2D" parent="."]
 

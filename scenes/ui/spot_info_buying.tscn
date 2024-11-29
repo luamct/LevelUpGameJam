@@ -8,6 +8,7 @@ offset_bottom = 40.0
 script = ExtResource("1_7gx7l")
 
 [node name="InfoColumn" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 2
 
 [node name="NameLabel" type="Label" parent="InfoColumn"]
@@ -27,6 +28,7 @@ layout_mode = 2
 text = "50 Gold per Adventurer"
 
 [node name="HSpace" type="Control" parent="."]
+visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 
