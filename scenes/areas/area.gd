@@ -9,8 +9,6 @@ var already_visited: bool = false
 
 @onready var collision_shape: CollisionShape2D = $Area2D/CollisionShape2D
 
-@export_multiline var story_text: String
-
 func _ready() -> void:
 	spots.assign($Spots.get_children())
 

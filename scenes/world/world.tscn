@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=54 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -222,31 +222,6 @@ xp = 1000
 level = 8
 hire_cost = 7000
 area = NodePath("../../../../Broken Sink Inn")
-
-[node name="Ebbo The Sorcerer" parent="Areas/Broken Sink Inn/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
-visible = false
-z_index = 10
-position = Vector2(-583, -65.5)
-name_ = "Ebbo The Sorcerer"
-class_ = 4
-portrait = ExtResource("16_erfj3")
-level = 1
-hire_cost = 1000
-area = NodePath("../../..")
-
-[node name="Sugar Foot Stables" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(532, -48)
-story_text = "The rancid smell of horse shit fills your nostrils as you walk into the stables."
-
-[node name="Sprite2D" parent="Areas/Sugar Foot Stables" index="0"]
-scale = Vector2(0.188136, 0.188136)
-
-[node name="Trainer" parent="Areas/Sugar Foot Stables/Spots" index="0" instance=ExtResource("3_7gc0v")]
-script = ExtResource("10_gbss6")
-max_level = 20
-gold_per_xp = 1
-xp_per_second = 300
-slots = 2
 
 [node name="Broken Sink Inn" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(602, 58)
