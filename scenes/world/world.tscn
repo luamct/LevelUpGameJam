@@ -191,17 +191,6 @@ slots = 2
 script = ExtResource("11_arn45")
 slots = 1
 
-[node name="Brice The Sleepy Beast" parent="Areas/TemplateArea/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
-visible = false
-z_index = 10
-position = Vector2(-647, -338.5)
-name_ = "Brice The Sleepy Beast"
-class_ = 5
-portrait = ExtResource("16_uqofc")
-level = 1
-hire_cost = 1000
-area = NodePath("../../../../Broken Sink Inn")
-
 [node name="Aruan The Righteous" parent="Areas/TemplateArea/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
@@ -382,12 +371,11 @@ position = Vector2(-583, -65.5)
 name_ = "Ebbo The Wise_ish"
 class_ = 4
 portrait = ExtResource("15_st8nv")
-speed = 1
 agility = 1
 defense = 1
 discipline = 1
-xp = 10000
-level = 4
+xp = 3000
+level = 3
 hire_cost = 1
 area = NodePath("../../../../Broken Sink Inn")
 
@@ -410,14 +398,34 @@ slots = 2
 position = Vector2(-137, 229)
 script = ExtResource("8_do0jp")
 
-[node name="Bandits" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="Bandit Banquet" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(794, 28)
 
-[node name="Sprite2D" parent="Areas/Bandits" index="0"]
+[node name="Sprite2D" parent="Areas/Bandit Banquet" index="0"]
 position = Vector2(-1, -4)
 texture = ExtResource("13_o4tw5")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Areas/Bandits"]
+[node name="Offer The Druid some Relaxing Shrooms" parent="Areas/Bandit Banquet/Spots" index="0" instance=ExtResource("3_7gc0v")]
+position = Vector2(-212, 31)
+script = ExtResource("11_arn45")
+slots = 1
+
+[node name="Brice The Sleepy Beast" parent="Areas/Bandit Banquet/Spots/Offer The Druid some Relaxing Shrooms" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+visible = false
+z_index = 10
+position = Vector2(-583, -65.5)
+name_ = "Brice The Sleepy Beast"
+class_ = 5
+portrait = ExtResource("16_uqofc")
+strength = 1
+agility = 1
+defense = 1
+attack = 1
+level = 4
+hire_cost = 2000
+area = NodePath("../../../../Broken Sink Inn")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Areas/Bandit Banquet"]
 texture_filter = 2
 position = Vector2(5, -1)
 scale = Vector2(0.234008, 0.234008)
@@ -675,7 +683,7 @@ horizontal_alignment = 1
 [editable path="Areas/Outpost With Fangs"]
 [editable path="Areas/Festival In the Woods"]
 [editable path="Areas/Side Quest Woods"]
-[editable path="Areas/Bandits"]
+[editable path="Areas/Bandit Banquet"]
 [editable path="Areas/OrcIslandScout"]
 [editable path="Areas/FortHideout"]
 [editable path="Areas/CorruptedMines"]
