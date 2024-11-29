@@ -293,7 +293,7 @@ scale = Vector2(0.188136, 0.188136)
 
 [node name="Learn New Cool Moves" parent="Areas/SugarFoot Stables/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
-max_level = 2
+max_level = 3
 gold_per_xp = 1
 xp_per_second = 300
 slots = 2
@@ -319,11 +319,11 @@ class_ = 6
 portrait = ExtResource("18_jge76")
 strength = 1
 speed = 1
-agility = 1
+agility = 2
 defense = 1
 discipline = 1
-xp = 500
-level = 5
+xp = 700
+level = 7
 hire_cost = 10000
 area = NodePath("../../..")
 
@@ -356,9 +356,9 @@ portrait = ExtResource("13_d7vdy")
 speed = 1
 morale = 1
 discipline = 1
-xp = 500
+xp = 300
 level = 3
-hire_cost = 5000
+hire_cost = 100
 area = NodePath("../../..")
 
 [node name="Break Pots And Steal Supplies Around" parent="Areas/Solitary Toilet Tower/Spots" index="1" instance=ExtResource("3_7gc0v")]
@@ -427,11 +427,10 @@ position = Vector2(-583, -65.5)
 name_ = "Ebbo The Wise_ish"
 class_ = 4
 portrait = ExtResource("15_st8nv")
-agility = 1
 defense = 1
 discipline = 1
-xp = 3000
-level = 3
+xp = 200
+level = 2
 hire_cost = 1
 area = NodePath("../../..")
 
@@ -491,6 +490,7 @@ strength = 1
 agility = 1
 defense = 1
 attack = 1
+xp = 400
 level = 4
 hire_cost = 2000
 area = NodePath("../../..")
@@ -581,7 +581,7 @@ defense = 1
 attack = 1
 morale = 1
 discipline = 2
-xp = 6000
+xp = 700
 level = 7
 hire_cost = 5000
 area = NodePath("../../..")
