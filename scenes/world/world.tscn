@@ -467,8 +467,7 @@ place turned to pieces. In the middle of the camp, you see a half-bear, half-man
 beast taking a lunch nap, until all you mumbling and singing wakes them up. This 
 must be Brice, the druid who keeps these woods safe from evil! 
 Well, You know people are gentler in their decision-making after a good feast, so 
-why not try to convince Brice to join you? You have always dreamed about benign 
-friends with a Druid! They're so cool and environment-friendly!"
+why not try to convince Brice to join you? You have always dreamed about being friends with a Druid! They're so cool and environment-friendly!"
 
 [node name="Sprite2D" parent="Areas/Bandit Banquet" index="0"]
 position = Vector2(-1, -4)
