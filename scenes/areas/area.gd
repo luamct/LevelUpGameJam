@@ -23,7 +23,7 @@ func connects_to(path: TravelPath) -> int:
 		return 1
 	else:
 		return 0
-	
+
 # Once an area is visited, all connected paths and areas are revealed
 # Calling this method on an already visited area has no effect
 func visited():

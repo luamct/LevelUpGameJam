@@ -123,3 +123,6 @@ func play_animation(animation_name: String):
 	print(animation_name)
 	if sprite.animation != animation_name:
 		sprite.play(animation_name)
+
+func total_level() -> int:
+	return level + new_levels

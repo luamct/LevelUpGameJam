@@ -26,4 +26,3 @@ text = "Error Message"
 [node name="AutoDestroyTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
-autostart = true

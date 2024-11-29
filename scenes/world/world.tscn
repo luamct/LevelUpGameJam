@@ -167,6 +167,7 @@ slots = 1
 
 [node name="Trainer" parent="Areas/TemplateArea/Spots" index="3" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
+max_level = 20
 gold_per_xp = 1
 xp_per_second = 300
 slots = 2
@@ -253,6 +254,7 @@ area = NodePath("../../../../Broken Sink Inn")
 
 [node name="Trainer" parent="Areas/Sugar Foot Stables/Spots" index="1" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
+max_level = 2
 gold_per_xp = 1
 xp_per_second = 300
 slots = 2
@@ -267,6 +269,7 @@ texture = ExtResource("12_88m3j")
 
 [node name="Dwarf Trainer" parent="Areas/Solitary Toilet Tower/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
+max_level = 20
 gold_per_xp = 1
 xp_per_second = 300
 slots = 2
@@ -347,6 +350,7 @@ texture = ExtResource("13_o4tw5")
 
 [node name="Trainer" parent="Areas/ScoutCamp/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
+max_level = 20
 gold_per_xp = 1
 xp_per_second = 300
 slots = 2
