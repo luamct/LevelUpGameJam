@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=64 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://jt24mbgmndoh" path="res://scenes/ui/bottom_panel.tscn" id="22_xlvp7"]
 [ext_resource type="Texture2D" uid="uid://e5i7lp6no830" path="res://assets/Paths/Road 03.png" id="23_21xdo"]
 [ext_resource type="Texture2D" uid="uid://jw83jkthb7xj" path="res://assets/Paths/Road 04.png" id="24_dd1x5"]
+[ext_resource type="Texture2D" uid="uid://dk2yb6hisrosl" path="res://assets/Map Structures/Building Magic Tower.png" id="24_t4pht"]
 [ext_resource type="Texture2D" uid="uid://b4kt0mdgfnxhq" path="res://assets/Paths/Road 05.png" id="25_ifnik"]
 [ext_resource type="Texture2D" uid="uid://p8wgsqhk1tn4" path="res://assets/Paths/Road 06.png" id="26_pr6oe"]
 [ext_resource type="Texture2D" uid="uid://bis6e1muiun60" path="res://assets/Paths/Road 07.png" id="27_hm5fs"]
@@ -69,12 +70,36 @@ minimum_value = 2
 [sub_resource type="Resource" id="Resource_3infq"]
 script = ExtResource("8_4wor3")
 class_ = 6
-attribute = 6
-minimum_value = 3
+attribute = 2
+minimum_value = 5
 
 [sub_resource type="Resource" id="Resource_wwj7x"]
 script = ExtResource("8_4wor3")
 class_ = 0
+attribute = 5
+minimum_value = 2
+
+[sub_resource type="Resource" id="Resource_jc18h"]
+script = ExtResource("8_4wor3")
+class_ = 4
+attribute = 6
+minimum_value = 4
+
+[sub_resource type="Resource" id="Resource_1nhqv"]
+script = ExtResource("8_4wor3")
+class_ = 3
+attribute = 3
+minimum_value = 3
+
+[sub_resource type="Resource" id="Resource_usedb"]
+script = ExtResource("8_4wor3")
+class_ = 0
+attribute = 5
+minimum_value = 3
+
+[sub_resource type="Resource" id="Resource_rxdeg"]
+script = ExtResource("8_4wor3")
+class_ = 1
 attribute = 5
 minimum_value = 2
 
@@ -236,6 +261,7 @@ gold_output = 1
 slots = 2
 
 [node name="SugarFoot Stables" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(532, -48)
 story_text = "Did you just get here and already witness weird mercenaries in red robes fleeing northwest?
 No! Focus! You are not here for silk costumes and pony rides. You are here to practice! And be polite.. Who knows what kind of friend you could make in the future..
@@ -281,6 +307,7 @@ hire_cost = 10000
 area = NodePath("../../../../Broken Sink Inn")
 
 [node name="Solitary Toilet Tower" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(717, 165)
 story_text = "You finally make it to the most famous Wash Tower around the area, and.. Is that.. Elis, the One-Hit Wonder? I mean, you know them for being shy despite all the singing, but what are the odds!
 Luckily, they are about done with their business and tell you that, for the right price, they would even help you investigate those weird lights approaching from the far sea. Unless you want to explore the woods.. We know we love a side quest!
@@ -320,6 +347,7 @@ gold_output = 2
 slots = 2
 
 [node name="Outpost With Fangs" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(895, 138)
 story_text = "Wow, who are those strange creatures hiding behind the dunes? What are they? Do they come from Outer Space, or do they worship some kind of evil God? Do they have families?
 Nah, they build buildings with fangs and you are done with that! 
@@ -345,6 +373,7 @@ xp_per_second = 300
 slots = 3
 
 [node name="Festival By The Water" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(426, -132)
 story_text = "You are back at scouting those mercenaries you saw earlier, leading you to a.. Hippie Cosplay Festival in the woods? No, no! Those are weird Cultists, all dressed in Red and beating on a poor cultist or sorcerer or something, dressed in blue! What is this? Quick, save that poor underdog soul! And Chase those escape artists! This gotta have something to do with saving the reign.."
 
@@ -379,6 +408,7 @@ hire_cost = 1
 area = NodePath("../../../../Broken Sink Inn")
 
 [node name="Side Quest Woods" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(783, 103)
 story_text = "You went looking for grasshoppers and cuckoos and ended up finding horrifying footsteps and a savaged bandit camp around these woods. What lives around here? Why, why must you keep making these choices? Why not settle down and find yourself a good farm? Seriously, while the real estate market still lets you! Or maybe dive deep into these woods and see where these footsteps will lead you, and what will make you their desert now.."
 
@@ -398,6 +428,7 @@ position = Vector2(-137, 229)
 script = ExtResource("8_do0jp")
 
 [node name="Bandit Banquet" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(794, 28)
 story_text = "Now that is good timing! You arrived at the Bandits Camp only to see the entire place turned to pieces. In the middle of the camp, you see a half-bear, half-man beast taking a lunch nap, until all you mumbling and singing wakes them up. This must be Brice, the druid who keeps these woods safe from evil! 
 Well, You know people are gentler in their decision-making after a good feast, so why not try to convince Brice to join you? You have always dreamed about benign friends with a Druid! They're so cool and environment-friendly!"
@@ -447,6 +478,7 @@ scale = Vector2(0.234008, 0.234008)
 texture = ExtResource("13_o4tw5")
 
 [node name="Stone Temple" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(418, 8)
 story_text = "Following those cosplay cultists brought you to the very scary gates of an enormous Stone Temple. Inscriptions can be read all around, and this must have been the work of a dyslexic Stonemason! You will need more than a minute to understand all these weird names written in stone.
 To your advantage, your policy of “Punch First, Ask Later” helped you to meet a lovely fella dressed in red, who was still able to babble something about “your action being in vain, since the great Young One would rise again from within the core of the mountain and control the whole Reign” before you knocked him twice."
@@ -467,10 +499,11 @@ slots = 2
 position = Vector2(228, 324)
 script = ExtResource("8_dl7w6")
 requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_3infq")])
-gold_output = 40
+gold_output = 50
 slots = 1
 
 [node name="Corrupted Mines" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(360, 90)
 story_text = "Of course, you would still find yourself facing a potentially terrifying death going through haunted mines.. Seriously, even the OP wizards in fancy IPs are dying inside these, and here you are thinking you are ready. Look at the size of that mountain, that’s for sure the final boss.. Or at least the partial final boss of a one-month attempt at a game! Maybe go wander a bit around before you adventure there! Remember those fangy creatures you killed? Or at least go check what that Paladin over there wants around these mines. Your enemy`s enemy is your friend, and it seems like they also wants to stop the Ritual regarding this Younge One or something."
 
@@ -508,34 +541,80 @@ requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_wwj7x")])
 gold_output = 20
 slots = 3
 
-[node name="ScoutCamp" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="Sages Tower" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(519, 54)
+story_text = "You see a tower on the horizon and it immediately feels like a turning point. We all know a good hero needs a good party, and a good party needs a good Mentor. You are also thankful for a second that despite the space-time breach that all this summoning could be causing, these are still Medieval Fantasy times, and you don’t need to worry about the coaching culture just yet. 
+However, just as you approach the Tower, you notice this has unfortunately become a Distant Learning Center, and you will be sharing the Sage`s attention with a class of 48. Worry not, though, this tower has an excellent reception!"
 
-[node name="Sprite2D" parent="Areas/ScoutCamp" index="0"]
+[node name="Sprite2D" parent="Areas/Sages Tower" index="0"]
+position = Vector2(1, -6)
 scale = Vector2(0.188136, 0.188136)
-texture = ExtResource("13_o4tw5")
+texture = ExtResource("24_t4pht")
 
-[node name="Trainer" parent="Areas/ScoutCamp/Spots" index="0" instance=ExtResource("3_7gc0v")]
+[node name="Listen To The Sage Talk" parent="Areas/Sages Tower/Spots" index="0" instance=ExtResource("3_7gc0v")]
+position = Vector2(13, -102)
 script = ExtResource("10_gbss6")
-max_level = 20
-gold_per_xp = 1
+max_level = 10
+gold_per_xp = 6
 xp_per_second = 300
-slots = 2
+slots = 4
 
-[node name="OrcIslandScout" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="Fast Track Studies Available" parent="Areas/Sages Tower/Spots" index="1" instance=ExtResource("3_7gc0v")]
+position = Vector2(127, 278)
+script = ExtResource("8_dl7w6")
+requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_jc18h")])
+gold_output = 30
+slots = 1
+
+[node name="More Fangs" parent="Areas" instance=ExtResource("6_il4vw")]
+visible = false
 position = Vector2(995, 242)
+story_text = "Who would know that fangs make great rafters? You adventure on top of one and go explore the open sea. What could go wrong? Well, it also turns out fangs do not help with taming the wind, controlling the wind, or naming it. So many people seem to have a good hang of this force of nature, but not you.
+You watch powerless as your rafter is dragged by a warm current, and you feel insignificant as you stare at a smokey Volcano ahead of you. What will you see on this island? What other treasures would have been spread around this world, hadn't it been for this brutal project deadline? One can only wonder about all the loot, but perhaps one could also wonder if you will  ever give these green creatures a chance to talk for themselves before being decimated, every time you get to one of their camps."
 
-[node name="Sprite2D" parent="Areas/OrcIslandScout" index="0"]
+[node name="Sprite2D" parent="Areas/More Fangs" index="0"]
 scale = Vector2(0.158844, 0.158844)
 texture = ExtResource("14_icbto")
 
+[node name="Try To Communicate With This New Community" parent="Areas/More Fangs/Spots" index="0" instance=ExtResource("3_7gc0v")]
+position = Vector2(-463, -290)
+script = ExtResource("10_gbss6")
+max_level = 9
+gold_per_xp = 5
+xp_per_second = 300
+slots = 5
+
+[node name="And Invite Them To Join Your Compulsory Order" parent="Areas/More Fangs/Spots" index="1" instance=ExtResource("3_7gc0v")]
+position = Vector2(-349, 90)
+script = ExtResource("8_dl7w6")
+requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_1nhqv")])
+gold_output = 30
+slots = 1
+
 [node name="TwinPeaks" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(290, 5)
+story_text = "Twin Peaks
+You made it here to the final stop of what can only be the first part of a trilogy (that is how great histories are written nowadays!). Your body feels the dopamine peaking just as high as that left knee injury, but it was all worth it for the stunning view, climbing up these beautiful rocky and snowy mountains. New Zealand has nothing on you! Now go there and beat those lunatics summoning tentacles all over these mountains! Your easiest option right now in dealing with these wrongdoers would be of course to release both dragons from those two dungeons (we made it plural so that it is not a rip-off on the name, see.. Plus, as we stated before, we all know that the enemy of your enemy is your friend, right? RIGHT? Go there and release them, it is almost Friday and you are ready to take a deserved break!"
 
 [node name="Sprite2D" parent="Areas/TwinPeaks" index="0"]
 position = Vector2(8, -4)
 scale = Vector2(0.16806, 0.16806)
 texture = ExtResource("17_2nwek")
+
+[node name="Release the Undead Dread Red Dragon" parent="Areas/TwinPeaks/Spots" index="0" instance=ExtResource("3_7gc0v")]
+position = Vector2(356, 327)
+script = ExtResource("8_dl7w6")
+requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_usedb")])
+gold_output = 25
+slots = 3
+
+[node name="Release the Keen Green Drag Dragon" parent="Areas/TwinPeaks/Spots" index="1" instance=ExtResource("3_7gc0v")]
+position = Vector2(356, 327)
+script = ExtResource("8_dl7w6")
+requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_rxdeg")])
+gold_output = 30
+slots = 1
 
 [node name="Sprite2D2" type="Sprite2D" parent="Areas/TwinPeaks"]
 texture_filter = 2
@@ -749,8 +828,8 @@ horizontal_alignment = 1
 [editable path="Areas/Bandit Banquet"]
 [editable path="Areas/Stone Temple"]
 [editable path="Areas/Corrupted Mines"]
-[editable path="Areas/ScoutCamp"]
-[editable path="Areas/OrcIslandScout"]
+[editable path="Areas/Sages Tower"]
+[editable path="Areas/More Fangs"]
 [editable path="Areas/TwinPeaks"]
 [editable path="TravelPaths/TravelPath_01"]
 [editable path="TravelPaths/TravelPath_02"]
