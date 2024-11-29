@@ -189,13 +189,20 @@ slots = 5
 script = ExtResource("8_dl7w6")
 requirements = Array[ExtResource("8_4wor3")]([])
 gold_output = 1
-slots = 4
+slots = 2
 
-[node name="Chat Around" parent="Areas/Broken Sink Inn/Spots" index="2" instance=ExtResource("3_7gc0v")]
+[node name="Sugar Foot Stables" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(532, -48)
+
+[node name="Sprite2D" parent="Areas/Sugar Foot Stables" index="0"]
+scale = Vector2(0.188136, 0.188136)
+
+[node name="Chat Around" parent="Areas/Sugar Foot Stables/Spots" index="0" instance=ExtResource("3_7gc0v")]
+position = Vector2(50, 107)
 script = ExtResource("11_arn45")
 slots = 1
 
-[node name="Elis The Bard" parent="Areas/Broken Sink Inn/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Elis The Bard" parent="Areas/Sugar Foot Stables/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
@@ -212,9 +219,9 @@ discipline = 4
 xp = 500
 level = 3
 hire_cost = 5000
-area = NodePath("../../..")
+area = NodePath("../../../../Broken Sink Inn")
 
-[node name="Aruan The Paladin" parent="Areas/Broken Sink Inn/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Aruan The Paladin" parent="Areas/Sugar Foot Stables/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
@@ -231,9 +238,9 @@ discipline = 9
 xp = 1000
 level = 8
 hire_cost = 7000
-area = NodePath("../../..")
+area = NodePath("../../../../Broken Sink Inn")
 
-[node name="Ebbo The Sorcerer" parent="Areas/Broken Sink Inn/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Ebbo The Sorcerer" parent="Areas/Sugar Foot Stables/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
@@ -242,15 +249,9 @@ class_ = 4
 portrait = ExtResource("16_erfj3")
 level = 1
 hire_cost = 1000
-area = NodePath("../../..")
+area = NodePath("../../../../Broken Sink Inn")
 
-[node name="Sugar Foot Stables" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(532, -48)
-
-[node name="Sprite2D" parent="Areas/Sugar Foot Stables" index="0"]
-scale = Vector2(0.188136, 0.188136)
-
-[node name="Trainer" parent="Areas/Sugar Foot Stables/Spots" index="0" instance=ExtResource("3_7gc0v")]
+[node name="Trainer" parent="Areas/Sugar Foot Stables/Spots" index="1" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
 gold_per_xp = 1
 xp_per_second = 300
