@@ -261,7 +261,6 @@ gold_output = 1
 slots = 2
 
 [node name="SugarFoot Stables" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(532, -48)
 story_text = "Did you just get here and already witness weird mercenaries in red robes fleeing northwest?
 No! Focus! You are not here for silk costumes and pony rides. You are here to practice! And be polite.. Who knows what kind of friend you could make in the future..
@@ -307,7 +306,6 @@ hire_cost = 10000
 area = NodePath("../../../../Broken Sink Inn")
 
 [node name="Solitary Toilet Tower" parent="Areas" instance=ExtResource("6_il4vw")]
-visible = false
 position = Vector2(717, 165)
 story_text = "You finally make it to the most famous Wash Tower around the area, and.. Is that.. Elis, the One-Hit Wonder? I mean, you know them for being shy despite all the singing, but what are the odds!
 Luckily, they are about done with their business and tell you that, for the right price, they would even help you investigate those weird lights approaching from the far sea. Unless you want to explore the woods.. We know we love a side quest!
