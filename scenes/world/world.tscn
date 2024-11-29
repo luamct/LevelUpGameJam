@@ -297,6 +297,9 @@ slots = 2
 
 [node name="Solitary Toilet Tower" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(717, 165)
+story_text = "You finally make it to the most famous Wash Tower around the area, and.. Is that.. Elis, the One Hit Wonder? I mean, you know them for being shy despite all the singing, but what are the odds!
+Luckily, they are about done with their business, and tell you that, for the right prize, they would even help you investigate those weird lights approaching from the far sea. Unless you want to explore the woods.. We know we love a side quest!
+"
 
 [node name="Sprite2D" parent="Areas/Solitary Toilet Tower" index="0"]
 position = Vector2(0, -2)
