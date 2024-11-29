@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdrp6dy3m1apy"]
+[gd_scene load_steps=4 format=3 uid="uid://bdrp6dy3m1apy"]
 
 [ext_resource type="Texture2D" uid="uid://bmguafu6tr4ng" path="res://assets/ui/bars_screens/Side bar1.png" id="1_kru2x"]
 [ext_resource type="Script" path="res://scenes/ui/side_panel.gd" id="2_8y1qs"]
-[ext_resource type="Texture2D" uid="uid://ckn6ic6p6sr3e" path="res://assets/ui/UI_Selectors.png" id="3_2fv8v"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r5e2e"]
 texture = ExtResource("1_kru2x")
@@ -10,10 +9,6 @@ texture_margin_left = 20.0
 texture_margin_top = 20.0
 texture_margin_right = 20.0
 texture_margin_bottom = 20.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4t32m"]
-atlas = ExtResource("3_2fv8v")
-region = Rect2(107, 10, 26, 28)
 
 [node name="SidePanel" type="Panel"]
 anchors_preset = 4
@@ -42,12 +37,6 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="PortraitSelector" type="TextureRect" parent="MarginContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-texture = SubResource("AtlasTexture_4t32m")
-
 [node name="PanelSectionsVBox" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
@@ -71,7 +60,7 @@ text = "Adventurers"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-columns = 5
+columns = 3
 
 [node name="AdventurerStats" type="VBoxContainer" parent="MarginContainer/PanelSectionsVBox"]
 unique_name_in_owner = true

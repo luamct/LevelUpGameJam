@@ -34,7 +34,7 @@ func _process(delta):
 # Navigation and zoom using the mouse middle button
 func _input(event: InputEvent):
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_MIDDLE:
+		if event.button_index == MOUSE_BUTTON_LEFT:
 			dragging = event.pressed
 		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			zoom = (zoom + Vector2(zoom_step, zoom_step)).clampf(min_zoom, max_zoom)
