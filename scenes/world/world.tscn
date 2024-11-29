@@ -295,12 +295,12 @@ requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_c730x")])
 gold_output = 5
 slots = 3
 
-[node name="Chat Around" parent="Areas/SugarFoot Stables/Spots" index="2" instance=ExtResource("3_7gc0v")]
+[node name="Look Out For a Good Gossip" parent="Areas/SugarFoot Stables/Spots" index="2" instance=ExtResource("3_7gc0v")]
 position = Vector2(50, 107)
 script = ExtResource("11_arn45")
 slots = 1
 
-[node name="Josse The Shadow Mingler" parent="Areas/SugarFoot Stables/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Josse The Shadow Mingler" parent="Areas/SugarFoot Stables/Spots/Look Out For a Good Gossip" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
 position = Vector2(-583, -65.5)
