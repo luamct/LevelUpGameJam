@@ -3,6 +3,9 @@ extends Node2D
 
 var spots: Array[Spot]
 var paths: Array[TravelPath]
+var already_visited: bool = false
+
+@export_multiline var story_text: String
 
 @onready var collision_shape: CollisionShape2D = $Area2D/CollisionShape2D
 
@@ -25,6 +28,12 @@ func connects_to(path: TravelPath) -> int:
 # Once an area is visited, all connected paths and areas are revealed
 # Calling this method on an already visited area has no effect
 func visited():
+	# If arriving for the first time, show the story/tutorial popout
+	if !already_visited:
+		already_visited = true
+		if story_text:
+			Globals.show_story_popout.emit(name, story_text)
+		
 	for path in paths:
 		path.visible = true
 		path.starts_at.visible = true

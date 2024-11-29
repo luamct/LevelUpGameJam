@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=51 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://dvvlku7yhfioy" path="res://assets/Paths/Road 10.png" id="30_nmbsu"]
 [ext_resource type="PackedScene" uid="uid://bdrp6dy3m1apy" path="res://scenes/ui/side_panel.tscn" id="34_vvur4"]
 [ext_resource type="Script" path="res://scenes/ui/popouts.gd" id="38_6pyis"]
+[ext_resource type="PackedScene" uid="uid://vho7axsqn8hg" path="res://scenes/ui/story_popout.tscn" id="39_fiye7"]
 
 [sub_resource type="Curve2D" id="Curve2D_m8ydb"]
 resource_local_to_scene = true
@@ -246,6 +247,7 @@ area = NodePath("../../..")
 
 [node name="Sugar Foot Stables" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(532, -48)
+story_text = "The rancid smell of horse shit fills your nostrils as you walk into the stables."
 
 [node name="Sprite2D" parent="Areas/Sugar Foot Stables" index="0"]
 scale = Vector2(0.188136, 0.188136)
@@ -521,10 +523,30 @@ unique_name_in_owner = true
 
 [node name="Popouts" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("38_6pyis")
+
+[node name="StoryPopout" parent="CanvasLayer/Popouts" instance=ExtResource("39_fiye7")]
+visible = false
+layout_mode = 1
+offset_left = 50.0
+offset_top = -86.0
+offset_right = 170.0
+offset_bottom = -40.0
+
+[node name="AreaNameLabel" parent="CanvasLayer/Popouts/StoryPopout/MarginContainer/VBoxContainer" index="0"]
+text = "Sugar Foot Stables"
+horizontal_alignment = 1
+
+[node name="AreaTextLabel" parent="CanvasLayer/Popouts/StoryPopout/MarginContainer/VBoxContainer" index="2"]
+text = "The rancid smell of horse shit fills your nostrils 
+as you walk into the stables."
+horizontal_alignment = 1
 
 [editable path="Areas/TemplateArea"]
 [editable path="Areas/Broken Sink Inn"]
@@ -550,3 +572,4 @@ script = ExtResource("38_6pyis")
 [editable path="TravelPaths/TravelPath_09"]
 [editable path="TravelPaths/TravelPath_10"]
 [editable path="TravelPaths/TravelPath_11"]
+[editable path="CanvasLayer/Popouts/StoryPopout"]
