@@ -3,7 +3,7 @@ extends Spot
 
 func try_to_add_adventurer(adventurer: Adventurer, slot_number: int) -> bool:
 	if adventurers[slot_number]:
-		print("Slot is already busy!")
+		Globals.show_error_popout.emit("Slot is already busy!", 1.5)
 		return false
 
 	# Try to remove this adventurer from current slot. Some spots, 

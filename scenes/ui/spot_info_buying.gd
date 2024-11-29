@@ -70,7 +70,7 @@ func on_portrait_clicked(adventurer: Adventurer):
 func on_hire_button_pressed(adventurer: Adventurer, slot: AvailableAdventurer):
 	on_portrait_clicked(adventurer)
 	if Globals.current_gold < adventurer.hire_cost:
-		print("Não há dinheiro suficiente para contratação do " + adventurer.name_)
+		Globals.show_error_popout.emit("Not enough money!", 2)
 		return
 	
 	Globals.current_gold -= adventurer.hire_cost

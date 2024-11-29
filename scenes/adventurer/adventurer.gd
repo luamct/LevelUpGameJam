@@ -121,8 +121,6 @@ func class_name_value(class_: Enums.Class) -> String:
 	return ""
 
 func play_animation(animation_name: String):
-	print(sprite.animation)
-	print(animation_name)
 	if sprite.animation != animation_name:
 		sprite.play(animation_name)
 

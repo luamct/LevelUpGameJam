@@ -13,7 +13,7 @@ func _ready():
 	
 func try_to_add_adventurer(adventurer: Adventurer, slot_number: int) -> bool:
 	if adventurers[slot_number]:
-		print("Slot is already busy!") # TODO: Pop out
+		Globals.show_error_popout.emit("Slot is already busy!", 1.5)
 		return false
 	
 	# Try to remove this adventurer from current slot. Some spots, 
@@ -40,7 +40,7 @@ func on_training_tick():
 			continue
 	
 		if Globals.current_gold < gold_per_xp:
-			print("Not enough gold for training!")  # TODO: Pop out
+			Globals.show_error_popout.emit("Not enough gold for training!", 1)
 			continue
 
 		Globals.current_gold -= gold_per_xp
