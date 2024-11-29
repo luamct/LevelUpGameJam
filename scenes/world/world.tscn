@@ -229,11 +229,6 @@ gold_per_xp = 1
 xp_per_second = 300
 slots = 2
 
-[node name="Firecamp" parent="Areas/TemplateArea" instance=ExtResource("3_7gc0v")]
-position = Vector2(-84, -272)
-script = ExtResource("8_do0jp")
-slots = 5
-
 [node name="Broken Sink Inn" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(602, 58)
 story_text = "One would say this is not the fancier Inn around, and one would be so right.
