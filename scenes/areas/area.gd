@@ -9,6 +9,8 @@ var already_visited: bool = false
 
 @onready var collision_shape: CollisionShape2D = $Area2D/CollisionShape2D
 
+@export_multiline var story_text: String
+
 func _ready() -> void:
 	spots.assign($Spots.get_children())
 
@@ -24,7 +26,7 @@ func connects_to(path: TravelPath) -> int:
 		return 1
 	else:
 		return 0
-	
+
 # Once an area is visited, all connected paths and areas are revealed
 # Calling this method on an already visited area has no effect
 func visited():

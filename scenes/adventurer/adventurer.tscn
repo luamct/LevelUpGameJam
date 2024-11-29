@@ -39,4 +39,3 @@ scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_up5nf")
 animation = &"bard"
 autoplay = "default"
-frame_progress = 0.460235

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://c0igutvoh1cxw"]
+[gd_scene load_steps=53 format=3 uid="uid://c0igutvoh1cxw"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_6e6bs"]
 [ext_resource type="Script" path="res://scenes/ui/cam_nav.gd" id="2_rwaap"]
@@ -13,15 +13,17 @@
 [ext_resource type="Script" path="res://scenes/areas/training_spot.gd" id="10_gbss6"]
 [ext_resource type="Script" path="res://scenes/areas/buying_spot.gd" id="11_arn45"]
 [ext_resource type="Texture2D" uid="uid://4mi51u168pnv" path="res://assets/Map Structures/Building humans Tower.png" id="12_88m3j"]
+[ext_resource type="Texture2D" uid="uid://b0t475e0jewt7" path="res://assets/classes/static_bard.png" id="13_d7vdy"]
 [ext_resource type="Texture2D" uid="uid://dkdo6yxdsx56t" path="res://assets/Map Structures/Building tend.png" id="13_o4tw5"]
 [ext_resource type="Texture2D" uid="uid://dipkwpg1dtghi" path="res://assets/Map Structures/Building humans Villa.png" id="13_wd84p"]
 [ext_resource type="Texture2D" uid="uid://ds8556n1lxu4g" path="res://assets/Map Structures/Building orc Tower.png" id="14_icbto"]
-[ext_resource type="Texture2D" uid="uid://bbvooj6ri1cqj" path="res://assets/classes/bard_1.png" id="14_t3r0y"]
-[ext_resource type="Texture2D" uid="uid://bkm556mg3yh8p" path="res://assets/classes/paladin_1.png" id="15_cs4ln"]
+[ext_resource type="Texture2D" uid="uid://b07n0b2n1kv4e" path="res://assets/classes/static_paladin.png" id="14_shb0o"]
+[ext_resource type="Texture2D" uid="uid://bin8tcb4318ru" path="res://assets/classes/Static sorcerer.png" id="15_st8nv"]
 [ext_resource type="Texture2D" uid="uid://mafofxwlgvej" path="res://assets/Map Structures/Building dwarv Castle.png" id="15_u862k"]
 [ext_resource type="Texture2D" uid="uid://bq1h8qypq0aph" path="res://assets/Map Structures/Building dwarv Altar.png" id="16_7ia4y"]
-[ext_resource type="Texture2D" uid="uid://dtasnts0fi3f0" path="res://assets/classes/sorcerer_1.png" id="16_erfj3"]
+[ext_resource type="Texture2D" uid="uid://ckr0t1b1sn4re" path="res://assets/classes/static_druid.png" id="16_uqofc"]
 [ext_resource type="Texture2D" uid="uid://ra25hj83xk6n" path="res://assets/Map Structures/Building dwarv Tower.png" id="17_2nwek"]
+[ext_resource type="Texture2D" uid="uid://8swinhrd6f6j" path="res://assets/classes/static_rogue.png" id="18_jge76"]
 [ext_resource type="Texture2D" uid="uid://da4wft15e23o8" path="res://assets/ui/bars_screens/Area1 blank.png" id="19_wjdxs"]
 [ext_resource type="PackedScene" uid="uid://bukvpaws8uoa2" path="res://scenes/world/travel_path.tscn" id="21_lj6df"]
 [ext_resource type="Texture2D" uid="uid://cutehjkb06qgt" path="res://assets/Paths/Road 01.png" id="21_ms4n2"]
@@ -39,6 +41,12 @@
 [ext_resource type="PackedScene" uid="uid://bdrp6dy3m1apy" path="res://scenes/ui/side_panel.tscn" id="34_vvur4"]
 [ext_resource type="Script" path="res://scenes/ui/popouts.gd" id="38_6pyis"]
 [ext_resource type="PackedScene" uid="uid://vho7axsqn8hg" path="res://scenes/ui/story_popout.tscn" id="39_fiye7"]
+
+[sub_resource type="Resource" id="Resource_c730x"]
+script = ExtResource("8_4wor3")
+class_ = 0
+attribute = 5
+minimum_value = 1
 
 [sub_resource type="Curve2D" id="Curve2D_m8ydb"]
 resource_local_to_scene = true
@@ -156,72 +164,53 @@ position = Vector2(-20, 1)
 [node name="Firecamp" parent="Areas/TemplateArea/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("8_do0jp")
 
-[node name="LeekCrops" parent="Areas/TemplateArea/Spots" index="1" instance=ExtResource("3_7gc0v")]
+[node name="produce" parent="Areas/TemplateArea/Spots" index="1" instance=ExtResource("3_7gc0v")]
 script = ExtResource("8_dl7w6")
 requirements = Array[ExtResource("8_4wor3")]([])
 gold_output = 1
 slots = 4
 
-[node name="Tavern" parent="Areas/TemplateArea/Spots" index="2" instance=ExtResource("3_7gc0v")]
-script = ExtResource("11_arn45")
-slots = 1
-
-[node name="Trainer" parent="Areas/TemplateArea/Spots" index="3" instance=ExtResource("3_7gc0v")]
+[node name="Dwarf Trainer" parent="Areas/TemplateArea/Spots" index="2" instance=ExtResource("3_7gc0v")]
+position = Vector2(71, -167)
 script = ExtResource("10_gbss6")
+max_level = 20
 gold_per_xp = 1
 xp_per_second = 300
 slots = 2
 
-[node name="Broken Sink Inn" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(602, 58)
-
-[node name="Sprite2D" parent="Areas/Broken Sink Inn" index="0"]
-scale = Vector2(0.191958, 0.191958)
-texture = ExtResource("13_wd84p")
-
-[node name="Spots" parent="Areas/Broken Sink Inn" index="1"]
-position = Vector2(-20, 1)
-
-[node name="Firecamp" parent="Areas/Broken Sink Inn/Spots" index="0" instance=ExtResource("3_7gc0v")]
-script = ExtResource("8_do0jp")
-slots = 5
-
-[node name="Wash Dishes" parent="Areas/Broken Sink Inn/Spots" index="1" instance=ExtResource("3_7gc0v")]
-script = ExtResource("8_dl7w6")
-requirements = Array[ExtResource("8_4wor3")]([])
-gold_output = 1
-slots = 4
-
-[node name="Chat Around" parent="Areas/Broken Sink Inn/Spots" index="2" instance=ExtResource("3_7gc0v")]
+[node name="Tavern" parent="Areas/TemplateArea/Spots" index="3" instance=ExtResource("3_7gc0v")]
 script = ExtResource("11_arn45")
 slots = 1
 
-[node name="Elis The Bard" parent="Areas/Broken Sink Inn/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Ebbo The Wise_ish" parent="Areas/TemplateArea/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
-position = Vector2(-583, -65.5)
-name_ = "Elis The Bard"
-class_ = 2
-portrait = ExtResource("14_t3r0y")
-strength = 3
-speed = 3
-agility = 6
-defense = 4
-attack = 8
-morale = 3
-discipline = 4
-xp = 500
-level = 3
-hire_cost = 5000
-area = NodePath("../../..")
+position = Vector2(-647, -338.5)
+name_ = "Ebbo The Wise_ish"
+class_ = 4
+portrait = ExtResource("15_st8nv")
+level = 1
+hire_cost = 1000
+area = NodePath("../../../../Broken Sink Inn")
 
-[node name="Aruan The Paladin" parent="Areas/Broken Sink Inn/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+[node name="Brice The Beast" parent="Areas/TemplateArea/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
 z_index = 10
-position = Vector2(-583, -65.5)
-name_ = "Aruan The Paladin"
+position = Vector2(-647, -338.5)
+name_ = "Brice The Beast"
+class_ = 5
+portrait = ExtResource("16_uqofc")
+level = 1
+hire_cost = 1000
+area = NodePath("../../../../Broken Sink Inn")
+
+[node name="Aruan The Righteous" parent="Areas/TemplateArea/Spots/Tavern" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+visible = false
+z_index = 10
+position = Vector2(-647, -338.5)
+name_ = "Aruan The Righteous"
 class_ = 3
-portrait = ExtResource("15_cs4ln")
+portrait = ExtResource("14_shb0o")
 strength = 10
 speed = 5
 agility = 6
@@ -232,7 +221,7 @@ discipline = 9
 xp = 1000
 level = 8
 hire_cost = 7000
-area = NodePath("../../..")
+area = NodePath("../../../../Broken Sink Inn")
 
 [node name="Ebbo The Sorcerer" parent="Areas/Broken Sink Inn/Spots/Chat Around" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
 visible = false
@@ -254,36 +243,144 @@ scale = Vector2(0.188136, 0.188136)
 
 [node name="Trainer" parent="Areas/Sugar Foot Stables/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
+max_level = 20
 gold_per_xp = 1
 xp_per_second = 300
 slots = 2
 
+[node name="Broken Sink Inn" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(602, 58)
+story_text = "One would say this is not the fancier Inn around, and one would be so right.
+Anyways, You have heard the stables to the North of here have a good promo on tactical lessons for a newbie fighter such as yourself. Definitely worth a visit before you start wandering around. What was it again? Save the (newly created) world or something?
+"
+
+[node name="Sprite2D" parent="Areas/Broken Sink Inn" index="0"]
+scale = Vector2(0.191958, 0.191958)
+texture = ExtResource("13_wd84p")
+
+[node name="Spots" parent="Areas/Broken Sink Inn" index="1"]
+position = Vector2(-20, 1)
+
+[node name="Wash Dishes" parent="Areas/Broken Sink Inn/Spots" index="0" instance=ExtResource("3_7gc0v")]
+script = ExtResource("8_dl7w6")
+requirements = Array[ExtResource("8_4wor3")]([])
+gold_output = 1
+slots = 2
+
+[node name="SugarFoot Stables" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(532, -48)
+story_text = "Did you just get here and already witness weird mercenaries in red robes fleeing northwest?
+No! Focus! You are not here for silk costumes and pony rides. You are here to practice! And be polite.. Who knows what kind of friend you could make in the future..
+"
+
+[node name="Sprite2D" parent="Areas/SugarFoot Stables" index="0"]
+scale = Vector2(0.188136, 0.188136)
+
+[node name="Learn New Cool Moves" parent="Areas/SugarFoot Stables/Spots" index="0" instance=ExtResource("3_7gc0v")]
+script = ExtResource("10_gbss6")
+max_level = 2
+gold_per_xp = 1
+xp_per_second = 300
+slots = 2
+
+[node name="Teach Kids Around What You Just Learned" parent="Areas/SugarFoot Stables/Spots" index="1" instance=ExtResource("3_7gc0v")]
+position = Vector2(114, 380)
+script = ExtResource("8_dl7w6")
+requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_c730x")])
+gold_output = 5
+slots = 3
+
+[node name="Look Out For a Good Gossip" parent="Areas/SugarFoot Stables/Spots" index="2" instance=ExtResource("3_7gc0v")]
+position = Vector2(50, 107)
+script = ExtResource("11_arn45")
+slots = 1
+
+[node name="Josse The Shadow Mingler" parent="Areas/SugarFoot Stables/Spots/Look Out For a Good Gossip" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+visible = false
+z_index = 10
+position = Vector2(-583, -65.5)
+name_ = "Josse The Shadow Mingler"
+class_ = 6
+portrait = ExtResource("18_jge76")
+strength = 1
+speed = 1
+agility = 1
+defense = 1
+discipline = 1
+xp = 500
+level = 5
+hire_cost = 10000
+area = NodePath("../../../../Broken Sink Inn")
+
 [node name="Solitary Toilet Tower" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(717, 165)
+story_text = "You finally make it to the most famous Wash Tower around the area, and.. Is that.. Elis, the One Hit Wonder? I mean, you know them for being shy despite all the singing, but what are the odds!
+Luckily, they are about done with their business, and tell you that, for the right prize, they would even help you investigate those weird lights approaching from the far sea. Unless you want to explore the woods.. We know we love a side quest!
+"
 
 [node name="Sprite2D" parent="Areas/Solitary Toilet Tower" index="0"]
 position = Vector2(0, -2)
 scale = Vector2(0.164296, 0.164296)
 texture = ExtResource("12_88m3j")
 
-[node name="Dwarf Trainer" parent="Areas/Solitary Toilet Tower/Spots" index="0" instance=ExtResource("3_7gc0v")]
-script = ExtResource("10_gbss6")
-gold_per_xp = 1
-xp_per_second = 300
+[node name="Befriend a Loud Speaker" parent="Areas/Solitary Toilet Tower/Spots" index="0" instance=ExtResource("3_7gc0v")]
+position = Vector2(-135, -106)
+script = ExtResource("11_arn45")
+slots = 1
+
+[node name="Elis The One Hit Star" parent="Areas/Solitary Toilet Tower/Spots/Befriend a Loud Speaker" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+visible = false
+z_index = 10
+position = Vector2(-583, -65.5)
+name_ = "Elis The One Hit Star"
+class_ = 2
+portrait = ExtResource("13_d7vdy")
+strength = 3
+speed = 1
+agility = 6
+defense = 4
+xp = 500
+level = 3
+hire_cost = 5000
+area = NodePath("../../../../Broken Sink Inn")
+
+[node name="Break Pots And Steal Supplies Around" parent="Areas/Solitary Toilet Tower/Spots" index="1" instance=ExtResource("3_7gc0v")]
+position = Vector2(-135, -106)
+script = ExtResource("8_dl7w6")
+requirements = Array[ExtResource("8_4wor3")]([])
+gold_output = 2
 slots = 2
+
+[node name="Outpost With Fangs" parent="Areas" instance=ExtResource("6_il4vw")]
+position = Vector2(895, 138)
+story_text = "Wow, who are those strange creatures hiding behind the dunes? What are they? Do they come from Outer Space, or do they worship some kind of evil God? Do they have families?
+Nah, they build buildings with fangs and you are done with that! 
+Off with their Green heads! (It`s OK, this is just a game..)"
+
+[node name="Sprite2D" parent="Areas/Outpost With Fangs" index="0"]
+scale = Vector2(0.158844, 0.158844)
+texture = ExtResource("14_icbto")
+
+[node name="Kill Green Creatures" parent="Areas/Outpost With Fangs/Spots" index="0" instance=ExtResource("3_7gc0v")]
+position = Vector2(-249, 194)
+script = ExtResource("8_dl7w6")
+requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_c730x")])
+gold_output = 5
+slots = 3
+
+[node name="Glue Some Bad Ass Fangs On Your Weapons" parent="Areas/Outpost With Fangs/Spots" index="1" instance=ExtResource("3_7gc0v")]
+position = Vector2(-363, -186)
+script = ExtResource("10_gbss6")
+max_level = 4
+gold_per_xp = 2
+xp_per_second = 300
+slots = 3
 
 [node name="Side Quest Woods" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(783, 103)
 
 [node name="Sprite2D" parent="Areas/Side Quest Woods" index="0"]
 texture = ExtResource("13_o4tw5")
-
-[node name="Building with Fangs" parent="Areas" instance=ExtResource("6_il4vw")]
-position = Vector2(895, 138)
-
-[node name="Sprite2D" parent="Areas/Building with Fangs" index="0"]
-scale = Vector2(0.158844, 0.158844)
-texture = ExtResource("14_icbto")
 
 [node name="OrcIslandScout" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(995, 242)
@@ -292,11 +389,33 @@ position = Vector2(995, 242)
 scale = Vector2(0.158844, 0.158844)
 texture = ExtResource("14_icbto")
 
-[node name="RobbersOutpost" parent="Areas" instance=ExtResource("6_il4vw")]
+[node name="Festival In the Woods" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(426, -132)
+story_text = "You are back at scouting those mercenaries you saw earlier and it leads you to a.. Hippie Cosplay Festival in the woods? No, no! Those are weird Cultists, all dressed in Red and beating on a poor cultist or sorcerer or something, dressed in blue! What is this? Quick, save that poor underdog soul! And chase those escape artists! This gotta have something to do with saving the reign.."
 
-[node name="Sprite2D" parent="Areas/RobbersOutpost" index="0"]
+[node name="Sprite2D" parent="Areas/Festival In the Woods" index="0"]
 texture = ExtResource("13_o4tw5")
+
+[node name="Free The Blue Sorcerer" parent="Areas/Festival In the Woods/Spots" index="0" instance=ExtResource("3_7gc0v")]
+position = Vector2(156, 191)
+script = ExtResource("11_arn45")
+slots = 1
+
+[node name="Elis The One Hit Star" parent="Areas/Festival In the Woods/Spots/Free The Blue Sorcerer" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
+visible = false
+z_index = 10
+position = Vector2(-583, -65.5)
+name_ = "Elis The One Hit Star"
+class_ = 2
+portrait = ExtResource("13_d7vdy")
+strength = 3
+speed = 1
+agility = 6
+defense = 4
+xp = 500
+level = 3
+hire_cost = 5000
+area = NodePath("../../../../Broken Sink Inn")
 
 [node name="FortHideout" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(418, 8)
@@ -348,6 +467,7 @@ texture = ExtResource("13_o4tw5")
 
 [node name="Trainer" parent="Areas/ScoutCamp/Spots" index="0" instance=ExtResource("3_7gc0v")]
 script = ExtResource("10_gbss6")
+max_level = 20
 gold_per_xp = 1
 xp_per_second = 300
 slots = 2
@@ -550,12 +670,12 @@ horizontal_alignment = 1
 
 [editable path="Areas/TemplateArea"]
 [editable path="Areas/Broken Sink Inn"]
-[editable path="Areas/Sugar Foot Stables"]
+[editable path="Areas/SugarFoot Stables"]
 [editable path="Areas/Solitary Toilet Tower"]
+[editable path="Areas/Outpost With Fangs"]
 [editable path="Areas/Side Quest Woods"]
-[editable path="Areas/Building with Fangs"]
 [editable path="Areas/OrcIslandScout"]
-[editable path="Areas/RobbersOutpost"]
+[editable path="Areas/Festival In the Woods"]
 [editable path="Areas/FortHideout"]
 [editable path="Areas/CorruptedMines"]
 [editable path="Areas/TwinPeaks"]

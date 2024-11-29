@@ -223,3 +223,11 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 28.0
 text = "+"
+
+[node name="AdventurerLocation" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="AdventurerSpot" type="Label" parent="MarginContainer/PanelSectionsVBox/AdventurerStats"]
+unique_name_in_owner = true
+layout_mode = 2

@@ -1,6 +1,7 @@
 class_name TrainingSpot
 extends Spot
 
+@export var max_level: int = 20 # Can't only train adventurers below this level
 @export var gold_per_xp: int # How much it costs to level up an adventurer (in gold)
 @export var xp_per_second: int # How long does it take to level up one adventurer (in seconds)
 
@@ -29,15 +30,21 @@ func try_to_add_adventurer(adventurer: Adventurer, slot_number: int) -> bool:
 
 func on_training_tick():
 	for adventurer in adventurers:
-		if adventurer:
-			if Globals.current_gold < gold_per_xp:
-				print("Not enough gold for training!")  # TODO: Pop out
-				continue
+		if not adventurer:
+			continue
+	
+		if adventurer.total_level() >= max_level:
+			Globals.show_error_popout.emit("Cannot train beyond level %d" % [max_level], 1)
+			continue
+	
+		if Globals.current_gold < gold_per_xp:
+			print("Not enough gold for training!")  # TODO: Pop out
+			continue
 
-			Globals.current_gold -= gold_per_xp
-			Globals.gold_updated.emit(Globals.current_gold)
+		Globals.current_gold -= gold_per_xp
+		Globals.gold_updated.emit(Globals.current_gold)
 
-			adventurer.add_xp(xp_per_second)
+		adventurer.add_xp(xp_per_second)
 
 func try_to_remove_adventurer(adventurer: Adventurer) -> bool:
 	var slot_number = adventurers.find(adventurer)

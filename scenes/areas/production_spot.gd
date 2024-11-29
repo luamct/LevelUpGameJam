@@ -20,7 +20,7 @@ func on_tick():
 
 func try_to_add_adventurer(adventurer: Adventurer, slot_number: int) -> bool:
 	if adventurers[slot_number]:
-		Globals.show_error_popout.emit("Slot is already busy!")
+		Globals.show_error_popout.emit("Slot is already busy!", 2)
 		return false
 
 	# Try to remove this adventurer from current slot. Some spots, 
@@ -32,12 +32,12 @@ func try_to_add_adventurer(adventurer: Adventurer, slot_number: int) -> bool:
 	for requirement: Requirement in requirements:
 		if requirement.class_ != Enums.Class.ANY and requirement.class_ != adventurer.class_:
 			var text = "Adventurer is not of the required class: %s " % [Enums.class_string(requirement.class_)]
-			Globals.show_error_popout.emit(text)
+			Globals.show_error_popout.emit(text, 3)
 			return false
 
 		if adventurer.attribute_value(requirement.attribute) < requirement.minimum_value:
 			var text = "Adventurer doesn't meet all requirements: %s is lower than %d" % [Enums.attribute_string(requirement.attribute), requirement.minimum_value]
-			Globals.show_error_popout.emit(text)
+			Globals.show_error_popout.emit(text, 3)
 			return false
 	
 	# Add to this spot

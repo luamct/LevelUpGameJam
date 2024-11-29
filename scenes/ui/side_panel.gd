@@ -19,6 +19,9 @@ const PORTRAIT_SCENE = preload("res://scenes/ui/portrait.tscn")
 @onready var morale_value: Label = %MoraleValue
 @onready var discipline_value: Label = %DisciplineValue
 
+@onready var adventurer_location = %AdventurerLocation
+@onready var adventurer_spot = %AdventurerSpot
+
 @onready var attributes_container: GridContainer = %AttributesContainer
 
 var adventurers: Array[Adventurer]
@@ -50,6 +53,10 @@ func on_portrait_input_event(event: InputEvent, portrait: Control, adventurer: A
 		adventurer_stats.visible = true
 
 		update_adventurer_panel()
+		
+		#if adventurer.has_method("play_animation"):
+			#print("Animação do %s clicado!" % adventurer.class_name_value(adventurer.class_))
+			#adventurer.play_animation(adventurer.class_name_value(adventurer.class_))
 
 func update_adventurer_panel():
 	var adventurer = Globals.selected_adventurer
@@ -66,6 +73,15 @@ func update_adventurer_panel():
 
 	for attribute: String in Globals.attributes:
 		get_level_up_button(attribute).visible = adventurer.new_levels > 0
+	
+	if adventurer.area:
+		var area_activity = "Current location: " + adventurer.area.name 
+		adventurer_location.text = area_activity 
+	if adventurer.spot:
+		var spot_activity = "Current activity: " + adventurer.spot.name
+		adventurer_spot.text = spot_activity
+
+
 
 func get_level_up_button(attribute: String):
 	return attributes_container.get_node("%sLevelUp/Button" % [attribute])
@@ -84,9 +100,9 @@ func on_gold_updated(current_gold: int):
 	gold_value.text = str(current_gold)
 
 func on_hired_adventurer(adventurer: Adventurer):
-	print("Aventureiro adicionado ao painel lateral: " + adventurer.name_)
 	adventurers.append(adventurer)
 	add_adventurer_to_panel(adventurer)
+	adventurer.sprite.show()
 	
 func add_adventurer_to_panel(adventurer: Adventurer):
 	var portrait: Control = PORTRAIT_SCENE.instantiate()
