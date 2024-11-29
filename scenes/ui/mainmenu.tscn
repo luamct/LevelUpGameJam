@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cmvnhhrm4b34m" path="res://assets/New Intro UI/NEW_intro1b.png" id="3_fvmt0"]
 [ext_resource type="Texture2D" uid="uid://ebgbhanl066g" path="res://assets/New Intro UI/NEW_intro1c.png" id="4_nq1vf"]
 [ext_resource type="FontFile" uid="uid://1bjas6wygquo" path="res://assets/fonts/BreatheFire-65pg.ttf" id="5_tsxwj"]
-[ext_resource type="StyleBox" uid="uid://cyy4qgfdvj5na" path="res://assets/New Intro UI/ButtonOn.tres" id="6_1ow4d"]
-[ext_resource type="StyleBox" uid="uid://c1nh3ownqqfdk" path="res://assets/New Intro UI/ButtonOff.tres" id="7_8hl2m"]
+[ext_resource type="StyleBox" path="res://assets/New Intro UI/ButtonOn.tres" id="6_1ow4d"]
+[ext_resource type="StyleBox" path="res://assets/New Intro UI/ButtonOff.tres" id="7_8hl2m"]
 [ext_resource type="AudioStream" uid="uid://153pnattf8dd" path="res://assets/music/guilds_tale_balanced_loop_main_menu.wav" id="8_8me7o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qra35"]
