@@ -24,7 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://ckr0t1b1sn4re" path="res://assets/classes/static_druid.png" id="16_uqofc"]
 [ext_resource type="Texture2D" uid="uid://ra25hj83xk6n" path="res://assets/Map Structures/Building dwarv Tower.png" id="17_2nwek"]
 [ext_resource type="Texture2D" uid="uid://8swinhrd6f6j" path="res://assets/classes/static_rogue.png" id="18_jge76"]
-[ext_resource type="Texture2D" uid="uid://da4wft15e23o8" path="res://assets/ui/bars_screens/Area1 blank.png" id="19_wjdxs"]
 [ext_resource type="PackedScene" uid="uid://bukvpaws8uoa2" path="res://scenes/world/travel_path.tscn" id="21_lj6df"]
 [ext_resource type="Texture2D" uid="uid://cutehjkb06qgt" path="res://assets/Paths/Road 01.png" id="21_ms4n2"]
 [ext_resource type="Texture2D" uid="uid://biuve6ako2ls0" path="res://assets/Paths/Road 02.png" id="22_ahxid"]
@@ -41,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://dvvlku7yhfioy" path="res://assets/Paths/Road 10.png" id="30_nmbsu"]
 [ext_resource type="PackedScene" uid="uid://bdrp6dy3m1apy" path="res://scenes/ui/side_panel.tscn" id="34_vvur4"]
 [ext_resource type="Script" path="res://scenes/ui/popouts.gd" id="38_6pyis"]
+[ext_resource type="Texture2D" uid="uid://bqb4t65d000k3" path="res://assets/area pannel/Area fundo novo.png" id="38_6tfph"]
 [ext_resource type="PackedScene" uid="uid://vho7axsqn8hg" path="res://scenes/ui/story_popout.tscn" id="39_fiye7"]
 
 [sub_resource type="Resource" id="Resource_ks6np"]
@@ -342,15 +342,11 @@ level = 7
 hire_cost = 10000
 area = NodePath("../../..")
 
-[node name="AnimatedSprite2D" parent="Areas/SugarFoot Stables/Spots/Look Out For a Good Gossip/Josse The Shadow Mingler" index="0"]
-animation = &"rogue"
-autoplay = "rogue"
-
 [node name="Solitary Toilet Tower" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(717, 165)
 story_text = "You finally make it to the most famous Wash Tower around the area, and.. Is that..
-Elis, the One-Hit Wonder? I mean, you know them for being shy despite all the
-singing, but what are the odds!
+Elis, the One-Hit Wonder? I mean, you know them for being shy - despite all the
+singing - but what are the odds!
 Luckily, they are about done with their business and tell you that, for the right
 price, they would even help you investigate those weird lights approaching from
 the far sea. Unless you want to explore the woods.. We know we love a side quest!"
@@ -379,9 +375,6 @@ xp = 300
 level = 3
 hire_cost = 100
 area = NodePath("../../..")
-
-[node name="AnimatedSprite2D" parent="Areas/Solitary Toilet Tower/Spots/Befriend a Loud Speaker/Elis The One Hit Star" index="0"]
-autoplay = "bard"
 
 [node name="Break Pots And Steal Supplies Around" parent="Areas/Solitary Toilet Tower/Spots" index="1" instance=ExtResource("3_7gc0v")]
 position = Vector2(-135, -106)
@@ -456,10 +449,6 @@ level = 2
 hire_cost = 1
 area = NodePath("../../..")
 
-[node name="AnimatedSprite2D" parent="Areas/Festival By The Water/Spots/Free The Blue Sorcerer/Ebbo The Wise_ish" index="0"]
-animation = &"sorcerer"
-autoplay = "sorcerer"
-
 [node name="Side Quest Woods" parent="Areas" instance=ExtResource("6_il4vw")]
 visible = false
 position = Vector2(783, 103)
@@ -520,10 +509,6 @@ xp = 400
 level = 4
 hire_cost = 2000
 area = NodePath("../../..")
-
-[node name="AnimatedSprite2D" parent="Areas/Bandit Banquet/Spots/Offer The Druid some Relaxing Shrooms/Brice The Sleepy Beast" index="0"]
-animation = &"druid"
-autoplay = "druid"
 
 [node name="Fine, Go Fetch Grasshopers And Lost Treasures" parent="Areas/Bandit Banquet/Spots" index="1" instance=ExtResource("3_7gc0v")]
 position = Vector2(-212, 31)
@@ -615,10 +600,6 @@ xp = 700
 level = 7
 hire_cost = 5000
 area = NodePath("../../..")
-
-[node name="AnimatedSprite2D" parent="Areas/Corrupted Mines/Spots/Offer The Paladin a Reasonable Tithe/Aruan The Righteous" index="0"]
-animation = &"paladin"
-autoplay = "paladin"
 
 [node name="Adventyure Inside These Corrupted Moldy Mines" parent="Areas/Corrupted Mines/Spots" index="1" instance=ExtResource("3_7gc0v")]
 position = Vector2(222, -31)
@@ -903,7 +884,7 @@ offset_right = 639.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("19_wjdxs")
+texture = ExtResource("38_6tfph")
 expand_mode = 1
 
 [node name="BottomPanel" parent="CanvasLayer" instance=ExtResource("22_xlvp7")]
@@ -941,18 +922,13 @@ horizontal_alignment = 1
 [editable path="Areas/TemplateArea"]
 [editable path="Areas/Broken Sink Inn"]
 [editable path="Areas/SugarFoot Stables"]
-[editable path="Areas/SugarFoot Stables/Spots/Look Out For a Good Gossip/Josse The Shadow Mingler"]
 [editable path="Areas/Solitary Toilet Tower"]
-[editable path="Areas/Solitary Toilet Tower/Spots/Befriend a Loud Speaker/Elis The One Hit Star"]
 [editable path="Areas/Outpost With Fangs"]
 [editable path="Areas/Festival By The Water"]
-[editable path="Areas/Festival By The Water/Spots/Free The Blue Sorcerer/Ebbo The Wise_ish"]
 [editable path="Areas/Side Quest Woods"]
 [editable path="Areas/Bandit Banquet"]
-[editable path="Areas/Bandit Banquet/Spots/Offer The Druid some Relaxing Shrooms/Brice The Sleepy Beast"]
 [editable path="Areas/Stone Temple"]
 [editable path="Areas/Corrupted Mines"]
-[editable path="Areas/Corrupted Mines/Spots/Offer The Paladin a Reasonable Tithe/Aruan The Righteous"]
 [editable path="Areas/Sages Tower"]
 [editable path="Areas/More Fangs"]
 [editable path="Areas/TwinPeaks"]
