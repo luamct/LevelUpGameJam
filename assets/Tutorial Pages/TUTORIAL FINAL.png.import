@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pbkx605jbc7y"
-path="res://.godot/imported/02-TRAIN.png-403f1dd58d9cbaba87e1c5ac5749c8a8.ctex"
+uid="uid://cn3py74qfigmw"
+path="res://.godot/imported/TUTORIAL FINAL.png-e825abf7eb31b646ac66e4b5fb273994.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tutorial Pages/New folder/02-TRAIN.png"
-dest_files=["res://.godot/imported/02-TRAIN.png-403f1dd58d9cbaba87e1c5ac5749c8a8.ctex"]
+source_file="res://assets/Tutorial Pages/TUTORIAL FINAL.png"
+dest_files=["res://.godot/imported/TUTORIAL FINAL.png-e825abf7eb31b646ac66e4b5fb273994.ctex"]
 
 [params]
 

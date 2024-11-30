@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3cabunlecwa0"
-path="res://.godot/imported/04-TRAVEL.png-bb790a69e3306cb670bdbe670d6dcfcb.ctex"
+path="res://.godot/imported/04-TRAVEL.png-ce6e9e7a760d0d6753a4885fd46e7957.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tutorial Pages/04-TRAVEL.png"
-dest_files=["res://.godot/imported/04-TRAVEL.png-bb790a69e3306cb670bdbe670d6dcfcb.ctex"]
+source_file="res://assets/Tutorial Pages/New folder/04-TRAVEL.png"
+dest_files=["res://.godot/imported/04-TRAVEL.png-ce6e9e7a760d0d6753a4885fd46e7957.ctex"]
 
 [params]
 
