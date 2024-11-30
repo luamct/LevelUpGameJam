@@ -90,8 +90,9 @@ func arrived_at(_area: Area):
 	area.visited()
 	global_position = area.global_position
 	traveling_in = null
-	Globals.update_bottom_panel.emit(self)
-	Globals.update_side_panel.emit()
+	if self == Globals.selected_adventurer:
+		Globals.update_bottom_panel.emit(self)
+		Globals.update_side_panel.emit()
 	
 func level_up_attribute(attribute_name: String):
 	new_levels -= 1

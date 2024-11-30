@@ -298,31 +298,6 @@ gold_per_xp = 1
 xp_per_second = 300
 slots = 2
 
-[node name="Tavern2" parent="Areas/Broken Sink Inn/Spots" index="2" instance=ExtResource("3_7gc0v")]
-position = Vector2(64, 274)
-script = ExtResource("11_arn45")
-slots = 1
-
-[node name="Josse The Shadow Mingler2" parent="Areas/Broken Sink Inn/Spots/Tavern2" node_paths=PackedStringArray("area") instance=ExtResource("4_ijfal")]
-visible = false
-z_index = 10
-position = Vector2(-647, -338.5)
-name_ = "Josse The Shadow Mingler"
-class_ = 6
-portrait = ExtResource("18_jge76")
-strength = 1
-speed = 1
-agility = 2
-defense = 1
-discipline = 1
-xp = 700
-level = 7
-hire_cost = 100
-area = NodePath("../../..")
-
-[node name="AnimatedSprite2D" parent="Areas/Broken Sink Inn/Spots/Tavern2/Josse The Shadow Mingler2" index="0"]
-autoplay = "bard"
-
 [node name="SugarFoot Stables" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(532, -48)
 story_text = "Did you just get here and immediately witness weird mercenaries in red robes
@@ -965,7 +940,6 @@ horizontal_alignment = 1
 
 [editable path="Areas/TemplateArea"]
 [editable path="Areas/Broken Sink Inn"]
-[editable path="Areas/Broken Sink Inn/Spots/Tavern2/Josse The Shadow Mingler2"]
 [editable path="Areas/SugarFoot Stables"]
 [editable path="Areas/SugarFoot Stables/Spots/Look Out For a Good Gossip/Josse The Shadow Mingler"]
 [editable path="Areas/Solitary Toilet Tower"]
