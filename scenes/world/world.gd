@@ -12,6 +12,6 @@ func _ready():
 	
 	broken_sink_inn.visited()
 
-func _input(_event):
-	if Input.is_key_pressed(KEY_ESCAPE):
-		get_tree().quit()
+#func _input(_event):
+	#if Input.is_key_pressed(KEY_ESCAPE):
+		#get_tree().quit()
