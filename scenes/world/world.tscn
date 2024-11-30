@@ -300,10 +300,15 @@ slots = 2
 
 [node name="SugarFoot Stables" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(532, -48)
-story_text = "Did you just get here and already witness weird mercenaries in red robes fleeing northwest?
-No! Focus! You are not here for silk costumes and pony rides. You are here to
-practice! And be polite.. Who knows what kind of friend you could make in the 
-future.."
+story_text = "Did you just get here and immediately witness weird mercenaries in red robes
+fleeing northwest? No! Focus! You are not here for silk costumes and pony rides. 
+You are here to.. What was it again..? Save the World!
+
+It was a good idea to come here. A lovely fella, absolutely friendly-looking, was
+hiding in the shadows with their daggers under their cloak, and was so kind to call
+you out for a hello and a quick gossip. Seems like weird things are happening
+around the reign, with cultists coming from the North, and strange beasts coming
+from the Sea to the South. "
 
 [node name="Sprite2D" parent="Areas/SugarFoot Stables" index="0"]
 scale = Vector2(0.188136, 0.188136)
