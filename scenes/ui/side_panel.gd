@@ -26,6 +26,7 @@ const PORTRAIT_SCENE = preload("res://scenes/ui/portrait.tscn")
 
 @onready var tutorial_button: Button = %TutorialButton
 @onready var tutorial_screen: TextureRect = $"../TutorialScreen"
+@onready var level_up_sfx = $LevelUpSFX
 
 var selected_portrait: Portrait
 var adventurers: Array[Adventurer]
@@ -110,6 +111,7 @@ func level_string(adventurer: Adventurer):
 func on_level_up_button_pressed(attribute_name: String):
 	Globals.selected_adventurer.level_up_attribute(attribute_name)
 	update_adventurer_panel()
+	level_up_sfx.play()
 	
 func on_gold_updated(current_gold: int):
 	gold_value.text = str(current_gold)
