@@ -50,7 +50,7 @@ func _ready():
 	tutorial_button.pressed.connect(on_tutorial_button_pressed)
 
 func on_tutorial_button_pressed():
-	tutorial_screen.visible = true
+	tutorial_screen.start()
 	
 func on_portrait_input_event(event: InputEvent, portrait: Portrait, adventurer: Adventurer):
 	if event.is_action_pressed("left_click"):
