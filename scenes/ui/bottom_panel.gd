@@ -10,11 +10,21 @@ const TRAVEL_INFO_PANEL = preload("res://scenes/ui/travel_info_panel.tscn")
 @onready var spot_container: HBoxContainer = $SpotContainer
 @onready var buttons_container: VBoxContainer = $SpotContainer/ButtonsContainer
 
+@export_color_no_alpha var production_button_color: Color
+@export_color_no_alpha var training_button_color: Color
+@export_color_no_alpha var buying_button_color: Color
+
 var currently_showing_panel: Control = null
 
 func _ready() -> void:
 	Globals.update_bottom_panel.connect(update_buttons)
 
+func button_color(spot:Spot) -> Color:
+	if spot is ProductionSpot: return production_button_color
+	elif spot is TrainingSpot: return training_button_color
+	elif spot is BuyingSpot: return buying_button_color
+	else: return Color.BLACK
+	
 func update_buttons(adventurer: Adventurer):
 	if currently_showing_panel:
 		currently_showing_panel.visible = false
@@ -29,9 +39,10 @@ func update_buttons(adventurer: Adventurer):
 		for spot in adventurer.area.spots:
 			var button: Button = Button.new()
 			button.text = spot.name
+			button.self_modulate = button_color(spot)
 			button.pressed.connect(func(): on_spot_button_pressed(spot))
 			buttons_container.add_child(button)
-		
+
 		# There's always the option to travel if in an area
 		var button: Button = Button.new()
 		button.text = "Travel"

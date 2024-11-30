@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://jt24mbgmndoh"]
 
 [ext_resource type="Script" path="res://scenes/ui/bottom_panel.gd" id="1_c8q1d"]
-[ext_resource type="PackedScene" uid="uid://beogoyxe3efrf" path="res://scenes/ui/spot_info_production.tscn" id="2_kkihu"]
+[ext_resource type="PackedScene" path="res://scenes/ui/spot_info_production.tscn" id="2_kkihu"]
 [ext_resource type="PackedScene" uid="uid://dwulq7rxjvi0x" path="res://scenes/ui/spot_info_training.tscn" id="3_c12k7"]
 [ext_resource type="PackedScene" uid="uid://d3xrhmeeu6pp" path="res://scenes/ui/spot_info_buying.tscn" id="4_x4raq"]
 
@@ -16,6 +16,9 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 script = ExtResource("1_c8q1d")
+production_button_color = Color(0.427372, 0.974363, 0.818506, 1)
+training_button_color = Color(0.906916, 0.758743, 0.951135, 1)
+buying_button_color = Color(1, 0.862745, 0.368627, 1)
 
 [node name="SpotContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
