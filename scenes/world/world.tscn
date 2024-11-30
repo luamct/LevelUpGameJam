@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://woucgevkq7qf" path="res://scenes/areas/spot.tscn" id="3_7gc0v"]
 [ext_resource type="Texture2D" uid="uid://gjekk4mkvr1b" path="res://assets/maps/2024-11-11 map01.png" id="3_exgk6"]
 [ext_resource type="PackedScene" uid="uid://cci1pxpj48ewe" path="res://scenes/adventurer/adventurer.tscn" id="4_ijfal"]
-[ext_resource type="Texture2D" uid="uid://q0i0d46bfym2" path="res://assets/classes/static_fighter.png" id="5_e8e4y"]
+[ext_resource type="Texture2D" uid="uid://ihg3tgvrop04" path="res://assets/classes/fighter_1.png" id="5_b26p0"]
 [ext_resource type="PackedScene" uid="uid://b0dek7py76rxn" path="res://scenes/areas/area.tscn" id="6_il4vw"]
 [ext_resource type="Script" path="res://scenes/areas/requirement.gd" id="8_4wor3"]
 [ext_resource type="Script" path="res://scenes/areas/production_spot.gd" id="8_dl7w6"]
@@ -13,24 +13,24 @@
 [ext_resource type="Script" path="res://scenes/areas/training_spot.gd" id="10_gbss6"]
 [ext_resource type="Script" path="res://scenes/areas/buying_spot.gd" id="11_arn45"]
 [ext_resource type="Texture2D" uid="uid://4mi51u168pnv" path="res://assets/Map Structures/Building humans Tower.png" id="12_88m3j"]
-[ext_resource type="Texture2D" uid="uid://b0t475e0jewt7" path="res://assets/classes/static_bard.png" id="13_d7vdy"]
 [ext_resource type="Texture2D" uid="uid://dkdo6yxdsx56t" path="res://assets/Map Structures/Building tend.png" id="13_o4tw5"]
+[ext_resource type="Texture2D" uid="uid://c81ci8cbs71oo" path="res://assets/classes/rogue_1.png" id="13_p8p66"]
 [ext_resource type="Texture2D" uid="uid://dipkwpg1dtghi" path="res://assets/Map Structures/Building humans Villa.png" id="13_wd84p"]
 [ext_resource type="Texture2D" uid="uid://ds8556n1lxu4g" path="res://assets/Map Structures/Building orc Tower.png" id="14_icbto"]
-[ext_resource type="Texture2D" uid="uid://b07n0b2n1kv4e" path="res://assets/classes/static_paladin.png" id="14_shb0o"]
-[ext_resource type="Texture2D" uid="uid://bin8tcb4318ru" path="res://assets/classes/Static sorcerer.png" id="15_st8nv"]
+[ext_resource type="Texture2D" uid="uid://bbvooj6ri1cqj" path="res://assets/classes/bard_1.png" id="15_3tyxv"]
 [ext_resource type="Texture2D" uid="uid://mafofxwlgvej" path="res://assets/Map Structures/Building dwarv Castle.png" id="15_u862k"]
 [ext_resource type="Texture2D" uid="uid://bq1h8qypq0aph" path="res://assets/Map Structures/Building dwarv Altar.png" id="16_7ia4y"]
-[ext_resource type="Texture2D" uid="uid://ckr0t1b1sn4re" path="res://assets/classes/static_druid.png" id="16_uqofc"]
 [ext_resource type="Texture2D" uid="uid://ra25hj83xk6n" path="res://assets/Map Structures/Building dwarv Tower.png" id="17_2nwek"]
-[ext_resource type="Texture2D" uid="uid://8swinhrd6f6j" path="res://assets/classes/static_rogue.png" id="18_jge76"]
+[ext_resource type="Texture2D" uid="uid://dtasnts0fi3f0" path="res://assets/classes/sorcerer_1.png" id="18_emku4"]
 [ext_resource type="Texture2D" uid="uid://da4wft15e23o8" path="res://assets/ui/bars_screens/Area1 blank.png" id="19_wjdxs"]
+[ext_resource type="Texture2D" uid="uid://diy55220xtyr2" path="res://assets/classes/druid_1.png" id="20_60rgq"]
 [ext_resource type="PackedScene" uid="uid://bukvpaws8uoa2" path="res://scenes/world/travel_path.tscn" id="21_lj6df"]
 [ext_resource type="Texture2D" uid="uid://cutehjkb06qgt" path="res://assets/Paths/Road 01.png" id="21_ms4n2"]
 [ext_resource type="Texture2D" uid="uid://biuve6ako2ls0" path="res://assets/Paths/Road 02.png" id="22_ahxid"]
 [ext_resource type="Texture2D" uid="uid://ccncje477xru8" path="res://assets/Paths/Road 11.png" id="22_p6cik"]
 [ext_resource type="PackedScene" uid="uid://jt24mbgmndoh" path="res://scenes/ui/bottom_panel.tscn" id="22_xlvp7"]
 [ext_resource type="Texture2D" uid="uid://e5i7lp6no830" path="res://assets/Paths/Road 03.png" id="23_21xdo"]
+[ext_resource type="Texture2D" uid="uid://bkm556mg3yh8p" path="res://assets/classes/paladin_1.png" id="23_fw084"]
 [ext_resource type="Texture2D" uid="uid://jw83jkthb7xj" path="res://assets/Paths/Road 04.png" id="24_dd1x5"]
 [ext_resource type="Texture2D" uid="uid://dk2yb6hisrosl" path="res://assets/Map Structures/Building Magic Tower.png" id="24_t4pht"]
 [ext_resource type="Texture2D" uid="uid://b4kt0mdgfnxhq" path="res://assets/Paths/Road 05.png" id="25_ifnik"]
@@ -220,7 +220,7 @@ z_index = 10
 position = Vector2(583, 56.5)
 name_ = "Peregrine The Fighter"
 class_ = 1
-portrait = ExtResource("5_e8e4y")
+portrait = ExtResource("5_b26p0")
 level = 1
 area = NodePath("../../Areas/Broken Sink Inn")
 
@@ -333,7 +333,7 @@ z_index = 10
 position = Vector2(-583, -65.5)
 name_ = "Josse The Shadow Mingler"
 class_ = 6
-portrait = ExtResource("18_jge76")
+portrait = ExtResource("13_p8p66")
 strength = 1
 speed = 1
 agility = 2
@@ -373,7 +373,7 @@ z_index = 10
 position = Vector2(-583, -65.5)
 name_ = "Elis The One Hit Star"
 class_ = 2
-portrait = ExtResource("13_d7vdy")
+portrait = ExtResource("15_3tyxv")
 speed = 1
 morale = 1
 discipline = 1
@@ -450,7 +450,7 @@ z_index = 10
 position = Vector2(-583, -65.5)
 name_ = "Ebbo The Wise_ish"
 class_ = 4
-portrait = ExtResource("15_st8nv")
+portrait = ExtResource("18_emku4")
 defense = 1
 discipline = 1
 xp = 200
@@ -513,7 +513,7 @@ z_index = 10
 position = Vector2(-583, -65.5)
 name_ = "Brice The Sleepy Beast"
 class_ = 5
-portrait = ExtResource("16_uqofc")
+portrait = ExtResource("20_60rgq")
 strength = 1
 agility = 1
 defense = 1
@@ -606,7 +606,7 @@ z_index = 10
 position = Vector2(-583, -65.5)
 name_ = "Aruan The Righteous"
 class_ = 3
-portrait = ExtResource("14_shb0o")
+portrait = ExtResource("23_fw084")
 strength = 1
 speed = 1
 defense = 1
