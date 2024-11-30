@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qfik4jhr6r4i"
-path="res://.godot/imported/03-HIRE.png-150e9e87017882c5ff8f8f942fbeb03a.ctex"
+path="res://.godot/imported/03-HIRE.png-603161432ebb9f0ee77aa153925249d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tutorial Pages/03-HIRE.png"
-dest_files=["res://.godot/imported/03-HIRE.png-150e9e87017882c5ff8f8f942fbeb03a.ctex"]
+source_file="res://assets/Tutorial Pages/New folder/03-HIRE.png"
+dest_files=["res://.godot/imported/03-HIRE.png-603161432ebb9f0ee77aa153925249d8.ctex"]
 
 [params]
 

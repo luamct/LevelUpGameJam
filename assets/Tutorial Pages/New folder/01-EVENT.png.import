@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7870jbm6158n"
-path="res://.godot/imported/01-EVENT.png-2e352ead9adb5745fb95d8775c0dfcd4.ctex"
+path="res://.godot/imported/01-EVENT.png-5478cd219159a35d3d4ce9beb97974cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tutorial Pages/01-EVENT.png"
-dest_files=["res://.godot/imported/01-EVENT.png-2e352ead9adb5745fb95d8775c0dfcd4.ctex"]
+source_file="res://assets/Tutorial Pages/New folder/01-EVENT.png"
+dest_files=["res://.godot/imported/01-EVENT.png-5478cd219159a35d3d4ce9beb97974cd.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pbkx605jbc7y"
-path="res://.godot/imported/02-TRAIN.png-403f1dd58d9cbaba87e1c5ac5749c8a8.ctex"
+uid="uid://c55wv4fixr27j"
+path="res://.godot/imported/TRAIN certo.png-282f9e8dd924d3081af41b053d20df0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tutorial Pages/New folder/02-TRAIN.png"
-dest_files=["res://.godot/imported/02-TRAIN.png-403f1dd58d9cbaba87e1c5ac5749c8a8.ctex"]
+source_file="res://assets/Tutorial Pages/New folder/TRAIN certo.png"
+dest_files=["res://.godot/imported/TRAIN certo.png-282f9e8dd924d3081af41b053d20df0d.ctex"]
 
 [params]
 
