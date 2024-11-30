@@ -458,6 +458,7 @@ slots = 2
 [node name="Just Sit And Hang At The Fire Camp" parent="Areas/Side Quest Woods/Spots" index="1" instance=ExtResource("3_7gc0v")]
 position = Vector2(-137, 229)
 script = ExtResource("8_do0jp")
+slots = 1
 
 [node name="Bandit Banquet" parent="Areas" instance=ExtResource("6_il4vw")]
 visible = false
