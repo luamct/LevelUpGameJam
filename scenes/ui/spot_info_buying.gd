@@ -75,8 +75,10 @@ func on_hire_button_pressed(adventurer: Adventurer, slot: AvailableAdventurer):
 	
 	Globals.current_gold -= adventurer.hire_cost
 	Globals.gold_updated.emit(Globals.current_gold)
-	#Globals.add_adventurer_to_firecamp(adventurer)
+
 	Globals.hired_adventurer.emit(adventurer)
+	
+	adventurer.visible = true
 	
 	# Remove hired adventurer from list to hire
 	adventurer_slots.remove_child(slot)

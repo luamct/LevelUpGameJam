@@ -1,10 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://cci1pxpj48ewe"]
+[gd_scene load_steps=17 format=3 uid="uid://cci1pxpj48ewe"]
 
 [ext_resource type="Script" path="res://scenes/adventurer/adventurer.gd" id="1_k4me1"]
 [ext_resource type="Texture2D" uid="uid://cneusih3qe6iq" path="res://assets/Map Travelers/M bard-1a.png" id="2_gg58s"]
 [ext_resource type="Texture2D" uid="uid://bkvcfnpy4f5ub" path="res://assets/Map Travelers/M fighter-1a.png" id="2_povhx"]
 [ext_resource type="Texture2D" uid="uid://cc74noe81t1tl" path="res://assets/Map Travelers/M fighter-1b.png" id="3_byblu"]
 [ext_resource type="Texture2D" uid="uid://ejype64tnko3" path="res://assets/Map Travelers/M bard-1b.png" id="3_v8lp7"]
+[ext_resource type="Texture2D" uid="uid://cei3i4ta20olv" path="res://assets/Map Travelers/M neutral-1a.png" id="4_plo5h"]
+[ext_resource type="Texture2D" uid="uid://hs8t50tcn1hn" path="res://assets/Map Travelers/M neutral-1b.png" id="5_ypb2p"]
+[ext_resource type="Texture2D" uid="uid://b3b33elsk44xv" path="res://assets/Map Travelers/M druid-1a.png" id="8_h6c05"]
+[ext_resource type="Texture2D" uid="uid://d384kk88u7sef" path="res://assets/Map Travelers/M druid-1b.png" id="9_uhft8"]
+[ext_resource type="Texture2D" uid="uid://coyra6ovilh2l" path="res://assets/Map Travelers/M paladin-1a.png" id="10_mdj46"]
+[ext_resource type="Texture2D" uid="uid://4abveb4gnr6r" path="res://assets/Map Travelers/M paladin-1b.png" id="11_j0xv6"]
+[ext_resource type="Texture2D" uid="uid://bcb7lgf2dkif" path="res://assets/Map Travelers/M rogue-1a.png" id="12_jcymb"]
+[ext_resource type="Texture2D" uid="uid://c0cibmove2t1l" path="res://assets/Map Travelers/M rogue-1b.png" id="13_mkb52"]
+[ext_resource type="Texture2D" uid="uid://bojj8mw7gwk4n" path="res://assets/Map Travelers/M sorcerer-1a.png" id="14_28mkp"]
+[ext_resource type="Texture2D" uid="uid://d2cd8b2fl2bcb" path="res://assets/Map Travelers/M sorcerer-1b.png" id="15_mmvmf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_up5nf"]
 animations = [{
@@ -21,6 +31,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("4_plo5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ypb2p")
+}],
+"loop": true,
+"name": &"comun",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_povhx")
 }, {
 "duration": 1.0,
@@ -28,6 +49,50 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_h6c05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uhft8")
+}],
+"loop": true,
+"name": &"druid",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_mdj46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_j0xv6")
+}],
+"loop": true,
+"name": &"paladin",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_jcymb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mkb52")
+}],
+"loop": true,
+"name": &"rogue",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_28mkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_mmvmf")
+}],
+"loop": true,
+"name": &"sorcerer",
 "speed": 2.0
 }]
 
@@ -37,5 +102,5 @@ script = ExtResource("1_k4me1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_up5nf")
-animation = &"bard"
+animation = &"comun"
 autoplay = "default"

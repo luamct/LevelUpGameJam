@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5tb6po7e7vi3"]
+[gd_scene load_steps=3 format=3 uid="uid://c7v1ykrkdmhrf"]
 
 [ext_resource type="PackedScene" uid="uid://0itb5ywjb0oj" path="res://scenes/ui/portrait.tscn" id="1_74e5p"]
 [ext_resource type="Script" path="res://scenes/ui/available_adventurer.gd" id="1_kqpp0"]
