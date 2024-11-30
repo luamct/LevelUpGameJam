@@ -261,11 +261,20 @@ slots = 2
 
 [node name="Broken Sink Inn" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(602, 57)
-story_text = "One would say this is not the fancier Inn around and one would be right.
-Anyways, you have heard the Stables to the North have a good promo on tactical
-lessons for a newbie fighter such as yourself. It is definitely worth a visit before you
-start wandering around. What was it again? Save the (newly created) world or
-something?
+story_text = "One would say this is not the fancier Inn around and one would be right. 
+Anyways, a lord, who by the way looked way stronger than you, said that you 
+need to save the world.
+
+Don’t ask, just accept this is about to feel a lot like an exploration journey. 
+Be prepared to participate in weird activities, make a buck or two, and then 
+invest that in yourself to train and level up! And who knows, maybe you`ll 
+make - or buy - some friends on your way!
+
+Since you are here, you have heard they do have a good promo on tactical
+lessons for a newbie fighter such as yourself going on right now. Go make some 
+a dozen bucks and practice a few attack moves before you wander around. 
+
+Something tells you this journey will be eventful.
 "
 
 [node name="Sprite2D" parent="Areas/Broken Sink Inn" index="0"]
@@ -281,6 +290,14 @@ requirements = Array[ExtResource("8_4wor3")]([])
 gold_output = 1
 slots = 2
 
+[node name="Learn New Cool Moves" parent="Areas/Broken Sink Inn/Spots" index="1" instance=ExtResource("3_7gc0v")]
+position = Vector2(-50, -106)
+script = ExtResource("10_gbss6")
+max_level = 3
+gold_per_xp = 1
+xp_per_second = 300
+slots = 2
+
 [node name="SugarFoot Stables" parent="Areas" instance=ExtResource("6_il4vw")]
 position = Vector2(532, -48)
 story_text = "Did you just get here and already witness weird mercenaries in red robes fleeing northwest?
@@ -291,21 +308,14 @@ future.."
 [node name="Sprite2D" parent="Areas/SugarFoot Stables" index="0"]
 scale = Vector2(0.188136, 0.188136)
 
-[node name="Learn New Cool Moves" parent="Areas/SugarFoot Stables/Spots" index="0" instance=ExtResource("3_7gc0v")]
-script = ExtResource("10_gbss6")
-max_level = 3
-gold_per_xp = 1
-xp_per_second = 300
-slots = 2
-
-[node name="Teach Kids Around What You Just Learned" parent="Areas/SugarFoot Stables/Spots" index="1" instance=ExtResource("3_7gc0v")]
+[node name="Teach Kids Around What You Just Learned" parent="Areas/SugarFoot Stables/Spots" index="0" instance=ExtResource("3_7gc0v")]
 position = Vector2(114, 380)
 script = ExtResource("8_dl7w6")
 requirements = Array[ExtResource("8_4wor3")]([SubResource("Resource_ks6np")])
 gold_output = 5
 slots = 3
 
-[node name="Look Out For a Good Gossip" parent="Areas/SugarFoot Stables/Spots" index="2" instance=ExtResource("3_7gc0v")]
+[node name="Look Out For a Good Gossip" parent="Areas/SugarFoot Stables/Spots" index="1" instance=ExtResource("3_7gc0v")]
 position = Vector2(50, 107)
 script = ExtResource("11_arn45")
 slots = 1
