@@ -42,7 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://bdrp6dy3m1apy" path="res://scenes/ui/side_panel.tscn" id="34_vvur4"]
 [ext_resource type="Script" path="res://scenes/ui/popouts.gd" id="38_6pyis"]
 [ext_resource type="PackedScene" uid="uid://vho7axsqn8hg" path="res://scenes/ui/story_popout.tscn" id="39_fiye7"]
-[ext_resource type="Texture2D" uid="uid://dcqexgqh85i6e" path="res://assets/Tutorial Pages/TUTORIAL FINAL.png" id="43_2303q"]
+[ext_resource type="Texture2D" uid="uid://dxf7xw4b6xf22" path="res://assets/Tutorial Pages/TUTORIAL FINAL.png" id="43_2303q"]
 [ext_resource type="Script" path="res://scenes/world/tutorial_screen.gd" id="44_vy4u1"]
 
 [sub_resource type="Resource" id="Resource_ks6np"]

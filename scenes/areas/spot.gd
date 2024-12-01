@@ -12,6 +12,9 @@ signal adventurer_removed(adventurer: Adventurer, slot_number: int)
 var adventurers: Array[Adventurer]
 
 @onready var area: Area = $"../.."
+@onready var travelling_sfx = $TravellingSFX
+@onready var training_sfx = $TrainingSFX
+@onready var production_sfx = $ProductionSFX
 
 func _ready() -> void:
 	for i in slots:
@@ -29,3 +32,19 @@ func try_to_remove_adventurer(_adventurer: Adventurer) -> bool:
 func full_name() -> String:
 	return "%s_%s" % [area.name, name]
 	
+func play_audio_for_duration(audio_player: AudioStreamPlayer, duration: float):
+	if audio_player.stream:
+		audio_player.stop() # Garante que o áudio não está tocando
+		audio_player.play() # Toca o áudio do início
+		# Configura um Timer para parar o áudio após o tempo desejado
+		var timer = Timer.new()
+		timer.wait_time = duration
+		timer.one_shot = true
+		add_child(timer)
+		timer.connect("timeout", Callable(self, "_on_timer_timeout"))
+		timer.start()
+	else:
+		print("Nenhum áudio carregado no AudioStreamPlayer!")
+
+func _on_timer_timeout(audio_player: AudioStreamPlayer):
+	audio_player.stop() # Para o áudio quando o Timer dispara
