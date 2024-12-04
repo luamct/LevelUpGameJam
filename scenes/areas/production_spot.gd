@@ -46,6 +46,10 @@ func try_to_add_adventurer(adventurer: Adventurer, slot_number: int) -> bool:
 	
 	adventurer_added.emit(adventurer, slot_number)
 	Globals.update_side_panel.emit()
+	
+	#var spot = Spot.new()
+	#print(spot.production_sfx)
+	#spot.play_audio_for_duration(spot.production_sfx, 3.0)
 	return true
 
 func try_to_remove_adventurer(adventurer: Adventurer) -> bool:

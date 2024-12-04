@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqp5ymb55u5sl"
-path="res://.godot/imported/03-HIRE.png-bd79b95090f4f35052915c4e75ccad52.ctex"
+uid="uid://2imke7t0bu5e"
+path="res://.godot/imported/TRAIN certo.png-282f9e8dd924d3081af41b053d20df0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tutorial Pages/Separadas/03-HIRE.png"
-dest_files=["res://.godot/imported/03-HIRE.png-bd79b95090f4f35052915c4e75ccad52.ctex"]
+source_file="res://assets/Tutorial Pages/New folder/TRAIN certo.png"
+dest_files=["res://.godot/imported/TRAIN certo.png-282f9e8dd924d3081af41b053d20df0d.ctex"]
 
 [params]
 
