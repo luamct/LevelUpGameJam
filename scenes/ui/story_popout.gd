@@ -17,3 +17,7 @@ func _input(event: InputEvent) -> void:
 	if visible and event.is_action_pressed("left_click"):
 		visible = false
 		set_process_input(false)
+
+func show_again():
+	visible = true
+	set_process_input(true)

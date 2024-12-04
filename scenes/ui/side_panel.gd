@@ -25,7 +25,9 @@ const PORTRAIT_SCENE = preload("res://scenes/ui/portrait.tscn")
 @onready var attributes_container: GridContainer = %AttributesContainer
 
 @onready var tutorial_button: Button = %TutorialButton
+@onready var area_text_button: Button = %AreaTextButton
 @onready var tutorial_screen: TextureRect = $"../TutorialScreen"
+@onready var story_popout_screen: StoryPopout = $"../Popouts/StoryPopout"
 @onready var level_up_sfx = $LevelUpSFX
 
 var selected_portrait: Portrait
@@ -48,7 +50,11 @@ func _ready():
 		level_up_button.pressed.connect(func(): on_level_up_button_pressed(attribute.to_lower()))
 
 	tutorial_button.pressed.connect(on_tutorial_button_pressed)
+	area_text_button.pressed.connect(on_area_text_button_pressed)
 
+func on_area_text_button_pressed():
+	story_popout_screen.show_again()
+	
 func on_tutorial_button_pressed():
 	tutorial_screen.start()
 	
