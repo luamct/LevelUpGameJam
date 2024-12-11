@@ -29,6 +29,7 @@ var xp_table: Array[int] = [
 
 var current_gold: int = 0
 var selected_adventurer: Adventurer
+var error_cap: bool = false
 
 func _ready() -> void:
 	gold_collected.connect(on_gold_collected)

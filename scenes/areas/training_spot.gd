@@ -36,17 +36,23 @@ func on_training_tick():
 			continue
 	
 		if adventurer.total_level() >= max_level:
-			Globals.show_error_popout.emit("Cannot train beyond level %d" % [max_level], 1)
+			if !Globals.error_cap:
+				Globals.show_error_popout.emit("Cannot train %s beyond level %d" % [adventurer.name_, max_level], 4)
+				Globals.error_cap = true
 			continue
 	
 		if Globals.current_gold < gold_per_xp:
-			Globals.show_error_popout.emit("Not enough gold for training!", 1)
+			if !Globals.error_cap:
+				Globals.show_error_popout.emit("Not enough gold for training!", 3)
+				Globals.error_cap = true
 			continue
 
 		Globals.current_gold -= gold_per_xp
 		Globals.gold_updated.emit(Globals.current_gold)
 
 		adventurer.add_xp(xp_per_second)
+		
+		Globals.error_cap = false
 
 func try_to_remove_adventurer(adventurer: Adventurer) -> bool:
 	var slot_number = adventurers.find(adventurer)
@@ -56,5 +62,6 @@ func try_to_remove_adventurer(adventurer: Adventurer) -> bool:
 	adventurers[slot_number] = null
 	adventurer_removed.emit(adventurer, slot_number)
 	Globals.update_side_panel.emit()
+	Globals.error_cap = false
 	return true
 	
